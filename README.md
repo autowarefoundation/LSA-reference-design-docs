@@ -1,2 +1,3 @@
 # LSA-reference-design-docs
-Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles
+
+Repository to store mkdocs based documentation for the Reference Design Guideline for LSA vehicle.
