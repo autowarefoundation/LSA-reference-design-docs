@@ -1,3 +1,3 @@
-# ODD Definition
+# Hardware Configuration
 
 (To be completed)

@@ -1,6 +1,6 @@
 # LSA-reference-design-docs
 
-Repository to store mkdocs based documentation for the Reference Design Guideline for LSA vehicle.
+Repository to store mkdocs based documentation for the Reference Design Guideline for Low Speed Autonomy(LSA) vehicle.
 
 You can access the document at [https://autowarefoundation.github.io/LSA-reference-design-docs/main/](https://autowarefoundation.github.io/LSA-reference-design-docs/main/)
 
