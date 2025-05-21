@@ -27,7 +27,7 @@ For more details about the reference design WG, its goals and details of the Aut
 
 - [RoboRacer (F1Tenth)](./OtherExampleDesigns/F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware.md) describes the design and implementation of racing robots using Autoware.
 
-- [GoKart](./OtherExampleDesigns/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware.md) describes the design and implementation of EV GoKart using Autware.
+- [GoKart](./OtherExampleDesigns/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware.md) describes the design and implementation of EV GoKart using Autoware.
 
 - [KWT LSV](./OtherExampleDesigns/LSV/Kingway_LSV_introduction_ENG_0729AWF_v1.pdf) describes the design and implementation of the LSV by KWT.
 
