@@ -46,6 +46,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/version-0.1/hardware-configuration/ECUs/</loc>
+         <lastmod>2025-05-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/version-0.1/hardware-configuration/Sensors-and-Actuators/</loc>
+         <lastmod>2025-05-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/version-0.1/hardware-configuration/chassis/</loc>
+         <lastmod>2025-05-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/version-0.1/odd-definition/</loc>
          <lastmod>2025-05-21</lastmod>
          <changefreq>daily</changefreq>
