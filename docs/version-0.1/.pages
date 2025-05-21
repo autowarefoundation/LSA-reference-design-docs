@@ -1,4 +1,6 @@
 nav:
-  - Introduction: index.md
+  - Introduction
   - start-guide
   - system-configuration
+  - hardware-configuration
+  - OtherExampleDesigns

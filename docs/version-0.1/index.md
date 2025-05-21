@@ -6,15 +6,15 @@
 
 ## About Reference Design Guideline for LSA Vehicles
 
-This document serves a guideline to design and deploy a TRL-6 low speed autonomy vehicle based on Autoware. The readers can take this document as a starting point to select and configure the hardware and software components of the vehicles.
+This document serves a guideline to design and deploy a TRL-6 low speed autonomy vehicle based on Autoware. The readers can take this document as a starting point to select and configure the hardware and software components of the vehicles. 
+
+## Reference Design Guideline for LSA Vehicles documentation structure
+
+The reference design WG publishes the guidelines for Low Speed Autonomy (LSA) vehicles, using the following document structure shown below.
 
 ![Reference Design Guideline Structure](assets/images/Structure_of_LSV_ReferenceDesign.svg)
 
 For more details about the reference design WG, its goals and details of the Autoware Foundation working groups that oversees the project, refer to the [Reference Design WG wiki](https://github.com/autowarefoundation/RefDesignWG/wiki/)
-
-## Reference Design Guideline for LSA Vehicles documentation structure
-
-![Reference Design Guideline for LSA vehicles docs structure](assets/images/Structure_of_document_repo.svg)
 
 ## Getting started
 
