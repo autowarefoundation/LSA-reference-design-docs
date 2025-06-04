@@ -1,4 +1,4 @@
-# Other design examples
+# Other Examples Design
 
 This page describes several examples of Autoware-based Low Speed Autonomy Vehicles. These examples are provided by the users and are shown as an example.
 

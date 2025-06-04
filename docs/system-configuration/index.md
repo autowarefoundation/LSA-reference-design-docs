@@ -1,3 +1,3 @@
-# System configuration
+# System Configuration
 
 TODO

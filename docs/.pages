@@ -1,6 +1,8 @@
 nav:
-  - Introduction
-  - start-guide
-  - system-configuration
-  - hardware-configuration
-  - OtherExampleDesigns
+  - Introduction: index.md
+  - System Configuration: system-configuration
+  - Software Configuration: software-configuration
+  - Hardware Configuration: hardware-configuration
+  - ODD Definition: odd-definition
+  - Evaluation and Testing: evaluation-and-testing
+  - Other Example Designs: other-example-designs

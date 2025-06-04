@@ -1,4 +1,4 @@
-# Reference Design Guideline for LSA Vehicles
+# Introduction
 
 !!! warning
 
@@ -25,10 +25,10 @@ For more details about the reference design WG, its goals and details of the Aut
 
 ## Other Example Design
 
-- [RoboRacer (F1Tenth)](./OtherExampleDesigns/F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware.md) describes the design and implementation of racing robots using Autoware.
+- [RoboRacer (F1Tenth)](./other-example-designs/F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware.md) describes the design and implementation of racing robots using Autoware.
 
-- [GoKart](./OtherExampleDesigns/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware.md) describes the design and implementation of EV GoKart using Autoware.
+- [GoKart](./other-example-designs/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware.md) describes the design and implementation of EV GoKart using Autoware.
 
-- [KWT LSV](./OtherExampleDesigns/KWT_LSV/Kingway_LSV_introduction_ENG_0729AWF_v1.pdf) describes the design and implementation of the LSV by KWT.
+- [KWT LSV](./other-example-designs/KWT_LSV/Kingway_LSV_introduction_ENG_0729AWF_v1.pdf) describes the design and implementation of the LSV by KWT.
 
 - [System configuration](./system-configuration/index.md) describes the components that make up LSA vehicles in terms of the required hardware and software.
