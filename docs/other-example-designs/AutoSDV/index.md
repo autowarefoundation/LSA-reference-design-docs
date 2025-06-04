@@ -7,6 +7,6 @@ AutoSDV provides a complete stack from hardware specifications to software imple
 
 | Robin-W Solid-State LiDAR Kit | Velodyne 32C LiDAR Kit   | Cube1 LiDAR + MOXA 5G Kit | 
 | ----------------------- | ----------------------- | ----------------------- |
-| ![[images/model_robin-w.webp]] | ![[images/model_velodyne_32c.webp]] | ![[images/model_cube1_moxa-5g.webp]] | 
+| ![Robin W](images/model_robin-w.png) | ![Velodyne 32C](images/model_velodyne_32c.png) | ![Moxa](images/model_cube1_moxa-5g.png) | 
 
 Read the book at [AutoSDV](https://newslabntu.github.io/autosdv-book/)
