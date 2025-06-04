@@ -6,7 +6,7 @@
 
 ## About Reference Design Guideline for LSA Vehicles
 
-This document serves a guideline to design and deploy a TRL-6 low speed autonomy vehicle based on Autoware. The readers can take this document as a starting point to select and configure the hardware and software components of the vehicles. 
+This document serves a guideline to design and deploy a TRL-6 low speed autonomy vehicle based on Autoware. The readers can take this document as a starting point to select and configure the hardware and software components of the vehicles.
 
 ## Reference Design Guideline for LSA Vehicles documentation structure
 
@@ -29,8 +29,6 @@ For more details about the reference design WG, its goals and details of the Aut
 
 - [GoKart](./OtherExampleDesigns/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware.md) describes the design and implementation of EV GoKart using Autoware.
 
-- [KWT LSV](./OtherExampleDesigns/LSV/Kingway_LSV_introduction_ENG_0729AWF_v1.pdf) describes the design and implementation of the LSV by KWT.
-
-- [Start guide](./start-guide/index.md) describes how to install, set up and run Autoware and its associated simulators on supported development platforms.
+- [KWT LSV](./OtherExampleDesigns/KWT_LSV/Kingway_LSV_introduction_ENG_0729AWF_v1.pdf) describes the design and implementation of the LSV by KWT.
 
 - [System configuration](./system-configuration/index.md) describes the components that make up LSA vehicles in terms of the required hardware and software.

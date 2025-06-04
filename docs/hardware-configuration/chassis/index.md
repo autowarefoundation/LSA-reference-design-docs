@@ -3,6 +3,7 @@
 (To be completed)
 
 ## Vehicle Definition
+
 [PDF](ReferenceDrawingV2.pdf)
 
 [Excel](AWFRefDesignWG_Chassis.xlsx)
@@ -41,4 +42,3 @@
 ## Example Drawing
 
 [PDF](ReferenceDrawingV2.pdf)
-
