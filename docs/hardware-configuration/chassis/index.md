@@ -4,7 +4,7 @@
 
 ## Vehicle Definition
 
-[PDF](ReferenceDrawingV2.pdf)
+[PDF](./ReferenceDrawingV2.pdf)
 
 [Excel](AWFRefDesignWG_Chassis.xlsx)
 
@@ -40,5 +40,13 @@
 |                  |                   |  |
 
 ## Example Drawing
+
+![images/ReferenceDrawingV2_Page_1.png](images/ReferenceDrawingV2_Page_1.png)
+
+![images/ReferenceDrawingV2_Page_2.png](images/ReferenceDrawingV2_Page_2.png)
+
+![images/ReferenceDrawingV2_Page_3.png](images/ReferenceDrawingV2_Page_3.png)
+
+![images/ReferenceDrawingV2_Page_4.png](images/ReferenceDrawingV2_Page_4.png)
 
 [PDF](ReferenceDrawingV2.pdf)

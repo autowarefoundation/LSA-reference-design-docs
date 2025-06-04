@@ -59,7 +59,6 @@ Autonomous Go-Kart is a one-third scale autonomous go-kart autonomous vehicle fo
 ## Computing Platforms:
 - X86 laptop with nVidia GPU
 
-![[GoKart-ComputeSensing.png]]
 ![GoKart-ComputeSensing.png](GoKart-ComputeSensing.png)
 
 # Software Configuration 

@@ -5,7 +5,7 @@ This document elaborates the hardware and software configurations for using Auto
 
 # Design Overview: 
 
-![Radar Chart for F1Tenth Design](RadarChart-F1Tenth.png)
+![Radar Chart for F1Tenth Design](images/RadarChart-F1Tenth.png)
 
 # Who should read: 
 One is interested in building your autonomous racing cars or low-cost platforms to learn Autoware, and looks for the place to start with. 
@@ -55,6 +55,8 @@ One is interested in building your autonomous racing cars or low-cost platforms 
 
 F1Tenth can be used for racing and education purpose. The simplest use case is to avoid colliding into the obstacle on a racing track. Meanwhile, one can also develop the SLAM algorithm to build the map on the fly and finishes the loop in short time. 
 
+![F1tenth NX](images/f1tenth_NX.webp)
+
 ![[f1tenth_NX.webp]]
 
 # Hardware Configuration
@@ -75,7 +77,7 @@ F1Tenth can be used for racing and education purpose. The simplest use case is t
 - USB Hub (4 ports)
 - (DEPRECATED) NVIDIA Jetson TX2
 
-![[together_NX_00.jpeg]]
+![F1 Tenth](images/together_NX_00.jpeg)
 
 # Software Configuration 
 - Software on the car:
