@@ -6,31 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/</loc>
-         <lastmod>2025-06-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/F1Tenth/</loc>
-         <lastmod>2025-06-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware/</loc>
-         <lastmod>2025-06-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/GoKart/</loc>
-         <lastmod>2025-06-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware/</loc>
-         <lastmod>2025-06-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/evaluation-and-testing/</loc>
          <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
@@ -57,6 +32,31 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/odd-definition/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/F1Tenth/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/GoKart/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware/</loc>
          <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>

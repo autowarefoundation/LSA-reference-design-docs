@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/GoKart/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/">
       
       
-        <link rel="prev" href="../F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware/">
+        <link rel="prev" href="../evaluation-and-testing/">
       
       
-        <link rel="next" href="Reference%20Design%20for%20Go-Kart%20with%20Autoware/">
+        <link rel="next" href="F1Tenth/">
       
-      <link rel="icon" href="../../assets/images/autoware-foundation.png">
+      <link rel="icon" href="../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Overview: - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
+        <title>Other Examples Design - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -44,7 +44,11 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#other-examples-design" class="md-skip">
           Skip to content
         </a>
       
@@ -82,6 +86,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -89,7 +97,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-header__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+    <a href=".." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-header__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -108,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview:
+              Other Examples Design
             
           </span>
         </div>
@@ -203,10 +211,90 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
-      Reference Design Guideline for LSA Vehicles
+    <a href=".." class="md-tabs__link">
+      Introduction
     </a>
   </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../system-configuration/" class="md-tabs__link">
+        System Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../software-configuration/" class="md-tabs__link">
+        Software Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../hardware-configuration/" class="md-tabs__link">
+        Hardware Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../odd-definition/" class="md-tabs__link">
+        ODD Definition
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../evaluation-and-testing/" class="md-tabs__link">
+        Evaluation and Testing
+      </a>
+    </li>
+  
 
       
         
@@ -220,88 +308,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
-        OtherExampleDesigns
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../evaluation-and-testing/" class="md-tabs__link">
-        Evaluation and testing
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../hardware-configuration/" class="md-tabs__link">
-        Hardware configuration
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../odd-definition/" class="md-tabs__link">
-        Odd definition
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../software-configuration/" class="md-tabs__link">
-        Software configuration
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../system-configuration/" class="md-tabs__link">
-        System configuration
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Other Example Designs
       </a>
     </li>
   
@@ -334,7 +342,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-nav__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+    <a href=".." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-nav__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -365,8 +373,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        Reference Design Guideline for LSA Vehicles
+      <a href=".." class="md-nav__link">
+        Introduction
       </a>
     </li>
   
@@ -376,53 +384,6 @@
       
       
 
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-      
-      
-        
-          
-            
-          
-        
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../">OtherExampleDesigns</a>
-          
-            <label for="__nav_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          OtherExampleDesigns
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
   
   
   
@@ -434,14 +395,12 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
         
           
             
-          
-        
           
         
       
@@ -449,108 +408,17 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../F1Tenth/">F1Tenth</a>
-          
-            <label for="__nav_2_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
+          <a href="../system-configuration/">System Configuration</a>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_2">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          F1Tenth
+          System Configuration
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware/" class="md-nav__link">
-        Overview:
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
-      
-      
-        
-          
-            
-          
-        
-          
-        
-      
-      
-        
-        
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">GoKart</a>
-          
-            <label for="__nav_2_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
-          
-        </div>
-      
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_2_3">
-          <span class="md-nav__icon md-icon"></span>
-          GoKart
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Reference%20Design%20for%20Go-Kart%20with%20Autoware/" class="md-nav__link">
-        Overview:
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
             
           
         </ul>
@@ -587,14 +455,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../evaluation-and-testing/">Evaluation and testing</a>
+          <a href="../software-configuration/">Software Configuration</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Evaluation and testing
+          Software Configuration
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -640,7 +508,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../hardware-configuration/">Hardware configuration</a>
+          <a href="../hardware-configuration/">Hardware Configuration</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -651,7 +519,7 @@
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Hardware configuration
+          Hardware Configuration
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -663,7 +531,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
@@ -683,7 +553,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../hardware-configuration/ECUs/">ECUs</a>
+          <a href="../hardware-configuration/ECUs/">ECUs</a>
           
         </div>
       
@@ -709,7 +579,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
@@ -729,7 +601,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
+          <a href="../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
           
         </div>
       
@@ -755,7 +627,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
@@ -775,7 +649,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../hardware-configuration/chassis/">Chassis</a>
+          <a href="../hardware-configuration/chassis/">Chassis</a>
           
         </div>
       
@@ -829,14 +703,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../odd-definition/">Odd definition</a>
+          <a href="../odd-definition/">ODD Definition</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          Odd definition
+          ODD Definition
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -876,14 +750,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/">Software configuration</a>
+          <a href="../evaluation-and-testing/">Evaluation and Testing</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
-          Software configuration
+          Evaluation and Testing
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -901,16 +775,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
       
       
         
@@ -918,22 +792,166 @@
             
           
         
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Other Example Designs</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Other Example Designs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../system-configuration/">System configuration</a>
+          <a href="F1Tenth/">F1Tenth</a>
+          
+            <label for="__nav_7_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
-          System configuration
+          F1Tenth
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware/" class="md-nav__link">
+        Overview:
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="GoKart/">GoKart</a>
+          
+            <label for="__nav_7_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          GoKart
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware/" class="md-nav__link">
+        Overview:
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
             
           
         </ul>
@@ -978,122 +996,14 @@
   
 
 
-<h1 id="overview">Overview:</h1>
-<p>This document elaborates the hardware and software configurations for using Autoware for autonomous driving. Hence, it will serve as a guideline to select hardware and software components to build autonomous vehicles. However, this document is NOT prepared as neither step-by-step instructions nor Q&amp;A books, which will be provided as a reference link if available. </p>
-<h1 id="design-overview">Design Overview:</h1>
-<p><img alt="Meta-Info Radar Chart for Go-Kart Design" src="MetaRadarChart-GoKart.png" /></p>
-<p><img alt="Tech Feature Radar Chart for Go-Kart Design" src="TechRadarChart-GoKart.png" /></p>
-<h1 id="who-should-read">Who should read:</h1>
-<p>One is interested in building your small size autonomous vehicles and looks for the place to start with. </p>
-<h1 id="references-and-resources">References and Resources:</h1>
-<ul>
-<li>Complete Go-Kart with Autoware documents: <a href="https://go-kart-upenn.readthedocs.io/en/latest/">link</a></li>
-<li>
-<p>ROS2 Foxy setup and autonomous code: <a href="https://github.com/mlab-upenn/gokart-sensor/tree/ros2_foxy_purepursuit">link</a></p>
-</li>
-<li>
-<p>ROS2 Humble setup and autonomous code: <a href="https://github.com/mlab-upenn/gokart-sensor/tree/ros2_humble_purepursuit">Link</a></p>
-</li>
-<li>
-<p>STM32 nucleo controller code: <a href="https://github.com/mlab-upenn/gokart-mechatronics/tree/main/STM32%20Control">link</a></p>
-</li>
-</ul>
-<h1 id="contributors">Contributors:</h1>
-<ul>
-<li>Autoware Center of Excellence (under Prof. Rahul Mangharam)</li>
-</ul>
-<h1 id="targeted-use-cases">Targeted Use Cases</h1>
-<table>
-<thead>
-<tr>
-<th align="center">Use Cases:</th>
-<th align="center">Education</th>
-<th align="center">Racing</th>
-<th align="center">PoC</th>
-<th align="center">Open AD Kit</th>
-<th align="center">Commercial Services/Production</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">F1Tenth</td>
-<td align="center"><input type="checkbox" checked /></td>
-<td align="center"><input type="checkbox" checked /></td>
-<td align="center"><input type="checkbox" checked  /></td>
-<td align="center"><input type="checkbox" disabled  /></td>
-<td align="center"><input type="checkbox" disabled  /></td>
-</tr>
-</tbody>
-</table>
-<h1 id="odd">ODD</h1>
-<table>
-<thead>
-<tr>
-<th align="center">ODD</th>
-<th align="center">Cargo</th>
-<th align="center">Bus</th>
-<th align="center">RoboTaxi</th>
-<th align="center">Low Speed (Utility) Vehicle</th>
-<th align="center">Delivery Robot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">F1Tenth</td>
-<td align="center"><input type="checkbox" disabled  /></td>
-<td align="center"><input type="checkbox" disabled /></td>
-<td align="center"><input type="checkbox" disabled  /></td>
-<td align="center"><input type="checkbox" disabled  /></td>
-<td align="center"><input type="checkbox" disabled  /></td>
-</tr>
-</tbody>
-</table>
-<h1 id="automation-level">Automation Level:</h1>
-<table>
-<thead>
-<tr>
-<th align="center">Automation Level</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">F1Tenth</td>
-<td align="center"><input type="checkbox" checked  /></td>
-<td align="center"><input type="checkbox" checked  /></td>
-<td align="center"><input type="checkbox" checked /></td>
-<td align="center"><input type="checkbox" checked  /></td>
-<td align="center"><input type="checkbox" disabled  /></td>
-<td align="center"><input type="checkbox" disabled  /></td>
-</tr>
-</tbody>
-</table>
-<h1 id="system-architecture">System Architecture</h1>
-<p>Autonomous Go-Kart is a one-third scale autonomous go-kart autonomous vehicle for development and prototyping purpose. It can be used for developing and testing software components in Autoware. </p>
-<p><img alt="System Architecture" src="avev_gokart.webp" /></p>
-<h1 id="hardware-configuration">Hardware Configuration</h1>
-<h2 id="chassis">Chassis:</h2>
-<ul>
-<li>TopKart: <a href="">link to purchase</a></li>
-</ul>
-<h2 id="sensors">Sensors:</h2>
-<ul>
-<li>Lidar: Ouster LIDAR OS1 and Velodyne M1600</li>
-<li>Camera: OAK-D camera</li>
-<li>GNSS: RTK-GNSS</li>
-</ul>
-<h2 id="computing-platforms">Computing Platforms:</h2>
-<ul>
-<li>X86 laptop with nVidia GPU</li>
-</ul>
-<p>![[GoKart-ComputeSensing.png]]
-<img alt="GoKart-ComputeSensing.png" src="GoKart-ComputeSensing.png" /></p>
-<h1 id="software-configuration">Software Configuration</h1>
+<h1 id="other-examples-design">Other Examples Design<a class="headerlink" href="#other-examples-design" title="Permanent link">#</a></h1>
+<p>This page describes several examples of Autoware-based Low Speed Autonomy Vehicles. These examples are provided by the users and are shown as an example.</p>
+<ol>
+<li><a href="F1Tenth/">RacingRobot (F1Tenth)</a> demonstrates the deployment of Autoware on one tenth scale racing vehicles.</li>
+<li><a href="GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware/">GoKart</a> demonstrates the deployment of Autoware on an EV GoCart.</li>
+<li><a href="KWT_LSV/Kingway_LSV_introduction_ENG_0729AWF_v1.pdf">KingWayTek LSV</a> shows how KingWayTek (Taiwan) designs their LSV to operate in Taiwan.</li>
+<li><a href="Delivery/index.md">Autoware Delivery Vehicles</a> demonstrates the design of a delivery vehicle based on Autoware.</li>
+</ol>
 
 
 
@@ -1114,6 +1024,44 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../evaluation-and-testing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Evaluation and Testing" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Evaluation and Testing
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="F1Tenth/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview:" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview:
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1140,10 +1088,22 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
       
     
   </body>
