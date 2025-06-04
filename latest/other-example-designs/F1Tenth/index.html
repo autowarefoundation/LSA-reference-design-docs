@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/F1Tenth/">
       
       
-        <link rel="prev" href="../../evaluation-and-testing/">
+        <link rel="prev" href="../">
       
       
         <link rel="next" href="../GoKart/">
@@ -314,18 +314,11 @@
   
   
   
-    
-
-  
-  
-  
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Other Example Designs
       </a>
     </li>
-  
-
   
 
       
@@ -791,15 +784,27 @@
       
         
           
+            
+          
+        
+          
+        
+          
         
           
         
       
       
-        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-          Other Example Designs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Other Example Designs</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_7">
@@ -807,6 +812,8 @@
           Other Example Designs
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
           
             
               
@@ -823,7 +830,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
       
       
         
@@ -840,8 +847,8 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_7_1">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
           F1Tenth
         </label>
@@ -871,7 +878,7 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
       
       
         
@@ -888,10 +895,58 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_7_2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
           GoKart
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../AutoSDV/">AutoSDV</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          AutoSDV
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -949,7 +1004,7 @@
 <h1 id="overview">Overview:<a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
 <p>This document elaborates the hardware and software configurations for using Autoware for autonomous driving. Hence, it will serve as a guideline to select hardware and software components to build autonomous vehicles. However, this document is NOT prepared as neither step-by-step instructions nor Q&amp;A books, which will be provided as a reference link if available. </p>
 <h1 id="design-overview">Design Overview:<a class="headerlink" href="#design-overview" title="Permanent link">#</a></h1>
-<p><img alt="Radar Chart for F1Tenth Design" src="RadarChart-F1Tenth.png" /></p>
+<p><img alt="Radar Chart for F1Tenth Design" src="images/RadarChart-F1Tenth.png" /></p>
 <h1 id="who-should-read">Who should read:<a class="headerlink" href="#who-should-read" title="Permanent link">#</a></h1>
 <p>One is interested in building your autonomous racing cars or low-cost platforms to learn Autoware, and looks for the place to start with. </p>
 <h1 id="references-and-resources">References and Resources:<a class="headerlink" href="#references-and-resources" title="Permanent link">#</a></h1>
@@ -1052,6 +1107,7 @@
 </table>
 <h1 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">#</a></h1>
 <p>F1Tenth can be used for racing and education purpose. The simplest use case is to avoid colliding into the obstacle on a racing track. Meanwhile, one can also develop the SLAM algorithm to build the map on the fly and finishes the loop in short time. </p>
+<p><img alt="F1tenth NX" src="images/f1tenth_NX.webp" /></p>
 <p>![[f1tenth_NX.webp]]</p>
 <h1 id="hardware-configuration">Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Permanent link">#</a></h1>
 <h2 id="chassis">Chassis:<a class="headerlink" href="#chassis" title="Permanent link">#</a></h2>
@@ -1078,7 +1134,7 @@
 <li>USB Hub (4 ports)</li>
 <li>(DEPRECATED) NVIDIA Jetson TX2</li>
 </ul>
-<p>![[together_NX_00.jpeg]]</p>
+<p><img alt="F1 Tenth" src="images/together_NX_00.jpeg" /></p>
 <h1 id="software-configuration">Software Configuration<a class="headerlink" href="#software-configuration" title="Permanent link">#</a></h1>
 <ul>
 <li>Software on the car:<ul>
@@ -1122,7 +1178,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../evaluation-and-testing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Evaluation and Testing" rel="prev">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Other Examples Design" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1131,7 +1187,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Evaluation and Testing
+                Other Examples Design
               </div>
             </div>
           </a>
