@@ -21,7 +21,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/hardware-configuration/ECUs/ad-computers/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/hardware-configuration/Sensors-and-Actuators/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/hardware-configuration/Sensors-and-Actuators/lidars/</loc>
          <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -37,6 +47,11 @@
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/other-example-designs/</loc>
+         <lastmod>2025-06-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/main/other-example-designs/AutoSDV/</loc>
          <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
