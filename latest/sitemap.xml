@@ -2,152 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/F1Tenth/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/GoKart/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/OtherExampleDesigns/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/evaluation-and-testing/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/Sensors-and-Actuators/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/chassis/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/odd-definition/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/how-to-run-autoware/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/how-to-run-simulators/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/how-to-run-simulators/limitations-and-issues/limitations-and-issues/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/how-to-run-simulators/logging-simulator/run-on-cloud-env/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/how-to-run-simulators/scenario-simulator/run-on-cloud-env/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/how-to-run-simulators/scenario-simulator/run-on-local-env/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/boot-ewaol/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/extend-rootfs/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/getting-started-pcu/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/getting-started/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/system-setup-ava/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/system-setup-host/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/system-setup-pcu/</loc>
-         <lastmod>2025-05-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/start-guide/installation/images/boot-ewaol/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/system-configuration/</loc>
-         <lastmod>2025-05-21</lastmod>
+         <lastmod>2025-06-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
