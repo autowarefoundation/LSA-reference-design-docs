@@ -1,3 +1,3 @@
-# Hardware Configuration
+# ECUs
 
 (To be completed)
