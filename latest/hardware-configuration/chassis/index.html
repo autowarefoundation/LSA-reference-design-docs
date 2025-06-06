@@ -997,15 +997,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vehicle-definition" class="md-nav__link">
-    Vehicle Definition
+  <a href="#vehicle-spec" class="md-nav__link">
+    Vehicle Spec
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-drawing" class="md-nav__link">
-    Example Drawing
+  <a href="#electronicalelectric-architecture-eea" class="md-nav__link">
+    Electronical/Electric Architecture, EEA
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -1029,10 +1036,11 @@
 
 
 <h1 id="chassis-design">Chassis Design<a class="headerlink" href="#chassis-design" title="Permanent link">#</a></h1>
-<p>(To be completed)</p>
-<h2 id="vehicle-definition">Vehicle Definition<a class="headerlink" href="#vehicle-definition" title="Permanent link">#</a></h2>
-<p><a href="./ReferenceDrawingV2.pdf">PDF</a></p>
-<p><a href="AWFRefDesignWG_Chassis.xlsx">Excel</a></p>
+<p>The page suggests the reference chassis for the Low Speed Autonomy.</p>
+<h2 id="vehicle-spec">Vehicle Spec<a class="headerlink" href="#vehicle-spec" title="Permanent link">#</a></h2>
+<ul>
+<li>Dimension:</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1044,8 +1052,8 @@
 <tbody>
 <tr>
 <td></td>
-<td>Wheel base (inch)</td>
-<td>Dimension</td>
+<td>Wheel base (mm)</td>
+<td>Dimension (mm)</td>
 </tr>
 <tr>
 <td>Length</td>
@@ -1062,134 +1070,95 @@
 <td></td>
 <td>1500</td>
 </tr>
+</tbody>
+</table>
+<ul>
+<li>Power Train</li>
+</ul>
+<table>
+<thead>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<th></th>
+<th>Reference Design</th>
 </tr>
-<tr>
-<td>Power Train</td>
-<td></td>
-<td></td>
-</tr>
+</thead>
+<tbody>
 <tr>
 <td>Battery Capacity</td>
-<td></td>
-<td></td>
+<td>23 kWh (TBC)</td>
 </tr>
 <tr>
 <td>Range</td>
-<td></td>
-<td></td>
+<td>? (TBC)</td>
 </tr>
 <tr>
 <td>Voltage</td>
-<td></td>
-<td></td>
+<td>96 V (TBC)</td>
 </tr>
+</tbody>
+</table>
+<ul>
+<li>Steering</li>
+<li>Only support Two-Wheel Drive (2WD)</li>
+</ul>
+<table>
+<thead>
 <tr>
-<td></td>
-<td></td>
-<td></td>
+<th></th>
+<th>Reference Design</th>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Steering</td>
-<td></td>
-<td></td>
-</tr>
+</thead>
+<tbody>
 <tr>
 <td>2 Wheel</td>
-<td>v</td>
-<td></td>
+<td>V</td>
 </tr>
 <tr>
 <td>4 Wheel</td>
 <td>Optional</td>
-<td></td>
 </tr>
+</tbody>
+</table>
+<ul>
+<li>Others</li>
+</ul>
+<table>
+<thead>
 <tr>
-<td>Power</td>
-<td></td>
-<td></td>
+<th></th>
+<th>Reference Design</th>
 </tr>
-<tr>
-<td>2 Wheel (2WD)</td>
-<td>V</td>
-<td></td>
-</tr>
-<tr>
-<td>4 Wheel (4WD)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>6 Wheel (6WD)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+</thead>
+<tbody>
 <tr>
 <td>Speed</td>
-<td>&lt;20 kph</td>
-<td>5, 10, 15</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
+<td>&lt;20 kph (5,10,15)</td>
 </tr>
 <tr>
 <td>Payload</td>
-<td></td>
 <td>500 - 1000KG</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>Turn Radius</td>
-<td>> 4M</td>
-<td></td>
+<td>&gt; 4M</td>
 </tr>
 <tr>
 <td>Slope</td>
 <td>20 (degree)</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="example-drawing">Example Drawing<a class="headerlink" href="#example-drawing" title="Permanent link">#</a></h2>
-<p><img alt="images/ReferenceDrawingV2_Page_1.png" src="images/ReferenceDrawingV2_Page_1.png" /></p>
-<p><img alt="images/ReferenceDrawingV2_Page_2.png" src="images/ReferenceDrawingV2_Page_2.png" /></p>
-<p><img alt="images/ReferenceDrawingV2_Page_3.png" src="images/ReferenceDrawingV2_Page_3.png" /></p>
-<p><img alt="images/ReferenceDrawingV2_Page_4.png" src="images/ReferenceDrawingV2_Page_4.png" /></p>
-<p><a href="ReferenceDrawingV2.pdf">PDF</a></p>
+<ul>
+<li>More detailed information:</li>
+<li><a href="./ReferenceDrawingV2.pdf">PDF</a></li>
+</ul>
+<h2 id="electronicalelectric-architecture-eea">Electronical/Electric Architecture, EEA<a class="headerlink" href="#electronicalelectric-architecture-eea" title="Permanent link">#</a></h2>
+<p>![images/LSA_EEA.png]</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="AWFRefDesignWG_Chassis.xlsx">AWF Reference Design Discussion (Excel)</a></li>
+<li><a href="ReferenceDrawingV2.pdf">Reference Drawing (PDF)</a></li>
+</ul>
 
 
 
