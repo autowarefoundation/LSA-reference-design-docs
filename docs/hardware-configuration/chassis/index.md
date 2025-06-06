@@ -21,8 +21,7 @@ The page suggests the reference chassis for the Low Speed Autonomy.
 | Range            | ? (TBC)           |
 | Voltage          | 96 V (TBC)        |
 
-* Steering
-  * Only support Two-Wheel Drive (2WD)
+* Steering (Only support Two-Wheel Drive, 2WD)
 
 |                  | Reference Design  |
 | ---------------- | ----------------- |
@@ -38,12 +37,9 @@ The page suggests the reference chassis for the Low Speed Autonomy.
 | Turn Radius      | > 4M              |
 | Slope            | 20 (degree)       |
 
-* More detailed information:
-  * [PDF](./ReferenceDrawingV2.pdf)
-
 ## Electronical/Electric Architecture, EEA
 
-![images/LSA_EEA.png]
+![LSA EEA Design](images/LSA_EEA.png)
 
 ## Reference
 
