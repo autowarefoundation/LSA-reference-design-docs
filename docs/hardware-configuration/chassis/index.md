@@ -17,9 +17,9 @@ The page suggests the reference chassis for the Low Speed Autonomy.
 
 |                  | Reference Design  |
 | ---------------- | ----------------- |
-| Battery Capacity | 23 kWh (TBC)      |
-| Range            | ? (TBC)           |
-| Voltage          | 96 V (TBC)        |
+| Battery Capacity | 22 kWh            |
+| Range            | 200 km            |
+| Voltage          | 96 V              |
 
 * Steering (Only support Two-Wheel Drive, 2WD)
 
