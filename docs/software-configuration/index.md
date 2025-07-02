@@ -1,21 +1,35 @@
 # Software Configuration
 
-For Low Speed Autonomy, please refer to the official Autoware installation guide.
-Both Docker-based and source-based installations are fully supported and work reliably.
+This section covers the software configuration aspects for Low Speed Autonomy (LSA) vehicles based on Autoware. The documentation is organized into two main areas:
 
-## rmw_zenoh
+## rmw_zenoh Middleware
 
-With the latest ROS 2 Kilted release, Zenoh has become a Tier 1 middleware, marking the first non-DDS (Data Distribution Service) implementation to achieve this level of support.
+The rmw_zenoh middleware provides a modern alternative to traditional DDS implementations in ROS 2, offering improved performance and simplified configuration for LSA applications.
 
-Although rmw_zenoh is officially supported in Kilted, it has also been backported to both ROS 2 Jazzy and Humble. This means that Autoware, which uses ROS 2 Humble, can now run seamlessly with rmw_zenoh.
+- **[rmw_zenoh Configuration](rmw_zenoh/index.md)**: Learn about implementing rmw_zenoh as your ROS 2 middleware, including its advantages for low-speed autonomy applications and cellular network support.
 
-### Advantages of Zenoh over DDS
+## Docker Container Configuration on AGX Orin
 
-1. Out-of-the-box configuration: rmw_zenoh comes with a default configuration optimized for most use cases, reducing setup complexity.
-2. Improved performance: Based on this benchmark study, Zenoh consistently outperforms other protocols, especially in wireless environments.
-3. Cellular network support: Unlike DDS, which relies on multicast (often unsupported in 4G/5G), Zenoh works efficiently over unicast, making it suitable for mobile and cloud-connected scenarios.
-4. Seamless cloud integration: DDS is typically restricted to local networks, whereas Zenoh can operate across the Internet, enabling easy data sharing with cloud systems.
+AutoSDV provides a comprehensive containerized development environment specifically optimized for NVIDIA Jetson and AGX Orin platforms, enabling efficient development and deployment of Autoware-based systems.
 
-We recommend using rmw_zenoh for Low Speed Autonomy applications to take advantage of its performance, simplicity, and modern network compatibility.
+### Development Workflow Documentation
 
-For a step-by-step tutorial on integrating rmw_zenoh with Autoware, please visit: [https://github.com/evshary/autoware_rmw_zenoh](https://github.com/evshary/autoware_rmw_zenoh)
+1. **[AutoSDV Environment Overview](docker-container/1-autosdv-environment-overview.md)**: Understanding the core philosophy and pipeline of AutoSDV's containerized build system.
+
+2. **[Containerized Development Guide](docker-container/2-autoadv-with-containerization.md)**: Developer-focused guide covering prerequisites, Docker setup, and NVIDIA Container Toolkit configuration for Jetson platforms.
+
+3. **[Environment Customization](docker-container/3-customize-package.md)**: Learn how to customize your development environment using Ansible for modular, reusable configurations.
+
+4. **[Debian Package Deployment](docker-container/4-autoware-deb-package.md)**: End-user deployment strategy using Debian packages and local APT repositories for production systems.
+
+## Key Features
+
+- **Unified Development Environment**: Docker-based development workflow optimized for NVIDIA Jetson hardware
+- **Performance Optimized**: rmw_zenoh middleware for improved ROS 2 communication performance
+- **Modular Architecture**: Ansible-based customization for flexible system configuration
+- **Production Ready**: Debian packaging system for reliable deployment to end-user systems
+- **Hardware Optimized**: Specific optimizations for AGX Orin and Jetson platforms
+
+## Getting Started
+
+For new developers, we recommend starting with the [AutoSDV Environment Overview](docker-container/1-autosdv-environment-overview.md) to understand the overall architecture, then proceeding through the containerized development workflow before exploring middleware configuration options.
