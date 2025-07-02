@@ -1298,6 +1298,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adlink-in-vehicle-computers" class="md-nav__link">
+    ADLINK In-Vehicle Computers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantech-in-vehicle-computers" class="md-nav__link">
+    AdvanTech In-Vehicle Computers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neousys-in-vehicle-computers" class="md-nav__link">
+    Neousys In-Vehicle Computers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crystal-rugged-in-vehicle-computers" class="md-nav__link">
+    Crystal Rugged In-Vehicle Computers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vecow-in-vehicle-computers" class="md-nav__link">
+    Vecow In-Vehicle Computers
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1315,7 +1358,205 @@
 
 
 <h1 id="x86-based-ecus">X86-based ECUs<a class="headerlink" href="#x86-based-ecus" title="Permanent link">#</a></h1>
-<p>(To be completed)</p>
+<p>The page lists the X86-bsaed ECUs being tested for LSA, which can meet the computation capacity requirement of LSA but does not overprovision the resource requirements. </p>
+<p>Another page on <a href="https://autowarefoundation.github.io/autoware-documentation/main/reference-hw/ad-computers/">Autoware Document</a> lists the ECUs being for other use scenarios. </p>
+<p>(Candidates of the ECUS to be used by the LSA)</p>
+<h2 id="adlink-in-vehicle-computers"><strong>ADLINK In-Vehicle Computers</strong><a class="headerlink" href="#adlink-in-vehicle-computers" title="Permanent link">#</a></h2>
+<p><img alt="ad_comp-adlink.png" src="images/ad_comp-adlink.png" /></p>
+<p>ADLINK solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
+<!-- cspell: ignore Altra BLUEBOX Grms Quadro Vecow vecow -->
+
+<table>
+<thead>
+<tr>
+<th>Supported Products List</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM, Interfaces</th>
+<th>Environmental</th>
+<th>Autoware Tested (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADM-AL30</td>
+<td>Intel® 13/12th Gen Core™ I processor</td>
+<td>Nvidia RTX 4000 SFF Ada</td>
+<td>128GB RAM, Serial, USB, Automotive Ethernet (Base-T1), 10G Ethernet, CAN 2.0/ CAN-FD, M.2/SATA SSD</td>
+<td>9~36 VDC, E-Mark, 7637-2, IEC 60068-2-64: Operating: 5Grms, random, 5-500Hz, 3 axes (with SSD)</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>AVA-3510</td>
+<td>Intel® Xeon® E-2278GE</td>
+<td>Dual MXM RTX 5000</td>
+<td>64GB RAM,CAN, USB, 10G Ethernet, DIO, Hot-Swap SSD, USIM</td>
+<td>9~36 VDC, MIL-STD-810H,ISO 7637-2</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>Link to company website is <a href="https://www.adlinktech.com/en/Connected-Autonomous-Vehicle-Solutions">here.</a></p>
+<h2 id="advantech-in-vehicle-computers"><strong>AdvanTech In-Vehicle Computers</strong><a class="headerlink" href="#advantech-in-vehicle-computers" title="Permanent link">#</a></h2>
+<p><img alt="Advantech AD Computers" src="https://github.com/user-attachments/assets/0798fc0d-e799-4c54-8f81-dfe98466e726" /></p>
+<p>Advantech's autonomous driving and robotic computers are of compact size, with GMSL camera and other sensor data available at ROS level.</p>
+<table>
+<thead>
+<tr>
+<th>Supported Products List</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM, Interfaces</th>
+<th>Environmental</th>
+<th>Autoware Tested (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AFE-R760</strong> (system, but the board  AFE-R360 is also avaialbe)</td>
+<td>Intel® Core™ Ultra 7/5 Processors</td>
+<td>(Optional) MXM-type RTX A2000/A4500/5000Ada</td>
+<td><ul><li>4 GMSL2 cameras</li><li>Dual Channel DDR5-5600, up to 96GB</li><li>3 x LAN up to 2.5GbE</li><li>4 x RS-232/422/485</li><li>2 x USB-C &amp; 2 USB-A  (10Gbps)</li><li>2 x CAN-FD</li></ul></td>
+<td><ul><li>Operating Temperature: -20 ~ 60° C with 0.7m/s air flow</li><li>Vibration During Operation: 3 Grms, IEC 60068-2-64, random, 5 ~ 500 Hz, 1 hr/axis.</li><li>Shock During Operation 30 G, IEC 60068-2-27, half sine, 11 ms duration</li><li>EMC: Heavy industrial certificates, CE/FCC Class B, UKCA, CCC, BSMI</li></ul></td>
+<td>Y</td>
+</tr>
+<tr>
+<td><strong>AFE-R750-X0A1U</strong> (AGX Orin 32GB/64GB system, but the board  ASR-A701 is also avaialbe)</td>
+<td>8/12-core NVIDIA Arm® Cortex A78AE v8.2</td>
+<td>1792/2048-core NVIDIA Ampere GPU with 56/64 Tensor Cores</td>
+<td><ul><li>8 x GMSL2 cameras</li><li>BOSCH BMI088 IMU</li><li>Xsens MTi3 IMU (Optional)</li><li>32/64GB 256-bit LPDDR5 DRAM</li><li> 4 x 2.5GbE, 4 x USB 3.2 Type A, 2 x isolated CANFD, 16bit isolated DIO, 2 x RS232/422/485</li> </ul></td>
+<td><ul><li>20~28V DC</li> <li>-10 ~ 60°C/50°C with 0.7 m/s air flow for 32GB/64GB</li></ul></td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>Link to company website is <a href="https://campaign.advantech.online/en/AMR-Robotic-Solutions/">here.</a></p>
+<h2 id="neousys-in-vehicle-computers"><strong>Neousys In-Vehicle Computers</strong><a class="headerlink" href="#neousys-in-vehicle-computers" title="Permanent link">#</a></h2>
+<p><img alt="ad_comp-neousys.png" src="images/ad_comp-neousys.png" /></p>
+<p>Neousys solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Supported Products List</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM, Interfaces</th>
+<th>Environmental</th>
+<th>Autoware Tested (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8805-GC</td>
+<td>AMD® EPYC™ 7003</td>
+<td>NVIDIA® RTX A6000/ A4500</td>
+<td>512GB CAN, USB, Ethernet, Serial, Easy-Swap SSD</td>
+<td>8-48 Volt, Vibration:MIL-STD810G, Method 514.6, Category 4</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>10208-GC</td>
+<td>Intel® 13th/12th-Gen Core™</td>
+<td>Dual 350W NVIDIA® RTX GPU</td>
+<td>64GB CAN, USB, Ethernet, Serial, M2 NVMe SSD</td>
+<td>8~48 Volt, Vibration: MIL-STD-810H, Method 514.8, Category 4</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>9160-GC</td>
+<td>Intel® 13th/12th-Gen Core™</td>
+<td>NVIDIA® RTX series up to 130W TDP</td>
+<td>64GB CAN, USB, Ethernet, PoE, Serial, two 2.5" SATA HDD/SSD with RAID, M2 NVMe SSD</td>
+<td>8~48, Vibration: Volt,MIL-STD-810G, Method 514.6, Category 4</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>Link to company website is <a href="https://www.neousys-tech.com/en/product/product-lines/edge-ai-gpu-computing">here.</a></p>
+<h2 id="crystal-rugged-in-vehicle-computers"><strong>Crystal Rugged In-Vehicle Computers</strong><a class="headerlink" href="#crystal-rugged-in-vehicle-computers" title="Permanent link">#</a></h2>
+<p><img alt="ad_comp-crystal_rugged.png" src="images/ad_comp-crystal_rugged.png" /></p>
+<p>Crystal Rugged solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Supported Products List</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM, Interfaces</th>
+<th>Environmental</th>
+<th>Autoware Tested (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVC 0161-AC</td>
+<td>Intel® Xeon® Scalable</td>
+<td>Dual GPU RTX Series</td>
+<td>2TB RAM,CAN, USB, Ethernet, Serial, Hot-Swap SSD</td>
+<td>10-32 VoltVibration:2 G RMS 10-1000 Hz, 3 axes</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AVC0403</td>
+<td>Intel® Xeon® Scalable or AMD EPYC™</td>
+<td>Optional (5 GPU)</td>
+<td>2TB RAM, CAN, USB, Ethernet, Serial, Hot-Swap SSD</td>
+<td>10-32 Volt, Vibration: 2 G RMS 10-1000 Hz, 3 axes</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AVC1322</td>
+<td>Intel® Xeon® D-1718T or Gen 12/13 Core™ i3/i5/i7</td>
+<td>NVIDIA® Jetson AGX Orin</td>
+<td>128 GB DDR4 RAM, USB, Ethernet, Serial, SATA 2.5” SSD</td>
+<td>10-36 Volt, Vibration: 5.5g, 5-2,000Hz, 60 min/axis, 3 axis</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AVC1753</td>
+<td>10th Generation Intel® Core™ and Xeon®</td>
+<td>Optional (1 GPU)</td>
+<td>128 GB DDR4 RAM, USB, Ethernet, NVMe U.2 SSD/ 3 SATA SSD</td>
+<td>8-36 VDC/ 120-240VAC 50/60Hz, Vibration: 5.5g, 5-2,000Hz, 60 min/axis, 3 axis</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>Link to company website is <a href="https://www.crystalrugged.com/products/ai-autonomous-vehicle-technology/">here.</a></p>
+<h2 id="vecow-in-vehicle-computers"><strong>Vecow In-Vehicle Computers</strong><a class="headerlink" href="#vecow-in-vehicle-computers" title="Permanent link">#</a></h2>
+<p><img alt="ad_comp-vecow.png" src="images/ad_comp-vecow.png" /></p>
+<p>Vecow solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Supported Products List</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM, Interfaces</th>
+<th>Environmental</th>
+<th>Autoware Tested (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ECX-3800 PEG</td>
+<td>Intel® 13th/12th-Gen Core™</td>
+<td>200W power of NVIDIA® or AMD graphics</td>
+<td>64GB RAM, CAN, USB, Ethernet, PoE, Serial, M.2/SATA SSD, SIM Card</td>
+<td>12-50 Volt, Vibration:MIL-STD810G, Procedure I, 20°C to 45°C</td>
+<td>-</td>
+</tr>
+<tr>
+<td>IVX-1000</td>
+<td>Intel® 13th/12th-Gen Core™</td>
+<td>NVIDIA Quadro® MXM Graphics</td>
+<td>64GB RAM, Ethernet, PoE, Serial, M.2/SATA/mSATA SSD, SIM Card</td>
+<td>16-160 Volt, Vibration: IEC 61373 : 2010, 40°C to 85°C</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>Link to company website is <a href="https://www.vecow.com/dispPageBox/vecow/VecowHp.aspx?ddsPageID=VECOW_EN">here.</a></p>
 
 
 
