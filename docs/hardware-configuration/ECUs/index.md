@@ -65,36 +65,6 @@ Advantech's autonomous driving and robotic computers are of compact size, with G
 Link to company website is [here.](https://campaign.advantech.online/en/AMR-Robotic-Solutions/)
 
 
-## **ADLINK In-Vehicle Computers**
-
-![ad_comp-adlink.png](images/ad_comp-adlink.png)
-
-ADLINK solutions which is used for autonomous driving and tested by one or more community members are listed below:
-
-  <!-- cspell: ignore Altra BLUEBOX Grms Quadro Vecow vecow -->
-
-| Supported Products List         | CPU                                    | GPU                      | RAM, Interfaces                                                                                    | Environmental                                                                                  | Autoware Tested (Y/N) |
-| ------------------------------- | -------------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------- |
-| ADM-AL30                        | Intel® 13/12th Gen Core™ I processor | Nvidia RTX 4000 SFF Ada  | 128GB RAM, Serial, USB, Automotive Ethernet (Base-T1), 10G Ethernet, CAN 2.0/ CAN-FD, M.2/SATA SSD | 9~36 VDC, E-Mark, 7637-2, IEC 60068-2-64: Operating: 5Grms, random, 5-500Hz, 3 axes (with SSD) | Y                     |
-| AVA-3510                        | Intel® Xeon® E-2278GE                | Dual MXM RTX 5000        | 64GB RAM,CAN, USB, 10G Ethernet, DIO, Hot-Swap SSD, USIM                                           | 9~36 VDC, MIL-STD-810H,ISO 7637-2                                                              | Y                     |
-| SOAFEE’s AVA Developer Platform | Ampere Altra ARMv8                     | optional                 | USB, Ethernet, DIO, M.2 NVMe SSDs                                                                  | 110/220 AC                                                                                     | Y                     |
-| RQX-58G                         | 8-core Arm                             | Nvidia Jetson AGX Xavier | USB, Ethernet, M.2 NVME SSD, CAN, USIM, GMSL2 Camera support                                       | 9~36VDC, IEC 60068-2-64: Operating 3Grms, 5-500 Hz, 3 axes                                     | Y                     |
-| RQX-59G                         | 8-core Arm                             | Nvidia Jetson AGX Orin   | USB, Ethernet, M.2 NVME SSD, CAN, USIM, GMSL2 Camera support                                       | 9~36VDC, IEC 60068-2-64: Operating 3Grms, 5-500 Hz, 3 axes                                     | -                     |
-
-Link to company website is [here.](https://www.adlinktech.com/en/Connected-Autonomous-Vehicle-Solutions)
-
-## **NXP In-Vehicle Computers**
-
-![ad_comp-nxp.png](images/ad_comp-nxp.png)
-
-NXP solutions which is used for autonomous driving and tested by one or more community members are listed below:
-
-| Supported Products List | CPU                     | GPU                        | RAM, Interfaces                                 | Environmental | Autoware Tested (Y/N) |
-| ----------------------- | ----------------------- | -------------------------- | ----------------------------------------------- | ------------- | --------------------- |
-| BLUEBOX 3.0             | 16 x Arm® Cortex®-A72 | Dual RTX 8000 or RTX A6000 | 16 GB RAM CAN, FlexRay, USB, Ethernet, DIO, SSD | ASIL-D        | -                     |
-
-Link to company website is [here.](https://www.nxp.com/design/designs/bluebox-3-0-automotive-high-performance-compute-ahpc-development-platform:BlueBox)
-
 ## **Neousys In-Vehicle Computers**
 
 ![ad_comp-neousys.png](images/ad_comp-neousys.png)
