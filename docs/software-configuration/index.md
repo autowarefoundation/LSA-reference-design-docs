@@ -1,35 +1,80 @@
 # Software Configuration
 
-This section covers the software configuration aspects for Low Speed Autonomy (LSA) vehicles based on Autoware. The documentation is organized into two main areas:
+This section provides comprehensive guidance for deploying Autoware on Low Speed Autonomy (LSA) vehicles. The documentation covers everything from initial system setup to platform-specific optimizations.
 
-## rmw_zenoh Middleware
+## Documentation Structure
 
-The rmw_zenoh middleware provides a modern alternative to traditional DDS implementations in ROS 2, offering improved performance and simplified configuration for LSA applications.
+### [Deployment Setup](deployment-setup/index.md)
+**Foundation for All Deployments**
 
-- **[rmw_zenoh Configuration](rmw_zenoh/index.md)**: Learn about implementing rmw_zenoh as your ROS 2 middleware, including its advantages for low-speed autonomy applications and cellular network support.
+Start here for:
+- Target environment requirements (Ubuntu 22.04 on AMD64/ARM64)
+- CUDA driver installation and verification
+- Ansible-based provisioning setup
+- Autoware installation via Debian packages
+- Common troubleshooting and verification
 
-## Docker Container Configuration on AGX Orin
+### Platform-Specific ECU Deployment
 
-AutoSDV provides a comprehensive containerized development environment specifically optimized for NVIDIA Jetson and AGX Orin platforms, enabling efficient development and deployment of Autoware-based systems.
+#### [x86-based ECU](x86-based_ECU/index.md)
+**Intel/AMD Platform Configuration**
 
-### Development Workflow Documentation
+Covers:
+- x86 hardware requirements and compatibility
+- CUDA setup for discrete GPUs (NVIDIA RTX/Tesla)
+- Platform-specific optimizations
+- Custom configurations for x86 architectures
 
-1. **[AutoSDV Environment Overview](docker-container/1-autosdv-environment-overview.md)**: Understanding the core philosophy and pipeline of AutoSDV's containerized build system.
+#### [ARM-based ECU](ARM-based_ECU/index.md)
+**NVIDIA Jetson/AGX Orin Platform Configuration**
 
-2. **[Containerized Development Guide](docker-container/2-autoadv-with-containerization.md)**: Developer-focused guide covering prerequisites, Docker setup, and NVIDIA Container Toolkit configuration for Jetson platforms.
+Includes:
+- ARM platform specifications (AGX Orin, Xavier, etc.)
+- Integrated GPU optimization
+- [Containerized development workflow](ARM-based_ECU/containerized-development.md)
+- [Platform-specific customizations](ARM-based_ECU/customization.md)
 
-3. **[Environment Customization](docker-container/3-customize-package.md)**: Learn how to customize your development environment using Ansible for modular, reusable configurations.
+### [RMW Zenoh Configuration](rmw_zenoh/index.md)
+**Next-Generation Middleware for ROS 2**
 
-4. **[Debian Package Deployment](docker-container/4-autoware-deb-package.md)**: End-user deployment strategy using Debian packages and local APT repositories for production systems.
-
-## Key Features
-
-- **Unified Development Environment**: Docker-based development workflow optimized for NVIDIA Jetson hardware
-- **Performance Optimized**: rmw_zenoh middleware for improved ROS 2 communication performance
-- **Modular Architecture**: Ansible-based customization for flexible system configuration
-- **Production Ready**: Debian packaging system for reliable deployment to end-user systems
-- **Hardware Optimized**: Specific optimizations for AGX Orin and Jetson platforms
+Features:
+- Alternative to DDS with improved performance
+- Simplified configuration for LSA applications
+- Enhanced support for cellular and cloud connectivity
+- Optimized for resource-constrained environments
 
 ## Getting Started
 
-For new developers, we recommend starting with the [AutoSDV Environment Overview](docker-container/1-autosdv-environment-overview.md) to understand the overall architecture, then proceeding through the containerized development workflow before exploring middleware configuration options.
+1. **Review Requirements**: Start with [Deployment Setup](deployment-setup/index.md) to understand system requirements
+2. **Choose Your Platform**: Select either [x86](x86-based_ECU/index.md) or [ARM](ARM-based_ECU/index.md) based on your ECU hardware
+3. **Install Autoware**: Follow the platform-specific installation guide
+4. **Configure Middleware**: Optionally switch to [rmw_zenoh](rmw_zenoh/index.md) for improved performance
+5. **Customize**: Apply platform-specific optimizations for your use case
+
+## Key Considerations
+
+### Hardware Selection
+- **x86 ECUs**: Better for high-compute perception tasks, easier software compatibility
+- **ARM ECUs**: Superior power efficiency, integrated GPU/DLA acceleration, compact form factor
+
+### Development Approach
+- **Native Installation**: Direct installation on hardware for maximum performance
+- **Containerized Development**: Reproducible environments with easier team collaboration (recommended for ARM)
+
+### Middleware Choice
+- **Default DDS**: Mature, widely supported, industry standard
+- **rmw_zenoh**: Modern alternative with better performance for LSA applications
+
+## Support and Resources
+
+- **Autoware Documentation**: [https://autoware.org/](https://autoware.org/)
+- **ROS 2 Documentation**: [https://docs.ros.org/](https://docs.ros.org/)
+- **NVIDIA Jetson Resources**: [https://developer.nvidia.com/embedded-computing](https://developer.nvidia.com/embedded-computing)
+
+## Contributing
+
+When contributing to this documentation:
+1. Follow the existing structure and formatting
+2. Test all commands and procedures on target hardware
+3. Include troubleshooting sections for common issues
+4. Keep content up-to-date with latest Autoware releases
