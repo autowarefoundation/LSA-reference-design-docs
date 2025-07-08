@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/Sensors-and-Actuators/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/x86-based_ECU/customization/">
       
       
-        <link rel="prev" href="../ECUs/armECUs/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../odd-definition/">
+        <link rel="next" href="../../rmw_zenoh/">
       
-      <link rel="icon" href="../../assets/images/autoware-foundation.png">
+      <link rel="icon" href="../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Hardware Configuration - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
+        <title>x86-based ECU Customization Guide - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -44,11 +44,11 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/css/extra.css">
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
     
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hardware-configuration" class="md-skip">
+        <a href="#macro-syntax-error" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-header__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+    <a href="../../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-header__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hardware Configuration
+              x86-based ECU Customization Guide
             
           </span>
         </div>
@@ -211,7 +211,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Introduction
     </a>
   </li>
@@ -226,24 +226,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../system-configuration/" class="md-tabs__link">
+      <a href="../../../system-configuration/" class="md-tabs__link">
         System Configuration
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../software-configuration/" class="md-tabs__link">
-        Software Configuration
       </a>
     </li>
   
@@ -260,7 +244,23 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Software Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../hardware-configuration/" class="md-tabs__link">
         Hardware Configuration
       </a>
     </li>
@@ -276,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../odd-definition/" class="md-tabs__link">
+      <a href="../../../odd-definition/" class="md-tabs__link">
         ODD Definition
       </a>
     </li>
@@ -292,7 +292,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../evaluation-and-testing/" class="md-tabs__link">
+      <a href="../../../evaluation-and-testing/" class="md-tabs__link">
         Evaluation and Testing
       </a>
     </li>
@@ -308,7 +308,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../other-example-designs/" class="md-tabs__link">
+      <a href="../../../other-example-designs/" class="md-tabs__link">
         Other Example Designs
       </a>
     </li>
@@ -342,7 +342,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-nav__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+    <a href="../../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-nav__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -373,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -408,7 +408,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../system-configuration/">System Configuration</a>
+          <a href="../../../system-configuration/">System Configuration</a>
           
         </div>
       
@@ -433,16 +433,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -461,7 +461,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/">Software Configuration</a>
+          <a href="../../">Software Configuration</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -469,7 +469,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Software Configuration
@@ -508,7 +508,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/ARM-based_ECU/">ARM based ECU</a>
+          <a href="../../ARM-based_ECU/">ARM based ECU</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software-configuration/ARM-based_ECU/customization/" class="md-nav__link">
+      <a href="../../ARM-based_ECU/customization/" class="md-nav__link">
         ARM-based ECU Customization Guide
       </a>
     </li>
@@ -550,18 +550,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
       
       
         
@@ -576,7 +576,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/x86-based_ECU/">x86 based ECU</a>
+          <a href="../">x86 based ECU</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -584,7 +584,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           x86 based ECU
@@ -597,11 +597,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../software-configuration/x86-based_ECU/customization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         x86-based ECU Customization Guide
       </a>
+      
     </li>
   
 
@@ -642,7 +652,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/rmw_zenoh/">Rmw zenoh</a>
+          <a href="../../rmw_zenoh/">Rmw zenoh</a>
           
         </div>
       
@@ -674,16 +684,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
         
@@ -702,7 +712,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Hardware Configuration</a>
+          <a href="../../../hardware-configuration/">Hardware Configuration</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -710,7 +720,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Hardware Configuration
@@ -747,7 +757,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../chassis/">Chassis</a>
+          <a href="../../../hardware-configuration/chassis/">Chassis</a>
           
         </div>
       
@@ -799,7 +809,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../ECUs/">ECUs</a>
+          <a href="../../../hardware-configuration/ECUs/">ECUs</a>
           
             <label for="__nav_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -842,7 +852,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../ECUs/x86ECUs/">x86ECUs</a>
+          <a href="../../../hardware-configuration/ECUs/x86ECUs/">x86ECUs</a>
           
         </div>
       
@@ -888,7 +898,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../ECUs/armECUs/">armECUs</a>
+          <a href="../../../hardware-configuration/ECUs/armECUs/">armECUs</a>
           
         </div>
       
@@ -919,18 +929,18 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
       
       
         
@@ -942,12 +952,12 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Sensors and Actuators</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
           Sensors and Actuators
@@ -1001,7 +1011,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../odd-definition/">ODD Definition</a>
+          <a href="../../../odd-definition/">ODD Definition</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1046,7 +1056,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../odd-definition/outdoor/">Outdoor</a>
+          <a href="../../../odd-definition/outdoor/">Outdoor</a>
           
         </div>
       
@@ -1094,7 +1104,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../odd-definition/indoor/">Indoor</a>
+          <a href="../../../odd-definition/indoor/">Indoor</a>
           
         </div>
       
@@ -1148,7 +1158,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../evaluation-and-testing/">Evaluation and Testing</a>
+          <a href="../../../evaluation-and-testing/">Evaluation and Testing</a>
           
         </div>
       
@@ -1201,7 +1211,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../other-example-designs/">Other Example Designs</a>
+          <a href="../../../other-example-designs/">Other Example Designs</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -1246,7 +1256,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../other-example-designs/F1Tenth/">F1Tenth</a>
+          <a href="../../../other-example-designs/F1Tenth/">F1Tenth</a>
           
         </div>
       
@@ -1294,7 +1304,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../other-example-designs/GoKart/">GoKart</a>
+          <a href="../../../other-example-designs/GoKart/">GoKart</a>
           
         </div>
       
@@ -1342,7 +1352,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../other-example-designs/AutoSDV/">AutoSDV</a>
+          <a href="../../../other-example-designs/AutoSDV/">AutoSDV</a>
           
         </div>
       
@@ -1388,35 +1398,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#velodyne-3d-lidar-sensors" class="md-nav__link">
-    Velodyne 3D LIDAR Sensors
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ouster-3d-lidar-sensors" class="md-nav__link">
-    Ouster 3D LIDAR Sensors
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robin-w-wide-fov-lidar" class="md-nav__link">
-    Robin W Wide FOV LiDAR
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1433,127 +1414,11 @@
   
 
 
-<h1 id="hardware-configuration">Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Permanent link">#</a></h1>
-<p>(To be completed)</p>
-<p>The page lists the sensors and actuators being tested for LSA, which can support the ODD of LSA. </p>
-<p>Another page on <a href="https://autowarefoundation.github.io/autoware-documentation/main/reference-hw/lidars/">Autoware Document</a> lists the sensors and actuators being used for other use scenarios.</p>
-<h2 id="velodyne-3d-lidar-sensors"><strong>Velodyne 3D LIDAR Sensors</strong><a class="headerlink" href="#velodyne-3d-lidar-sensors" title="Permanent link">#</a></h2>
-<p><img alt="lidar-velodyne.png" src="images/lidar-velodyne.png" /></p>
-<p>Velodyne Lidars which has ROS 2 driver and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>Range</th>
-<th>FOV (V), (H)</th>
-<th>ROS 2 Driver</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Alpha Prime</td>
-<td>245m</td>
-<td>(+15°)/(-25°), (360°)</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>Ultra Puck</td>
-<td>200m</td>
-<td>(+15°)/(-25°), (360°)</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>Puck</td>
-<td>100m</td>
-<td>(+15°)/(-15°), (360°)</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>Puck Hi-res</td>
-<td>100m</td>
-<td>(+10°)/(-10°), (360°)</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ouster-3d-lidar-sensors"><strong>Ouster 3D LIDAR Sensors</strong><a class="headerlink" href="#ouster-3d-lidar-sensors" title="Permanent link">#</a></h2>
-<p><img alt="images/lidar-ouster.png" src="images/lidar-ouster.png" /></p>
-<p>Ouster Lidars which has ROS 2 driver and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>Range</th>
-<th>FOV (V), (H)</th>
-<th>ROS 2 Driver</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OSDome</td>
-<td>45m</td>
-<td>(180°), (360°)</td>
-<td>Y</td>
-<td>-</td>
-</tr>
-<tr>
-<td>OS0</td>
-<td>100m</td>
-<td>(90°), (360°)</td>
-<td>Y</td>
-<td>-</td>
-</tr>
-<tr>
-<td>OS1</td>
-<td>200m</td>
-<td>(45°), (360°)</td>
-<td>Y</td>
-<td>-</td>
-</tr>
-<tr>
-<td>OS2</td>
-<td>400m</td>
-<td>(22,5°), (360°)</td>
-<td>Y</td>
-<td>Y</td>
-</tr>
-</tbody>
-</table>
-<p>Link to ROS 2 driver:<br />
-<a href="https://github.com/ros-drivers/ros2_ouster_drivers">https://github.com/ros-drivers/ros2_ouster_drivers</a></p>
-<p>Link to company website:<br />
-<a href="https://ouster.com/">https://ouster.com/</a></p>
-<h2 id="robin-w-wide-fov-lidar"><strong>Robin W Wide FOV LiDAR</strong><a class="headerlink" href="#robin-w-wide-fov-lidar" title="Permanent link">#</a></h2>
-<p><img alt="images/robin-w.png" src="images/robin-w.png" /></p>
-<p>Robin W Wide FoV Lidars which has ROS 2 driver and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>Range</th>
-<th>FOV (V), (H)</th>
-<th>ROS 2 Driver</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Wide FOV LiDAR</td>
-<td>0.1m~150m</td>
-<td>(120°), (70°)</td>
-<td>Y</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website:<br />
-<a href="https://www.seyond.com/products/robin-w/">https://www.seyond.com/products/robin-w/</a></p>
+<h1 id="macro-syntax-error"><em>Macro Syntax Error</em><a class="headerlink" href="#macro-syntax-error" title="Permanent link">#</a></h1>
+<p><em>File</em>: <code>software-configuration/x86-based_ECU/customization.md</code></p>
+<p><em>Line 361 in Markdown file:</em> <strong>No filter named 'regex_search'.</strong>
+<div class="highlight"><pre><span></span><code>    platform_type: &quot;{{ ansible_processor[1] | regex_search(&#39;Intel|AMD&#39;) | lower }}&quot;
+</code></pre></div></p>
 
 
 
@@ -1580,7 +1445,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ECUs/armECUs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ARM-based ECUs" rel="prev">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software Configuration for x86-based ECUs" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1589,20 +1454,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                ARM-based ECUs
+                Software Configuration for x86-based ECUs
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../odd-definition/" class="md-footer__link md-footer__link--next" aria-label="Next: ODD Definition" rel="next">
+          <a href="../../rmw_zenoh/" class="md-footer__link md-footer__link--next" aria-label="Next: RMW Zenoh Configuration for Autoware" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                ODD Definition
+                RMW Zenoh Configuration for Autoware
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1638,10 +1503,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
         
           <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

@@ -1,0 +1,41 @@
+---
+- name: Setup Autoware Environment
+  hosts: localhost
+  become: yes
+  
+  tasks:
+    - name: Add ROS 2 GPG key
+      apt_key:
+        url: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
+        state: present
+
+    - name: Add ROS 2 repository
+      apt_repository:
+        repo: "deb http://packages.ros.org/ros2/ubuntu {{ ansible_distribution_release }} main"
+        state: present
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install ROS 2 Humble desktop
+      apt:
+        name: ros-humble-desktop
+        state: present
+
+    - name: Install ROS 2 development tools
+      apt:
+        name:
+          - python3-colcon-common-extensions
+          - python3-rosdep
+          - python3-vcstool
+        state: present
+
+    - name: Initialize rosdep
+      command: rosdep init
+      args:
+        creates: /etc/ros/rosdep/sources.list.d/20-default.list
+
+    - name: Update rosdep
+      become: no
+      command: rosdep update

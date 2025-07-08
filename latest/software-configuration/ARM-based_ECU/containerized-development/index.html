@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/ad-computers/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/ARM-based_ECU/containerized-development/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../armECUs/">
+        <link rel="next" href="../customization/">
       
       <link rel="icon" href="../../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>AD Computers - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
+        <title>Containerized Development for ARM-based ECUs - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ad-computers" class="md-skip">
+        <a href="#containerized-development-for-arm-based-ecus" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AD Computers
+              Containerized Development for ARM-based ECUs
             
           </span>
         </div>
@@ -236,22 +236,6 @@
         
   
   
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../software-configuration/" class="md-tabs__link">
-        Software Configuration
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
     
   
 
@@ -261,6 +245,22 @@
   
     <li class="md-tabs__item">
       <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Software Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../hardware-configuration/" class="md-tabs__link">
         Hardware Configuration
       </a>
     </li>
@@ -433,16 +433,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
         
@@ -461,7 +461,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../software-configuration/">Software Configuration</a>
+          <a href="../../">Software Configuration</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -469,7 +469,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Software Configuration
@@ -482,18 +482,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
       
       
         
@@ -508,7 +508,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../software-configuration/ARM-based_ECU/">ARM based ECU</a>
+          <a href="../">ARM based ECU</a>
           
             <label for="__nav_3_2">
               <span class="md-nav__icon md-icon"></span>
@@ -516,7 +516,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           ARM based ECU
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../software-configuration/ARM-based_ECU/customization/" class="md-nav__link">
+      <a href="../customization/" class="md-nav__link">
         ARM-based ECU Customization Guide
       </a>
     </li>
@@ -576,7 +576,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../software-configuration/x86-based_ECU/">x86 based ECU</a>
+          <a href="../../x86-based_ECU/">x86 based ECU</a>
           
             <label for="__nav_3_3">
               <span class="md-nav__icon md-icon"></span>
@@ -599,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../software-configuration/x86-based_ECU/customization/" class="md-nav__link">
+      <a href="../../x86-based_ECU/customization/" class="md-nav__link">
         x86-based ECU Customization Guide
       </a>
     </li>
@@ -642,7 +642,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../software-configuration/rmw_zenoh/">Rmw zenoh</a>
+          <a href="../../rmw_zenoh/">Rmw zenoh</a>
           
         </div>
       
@@ -674,16 +674,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
         
@@ -702,7 +702,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Hardware Configuration</a>
+          <a href="../../../hardware-configuration/">Hardware Configuration</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -710,7 +710,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Hardware Configuration
@@ -747,7 +747,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../chassis/">Chassis</a>
+          <a href="../../../hardware-configuration/chassis/">Chassis</a>
           
         </div>
       
@@ -771,18 +771,18 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
       
       
         
@@ -799,7 +799,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">ECUs</a>
+          <a href="../../../hardware-configuration/ECUs/">ECUs</a>
           
             <label for="__nav_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -807,7 +807,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_3">
           <span class="md-nav__icon md-icon"></span>
           ECUs
@@ -842,7 +842,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../x86ECUs/">x86ECUs</a>
+          <a href="../../../hardware-configuration/ECUs/x86ECUs/">x86ECUs</a>
           
         </div>
       
@@ -888,7 +888,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../armECUs/">armECUs</a>
+          <a href="../../../hardware-configuration/ECUs/armECUs/">armECUs</a>
           
         </div>
       
@@ -943,7 +943,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../Sensors-and-Actuators/">Sensors and Actuators</a>
+          <a href="../../../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
           
         </div>
       
@@ -1395,43 +1395,265 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#advantech-ad-computers" class="md-nav__link">
-    Advantech AD Computers
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#adlink-in-vehicle-computers" class="md-nav__link">
-    ADLINK In-Vehicle Computers
+  <a href="#build-philosophy-compile-once-deploy-everywhere" class="md-nav__link">
+    Build Philosophy: Compile Once, Deploy Everywhere
   </a>
+  
+    <nav class="md-nav" aria-label="Build Philosophy: Compile Once, Deploy Everywhere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-containerized-compilation" class="md-nav__link">
+    1. Containerized Compilation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-debian-package-creation" class="md-nav__link">
+    2. Debian Package Creation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ansible-based-provisioning" class="md-nav__link">
+    3. Ansible-Based Provisioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-unified-docker-environment" class="md-nav__link">
+    4. Unified Docker Environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nxp-in-vehicle-computers" class="md-nav__link">
-    NXP In-Vehicle Computers
+  <a href="#development-environment-setup" class="md-nav__link">
+    Development Environment Setup
   </a>
+  
+    <nav class="md-nav" aria-label="Development Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-start-guide" class="md-nav__link">
+    Quick Start Guide
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#neousys-in-vehicle-computers" class="md-nav__link">
-    Neousys In-Vehicle Computers
+  <a href="#technical-architecture" class="md-nav__link">
+    Technical Architecture
   </a>
+  
+    <nav class="md-nav" aria-label="Technical Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-design-principles" class="md-nav__link">
+    Container Design Principles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-vs-native-development" class="md-nav__link">
+    Container vs. Native Development
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#crystal-rugged-in-vehicle-computers" class="md-nav__link">
-    Crystal Rugged In-Vehicle Computers
+  <a href="#environment-customization" class="md-nav__link">
+    Environment Customization
   </a>
+  
+    <nav class="md-nav" aria-label="Environment Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-ansible-for-configuration-management" class="md-nav__link">
+    Using Ansible for Configuration Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-specific-configurations" class="md-nav__link">
+    Hardware-Specific Configurations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vecow-in-vehicle-computers" class="md-nav__link">
-    Vecow In-Vehicle Computers
+  <a href="#package-management" class="md-nav__link">
+    Package Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-debian-packages" class="md-nav__link">
+    Building Debian Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repository-management" class="md-nav__link">
+    Repository Management
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-workflows" class="md-nav__link">
+    Development Workflows
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-development-cycle" class="md-nav__link">
+    Typical Development Cycle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-integration" class="md-nav__link">
+    CI/CD Integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    Performance Optimization
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-runtime-optimizations" class="md-nav__link">
+    Container Runtime Optimizations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-performance" class="md-nav__link">
+    Build Performance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    Common Issues and Solutions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    Best Practices
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-guidelines" class="md-nav__link">
+    Development Guidelines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#team-collaboration" class="md-nav__link">
+    Team Collaboration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
   </a>
   
 </li>
@@ -1454,253 +1676,365 @@
   
 
 
-<h1 id="ad-computers">AD Computers<a class="headerlink" href="#ad-computers" title="Permanent link">#</a></h1>
-<h2 id="advantech-ad-computers">Advantech AD Computers<a class="headerlink" href="#advantech-ad-computers" title="Permanent link">#</a></h2>
-<p><img alt="Advantech AD Computers" src="https://github.com/user-attachments/assets/0798fc0d-e799-4c54-8f81-dfe98466e726" /></p>
-<p>Advantech's autonomous driving and robotic computers are of compact size, with GMSL camera and other sensor data available at ROS level.</p>
+<h1 id="containerized-development-for-arm-based-ecus">Containerized Development for ARM-based ECUs<a class="headerlink" href="#containerized-development-for-arm-based-ecus" title="Permanent link">#</a></h1>
+<p>This comprehensive guide covers the containerized development environment for ARM-based ECUs, particularly focused on NVIDIA AGX Orin platforms. The content is adapted from the AutoSDV project, which provides a sophisticated containerized approach to Autoware development.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>The containerized development approach provides a complete, reproducible environment for developing and deploying Autoware on ARM-based ECUs. This methodology ensures consistency across development teams while optimizing for the specific capabilities of NVIDIA Jetson and AGX Orin hardware.</p>
+<h2 id="build-philosophy-compile-once-deploy-everywhere">Build Philosophy: Compile Once, Deploy Everywhere<a class="headerlink" href="#build-philosophy-compile-once-deploy-everywhere" title="Permanent link">#</a></h2>
+<p>The containerized environment follows a four-stage pipeline that maximizes efficiency and reproducibility:</p>
+<h3 id="1-containerized-compilation">1. Containerized Compilation<a class="headerlink" href="#1-containerized-compilation" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Process</strong>: Complete Autoware build (<code>colcon build</code>) within isolated Docker containers</li>
+<li><strong>Benefits</strong>: </li>
+<li>Eliminates host system dependency conflicts</li>
+<li>Ensures reproducible builds across different development machines</li>
+<li>Provides consistent compilation environment</li>
+</ul>
+<h3 id="2-debian-package-creation">2. Debian Package Creation<a class="headerlink" href="#2-debian-package-creation" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Process</strong>: Automated conversion of ROS 2 packages to <code>.deb</code> files via <code>package-deb.sh</code></li>
+<li><strong>Benefits</strong>:</li>
+<li>Captures compiled artifacts in distributable format</li>
+<li>Enables version control and release management</li>
+<li>Supports standard Linux package management</li>
+</ul>
+<h3 id="3-ansible-based-provisioning">3. Ansible-Based Provisioning<a class="headerlink" href="#3-ansible-based-provisioning" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Process</strong>: Environment setup using pre-built packages instead of source compilation</li>
+<li><strong>Benefits</strong>:</li>
+<li>Dramatically faster than full <code>colcon build</code></li>
+<li>Consistent configuration across deployments</li>
+<li>Infrastructure-as-code approach</li>
+</ul>
+<h3 id="4-unified-docker-environment">4. Unified Docker Environment<a class="headerlink" href="#4-unified-docker-environment" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Process</strong>: Complete pipeline orchestration through Docker</li>
+<li><strong>Benefits</strong>:</li>
+<li>Platform-independent development</li>
+<li>Simplified developer onboarding</li>
+<li>Consistent toolchain across teams</li>
+</ul>
+<h2 id="development-environment-setup">Development Environment Setup<a class="headerlink" href="#development-environment-setup" title="Permanent link">#</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
+<p>Before starting, ensure your development machine has:</p>
+<ul>
+<li><strong>Docker Engine</strong>: Latest version with buildx support</li>
+<li><strong>NVIDIA Container Toolkit</strong>: For GPU acceleration in containers</li>
+<li><strong>QEMU</strong>: Cross-architecture build support (for x86_64 development hosts)</li>
+<li><strong>Git</strong>: For repository management</li>
+<li><strong>Sufficient Storage</strong>: At least 50GB free space for images and builds</li>
+</ul>
+<h3 id="quick-start-guide">Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permanent link">#</a></h3>
+<h4 id="1-repository-setup">1. Repository Setup<a class="headerlink" href="#1-repository-setup" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone the repository with submodules</span>
+git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>&lt;your-autoware-repository&gt;
+<span class="nb">cd</span><span class="w"> </span>&lt;repository&gt;/docker
+</code></pre></div>
+<h4 id="2-bootstrap-environment-first-time-only">2. Bootstrap Environment (First Time Only)<a class="headerlink" href="#2-bootstrap-environment-first-time-only" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure QEMU for cross-architecture builds</span>
+make<span class="w"> </span>bootstrap
+</code></pre></div>
+<h4 id="3-build-development-image">3. Build Development Image<a class="headerlink" href="#3-build-development-image" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Build ARM64 Docker image with commit tagging</span>
+make<span class="w"> </span>build
+</code></pre></div>
+<h4 id="4-launch-development-container">4. Launch Development Container<a class="headerlink" href="#4-launch-development-container" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Start interactive development session</span>
+make<span class="w"> </span>run
+</code></pre></div>
+<p><strong>Note</strong>: The container automatically mounts your local source directory, enabling real-time code synchronization between host and container.</p>
+<h2 id="technical-architecture">Technical Architecture<a class="headerlink" href="#technical-architecture" title="Permanent link">#</a></h2>
+<h3 id="container-design-principles">Container Design Principles<a class="headerlink" href="#container-design-principles" title="Permanent link">#</a></h3>
+<h4 id="base-image-strategy">Base Image Strategy<a class="headerlink" href="#base-image-strategy" title="Permanent link">#</a></h4>
+<p>The containerized environment uses NVIDIA's official L4T (Linux for Tegra) images as the foundation:</p>
+<ul>
+<li><strong>Base Image</strong>: <code>nvcr.io/nvidia/l4t-tensorrt:r8.6.2-devel</code></li>
+<li><strong>Includes</strong>: CUDA, cuDNN, TensorRT pre-installed and optimized</li>
+<li><strong>Target Hardware</strong>: NVIDIA Jetson AGX Orin, Xavier, and compatible platforms</li>
+</ul>
+<h4 id="build-reproducibility-features">Build Reproducibility Features<a class="headerlink" href="#build-reproducibility-features" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Commit-based tagging</strong>: Each image tagged with Git commit hash</li>
+<li><strong>Deterministic builds</strong>: Locked dependency versions</li>
+<li><strong>Build cache optimization</strong>: Layered approach for faster rebuilds</li>
+<li><strong>Multi-stage builds</strong>: Separate build and runtime environments</li>
+</ul>
+<h4 id="nvidia-specific-optimizations">NVIDIA-Specific Optimizations<a class="headerlink" href="#nvidia-specific-optimizations" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>Custom APT sources</strong>: Access to NVIDIA L4T packages</li>
+<li><strong>DLA compiler</strong>: Deep Learning Accelerator support</li>
+<li><strong>Jetson-specific libraries</strong>: Hardware-optimized components</li>
+<li><strong>Power mode configurations</strong>: Development vs. production profiles</li>
+</ul>
+<h3 id="container-vs-native-development">Container vs. Native Development<a class="headerlink" href="#container-vs-native-development" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
+<th>Aspect</th>
+<th>Containerized</th>
+<th>Native</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>AFE-R760</strong> (system, but the board  AFE-R360 is also avaialbe)</td>
-<td>Intel® Core™ Ultra 7/5 Processors</td>
-<td>(Optional) MXM-type RTX A2000/A4500/5000Ada</td>
-<td><ul><li>4 GMSL2 cameras</li><li>Dual Channel DDR5-5600, up to 96GB</li><li>3 x LAN up to 2.5GbE</li><li>4 x RS-232/422/485</li><li>2 x USB-C &amp; 2 USB-A  (10Gbps)</li><li>2 x CAN-FD</li></ul></td>
-<td><ul><li>Operating Temperature: -20 ~ 60° C with 0.7m/s air flow</li><li>Vibration During Operation: 3 Grms, IEC 60068-2-64, random, 5 ~ 500 Hz, 1 hr/axis.</li><li>Shock During Operation 30 G, IEC 60068-2-27, half sine, 11 ms duration</li><li>EMC: Heavy industrial certificates, CE/FCC Class B, UKCA, CCC, BSMI</li></ul></td>
-<td>Y</td>
+<td><strong>Setup Time</strong></td>
+<td>&lt; 30 minutes</td>
+<td>Several hours</td>
 </tr>
 <tr>
-<td><strong>AFE-R750-X0A1U</strong> (AGX Orin 32GB/64GB system, but the board  ASR-A701 is also avaialbe)</td>
-<td>8/12-core NVIDIA Arm® Cortex A78AE v8.2</td>
-<td>1792/2048-core NVIDIA Ampere GPU with 56/64 Tensor Cores</td>
-<td><ul><li>8 x GMSL2 cameras</li><li>BOSCH BMI088 IMU</li><li>Xsens MTi3 IMU (Optional)</li><li>32/64GB 256-bit LPDDR5 DRAM</li><li> 4 x 2.5GbE, 4 x USB 3.2 Type A, 2 x isolated CANFD, 16bit isolated DIO, 2 x RS232/422/485</li> </ul></td>
-<td><ul><li>20~28V DC</li> <li>-10 ~ 60°C/50°C with 0.7 m/s air flow for 32GB/64GB</li></ul></td>
-<td>Y</td>
+<td><strong>Reproducibility</strong></td>
+<td>Guaranteed</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td><strong>Dependency Management</strong></td>
+<td>Automated</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td><strong>Hardware Access</strong></td>
+<td>Full (with proper flags)</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>~98% of native</td>
+<td>100%</td>
+</tr>
+<tr>
+<td><strong>Team Scalability</strong></td>
+<td>Excellent</td>
+<td>Challenging</td>
 </tr>
 </tbody>
 </table>
-<p>Link to company website is <a href="https://campaign.advantech.online/en/AMR-Robotic-Solutions/">here.</a></p>
-<h2 id="adlink-in-vehicle-computers"><strong>ADLINK In-Vehicle Computers</strong><a class="headerlink" href="#adlink-in-vehicle-computers" title="Permanent link">#</a></h2>
-<p><img alt="ad_comp-adlink.png" src="../images/ad_comp-adlink.png" /></p>
-<p>ADLINK solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
-<!-- cspell: ignore Altra BLUEBOX Grms Quadro Vecow vecow -->
+<h2 id="environment-customization">Environment Customization<a class="headerlink" href="#environment-customization" title="Permanent link">#</a></h2>
+<h3 id="using-ansible-for-configuration-management">Using Ansible for Configuration Management<a class="headerlink" href="#using-ansible-for-configuration-management" title="Permanent link">#</a></h3>
+<p>The containerized environment uses Ansible for flexible, maintainable configuration:</p>
+<h4 id="creating-custom-components">Creating Custom Components<a class="headerlink" href="#creating-custom-components" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p><strong>Define Component Role</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create role structure</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/my_component/<span class="o">{</span>tasks,defaults,meta<span class="o">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Implement Installation Logic</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/my_component/tasks/main.yml</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install component dependencies</span>
+<span class="w">  </span><span class="nt">apt</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">component_dependencies</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
 
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ADM-AL30</td>
-<td>Intel® 13/12th Gen Core™ I processor</td>
-<td>Nvidia RTX 4000 SFF Ada</td>
-<td>128GB RAM, Serial, USB, Automotive Ethernet (Base-T1), 10G Ethernet, CAN 2.0/ CAN-FD, M.2/SATA SSD</td>
-<td>9~36 VDC, E-Mark, 7637-2, IEC 60068-2-64: Operating: 5Grms, random, 5-500Hz, 3 axes (with SSD)</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>AVA-3510</td>
-<td>Intel® Xeon® E-2278GE</td>
-<td>Dual MXM RTX 5000</td>
-<td>64GB RAM,CAN, USB, 10G Ethernet, DIO, Hot-Swap SSD, USIM</td>
-<td>9~36 VDC, MIL-STD-810H,ISO 7637-2</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>SOAFEE’s AVA Developer Platform</td>
-<td>Ampere Altra ARMv8</td>
-<td>optional</td>
-<td>USB, Ethernet, DIO, M.2 NVMe SSDs</td>
-<td>110/220 AC</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>RQX-58G</td>
-<td>8-core Arm</td>
-<td>Nvidia Jetson AGX Xavier</td>
-<td>USB, Ethernet, M.2 NVME SSD, CAN, USIM, GMSL2 Camera support</td>
-<td>9~36VDC, IEC 60068-2-64: Operating 3Grms, 5-500 Hz, 3 axes</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>RQX-59G</td>
-<td>8-core Arm</td>
-<td>Nvidia Jetson AGX Orin</td>
-<td>USB, Ethernet, M.2 NVME SSD, CAN, USIM, GMSL2 Camera support</td>
-<td>9~36VDC, IEC 60068-2-64: Operating 3Grms, 5-500 Hz, 3 axes</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website is <a href="https://www.adlinktech.com/en/Connected-Autonomous-Vehicle-Solutions">here.</a></p>
-<h2 id="nxp-in-vehicle-computers"><strong>NXP In-Vehicle Computers</strong><a class="headerlink" href="#nxp-in-vehicle-computers" title="Permanent link">#</a></h2>
-<p><img alt="ad_comp-nxp.png" src="../images/ad_comp-nxp.png" /></p>
-<p>NXP solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BLUEBOX 3.0</td>
-<td>16 x Arm® Cortex®-A72</td>
-<td>Dual RTX 8000 or RTX A6000</td>
-<td>16 GB RAM CAN, FlexRay, USB, Ethernet, DIO, SSD</td>
-<td>ASIL-D</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website is <a href="https://www.nxp.com/design/designs/bluebox-3-0-automotive-high-performance-compute-ahpc-development-platform:BlueBox">here.</a></p>
-<h2 id="neousys-in-vehicle-computers"><strong>Neousys In-Vehicle Computers</strong><a class="headerlink" href="#neousys-in-vehicle-computers" title="Permanent link">#</a></h2>
-<p><img alt="ad_comp-neousys.png" src="../images/ad_comp-neousys.png" /></p>
-<p>Neousys solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>8805-GC</td>
-<td>AMD® EPYC™ 7003</td>
-<td>NVIDIA® RTX A6000/ A4500</td>
-<td>512GB CAN, USB, Ethernet, Serial, Easy-Swap SSD</td>
-<td>8-48 Volt, Vibration:MIL-STD810G, Method 514.6, Category 4</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>10208-GC</td>
-<td>Intel® 13th/12th-Gen Core™</td>
-<td>Dual 350W NVIDIA® RTX GPU</td>
-<td>64GB CAN, USB, Ethernet, Serial, M2 NVMe SSD</td>
-<td>8~48 Volt, Vibration: MIL-STD-810H, Method 514.8, Category 4</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>9160-GC</td>
-<td>Intel® 13th/12th-Gen Core™</td>
-<td>NVIDIA® RTX series up to 130W TDP</td>
-<td>64GB CAN, USB, Ethernet, PoE, Serial, two 2.5" SATA HDD/SSD with RAID, M2 NVMe SSD</td>
-<td>8~48, Vibration: Volt,MIL-STD-810G, Method 514.6, Category 4</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website is <a href="https://www.neousys-tech.com/en/product/product-lines/edge-ai-gpu-computing">here.</a></p>
-<h2 id="crystal-rugged-in-vehicle-computers"><strong>Crystal Rugged In-Vehicle Computers</strong><a class="headerlink" href="#crystal-rugged-in-vehicle-computers" title="Permanent link">#</a></h2>
-<p><img alt="ad_comp-crystal_rugged.png" src="images/ad_comp-crystal_rugged.png" /></p>
-<p>Crystal Rugged solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AVC 0161-AC</td>
-<td>Intel® Xeon® Scalable</td>
-<td>Dual GPU RTX Series</td>
-<td>2TB RAM,CAN, USB, Ethernet, Serial, Hot-Swap SSD</td>
-<td>10-32 VoltVibration:2 G RMS 10-1000 Hz, 3 axes</td>
-<td>-</td>
-</tr>
-<tr>
-<td>AVC0403</td>
-<td>Intel® Xeon® Scalable or AMD EPYC™</td>
-<td>Optional (5 GPU)</td>
-<td>2TB RAM, CAN, USB, Ethernet, Serial, Hot-Swap SSD</td>
-<td>10-32 Volt, Vibration: 2 G RMS 10-1000 Hz, 3 axes</td>
-<td>-</td>
-</tr>
-<tr>
-<td>AVC1322</td>
-<td>Intel® Xeon® D-1718T or Gen 12/13 Core™ i3/i5/i7</td>
-<td>NVIDIA® Jetson AGX Orin</td>
-<td>128 GB DDR4 RAM, USB, Ethernet, Serial, SATA 2.5” SSD</td>
-<td>10-36 Volt, Vibration: 5.5g, 5-2,000Hz, 60 min/axis, 3 axis</td>
-<td>-</td>
-</tr>
-<tr>
-<td>AVC1753</td>
-<td>10th Generation Intel® Core™ and Xeon®</td>
-<td>Optional (1 GPU)</td>
-<td>128 GB DDR4 RAM, USB, Ethernet, NVMe U.2 SSD/ 3 SATA SSD</td>
-<td>8-36 VDC/ 120-240VAC 50/60Hz, Vibration: 5.5g, 5-2,000Hz, 60 min/axis, 3 axis</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website is <a href="https://www.crystalrugged.com/products/ai-autonomous-vehicle-technology/">here.</a></p>
-<h2 id="vecow-in-vehicle-computers"><strong>Vecow In-Vehicle Computers</strong><a class="headerlink" href="#vecow-in-vehicle-computers" title="Permanent link">#</a></h2>
-<p><img alt="ad_comp-vecow.png" src="../images/ad_comp-vecow.png" /></p>
-<p>Vecow solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ECX-3800 PEG</td>
-<td>Intel® 13th/12th-Gen Core™</td>
-<td>200W power of NVIDIA® or AMD graphics</td>
-<td>64GB RAM, CAN, USB, Ethernet, PoE, Serial, M.2/SATA SSD, SIM Card</td>
-<td>12-50 Volt, Vibration:MIL-STD810G, Procedure I, 20°C to 45°C</td>
-<td>-</td>
-</tr>
-<tr>
-<td>IVX-1000</td>
-<td>Intel® 13th/12th-Gen Core™</td>
-<td>NVIDIA Quadro® MXM Graphics</td>
-<td>64GB RAM, Ethernet, PoE, Serial, M.2/SATA/mSATA SSD, SIM Card</td>
-<td>16-160 Volt, Vibration: IEC 61373 : 2010, 40°C to 85°C</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website is <a href="https://www.vecow.com/dispPageBox/vecow/VecowHp.aspx?ddsPageID=VECOW_EN">here.</a></p>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Download and install component</span>
+<span class="w">  </span><span class="nt">get_url</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">component_url</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/tmp/{{</span><span class="nv"> </span><span class="s">component_filename</span><span class="nv"> </span><span class="s">}}&quot;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install component package</span>
+<span class="w">  </span><span class="nt">apt</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">deb</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/tmp/{{</span><span class="nv"> </span><span class="s">component_filename</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">component_type == &quot;deb&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Configure Variables</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/my_component/defaults/main.yml</span>
+<span class="nn">---</span>
+<span class="nt">component_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_custom_component&quot;</span>
+<span class="nt">component_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span>
+<span class="nt">component_dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libboost-all-dev</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3-pip</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="hardware-specific-configurations">Hardware-Specific Configurations<a class="headerlink" href="#hardware-specific-configurations" title="Permanent link">#</a></h3>
+<h4 id="agx-orin-optimizations">AGX Orin Optimizations<a class="headerlink" href="#agx-orin-optimizations" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/agx_orin_config/tasks/main.yml</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure Jetson power mode</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvpmodel -m 0</span><span class="w">  </span><span class="c1"># MAXN mode for development</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set GPU/DLA clock frequencies</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetson_clocks --fan</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure memory growth for TensorRT</span>
+<span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/environment</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TF_FORCE_GPU_ALLOW_GROWTH=true&#39;</span>
+</code></pre></div>
+<h2 id="package-management">Package Management<a class="headerlink" href="#package-management" title="Permanent link">#</a></h2>
+<h3 id="building-debian-packages">Building Debian Packages<a class="headerlink" href="#building-debian-packages" title="Permanent link">#</a></h3>
+<p>The containerized environment includes sophisticated tooling for creating Debian packages:</p>
+<h4 id="individual-package-building">Individual Package Building<a class="headerlink" href="#individual-package-building" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Convert single ROS 2 package to .deb</span>
+./scripts/make-deb.sh<span class="w"> </span>&lt;package_name&gt;
+</code></pre></div>
+<h4 id="batch-package-creation">Batch Package Creation<a class="headerlink" href="#batch-package-creation" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Build all packages in workspace</span>
+./scripts/package-deb.sh<span class="w"> </span>--workspace<span class="w"> </span>/path/to/ws
+</code></pre></div>
+<h3 id="repository-management">Repository Management<a class="headerlink" href="#repository-management" title="Permanent link">#</a></h3>
+<h4 id="local-apt-repository-structure">Local APT Repository Structure<a class="headerlink" href="#local-apt-repository-structure" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>local-apt-repo/
+├── dists/
+│   └── focal/
+│       └── main/
+│           └── binary-arm64/
+└── pool/
+    └── main/
+        └── a/autoware-*/
+</code></pre></div>
+<h4 id="deployment-workflow">Deployment Workflow<a class="headerlink" href="#deployment-workflow" title="Permanent link">#</a></h4>
+<ol>
+<li>Build packages in container</li>
+<li>Export to local repository</li>
+<li>Configure target ECUs to use repository</li>
+<li>Deploy via standard <code>apt</code> commands</li>
+</ol>
+<h2 id="development-workflows">Development Workflows<a class="headerlink" href="#development-workflows" title="Permanent link">#</a></h2>
+<h3 id="typical-development-cycle">Typical Development Cycle<a class="headerlink" href="#typical-development-cycle" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Code Development</strong></li>
+<li>Edit code on host machine</li>
+<li>Changes reflected instantly in container</li>
+<li>
+<p>Use IDE of choice on host</p>
+</li>
+<li>
+<p><strong>Build and Test</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Inside container</span>
+colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>&lt;your_package&gt;
+colcon<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--packages-select<span class="w"> </span>&lt;your_package&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Package Creation</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Create deployable package</span>
+make<span class="w"> </span>package<span class="w"> </span><span class="nv">PKG</span><span class="o">=</span>&lt;your_package&gt;
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Deployment Testing</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Test on target hardware</span>
+ansible-playbook<span class="w"> </span>deploy.yml<span class="w"> </span>-l<span class="w"> </span>target_ecu
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="cicd-integration">CI/CD Integration<a class="headerlink" href="#cicd-integration" title="Permanent link">#</a></h3>
+<p>The containerized approach seamlessly integrates with CI/CD pipelines:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example GitLab CI configuration</span>
+<span class="nt">build-arm64</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker buildx build --platform linux/arm64 -t ${IMAGE_TAG} .</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker run ${IMAGE_TAG} make test</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker run ${IMAGE_TAG} make package</span>
+<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">packages/*.deb</span>
+</code></pre></div>
+<h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">#</a></h2>
+<h3 id="container-runtime-optimizations">Container Runtime Optimizations<a class="headerlink" href="#container-runtime-optimizations" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>GPU Access</strong>
+   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--runtime<span class="w"> </span>nvidia<span class="w"> </span>...
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Memory Management</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Limit container memory to prevent OOM</span>
+docker<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>16g<span class="w"> </span>--memory-swap<span class="w"> </span>16g<span class="w"> </span>...
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>CPU Affinity</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Pin to specific cores</span>
+docker<span class="w"> </span>run<span class="w"> </span>--cpuset-cpus<span class="o">=</span><span class="s2">&quot;0-3&quot;</span><span class="w"> </span>...
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="build-performance">Build Performance<a class="headerlink" href="#build-performance" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Parallel Compilation</strong>: <code>colcon build --parallel-workers $(nproc)</code></li>
+<li><strong>ccache Integration</strong>: Persistent cache volumes</li>
+<li><strong>Incremental Builds</strong>: Proper workspace overlays</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<h3 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>QEMU Errors on x86_64 Hosts</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Re-run bootstrap</span>
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--privileged<span class="w"> </span>multiarch/qemu-user-static<span class="w"> </span>--reset<span class="w"> </span>-p<span class="w"> </span>yes
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>GPU Not Accessible</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Verify NVIDIA runtime</span>
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>nvidia/cuda:11.4.3-base-ubuntu20.04<span class="w"> </span>nvidia-smi
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Build Cache Issues</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Clean and rebuild</span>
+docker<span class="w"> </span>builder<span class="w"> </span>prune
+docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>-t<span class="w"> </span><span class="si">${</span><span class="nv">IMAGE_TAG</span><span class="si">}</span><span class="w"> </span>.
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">#</a></h2>
+<h3 id="development-guidelines">Development Guidelines<a class="headerlink" href="#development-guidelines" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Layer Optimization</strong></li>
+<li>Group related operations</li>
+<li>Minimize layer size</li>
+<li>
+<p>Use multi-stage builds</p>
+</li>
+<li>
+<p><strong>Security Considerations</strong></p>
+</li>
+<li>Don't store credentials in images</li>
+<li>Use secrets management</li>
+<li>
+<p>Regular base image updates</p>
+</li>
+<li>
+<p><strong>Resource Management</strong></p>
+</li>
+<li>Set appropriate resource limits</li>
+<li>Monitor container metrics</li>
+<li>Clean up unused images regularly</li>
+</ol>
+<h3 id="team-collaboration">Team Collaboration<a class="headerlink" href="#team-collaboration" title="Permanent link">#</a></h3>
+<ol>
+<li><strong>Image Versioning</strong></li>
+<li>Semantic versioning for releases</li>
+<li>Commit-based tags for development</li>
+<li>
+<p>Maintain changelog</p>
+</li>
+<li>
+<p><strong>Documentation</strong></p>
+</li>
+<li>Document custom configurations</li>
+<li>Maintain runbooks</li>
+<li>Update README files</li>
+</ol>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<p>The containerized development approach for ARM-based ECUs provides a robust, scalable solution for Autoware development on NVIDIA Jetson platforms. By combining Docker containerization, Ansible automation, and Debian packaging, teams can achieve:</p>
+<ul>
+<li><strong>Rapid Development</strong>: From code to deployment in minutes</li>
+<li><strong>Consistency</strong>: Identical environments across all developers</li>
+<li><strong>Hardware Optimization</strong>: Full utilization of NVIDIA accelerators</li>
+<li><strong>Production Ready</strong>: Seamless transition from development to deployment</li>
+</ul>
+<p>This methodology has been proven in production environments and continues to evolve with the Autoware ecosystem.</p>
 
 
 
@@ -1727,7 +2061,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: ECUs" rel="prev">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software Configuration for ARM-based ECUs" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1736,20 +2070,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                ECUs
+                Software Configuration for ARM-based ECUs
               </div>
             </div>
           </a>
         
         
           
-          <a href="../armECUs/" class="md-footer__link md-footer__link--next" aria-label="Next: ARM-based ECUs" rel="next">
+          <a href="../customization/" class="md-footer__link md-footer__link--next" aria-label="Next: ARM-based ECU Customization Guide" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                ARM-based ECUs
+                ARM-based ECU Customization Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">

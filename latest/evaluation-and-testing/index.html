@@ -454,6 +454,8 @@
         
           
         
+          
+        
       
       
         
@@ -499,12 +501,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../software-configuration/ARM-based_ECU/">ARM based ECU</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -515,6 +523,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-configuration/ARM-based_ECU/customization/" class="md-nav__link">
+        ARM-based ECU Customization Guide
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -547,6 +569,8 @@
             
           
         
+          
+        
       
       
         
@@ -554,12 +578,78 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../software-configuration/x86-based_ECU/">x86 based ECU</a>
           
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           x86 based ECU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-configuration/x86-based_ECU/customization/" class="md-nav__link">
+        x86-based ECU Customization Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../software-configuration/rmw_zenoh/">Rmw zenoh</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rmw zenoh
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1298,6 +1388,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expected-performance-metrics-for-arm-based-ecus" class="md-nav__link">
+    Expected Performance Metrics for ARM-based ECUs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expected-performance-metrics-for-x86-based-ecus" class="md-nav__link">
+    Expected Performance Metrics for X86-based ECUs
+  </a>
+  
+    <nav class="md-nav" aria-label="Expected Performance Metrics for X86-based ECUs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantech-x86-based-ecu" class="md-nav__link">
+    AdvanTech X86-based ECU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vecow-x86-based-ecu" class="md-nav__link">
+    vecow X86-based ECU
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1316,6 +1448,93 @@
 
 <h1 id="evaluation-and-testing">Evaluation and Testing<a class="headerlink" href="#evaluation-and-testing" title="Permanent link">#</a></h1>
 <p>(To be completed)</p>
+<h2 id="expected-performance-metrics-for-arm-based-ecus">Expected Performance Metrics for ARM-based ECUs<a class="headerlink" href="#expected-performance-metrics-for-arm-based-ecus" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>AGX Orin</th>
+<th>Xavier</th>
+<th>Orin Nano</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiDAR Detection</td>
+<td>10 Hz</td>
+<td>8 Hz</td>
+<td>5 Hz</td>
+</tr>
+<tr>
+<td>Camera Detection</td>
+<td>20 Hz</td>
+<td>15 Hz</td>
+<td>10 Hz</td>
+</tr>
+<tr>
+<td>Planning</td>
+<td>10 Hz</td>
+<td>10 Hz</td>
+<td>8 Hz</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>50 Hz</td>
+<td>50 Hz</td>
+<td>50 Hz</td>
+</tr>
+<tr>
+<td>Power Usage</td>
+<td>40W</td>
+<td>25W</td>
+<td>12W</td>
+</tr>
+</tbody>
+</table>
+<h2 id="expected-performance-metrics-for-x86-based-ecus">Expected Performance Metrics for X86-based ECUs<a class="headerlink" href="#expected-performance-metrics-for-x86-based-ecus" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Target FPS</th>
+<th>CPU Usage</th>
+<th>GPU Usage</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiDAR Detection</td>
+<td>10 Hz</td>
+<td>20-30%</td>
+<td>40-60%</td>
+<td>&lt;100ms</td>
+</tr>
+<tr>
+<td>Camera Detection</td>
+<td>15 Hz</td>
+<td>15-25%</td>
+<td>50-70%</td>
+<td>&lt;80ms</td>
+</tr>
+<tr>
+<td>Planning</td>
+<td>10 Hz</td>
+<td>30-40%</td>
+<td>N/A</td>
+<td>&lt;50ms</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>50 Hz</td>
+<td>10-15%</td>
+<td>N/A</td>
+<td>&lt;20ms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advantech-x86-based-ecu">AdvanTech X86-based ECU<a class="headerlink" href="#advantech-x86-based-ecu" title="Permanent link">#</a></h3>
+<h3 id="vecow-x86-based-ecu">vecow X86-based ECU<a class="headerlink" href="#vecow-x86-based-ecu" title="Permanent link">#</a></h3>
 
 
 
