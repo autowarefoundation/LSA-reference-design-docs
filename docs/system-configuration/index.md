@@ -2,23 +2,17 @@
 
 (To be completed)
 
+The section describes the system configuration of the LSA vehicles. It shows the options to design your own LSA vehicles. The configuration consists of ECU selection, development approach, middleware candidates, etc. 
+
 # Key Considerations
 
 ## Hardware Selection
-- **x86 ECUs**: Better for high-compute perception tasks, easier software compatibility
 - **ARM ECUs**: Superior power efficiency, integrated GPU/DLA acceleration, compact form factor
 
-## Development Approach
-- **Native Installation**: Direct installation on hardware for maximum performance
-- **Containerized Development**: Reproducible environments with easier team collaboration (recommended for ARM)
-
-## Middleware Choice
-- **Default DDS**: Mature, widely supported, industry standard
-- **rmw_zenoh**: Modern alternative with better performance for LSA applications
-
-## Technical Specifications for X86-based ECUs
-
+- **x86 ECUs**: Better for high-compute perception tasks, easier software compatibility
 ### Recommended Hardware Configurations
+
+For X86-based ECUs, there are configurations for different use scearios. 
 
 #### High-Performance Configuration
 - **CPU**: Intel Core i9-13900K or AMD Ryzen 9 7950X (16+ cores)
@@ -48,4 +42,13 @@
 - **Neousys Nuvo-8108GC**: Rugged x86 platform with RTX GPU support
 - **Advantech MIC-770**: Compact industrial PC with GPU expansion
 - **Crystal Group RS363S**: MIL-SPEC certified with NVIDIA GPU
+
+## Development Approach
+- **Native Installation**: Direct installation on hardware for maximum performance
+- **Containerized Development**: Reproducible environments with easier team collaboration (recommended for ARM)
+
+## Middleware Choice
+- **Default DDS**: Mature, widely supported, industry standard
+- **rmw_zenoh**: Modern alternative with better performance for LSA applications
+
 

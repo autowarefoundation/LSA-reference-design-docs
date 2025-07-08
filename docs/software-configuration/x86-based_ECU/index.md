@@ -300,7 +300,7 @@ else
 fi
 EOF
 ```
-You can also download the [file](assets/verify-installation.sh) and move the shell script to the working directory.
+You can also download the [file](../deployment-setup/assets/verify-installation.sh) and move the shell script to the working directory.
 
 ##### Verify the deployment
 The last step executes the verification script to verify the deployment. 
