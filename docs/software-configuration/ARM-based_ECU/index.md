@@ -2,46 +2,27 @@
 
 This guide provides comprehensive instructions for deploying Autoware on ARM-based ECUs, with specific focus on NVIDIA Jetson and AGX Orin platforms for Low Speed Autonomy vehicles.
 
-## Technical Specifications
-
-### NVIDIA Jetson Platform Options
-
-#### AGX Orin Series (Recommended)
-- **AGX Orin 64GB Developer Kit**
-  - CPU: 12-core Arm Cortex-A78AE
-  - GPU: 2048-core NVIDIA Ampere with 64 Tensor Cores
-  - Memory: 64GB 256-bit LPDDR5
-  - Storage: 64GB eMMC, NVMe M.2 support
-  - AI Performance: 275 TOPS
-  - Power: 15W-60W configurable
-
-- **AGX Orin 32GB**
-  - Similar specs with 32GB memory
-  - AI Performance: 200 TOPS
-  - Power: 15W-40W configurable
-
-#### Xavier Series
-- **AGX Xavier Industrial**
-  - CPU: 8-core NVIDIA Carmel ARM v8.2
-  - GPU: 512-core Volta with 64 Tensor Cores
-  - Memory: 32GB 256-bit LPDDR4x
-  - AI Performance: 30 TOPS
-  - Power: 10W-30W configurable
-
-#### Orin Nano/NX Series (Entry Level)
-- **Orin Nano 8GB**
-  - CPU: 6-core Arm Cortex-A78AE
-  - GPU: 1024-core NVIDIA Ampere
-  - Memory: 8GB 128-bit LPDDR5
-  - AI Performance: 40 TOPS
-  - Power: 7W-15W configurable
-
-### Industrial ARM Platforms
-- **ADLINK AVA-ORIN**: Rugged AGX Orin platform for vehicles
-- **Connect Tech Rogue**: Carrier board for AGX Orin with automotive interfaces
-- **Auvidea JNX30**: Industrial carrier for Jetson with CAN/LIN interfaces
-
 ## System Preparation
+
+### CUDA Toolkit Installation
+
+Using the following instructions to install the toolkit of nVidia CUDA. 
+
+For Jetson platforms, CUDA comes pre-installed with JetPack. Verify your installation:
+
+```bash
+# Check CUDA version
+nvcc --version
+
+# Verify Jetson platform
+sudo apt install -y python3-pip
+pip3 install jetson-stats
+sudo jtop
+```
+
+If CUDA is not installed, flash your Jetson with the appropriate JetPack version:
+- AGX Orin: JetPack 5.1.2 or later
+- Xavier Series: JetPack 5.1 or later
 
 ### JetPack Installation
 
@@ -118,6 +99,7 @@ sudo echo 1 > /sys/kernel/debug/bpmp/debug/clk/emc/state
 ```
 
 ## Sensor Configuration
+The following instrucitons configure the sensor for LSA vehicles.
 
 ### CSI Camera Configuration
 
@@ -160,11 +142,53 @@ cap = cv2.VideoCapture(create_hw_accelerated_pipeline(), cv2.CAP_GSTREAMER)
 
 ## Autoware Deployment
 
-### 1. Follow Base Installation
+### 1. Core Autoware Installation
 
-Complete the general setup from [Deployment Setup](../deployment-setup/index.md), then proceed with ARM-specific configuration.
+Complete the general setup from [Deployment Setup](../deployment-setup/#autoware-deployment-via-debian-packages), then proceed with ARM-specific configuration. 
+
+## Autoware Deployment via Debian Packages
+(This part should be moved to ECU-dependent deployment.)
+
+#### 1.1 Configure Autoware APT Repository
+
+```bash
+# Download and install repository configuration
+wget https://github.com/autowarefoundation/autoware/releases/latest/download/autoware-apt-config.deb
+sudo dpkg -i autoware-apt-config.deb
+
+# Update package lists
+sudo apt update
+```
+
+#### 1.2. Deploy Autoware Core Packages
+
+```bash
+# Install complete Autoware stack
+sudo apt install -y autoware-universe
+
+# Or install specific components
+sudo apt install -y \
+  autoware-common \
+  autoware-control \
+  autoware-localization \
+  autoware-perception \
+  autoware-planning
+```
+
+#### 1.3. Configure Environment
+
+```bash
+# Add Autoware setup to bashrc
+echo "source /opt/autoware/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+# Verify installation
+ros2 pkg list | grep autoware
+```
 
 ### 2. ARM-Specific Dependencies
+
+The following instructions install ARM-specific tools before deploying Autoware.
 
 ```bash
 # Install ARM-optimized libraries
@@ -207,6 +231,8 @@ Create Jetson-optimized configuration:
     enable_cpu_affinity: true
 ```
 
+You can also download the [file](assets/jetson_optimization.yaml) and move it 'autoware_config'. 
+
 ### 4. Launch Configuration
 
 ```xml
@@ -225,11 +251,81 @@ Create Jetson-optimized configuration:
 </launch>
 ```
 
+Download the [lauch file](assets/autoware_jetson.launch.xml).
+
+system. 
+
+
+#### 5.1. System Check Script
+
+The first step is to create a verification script:
+
+```bash
+cat > verify-installation.sh << 'EOF'
+#!/bin/bash
+
+echo "=== System Verification ==="
+echo "OS Version: $(lsb_release -d | cut -f2)"
+echo "Kernel: $(uname -r)"
+echo ""
+
+echo "=== CUDA Verification ==="
+if command -v nvidia-smi &> /dev/null; then
+    nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader
+else
+    echo "NVIDIA driver not found"
+fi
+
+if command -v nvcc &> /dev/null; then
+    echo "CUDA Version: $(nvcc --version | grep release | awk '{print $6}')"
+else
+    echo "CUDA not found"
+fi
+echo ""
+
+echo "=== ROS 2 Verification ==="
+if [ -f /opt/ros/humble/setup.bash ]; then
+    source /opt/ros/humble/setup.bash
+    echo "ROS 2 Distro: $ROS_DISTRO"
+    echo "ROS 2 Version: $(ros2 --version 2>&1 | grep '^ros2')"
+else
+    echo "ROS 2 not found"
+fi
+echo ""
+
+echo "=== Autoware Verification ==="
+if [ -f /opt/autoware/setup.bash ]; then
+    source /opt/autoware/setup.bash
+    echo "Autoware packages installed: $(ros2 pkg list | grep -c autoware)"
+else
+    echo "Autoware not found"
+fi
+EOF
+```
+You can also download the [file](assets/verify-installation.sh) and move the shell script to the working directory.
+
+The last step executes the verification script to verify the deployment. 
+
+```
+chmod +x verify-installation.sh
+./verify-installation.sh
+```
+
+#### 5.2. Test Basic Functionality
+
+```bash
+# Test ROS 2 communication
+ros2 doctor
+
+# Launch minimal Autoware nodes
+ros2 launch autoware_launch logging_simulator.launch.xml
+```
+
 ## Development Workflows
 
 ### Native Development
 
-For direct development on Jetson:
+To directly develope on Jetson, you need to install the tools and set up the workspace.
 
 ```bash
 # Install development tools
@@ -248,14 +344,17 @@ git clone https://github.com/autowarefoundation/autoware.universe.git src/univer
 ### Containerized Development
 
 For reproducible environments, see our comprehensive [Containerized Development Guide](containerized-development.md) which covers:
+
 - Docker setup for Jetson
 - Cross-compilation from x86
 - Automated build pipelines
 - Team collaboration workflows
 
-## Performance Optimization
+## Performance Enhancement
 
-### Power Mode Configuration
+To enhance the performance of the system, one may use the following configuration for power consumption, DLA acceleration, and memory bandwidth optimization.
+
+### Power Consumption Mode Configuration
 
 ```bash
 # View available power modes
@@ -271,7 +370,7 @@ sudo nvpmodel -m 3  # 15W mode
 sudo jetson_clocks --fan
 ```
 
-### DLA Acceleration
+### Deep Learning Accelerator (DLA) 
 
 ```cpp
 // Example: Configure DLA in TensorRT
@@ -304,7 +403,7 @@ sudo cat /sys/kernel/debug/bpmp/debug/clk/emc/max_rate > \
   /sys/kernel/debug/bpmp/debug/clk/emc/rate
 ```
 
-## Performance Evaluation
+## Tools for Performance Evaluation
 
 ### Monitoring Tools
 
@@ -319,7 +418,7 @@ sudo tegrastats --interval 1000
 sudo cat /sys/bus/i2c/drivers/ina3221x/1-0040/iio_device/in_power0_input
 ```
 
-### Expected Performance Metrics
+### Expected Performance Metrics for ARM-based ECUs
 
 | Component | AGX Orin | Xavier | Orin Nano |
 |-----------|----------|---------|-----------|
@@ -377,12 +476,13 @@ sudo cat /sys/kernel/debug/nvdla/dla0/busy
 ## Platform-Specific Customizations
 
 For advanced ARM platform customizations including:
+
 - Ansible automation for fleet deployment
 - Hardware-specific sensor integration
 - Custom kernel module development
 - Security hardening for production
 
-See our [ARM Customization Guide](customization.md).
+One can use this guide: [ARM Customization Guide](customization.md).
 
 ## Next Steps
 

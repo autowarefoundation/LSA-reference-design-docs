@@ -2,78 +2,82 @@
 
 This section provides comprehensive guidance for deploying Autoware on Low Speed Autonomy (LSA) vehicles. The documentation covers everything from initial system setup to platform-specific optimizations.
 
-## Documentation Structure
+# Struture of the Guidelines
 
-### [Deployment Setup](deployment-setup/index.md)
-**Foundation for All Deployments**
+The guidelines consist of several parts. You may go directly to [Getting Started](#getting-started) if you want to skip the structure of the guidelines.
 
-Start here for:
+## Preparation for Deployment
+
+This guideline uses a containerized Autoware for deployment, which is hardeware independent. Hence, this guideline can be used for both X86 and ARM-based ECUs. The guideline inlcudes the following topics: 
+
 - Target environment requirements (Ubuntu 22.04 on AMD64/ARM64)
 - CUDA driver installation and verification
 - Ansible-based provisioning setup
 - Autoware installation via Debian packages
-- Common troubleshooting and verification
+- Frequent troubleshooting and verification
 
-### Platform-Specific ECU Deployment
+Read [Preparation for Deployment](deployment-setup/index.md)
 
-#### [x86-based ECU](x86-based_ECU/index.md)
-**Intel/AMD Platform Configuration**
+## Platform-Specific ECU Deployment
 
-Covers:
+Given the containerized Autoware, this section provides the instructions to deploy the containers on different types of ECUs, including X86-based and ARM-based ECUs.
+
+### Instructions to deploy Autoware on x86-based ECUs
+
+X86-based ECUs are well-received for research, development, and PoC. Several tested X86-based ECUs are listed on [this page](../hardware-configuration/ECUs/x86ECUs/index.md)
+
+The instructions to deploy containerized Autoware include the following topics: 
+
 - x86 hardware requirements and compatibility
 - CUDA setup for discrete GPUs (NVIDIA RTX/Tesla)
 - Platform-specific optimizations
 - Custom configurations for x86 architectures
 
-#### [ARM-based ECU](ARM-based_ECU/index.md)
-**NVIDIA Jetson/AGX Orin Platform Configuration**
+Read the instructions to deploy containerized Autotware to [x86-based ECUs](x86-based_ECU/index.md)
 
-Includes:
+### Instructions to deploy Autoware on ARM-based ECUs
+
+ARM-based ECUs are well received for low-energy consumption vehicles and several of them are tested and listed on this [page](../hardware-configuration/ECUs/armECUs/index.md).
+
+The instructions to deploy containerized Autoware include the following topics: 
+
 - ARM platform specifications (AGX Orin, Xavier, etc.)
 - Integrated GPU optimization
 - [Containerized development workflow](ARM-based_ECU/containerized-development.md)
 - [Platform-specific customizations](ARM-based_ECU/customization.md)
 
-### [RMW Zenoh Configuration](rmw_zenoh/index.md)
-**Next-Generation Middleware for ROS 2**
+Read the instructions to deploy containerized Autotware to [x86-based ECUs](x86-based_ECU/index.md)
 
-Features:
+## RMW Zenoh as the middleware for ROS 2
+
+The middleware in ROS 2 have several options. DDS is the default configuration and rmw_zenoh has been approved by ROS 2 to be compatiable as the middleware of ROS 2. The instructions show how to use rmw_zenoh as the middleware of ROS 2. rmw_zenoh has the following features:
+
 - Alternative to DDS with improved performance
 - Simplified configuration for LSA applications
 - Enhanced support for cellular and cloud connectivity
 - Optimized for resource-constrained environments
 
-## Getting Started
+Read the instructions to deploy [rmw_zenoh](rmw_zenoh/index.md)
+
+# Getting Started
 
 1. **Review Requirements**: Start with [Deployment Setup](deployment-setup/index.md) to understand system requirements
-2. **Choose Your Platform**: Select either [x86](x86-based_ECU/index.md) or [ARM](ARM-based_ECU/index.md) based on your ECU hardware
-3. **Install Autoware**: Follow the platform-specific installation guide
-4. **Configure Middleware**: Optionally switch to [rmw_zenoh](rmw_zenoh/index.md) for improved performance
-5. **Customize**: Apply platform-specific optimizations for your use case
+2. **Choose Your Platform**: Select either x86 or ARM ECUs based on your design requirements. 
+3. **Install Autoware**: Follow the platform-specific installation guide: [x86](x86-based_ECU/index.md) or [ARM](ARM-based_ECU/index.md).
+4. **Configure Middleware**: Optionally switch to [rmw_zenoh](rmw_zenoh/index.md) to improve the performance of ROS messages.
+5. **Customize the system**: Apply platform-specific optimizations for your use case
 
-## Key Considerations
+# Support and Resources
 
-### Hardware Selection
-- **x86 ECUs**: Better for high-compute perception tasks, easier software compatibility
-- **ARM ECUs**: Superior power efficiency, integrated GPU/DLA acceleration, compact form factor
-
-### Development Approach
-- **Native Installation**: Direct installation on hardware for maximum performance
-- **Containerized Development**: Reproducible environments with easier team collaboration (recommended for ARM)
-
-### Middleware Choice
-- **Default DDS**: Mature, widely supported, industry standard
-- **rmw_zenoh**: Modern alternative with better performance for LSA applications
-
-## Support and Resources
+Below are the support and resources for the software configuration guideline.
 
 - **Autoware Documentation**: [https://autoware.org/](https://autoware.org/)
 - **ROS 2 Documentation**: [https://docs.ros.org/](https://docs.ros.org/)
 - **NVIDIA Jetson Resources**: [https://developer.nvidia.com/embedded-computing](https://developer.nvidia.com/embedded-computing)
 
-## Contributing
-
+# Contributing
 When contributing to this documentation:
+
 1. Follow the existing structure and formatting
 2. Test all commands and procedures on target hardware
 3. Include troubleshooting sections for common issues

@@ -2,39 +2,6 @@
 
 This guide provides comprehensive instructions for deploying Autoware on x86-based ECUs (Intel/AMD platforms) for Low Speed Autonomy vehicles.
 
-## Technical Specifications
-
-### Recommended Hardware Configurations
-
-#### High-Performance Configuration
-- **CPU**: Intel Core i9-13900K or AMD Ryzen 9 7950X (16+ cores)
-- **RAM**: 64 GB DDR5
-- **GPU**: NVIDIA RTX 4090 or RTX A6000
-- **Storage**: 1TB NVMe SSD (PCIe 4.0)
-- **Network**: Dual 10GbE interfaces
-- **Power**: 850W+ PSU with redundancy
-
-#### Standard Configuration
-- **CPU**: Intel Core i7-12700K or AMD Ryzen 7 7700X (8+ cores)
-- **RAM**: 32 GB DDR4/DDR5
-- **GPU**: NVIDIA RTX 3080 or RTX A4000
-- **Storage**: 512GB NVMe SSD
-- **Network**: Gigabit Ethernet
-- **Power**: 650W PSU
-
-#### Minimum Configuration
-- **CPU**: Intel Core i5-12600K or AMD Ryzen 5 5600X (6+ cores)
-- **RAM**: 16 GB DDR4
-- **GPU**: NVIDIA RTX 3060 or T1000
-- **Storage**: 256GB SSD
-- **Network**: Gigabit Ethernet
-- **Power**: 550W PSU
-
-### Industrial/Vehicle-Grade Options
-- **Neousys Nuvo-8108GC**: Rugged x86 platform with RTX GPU support
-- **Advantech MIC-770**: Compact industrial PC with GPU expansion
-- **Crystal Group RS363S**: MIL-SPEC certified with NVIDIA GPU
-
 ## System Preparation
 
 ### BIOS/UEFI Configuration
@@ -70,7 +37,32 @@ sudo apt install -y linux-realtime
 
 ## CUDA and GPU Configuration
 
-### 1. Install NVIDIA Drivers
+### 1. CUDA Toolkit Installation
+
+(This part should be moved to hardware-dependent instructions.)
+
+Using the following instructions to install the toolkit of nVidia CUDA. 
+
+```bash
+# Add NVIDIA network package repositories
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt update
+
+# Install CUDA toolkit
+sudo apt install -y cuda-12-3
+
+# Add CUDA to PATH
+echo 'export PATH=/usr/local/cuda-12.3/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+
+# Verify installation
+nvidia-smi
+nvcc --version
+```
+
+### 2. Install NVIDIA Drivers
 
 ```bash
 # Remove any existing NVIDIA installations
@@ -89,7 +81,7 @@ sudo apt install nvidia-driver-535  # Or latest recommended
 sudo reboot
 ```
 
-### 2. Configure GPU for Compute
+### 3. Configure GPU for Compute
 
 ```bash
 # Set GPU to persistence mode
@@ -105,7 +97,7 @@ sudo nvidia-smi -c EXCLUSIVE_PROCESS
 nvidia-smi -q -d PERFORMANCE
 ```
 
-### 3. Install CUDA Toolkit
+### 4. Install CUDA Toolkit
 
 ```bash
 # Install CUDA 12.3 (matching driver version)
@@ -220,6 +212,105 @@ EOF
 ### 1. Install Autoware Components
 
 Follow the general installation from [Deployment Setup](../deployment-setup/index.md), then add x86-specific optimizations:
+
+#### 1.1 Configure Autoware APT Repository
+
+```bash
+# Download and install repository configuration
+wget https://github.com/autowarefoundation/autoware/releases/latest/download/autoware-apt-config.deb
+sudo dpkg -i autoware-apt-config.deb
+
+# Update package lists
+sudo apt update
+```
+
+#### 1.2. Deploy Autoware Core Packages
+
+```bash
+# Install complete Autoware stack
+sudo apt install -y autoware-universe
+
+# Or install specific components
+sudo apt install -y \
+  autoware-common \
+  autoware-control \
+  autoware-localization \
+  autoware-perception \
+  autoware-planning
+```
+
+#### 1.3. Configure Environment
+
+```bash
+# Add Autoware setup to bashrc
+echo "source /opt/autoware/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+# Verify installation
+ros2 pkg list | grep autoware
+```
+
+#### 1.4 Post-Installation Verification
+
+This section uses a shell script to verify if the Autoware is successfully deployed to the system. 
+
+##### System Check Script
+
+The first step is to create a verification script:
+
+```bash
+cat > verify-installation.sh << 'EOF'
+#!/bin/bash
+
+echo "=== System Verification ==="
+echo "OS Version: $(lsb_release -d | cut -f2)"
+echo "Kernel: $(uname -r)"
+echo ""
+
+echo "=== CUDA Verification ==="
+if command -v nvidia-smi &> /dev/null; then
+    nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader
+else
+    echo "NVIDIA driver not found"
+fi
+
+if command -v nvcc &> /dev/null; then
+    echo "CUDA Version: $(nvcc --version | grep release | awk '{print $6}')"
+else
+    echo "CUDA not found"
+fi
+echo ""
+
+echo "=== ROS 2 Verification ==="
+if [ -f /opt/ros/humble/setup.bash ]; then
+    source /opt/ros/humble/setup.bash
+    echo "ROS 2 Distro: $ROS_DISTRO"
+    echo "ROS 2 Version: $(ros2 --version 2>&1 | grep '^ros2')"
+else
+    echo "ROS 2 not found"
+fi
+echo ""
+
+echo "=== Autoware Verification ==="
+if [ -f /opt/autoware/setup.bash ]; then
+    source /opt/autoware/setup.bash
+    echo "Autoware packages installed: $(ros2 pkg list | grep -c autoware)"
+else
+    echo "Autoware not found"
+fi
+EOF
+```
+You can also download the [file](assets/verify-installation.sh) and move the shell script to the working directory.
+
+##### Verify the deployment
+The last step executes the verification script to verify the deployment. 
+
+```
+chmod +x verify-installation.sh
+./verify-installation.sh
+```
+
+#### 1.5 Add x86-specific optimizations:
 
 ```bash
 # Install performance analysis tools

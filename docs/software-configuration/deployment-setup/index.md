@@ -2,16 +2,13 @@
 
 This guide provides the foundational setup required for deploying Autoware on both AMD64 and ARM64 platforms running Ubuntu 22.04. Follow these steps before proceeding to platform-specific ECU configurations.
 
-## Target Environment Requirements
+## Requirements on Target Environment
 
-### Operating System
-- **Ubuntu 22.04 LTS (Jammy Jellyfish)**
-- Kernel version 5.15 or later
-- Real-time kernel recommended for production deployments
+Please assure the requirements for hardware and operating systems are met before continuing to deploy the Autoware.
 
 ### Hardware Requirements
 
-#### Minimum Specifications
+#### Minimum Hardware Specifications
 - **CPU**: 8 cores (AMD64 or ARM64)
 - **RAM**: 16 GB
 - **Storage**: 128 GB SSD/NVMe
@@ -25,12 +22,21 @@ This guide provides the foundational setup required for deploying Autoware on bo
 
 ### Network Requirements
 - Gigabit Ethernet for sensor connectivity
-- Optional: Secondary network interface for vehicle communication
 - Internet access for initial setup and package installation
+- **Optional**: Secondary network interface for vehicle communication
 
-## System Preparation
+### Operating System
+- **Ubuntu 22.04 LTS (Jammy Jellyfish)**
+- Kernel version 5.15 or later
+- Real-time kernel is recommended for production deployments
+
+## Preparation for system environments and tools
+
+Given meeting the requirements for hardware and operating systems, the following instructions prepare the system environments and tools for the deployment. 
 
 ### 1. Update Base System
+
+Using the following instructions to update the base system of the package installation. The comments started with the symbol '#' and should be ignored while executing the commands. One may copy and paste the command to the terminal.
 
 ```bash
 # Update package lists and upgrade system
@@ -50,9 +56,9 @@ sudo apt install -y \
   python3-venv
 ```
 
-### 2. Configure System Limits
+### 2. Configure System Limits for better performance
 
-Optimize system settings for real-time performance:
+Using the following instructions to optimize system settings for real-time performance: 
 
 ```bash
 # Add to /etc/security/limits.conf
@@ -66,17 +72,21 @@ echo "net.core.wmem_max=134217728" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
 
-## CUDA Driver Installation
+## CUDA Toolkit Installation
+
+(This part should be moved to hardware-dependent instructions.)
+
+Using the following instructions to install the toolkit of nVidia CUDA. 
 
 ### For AMD64 Platforms
 
 ```bash
-# Add NVIDIA package repositories
+# Add NVIDIA network package repositories
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 sudo apt update
 
-# Install CUDA toolkit and drivers
+# Install CUDA toolkit
 sudo apt install -y cuda-12-3
 
 # Add CUDA to PATH
@@ -108,6 +118,8 @@ If CUDA is not installed, flash your Jetson with the appropriate JetPack version
 - Xavier Series: JetPack 5.1 or later
 
 ## Ansible Setup for Automated Provisioning
+
+[Ansible](https://docs.ansible.com/) is an open source automation tool, which can help to speed up the deployment process. 
 
 ### 1. Install Ansible
 
@@ -143,6 +155,8 @@ become_ask_pass = False
 EOF
 ```
 
+You can also download the [file](assets/ansible.cfg) and move the configuration file to the working directory.
+
 ### 3. Create Inventory File
 
 ```bash
@@ -159,6 +173,8 @@ all:
     cuda_version: "12.3"
 EOF
 ```
+
+You can also download the [file](assets/hosts.yml) and move the file to the working directory - "ansible/inventory".
 
 ### 4. Create Base Provisioning Playbook
 
@@ -208,7 +224,10 @@ cat > setup-autoware.yml << EOF
 EOF
 ```
 
-## Autoware Installation via Debian Packages
+You can also download the [file](assets/setup-autoware.yml) and move the set up environment file to the working directory.
+
+## Autoware Deployment via Debian Packages
+(This part should be moved to ECU-dependent deployment.)
 
 ### 1. Configure Autoware APT Repository
 
@@ -221,7 +240,7 @@ sudo dpkg -i autoware-apt-config.deb
 sudo apt update
 ```
 
-### 2. Install Autoware Core Packages
+### 2. Deploy Autoware Core Packages
 
 ```bash
 # Install complete Autoware stack
@@ -249,9 +268,11 @@ ros2 pkg list | grep autoware
 
 ## Post-Installation Verification
 
+This section uses a shell script to verify if the Autoware is successfully deployed to the system. 
+
 ### 1. System Check Script
 
-Create a verification script:
+The first step is to create a verification script:
 
 ```bash
 cat > verify-installation.sh << 'EOF'
@@ -294,7 +315,12 @@ else
     echo "Autoware not found"
 fi
 EOF
+```
+You can also download the [file](assets/verify-installation.sh) and move the shell script to the working directory.
 
+The last step executes the verification script to verify the deployment. 
+
+```
 chmod +x verify-installation.sh
 ./verify-installation.sh
 ```

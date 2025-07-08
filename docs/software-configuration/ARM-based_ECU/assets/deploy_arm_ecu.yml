@@ -1,0 +1,25 @@
+# deploy_arm_ecu.yml
+---
+- hosts: arm_ecus
+  become: yes
+  vars:
+    ecu_type: "agx_orin"
+    autoware_version: "2024.12"
+  
+  roles:
+    - role: base_system
+    - role: nvidia_drivers
+    - role: autoware_core
+    - role: sensor_drivers
+    - role: network_config
+    - role: performance_tuning
+    - role: monitoring
+    
+  post_tasks:
+    - name: Verify deployment
+      command: ros2 doctor
+      register: ros2_doctor_output
+    
+    - name: Display status
+      debug:
+        msg: "Deployment complete. ROS 2 status: {{ ros2_doctor_output.stdout }}"
