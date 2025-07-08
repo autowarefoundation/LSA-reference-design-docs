@@ -299,6 +299,9 @@ ncu --target-processes all \
 ## Deployment Automation
 
 ### Ansible Playbook for Complete Setup
+
+(There are errors on rendering the content in this part.)
+
 ```yaml
 # deploy_arm_ecu.yml
 ---
@@ -316,15 +319,15 @@ ncu --target-processes all \
     - role: network_config
     - role: performance_tuning
     - role: monitoring
-    
+
   post_tasks:
     - name: Verify deployment
       command: ros2 doctor
       register: ros2_doctor_output
-    
+
     - name: Display status
       debug:
-        msg: "Deployment complete. ROS 2 status: {{ ros2_doctor_output.stdout }}"
+       msg: "Deployment complete. ROS 2 status:"
 ```
 
 ## Summary
@@ -338,3 +341,4 @@ Customizing ARM-based ECUs for Autoware requires careful attention to:
 5. **Security hardening** - Production-ready deployments
 
 These customizations ensure optimal performance and reliability for autonomous vehicle applications on ARM platforms.
+
