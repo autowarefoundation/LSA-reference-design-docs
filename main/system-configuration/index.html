@@ -454,6 +454,8 @@
         
           
         
+          
+        
       
       
         
@@ -499,12 +501,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../software-configuration/ARM-based_ECU/">ARM based ECU</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -515,6 +523,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-configuration/ARM-based_ECU/customization/" class="md-nav__link">
+        ARM-based ECU Customization Guide
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -547,6 +569,8 @@
             
           
         
+          
+        
       
       
         
@@ -554,12 +578,78 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../software-configuration/x86-based_ECU/">x86 based ECU</a>
           
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           x86 based ECU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-configuration/x86-based_ECU/customization/" class="md-nav__link">
+        x86-based ECU Customization Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../software-configuration/rmw_zenoh/">Rmw zenoh</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rmw zenoh
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1315,7 +1405,58 @@
 
 
 <h1 id="system-configuration">System Configuration<a class="headerlink" href="#system-configuration" title="Permanent link">#</a></h1>
-<p>TODO</p>
+<p>(To be completed)</p>
+<h1 id="key-considerations">Key Considerations<a class="headerlink" href="#key-considerations" title="Permanent link">#</a></h1>
+<h2 id="hardware-selection">Hardware Selection<a class="headerlink" href="#hardware-selection" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>x86 ECUs</strong>: Better for high-compute perception tasks, easier software compatibility</li>
+<li><strong>ARM ECUs</strong>: Superior power efficiency, integrated GPU/DLA acceleration, compact form factor</li>
+</ul>
+<h2 id="development-approach">Development Approach<a class="headerlink" href="#development-approach" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Native Installation</strong>: Direct installation on hardware for maximum performance</li>
+<li><strong>Containerized Development</strong>: Reproducible environments with easier team collaboration (recommended for ARM)</li>
+</ul>
+<h2 id="middleware-choice">Middleware Choice<a class="headerlink" href="#middleware-choice" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Default DDS</strong>: Mature, widely supported, industry standard</li>
+<li><strong>rmw_zenoh</strong>: Modern alternative with better performance for LSA applications</li>
+</ul>
+<h2 id="technical-specifications-for-x86-based-ecus">Technical Specifications for X86-based ECUs<a class="headerlink" href="#technical-specifications-for-x86-based-ecus" title="Permanent link">#</a></h2>
+<h3 id="recommended-hardware-configurations">Recommended Hardware Configurations<a class="headerlink" href="#recommended-hardware-configurations" title="Permanent link">#</a></h3>
+<h4 id="high-performance-configuration">High-Performance Configuration<a class="headerlink" href="#high-performance-configuration" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>CPU</strong>: Intel Core i9-13900K or AMD Ryzen 9 7950X (16+ cores)</li>
+<li><strong>RAM</strong>: 64 GB DDR5</li>
+<li><strong>GPU</strong>: NVIDIA RTX 4090 or RTX A6000</li>
+<li><strong>Storage</strong>: 1TB NVMe SSD (PCIe 4.0)</li>
+<li><strong>Network</strong>: Dual 10GbE interfaces</li>
+<li><strong>Power</strong>: 850W+ PSU with redundancy</li>
+</ul>
+<h4 id="standard-configuration">Standard Configuration<a class="headerlink" href="#standard-configuration" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>CPU</strong>: Intel Core i7-12700K or AMD Ryzen 7 7700X (8+ cores)</li>
+<li><strong>RAM</strong>: 32 GB DDR4/DDR5</li>
+<li><strong>GPU</strong>: NVIDIA RTX 3080 or RTX A4000</li>
+<li><strong>Storage</strong>: 512GB NVMe SSD</li>
+<li><strong>Network</strong>: Gigabit Ethernet</li>
+<li><strong>Power</strong>: 650W PSU</li>
+</ul>
+<h4 id="minimum-configuration">Minimum Configuration<a class="headerlink" href="#minimum-configuration" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>CPU</strong>: Intel Core i5-12600K or AMD Ryzen 5 5600X (6+ cores)</li>
+<li><strong>RAM</strong>: 16 GB DDR4</li>
+<li><strong>GPU</strong>: NVIDIA RTX 3060 or T1000</li>
+<li><strong>Storage</strong>: 256GB SSD</li>
+<li><strong>Network</strong>: Gigabit Ethernet</li>
+<li><strong>Power</strong>: 550W PSU</li>
+</ul>
+<h3 id="industrialvehicle-grade-options">Industrial/Vehicle-Grade Options<a class="headerlink" href="#industrialvehicle-grade-options" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Neousys Nuvo-8108GC</strong>: Rugged x86 platform with RTX GPU support</li>
+<li><strong>Advantech MIC-770</strong>: Compact industrial PC with GPU expansion</li>
+<li><strong>Crystal Group RS363S</strong>: MIL-SPEC certified with NVIDIA GPU</li>
+</ul>
 
 
 

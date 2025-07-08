@@ -454,6 +454,8 @@
         
           
         
+          
+        
       
       
         
@@ -499,12 +501,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="ARM-based_ECU/">ARM based ECU</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -515,6 +523,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ARM-based_ECU/customization/" class="md-nav__link">
+        ARM-based ECU Customization Guide
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -547,6 +569,8 @@
             
           
         
+          
+        
       
       
         
@@ -554,12 +578,78 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="x86-based_ECU/">x86 based ECU</a>
           
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           x86 based ECU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="x86-based_ECU/customization/" class="md-nav__link">
+        x86-based ECU Customization Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="rmw_zenoh/">Rmw zenoh</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rmw zenoh
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1298,34 +1388,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rmw_zenoh" class="md-nav__link">
-    rmw_zenoh
-  </a>
-  
-    <nav class="md-nav" aria-label="rmw_zenoh">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#advantages-of-zenoh-over-dds" class="md-nav__link">
-    Advantages of Zenoh over DDS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1343,20 +1405,73 @@
 
 
 <h1 id="software-configuration">Software Configuration<a class="headerlink" href="#software-configuration" title="Permanent link">#</a></h1>
-<p>For Low Speed Autonomy, please refer to the official Autoware installation guide.
-Both Docker-based and source-based installations are fully supported and work reliably.</p>
-<h2 id="rmw_zenoh">rmw_zenoh<a class="headerlink" href="#rmw_zenoh" title="Permanent link">#</a></h2>
-<p>With the latest ROS 2 Kilted release, Zenoh has become a Tier 1 middleware, marking the first non-DDS (Data Distribution Service) implementation to achieve this level of support.</p>
-<p>Although rmw_zenoh is officially supported in Kilted, it has also been backported to both ROS 2 Jazzy and Humble. This means that Autoware, which uses ROS 2 Humble, can now run seamlessly with rmw_zenoh.</p>
-<h3 id="advantages-of-zenoh-over-dds">Advantages of Zenoh over DDS<a class="headerlink" href="#advantages-of-zenoh-over-dds" title="Permanent link">#</a></h3>
+<p>This section provides comprehensive guidance for deploying Autoware on Low Speed Autonomy (LSA) vehicles. The documentation covers everything from initial system setup to platform-specific optimizations.</p>
+<h1 id="struture-of-the-guidelines">Struture of the Guidelines<a class="headerlink" href="#struture-of-the-guidelines" title="Permanent link">#</a></h1>
+<p>The guidelines consist of several parts. You may go directly to <a href="#getting-started">Getting Started</a> if you want to skip the structure of the guidelines.</p>
+<h2 id="preparation-for-deployment">Preparation for Deployment<a class="headerlink" href="#preparation-for-deployment" title="Permanent link">#</a></h2>
+<p>This guideline uses a containerized Autoware for deployment, which is hardeware independent. Hence, this guideline can be used for both X86 and ARM-based ECUs. The guideline inlcudes the following topics: </p>
+<ul>
+<li>Target environment requirements (Ubuntu 22.04 on AMD64/ARM64)</li>
+<li>CUDA driver installation and verification</li>
+<li>Ansible-based provisioning setup</li>
+<li>Autoware installation via Debian packages</li>
+<li>Frequent troubleshooting and verification</li>
+</ul>
+<p>Read <a href="deployment-setup/">Preparation for Deployment</a></p>
+<h2 id="platform-specific-ecu-deployment">Platform-Specific ECU Deployment<a class="headerlink" href="#platform-specific-ecu-deployment" title="Permanent link">#</a></h2>
+<p>Given the containerized Autoware, this section provides the instructions to deploy the containers on different types of ECUs, including X86-based and ARM-based ECUs.</p>
+<h3 id="instructions-to-deploy-autoware-on-x86-based-ecus">Instructions to deploy Autoware on x86-based ECUs<a class="headerlink" href="#instructions-to-deploy-autoware-on-x86-based-ecus" title="Permanent link">#</a></h3>
+<p>X86-based ECUs are well-received for research, development, and PoC. Several tested X86-based ECUs are listed on <a href="../hardware-configuration/ECUs/x86ECUs/">this page</a></p>
+<p>The instructions to deploy containerized Autoware include the following topics: </p>
+<ul>
+<li>x86 hardware requirements and compatibility</li>
+<li>CUDA setup for discrete GPUs (NVIDIA RTX/Tesla)</li>
+<li>Platform-specific optimizations</li>
+<li>Custom configurations for x86 architectures</li>
+</ul>
+<p>Read the instructions to deploy containerized Autotware to <a href="x86-based_ECU/">x86-based ECUs</a></p>
+<h3 id="instructions-to-deploy-autoware-on-arm-based-ecus">Instructions to deploy Autoware on ARM-based ECUs<a class="headerlink" href="#instructions-to-deploy-autoware-on-arm-based-ecus" title="Permanent link">#</a></h3>
+<p>ARM-based ECUs are well received for low-energy consumption vehicles and several of them are tested and listed on this <a href="../hardware-configuration/ECUs/armECUs/">page</a>.</p>
+<p>The instructions to deploy containerized Autoware include the following topics: </p>
+<ul>
+<li>ARM platform specifications (AGX Orin, Xavier, etc.)</li>
+<li>Integrated GPU optimization</li>
+<li><a href="ARM-based_ECU/containerized-development/">Containerized development workflow</a></li>
+<li><a href="ARM-based_ECU/customization/">Platform-specific customizations</a></li>
+</ul>
+<p>Read the instructions to deploy containerized Autotware to <a href="x86-based_ECU/">x86-based ECUs</a></p>
+<h2 id="rmw-zenoh-as-the-middleware-for-ros-2">RMW Zenoh as the middleware for ROS 2<a class="headerlink" href="#rmw-zenoh-as-the-middleware-for-ros-2" title="Permanent link">#</a></h2>
+<p>The middleware in ROS 2 have several options. DDS is the default configuration and rmw_zenoh has been approved by ROS 2 to be compatiable as the middleware of ROS 2. The instructions show how to use rmw_zenoh as the middleware of ROS 2. rmw_zenoh has the following features:</p>
+<ul>
+<li>Alternative to DDS with improved performance</li>
+<li>Simplified configuration for LSA applications</li>
+<li>Enhanced support for cellular and cloud connectivity</li>
+<li>Optimized for resource-constrained environments</li>
+</ul>
+<p>Read the instructions to deploy <a href="rmw_zenoh/">rmw_zenoh</a></p>
+<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">#</a></h1>
 <ol>
-<li>Out-of-the-box configuration: rmw_zenoh comes with a default configuration optimized for most use cases, reducing setup complexity.</li>
-<li>Improved performance: Based on this benchmark study, Zenoh consistently outperforms other protocols, especially in wireless environments.</li>
-<li>Cellular network support: Unlike DDS, which relies on multicast (often unsupported in 4G/5G), Zenoh works efficiently over unicast, making it suitable for mobile and cloud-connected scenarios.</li>
-<li>Seamless cloud integration: DDS is typically restricted to local networks, whereas Zenoh can operate across the Internet, enabling easy data sharing with cloud systems.</li>
+<li><strong>Review Requirements</strong>: Start with <a href="deployment-setup/">Deployment Setup</a> to understand system requirements</li>
+<li><strong>Choose Your Platform</strong>: Select either x86 or ARM ECUs based on your design requirements. </li>
+<li><strong>Install Autoware</strong>: Follow the platform-specific installation guide: <a href="x86-based_ECU/">x86</a> or <a href="ARM-based_ECU/">ARM</a>.</li>
+<li><strong>Configure Middleware</strong>: Optionally switch to <a href="rmw_zenoh/">rmw_zenoh</a> to improve the performance of ROS messages.</li>
+<li><strong>Customize the system</strong>: Apply platform-specific optimizations for your use case</li>
 </ol>
-<p>We recommend using rmw_zenoh for Low Speed Autonomy applications to take advantage of its performance, simplicity, and modern network compatibility.</p>
-<p>For a step-by-step tutorial on integrating rmw_zenoh with Autoware, please visit: <a href="https://github.com/evshary/autoware_rmw_zenoh">https://github.com/evshary/autoware_rmw_zenoh</a></p>
+<h1 id="support-and-resources">Support and Resources<a class="headerlink" href="#support-and-resources" title="Permanent link">#</a></h1>
+<p>Below are the support and resources for the software configuration guideline.</p>
+<ul>
+<li><strong>Autoware Documentation</strong>: <a href="https://autoware.org/">https://autoware.org/</a></li>
+<li><strong>ROS 2 Documentation</strong>: <a href="https://docs.ros.org/">https://docs.ros.org/</a></li>
+<li><strong>NVIDIA Jetson Resources</strong>: <a href="https://developer.nvidia.com/embedded-computing">https://developer.nvidia.com/embedded-computing</a></li>
+</ul>
+<h1 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">#</a></h1>
+<p>When contributing to this documentation:</p>
+<ol>
+<li>Follow the existing structure and formatting</li>
+<li>Test all commands and procedures on target hardware</li>
+<li>Include troubleshooting sections for common issues</li>
+<li>Keep content up-to-date with latest Autoware releases</li>
+</ol>
 
 
 

@@ -14,7 +14,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../x86-based_ECU/">
+        <link rel="next" href="customization/">
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
@@ -454,6 +454,8 @@
         
           
         
+          
+        
       
       
         
@@ -499,12 +501,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">ARM based ECU</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -515,6 +523,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="customization/" class="md-nav__link">
+        ARM-based ECU Customization Guide
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -547,6 +569,8 @@
             
           
         
+          
+        
       
       
         
@@ -554,12 +578,78 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../x86-based_ECU/">x86 based ECU</a>
           
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           x86 based ECU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../x86-based_ECU/customization/" class="md-nav__link">
+        x86-based ECU Customization Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../rmw_zenoh/">Rmw zenoh</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rmw zenoh
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1305,29 +1395,272 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#technical-specification-of-arm-based-ecus" class="md-nav__link">
-    Technical Specification of ARM-based ECUs
+  <a href="#system-preparation" class="md-nav__link">
+    System Preparation
   </a>
+  
+    <nav class="md-nav" aria-label="System Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-toolkit-installation" class="md-nav__link">
+    CUDA Toolkit Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetpack-installation" class="md-nav__link">
+    JetPack Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-installation-setup" class="md-nav__link">
+    Post-Installation Setup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-specific-configuration" class="md-nav__link">
+    Platform-Specific Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-management" class="md-nav__link">
+    Memory Management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermal-management" class="md-nav__link">
+    Thermal Management
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#sensor-configuration" class="md-nav__link">
-    Sensor Configuration:
+    Sensor Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csi-camera-configuration" class="md-nav__link">
+    CSI Camera Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-accelerated-processing" class="md-nav__link">
+    Hardware Accelerated Processing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoware-deployment" class="md-nav__link">
+    Autoware Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="Autoware Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-core-autoware-installation" class="md-nav__link">
+    1. Core Autoware Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoware-deployment-via-debian-packages" class="md-nav__link">
+    Autoware Deployment via Debian Packages
+  </a>
+  
+    <nav class="md-nav" aria-label="Autoware Deployment via Debian Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-arm-specific-dependencies" class="md-nav__link">
+    2. ARM-Specific Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-for-jetson" class="md-nav__link">
+    3. Configure for Jetson
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-launch-configuration" class="md-nav__link">
+    4. Launch Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-workflows" class="md-nav__link">
+    Development Workflows
+  </a>
+  
+    <nav class="md-nav" aria-label="Development Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#native-development" class="md-nav__link">
+    Native Development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containerized-development" class="md-nav__link">
+    Containerized Development
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-enhancement" class="md-nav__link">
+    Performance Enhancement
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Enhancement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-consumption-mode-configuration" class="md-nav__link">
+    Power Consumption Mode Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning-accelerator-dla" class="md-nav__link">
+    Deep Learning Accelerator (DLA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-bandwidth-optimization" class="md-nav__link">
+    Memory Bandwidth Optimization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-for-performance-evaluation" class="md-nav__link">
+    Tools for Performance Evaluation
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools for Performance Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-tools" class="md-nav__link">
+    Monitoring Tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-performance-metrics-for-arm-based-ecus" class="md-nav__link">
+    Expected Performance Metrics for ARM-based ECUs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profiling-with-nsight" class="md-nav__link">
+    Profiling with Nsight
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    Common Issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platform-specific-customizations" class="md-nav__link">
+    Platform-Specific Customizations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions-to-deploy-autoware" class="md-nav__link">
-    Instructions to deploy Autoware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-evaluation" class="md-nav__link">
-    Performance Evaluation
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
   </a>
   
 </li>
@@ -1351,15 +1684,436 @@
 
 
 <h1 id="software-configuration-for-arm-based-ecus">Software Configuration for ARM-based ECUs<a class="headerlink" href="#software-configuration-for-arm-based-ecus" title="Permanent link">#</a></h1>
-<p>This page provides the instructions to deploy Autoware on ARM-based ECUs.</p>
-<h2 id="technical-specification-of-arm-based-ecus">Technical Specification of ARM-based ECUs<a class="headerlink" href="#technical-specification-of-arm-based-ecus" title="Permanent link">#</a></h2>
-<p>(Describe the use of nVidia AGX Orin ECUs)</p>
-<h2 id="sensor-configuration">Sensor Configuration:<a class="headerlink" href="#sensor-configuration" title="Permanent link">#</a></h2>
-<p>(Described the sensors connected to the ECUs)</p>
-<h2 id="instructions-to-deploy-autoware">Instructions to deploy Autoware<a class="headerlink" href="#instructions-to-deploy-autoware" title="Permanent link">#</a></h2>
-<p>(Describe the instructions to deploy Autware, configuration, and start Autoware)</p>
-<h2 id="performance-evaluation">Performance Evaluation<a class="headerlink" href="#performance-evaluation" title="Permanent link">#</a></h2>
-<p>(Describe the performance of the deloyed Autoware, including framerate on obejct detections, CPU/GPU utilization)</p>
+<p>This guide provides comprehensive instructions for deploying Autoware on ARM-based ECUs, with specific focus on NVIDIA Jetson and AGX Orin platforms for Low Speed Autonomy vehicles.</p>
+<h2 id="system-preparation">System Preparation<a class="headerlink" href="#system-preparation" title="Permanent link">#</a></h2>
+<h3 id="cuda-toolkit-installation">CUDA Toolkit Installation<a class="headerlink" href="#cuda-toolkit-installation" title="Permanent link">#</a></h3>
+<p>Using the following instructions to install the toolkit of nVidia CUDA. </p>
+<p>For Jetson platforms, CUDA comes pre-installed with JetPack. Verify your installation:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check CUDA version</span>
+nvcc<span class="w"> </span>--version
+
+<span class="c1"># Verify Jetson platform</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3-pip
+pip3<span class="w"> </span>install<span class="w"> </span>jetson-stats
+sudo<span class="w"> </span>jtop
+</code></pre></div>
+<p>If CUDA is not installed, flash your Jetson with the appropriate JetPack version:
+- AGX Orin: JetPack 5.1.2 or later
+- Xavier Series: JetPack 5.1 or later</p>
+<h3 id="jetpack-installation">JetPack Installation<a class="headerlink" href="#jetpack-installation" title="Permanent link">#</a></h3>
+<p>The NVIDIA JetPack SDK provides the foundation for ARM-based deployments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For AGX Orin - Use JetPack 5.1.2 or later</span>
+<span class="c1"># Download NVIDIA SDK Manager from:</span>
+<span class="c1"># https://developer.nvidia.com/nvidia-sdk-manager</span>
+
+<span class="c1"># Or flash directly using command line:</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nvidia-jetpack
+</code></pre></div>
+<h3 id="post-installation-setup">Post-Installation Setup<a class="headerlink" href="#post-installation-setup" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Verify JetPack installation</span>
+cat<span class="w"> </span>/etc/nv_tegra_release
+
+<span class="c1"># Check CUDA version</span>
+nvcc<span class="w"> </span>--version
+
+<span class="c1"># Install Jetson utilities</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3-pip
+pip3<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>jetson-stats
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>jtop.service
+
+<span class="c1"># Configure power mode for development</span>
+sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="c1"># MAXN mode</span>
+sudo<span class="w"> </span>jetson_clocks
+</code></pre></div>
+<h2 id="platform-specific-configuration">Platform-Specific Configuration<a class="headerlink" href="#platform-specific-configuration" title="Permanent link">#</a></h2>
+<h3 id="memory-management">Memory Management<a class="headerlink" href="#memory-management" title="Permanent link">#</a></h3>
+<p>ARM platforms have unified memory architecture:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure memory growth for GPU applications</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export TF_FORCE_GPU_ALLOW_GROWTH=true&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+
+<span class="c1"># Optimize memory bandwidth</span>
+sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/bpmp/debug/clk/emc/mrq_rate_locked
+sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/bpmp/debug/clk/emc/state
+</code></pre></div>
+<h3 id="thermal-management">Thermal Management<a class="headerlink" href="#thermal-management" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/jetson_thermal/tasks/main.yml</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure thermal zones</span>
+<span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/nvfancontrol.conf</span>
+<span class="w">    </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;^FAN_PROFILE&#39;</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;FAN_PROFILE</span><span class="nv"> </span><span class="s">quiet&#39;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set temperature thresholds</span>
+<span class="w">  </span><span class="nt">copy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">&lt;FAN_PROFILE name=&quot;quiet&quot;&gt;</span>
+<span class="w">        </span><span class="no">&lt;FAN_CONTROL channel=&quot;0&quot;&gt;</span>
+<span class="w">          </span><span class="no">&lt;TEMP_POINT temp=&quot;50&quot; speed=&quot;0&quot;/&gt;</span>
+<span class="w">          </span><span class="no">&lt;TEMP_POINT temp=&quot;60&quot; speed=&quot;80&quot;/&gt;</span>
+<span class="w">          </span><span class="no">&lt;TEMP_POINT temp=&quot;70&quot; speed=&quot;120&quot;/&gt;</span>
+<span class="w">          </span><span class="no">&lt;TEMP_POINT temp=&quot;80&quot; speed=&quot;255&quot;/&gt;</span>
+<span class="w">        </span><span class="no">&lt;/FAN_CONTROL&gt;</span>
+<span class="w">      </span><span class="no">&lt;/FAN_PROFILE&gt;</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/nvfancontrol.d/autoware.conf</span>
+</code></pre></div>
+<h2 id="sensor-configuration">Sensor Configuration<a class="headerlink" href="#sensor-configuration" title="Permanent link">#</a></h2>
+<p>The following instrucitons configure the sensor for LSA vehicles.</p>
+<h3 id="csi-camera-configuration">CSI Camera Configuration<a class="headerlink" href="#csi-camera-configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure CSI cameras</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nvidia-l4t-camera
+
+<span class="c1"># Verify camera detection</span>
+v4l2-ctl<span class="w"> </span>--list-devices
+
+<span class="c1"># Test camera feed</span>
+gst-launch-1.0<span class="w"> </span>nvarguscamerasrc<span class="w"> </span>sensor-id<span class="o">=</span><span class="m">0</span><span class="w"> </span>!<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;video/x-raw(memory:NVMM),width=1920,height=1080,framerate=30/1&#39;</span><span class="w"> </span>!<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nvvidconv<span class="w"> </span>flip-method<span class="o">=</span><span class="m">0</span><span class="w"> </span>!<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;video/x-raw,format=BGRx&#39;</span><span class="w"> </span>!<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>videoconvert<span class="w"> </span>!<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;video/x-raw,format=BGR&#39;</span><span class="w"> </span>!<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>fakesink
+</code></pre></div>
+<h3 id="hardware-accelerated-processing">Hardware Accelerated Processing<a class="headerlink" href="#hardware-accelerated-processing" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example: Hardware-accelerated image processing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_hw_accelerated_pipeline</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="s2">&quot;nvarguscamerasrc sensor-id=0 ! &quot;</span>
+        <span class="s2">&quot;video/x-raw(memory:NVMM), width=1920, height=1080, framerate=30/1 ! &quot;</span>
+        <span class="s2">&quot;nvvidconv ! &quot;</span>
+        <span class="s2">&quot;video/x-raw, format=BGRx ! &quot;</span>
+        <span class="s2">&quot;videoconvert ! &quot;</span>
+        <span class="s2">&quot;video/x-raw, format=BGR ! &quot;</span>
+        <span class="s2">&quot;appsink&quot;</span>
+    <span class="p">)</span>
+
+<span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">create_hw_accelerated_pipeline</span><span class="p">(),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CAP_GSTREAMER</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="autoware-deployment">Autoware Deployment<a class="headerlink" href="#autoware-deployment" title="Permanent link">#</a></h2>
+<h3 id="1-core-autoware-installation">1. Core Autoware Installation<a class="headerlink" href="#1-core-autoware-installation" title="Permanent link">#</a></h3>
+<p>Complete the general setup from <a href="../deployment-setup/#autoware-deployment-via-debian-packages">Deployment Setup</a>, then proceed with ARM-specific configuration. </p>
+<h2 id="autoware-deployment-via-debian-packages">Autoware Deployment via Debian Packages<a class="headerlink" href="#autoware-deployment-via-debian-packages" title="Permanent link">#</a></h2>
+<p>(This part should be moved to ECU-dependent deployment.)</p>
+<h4 id="11-configure-autoware-apt-repository">1.1 Configure Autoware APT Repository<a class="headerlink" href="#11-configure-autoware-apt-repository" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Download and install repository configuration</span>
+wget<span class="w"> </span>https://github.com/autowarefoundation/autoware/releases/latest/download/autoware-apt-config.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>autoware-apt-config.deb
+
+<span class="c1"># Update package lists</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<h4 id="12-deploy-autoware-core-packages">1.2. Deploy Autoware Core Packages<a class="headerlink" href="#12-deploy-autoware-core-packages" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install complete Autoware stack</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>autoware-universe
+
+<span class="c1"># Or install specific components</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-common<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-control<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-localization<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-perception<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-planning
+</code></pre></div>
+<h4 id="13-configure-environment">1.3. Configure Environment<a class="headerlink" href="#13-configure-environment" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add Autoware setup to bashrc</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+
+<span class="c1"># Verify installation</span>
+ros2<span class="w"> </span>pkg<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>autoware
+</code></pre></div>
+<h3 id="2-arm-specific-dependencies">2. ARM-Specific Dependencies<a class="headerlink" href="#2-arm-specific-dependencies" title="Permanent link">#</a></h3>
+<p>The following instructions install ARM-specific tools before deploying Autoware.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install ARM-optimized libraries</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libopenblas-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>liblapack-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libeigen3-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libboost-all-dev
+
+<span class="c1"># Install Jetson-specific tools</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nvidia-jetpack<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nvidia-l4t-tools<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nvidia-l4t-multimedia
+</code></pre></div>
+<h3 id="3-configure-for-jetson">3. Configure for Jetson<a class="headerlink" href="#3-configure-for-jetson" title="Permanent link">#</a></h3>
+<p>Create Jetson-optimized configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/jetson_optimization.yaml</span>
+<span class="nt">/**</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># DLA acceleration</span>
+<span class="w">    </span><span class="nt">use_dla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">dla_core</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="w">    </span><span class="c1"># GPU configuration</span>
+<span class="w">    </span><span class="nt">gpu_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">    </span><span class="nt">allow_gpu_memory_growth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="w">    </span><span class="c1"># TensorRT optimization</span>
+<span class="w">    </span><span class="nt">use_tensorrt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">tensorrt_precision</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;INT8&quot;</span><span class="w">  </span><span class="c1"># Jetson supports INT8</span>
+<span class="w">    </span><span class="nt">tensorrt_workspace_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1073741824</span><span class="w">  </span><span class="c1"># 1GB</span>
+
+<span class="w">    </span><span class="c1"># CPU configuration</span>
+<span class="w">    </span><span class="nt">cpu_cores</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="w">    </span><span class="nt">enable_cpu_affinity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>You can also download the <a href="assets/jetson_optimization.yaml">file</a> and move it 'autoware_config'. </p>
+<h3 id="4-launch-configuration">4. Launch Configuration<a class="headerlink" href="#4-launch-configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- autoware_jetson.launch.xml --&gt;</span>
+<span class="nt">&lt;launch&gt;</span>
+<span class="w">  </span><span class="cm">&lt;!-- Load Jetson-specific parameters --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;$(find-pkg-share autoware_launch)/launch/autoware.launch.xml&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;vehicle_model&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;jetson_vehicle&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;sensor_model&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;jetson_sensor_kit&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;use_tensorrt&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;use_dla&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/include&gt;</span>
+
+<span class="w">  </span><span class="cm">&lt;!-- Jetson-specific nodes --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">&quot;jetson_stats_publisher&quot;</span><span class="w"> </span><span class="na">exec=</span><span class="s">&quot;jtop_publisher&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;jetson_monitor&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/launch&gt;</span>
+</code></pre></div>
+<p>Download the <a href="assets/autoware_jetson.launch.xml">lauch file</a>.</p>
+<p>system. </p>
+<h4 id="51-system-check-script">5.1. System Check Script<a class="headerlink" href="#51-system-check-script" title="Permanent link">#</a></h4>
+<p>The first step is to create a verification script:</p>
+<p><div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>verify-installation.sh<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">#!/bin/bash</span>
+
+<span class="s">echo &quot;=== System Verification ===&quot;</span>
+<span class="s">echo &quot;OS Version: $(lsb_release -d | cut -f2)&quot;</span>
+<span class="s">echo &quot;Kernel: $(uname -r)&quot;</span>
+<span class="s">echo &quot;&quot;</span>
+
+<span class="s">echo &quot;=== CUDA Verification ===&quot;</span>
+<span class="s">if command -v nvidia-smi &amp;&gt; /dev/null; then</span>
+<span class="s">    nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;NVIDIA driver not found&quot;</span>
+<span class="s">fi</span>
+
+<span class="s">if command -v nvcc &amp;&gt; /dev/null; then</span>
+<span class="s">    echo &quot;CUDA Version: $(nvcc --version | grep release | awk &#39;{print $6}&#39;)&quot;</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;CUDA not found&quot;</span>
+<span class="s">fi</span>
+<span class="s">echo &quot;&quot;</span>
+
+<span class="s">echo &quot;=== ROS 2 Verification ===&quot;</span>
+<span class="s">if [ -f /opt/ros/humble/setup.bash ]; then</span>
+<span class="s">    source /opt/ros/humble/setup.bash</span>
+<span class="s">    echo &quot;ROS 2 Distro: $ROS_DISTRO&quot;</span>
+<span class="s">    echo &quot;ROS 2 Version: $(ros2 --version 2&gt;&amp;1 | grep &#39;^ros2&#39;)&quot;</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;ROS 2 not found&quot;</span>
+<span class="s">fi</span>
+<span class="s">echo &quot;&quot;</span>
+
+<span class="s">echo &quot;=== Autoware Verification ===&quot;</span>
+<span class="s">if [ -f /opt/autoware/setup.bash ]; then</span>
+<span class="s">    source /opt/autoware/setup.bash</span>
+<span class="s">    echo &quot;Autoware packages installed: $(ros2 pkg list | grep -c autoware)&quot;</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;Autoware not found&quot;</span>
+<span class="s">fi</span>
+<span class="s">EOF</span>
+</code></pre></div>
+You can also download the <a href="assets/verify-installation.sh">file</a> and move the shell script to the working directory.</p>
+<p>The last step executes the verification script to verify the deployment. </p>
+<div class="highlight"><pre><span></span><code>chmod +x verify-installation.sh
+./verify-installation.sh
+</code></pre></div>
+<h4 id="52-test-basic-functionality">5.2. Test Basic Functionality<a class="headerlink" href="#52-test-basic-functionality" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Test ROS 2 communication</span>
+ros2<span class="w"> </span>doctor
+
+<span class="c1"># Launch minimal Autoware nodes</span>
+ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>logging_simulator.launch.xml
+</code></pre></div>
+<h2 id="development-workflows">Development Workflows<a class="headerlink" href="#development-workflows" title="Permanent link">#</a></h2>
+<h3 id="native-development">Native Development<a class="headerlink" href="#native-development" title="Permanent link">#</a></h3>
+<p>To directly develope on Jetson, you need to install the tools and set up the workspace.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install development tools</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>build-essential<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>python3-colcon-common-extensions
+
+<span class="c1"># Setup workspace</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/autoware_ws/src
+<span class="nb">cd</span><span class="w"> </span>~/autoware_ws
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/autowarefoundation/autoware.universe.git<span class="w"> </span>src/universe
+</code></pre></div>
+<h3 id="containerized-development">Containerized Development<a class="headerlink" href="#containerized-development" title="Permanent link">#</a></h3>
+<p>For reproducible environments, see our comprehensive <a href="containerized-development/">Containerized Development Guide</a> which covers:</p>
+<ul>
+<li>Docker setup for Jetson</li>
+<li>Cross-compilation from x86</li>
+<li>Automated build pipelines</li>
+<li>Team collaboration workflows</li>
+</ul>
+<h2 id="performance-enhancement">Performance Enhancement<a class="headerlink" href="#performance-enhancement" title="Permanent link">#</a></h2>
+<p>To enhance the performance of the system, one may use the following configuration for power consumption, DLA acceleration, and memory bandwidth optimization.</p>
+<h3 id="power-consumption-mode-configuration">Power Consumption Mode Configuration<a class="headerlink" href="#power-consumption-mode-configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># View available power modes</span>
+sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-q
+
+<span class="c1"># Set power mode (example for AGX Orin)</span>
+sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">0</span><span class="w">  </span><span class="c1"># MAXN (maximum performance)</span>
+sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w">  </span><span class="c1"># 50W mode</span>
+sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">2</span><span class="w">  </span><span class="c1"># 30W mode</span>
+sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">3</span><span class="w">  </span><span class="c1"># 15W mode</span>
+
+<span class="c1"># Lock clocks to maximum</span>
+sudo<span class="w"> </span>jetson_clocks<span class="w"> </span>--fan
+</code></pre></div>
+<h3 id="deep-learning-accelerator-dla">Deep Learning Accelerator (DLA)<a class="headerlink" href="#deep-learning-accelerator-dla" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Example: Configure DLA in TensorRT</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;NvInfer.h&gt;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">configureDLA</span><span class="p">(</span><span class="n">nvinfer1</span><span class="o">::</span><span class="n">IBuilder</span><span class="o">*</span><span class="w"> </span><span class="n">builder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="o">-&gt;</span><span class="n">createBuilderConfig</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Enable DLA</span>
+<span class="w">    </span><span class="n">config</span><span class="o">-&gt;</span><span class="n">setFlag</span><span class="p">(</span><span class="n">BuilderFlag</span><span class="o">::</span><span class="n">kGPU_FALLBACK</span><span class="p">);</span>
+<span class="w">    </span><span class="n">config</span><span class="o">-&gt;</span><span class="n">setDefaultDeviceType</span><span class="p">(</span><span class="n">DeviceType</span><span class="o">::</span><span class="n">kDLA</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Use DLA core 0</span>
+<span class="w">    </span><span class="n">config</span><span class="o">-&gt;</span><span class="n">setDLACore</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Set INT8 precision for DLA</span>
+<span class="w">    </span><span class="n">config</span><span class="o">-&gt;</span><span class="n">setFlag</span><span class="p">(</span><span class="n">BuilderFlag</span><span class="o">::</span><span class="n">kINT8</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="memory-bandwidth-optimization">Memory Bandwidth Optimization<a class="headerlink" href="#memory-bandwidth-optimization" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Monitor memory bandwidth</span>
+sudo<span class="w"> </span>tegrastats
+
+<span class="c1"># Optimize EMC frequency</span>
+sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/bpmp/debug/clk/emc/mrq_rate_locked
+sudo<span class="w"> </span>cat<span class="w"> </span>/sys/kernel/debug/bpmp/debug/clk/emc/max_rate<span class="w"> </span>&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/sys/kernel/debug/bpmp/debug/clk/emc/rate
+</code></pre></div>
+<h2 id="tools-for-performance-evaluation">Tools for Performance Evaluation<a class="headerlink" href="#tools-for-performance-evaluation" title="Permanent link">#</a></h2>
+<h3 id="monitoring-tools">Monitoring Tools<a class="headerlink" href="#monitoring-tools" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Real-time system monitoring</span>
+sudo<span class="w"> </span>jtop
+
+<span class="c1"># Detailed GPU metrics</span>
+sudo<span class="w"> </span>tegrastats<span class="w"> </span>--interval<span class="w"> </span><span class="m">1000</span>
+
+<span class="c1"># Power consumption</span>
+sudo<span class="w"> </span>cat<span class="w"> </span>/sys/bus/i2c/drivers/ina3221x/1-0040/iio_device/in_power0_input
+</code></pre></div>
+<h3 id="expected-performance-metrics-for-arm-based-ecus">Expected Performance Metrics for ARM-based ECUs<a class="headerlink" href="#expected-performance-metrics-for-arm-based-ecus" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>AGX Orin</th>
+<th>Xavier</th>
+<th>Orin Nano</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiDAR Detection</td>
+<td>10 Hz</td>
+<td>8 Hz</td>
+<td>5 Hz</td>
+</tr>
+<tr>
+<td>Camera Detection</td>
+<td>20 Hz</td>
+<td>15 Hz</td>
+<td>10 Hz</td>
+</tr>
+<tr>
+<td>Planning</td>
+<td>10 Hz</td>
+<td>10 Hz</td>
+<td>8 Hz</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>50 Hz</td>
+<td>50 Hz</td>
+<td>50 Hz</td>
+</tr>
+<tr>
+<td>Power Usage</td>
+<td>40W</td>
+<td>25W</td>
+<td>12W</td>
+</tr>
+</tbody>
+</table>
+<h3 id="profiling-with-nsight">Profiling with Nsight<a class="headerlink" href="#profiling-with-nsight" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># System-wide profiling</span>
+sudo<span class="w"> </span>/opt/nvidia/nsight-systems/2023.3.1/bin/nsys<span class="w"> </span>profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-t<span class="w"> </span>cuda,nvtx,osrt,cudnn,cublas<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>autoware_profile<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>autoware.launch.xml
+
+<span class="c1"># Analyze results</span>
+nsys-ui<span class="w"> </span>autoware_profile.nsys-rep
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>CUDA Out of Memory</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Monitor GPU memory</span>
+watch<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>nvidia-smi
+
+<span class="c1"># Solution: Enable memory growth</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TF_FORCE_GPU_ALLOW_GROWTH</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Thermal Throttling</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check thermal status</span>
+sudo<span class="w"> </span>cat<span class="w"> </span>/sys/devices/virtual/thermal/thermal_zone*/type
+sudo<span class="w"> </span>cat<span class="w"> </span>/sys/devices/virtual/thermal/thermal_zone*/temp
+
+<span class="c1"># Solution: Improve cooling or reduce power mode</span>
+sudo<span class="w"> </span>nvpmodel<span class="w"> </span>-m<span class="w"> </span><span class="m">2</span><span class="w">  </span><span class="c1"># Lower power mode</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>DLA Failures</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check DLA status</span>
+sudo<span class="w"> </span>cat<span class="w"> </span>/sys/kernel/debug/nvdla/dla0/busy
+
+<span class="c1"># Solution: Fallback to GPU</span>
+<span class="c1"># Set use_dla: false in configuration</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="platform-specific-customizations">Platform-Specific Customizations<a class="headerlink" href="#platform-specific-customizations" title="Permanent link">#</a></h2>
+<p>For advanced ARM platform customizations including:</p>
+<ul>
+<li>Ansible automation for fleet deployment</li>
+<li>Hardware-specific sensor integration</li>
+<li>Custom kernel module development</li>
+<li>Security hardening for production</li>
+</ul>
+<p>One can use this guide: <a href="customization/">ARM Customization Guide</a>.</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<ul>
+<li>Explore <a href="containerized-development/">Containerized Development</a> for team collaboration</li>
+<li>Configure <a href="../rmw_zenoh/">RMW Zenoh</a> for optimized communication</li>
+<li>Review <a href="customization/">platform-specific customizations</a> for production deployment</li>
+<li>Compare with <a href="../x86-based_ECU/">x86-based ECU</a> configurations</li>
+</ul>
 
 
 
@@ -1402,13 +2156,13 @@
         
         
           
-          <a href="../x86-based_ECU/" class="md-footer__link md-footer__link--next" aria-label="Next: Software Configuration for x86-based ECUs" rel="next">
+          <a href="customization/" class="md-footer__link md-footer__link--next" aria-label="Next: ARM-based ECU Customization Guide" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Software Configuration for x86-based ECUs
+                ARM-based ECU Customization Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">

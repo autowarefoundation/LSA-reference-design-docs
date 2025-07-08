@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/main/software-configuration/x86-based_ECU/">
       
       
-        <link rel="prev" href="../ARM-based_ECU/">
+        <link rel="prev" href="../ARM-based_ECU/customization/">
       
       
-        <link rel="next" href="../../hardware-configuration/">
+        <link rel="next" href="customization/">
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
@@ -454,6 +454,8 @@
         
           
         
+          
+        
       
       
         
@@ -499,12 +501,18 @@
             
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
           <a href="../ARM-based_ECU/">ARM based ECU</a>
+          
+            <label for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
           
         </div>
       
@@ -515,6 +523,20 @@
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ARM-based_ECU/customization/" class="md-nav__link">
+        ARM-based ECU Customization Guide
+      </a>
+    </li>
+  
+
             
           
         </ul>
@@ -547,6 +569,8 @@
             
           
         
+          
+        
       
       
         
@@ -554,12 +578,78 @@
         <div class="md-nav__link md-nav__link--index md-nav__link--active">
           <a href="./">x86 based ECU</a>
           
+            <label for="__nav_3_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
         </div>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_3">
           <span class="md-nav__icon md-icon"></span>
           x86 based ECU
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="customization/" class="md-nav__link">
+        x86-based ECU Customization Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../rmw_zenoh/">Rmw zenoh</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rmw zenoh
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1305,29 +1395,232 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#technical-specification-of-x86-based-ecus" class="md-nav__link">
-    Technical Specification of X86-based ECUs
+  <a href="#system-preparation" class="md-nav__link">
+    System Preparation
   </a>
+  
+    <nav class="md-nav" aria-label="System Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#biosuefi-configuration" class="md-nav__link">
+    BIOS/UEFI Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operating-system-installation" class="md-nav__link">
+    Operating System Installation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuda-and-gpu-configuration" class="md-nav__link">
+    CUDA and GPU Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="CUDA and GPU Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cuda-toolkit-installation" class="md-nav__link">
+    1. CUDA Toolkit Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-install-nvidia-drivers" class="md-nav__link">
+    2. Install NVIDIA Drivers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-configure-gpu-for-compute" class="md-nav__link">
+    3. Configure GPU for Compute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-install-cuda-toolkit" class="md-nav__link">
+    4. Install CUDA Toolkit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#sensor-configuration" class="md-nav__link">
-    Sensor Configuration:
+    Sensor Configuration
   </a>
+  
+    <nav class="md-nav" aria-label="Sensor Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lidar-integration" class="md-nav__link">
+    LiDAR Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-configuration" class="md-nav__link">
+    Camera Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-bus-interface" class="md-nav__link">
+    CAN Bus Interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions-to-deploy-autoware" class="md-nav__link">
-    Instructions to deploy Autoware
+  <a href="#autoware-deployment" class="md-nav__link">
+    Autoware Deployment
   </a>
+  
+    <nav class="md-nav" aria-label="Autoware Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-autoware-components" class="md-nav__link">
+    1. Install Autoware Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-autoware-for-x86" class="md-nav__link">
+    2. Configure Autoware for x86
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-system-service-configuration" class="md-nav__link">
+    3. System Service Configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    Performance Optimization
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-optimization" class="md-nav__link">
+    CPU Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-optimization" class="md-nav__link">
+    Memory Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-optimization" class="md-nav__link">
+    Network Optimization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#performance-evaluation" class="md-nav__link">
     Performance Evaluation
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-tools" class="md-nav__link">
+    Monitoring Tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-performance-metrics" class="md-nav__link">
+    Expected Performance Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profiling-and-optimization" class="md-nav__link">
+    Profiling and Optimization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    Common Issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
   </a>
   
 </li>
@@ -1351,15 +1644,466 @@
 
 
 <h1 id="software-configuration-for-x86-based-ecus">Software Configuration for x86-based ECUs<a class="headerlink" href="#software-configuration-for-x86-based-ecus" title="Permanent link">#</a></h1>
-<p>This page provides the instructions to deploy Autoware on X86-based ECUs.</p>
-<h2 id="technical-specification-of-x86-based-ecus">Technical Specification of X86-based ECUs<a class="headerlink" href="#technical-specification-of-x86-based-ecus" title="Permanent link">#</a></h2>
-<p>(Describe the use of nVidia AGX Orin ECUs)</p>
-<h2 id="sensor-configuration">Sensor Configuration:<a class="headerlink" href="#sensor-configuration" title="Permanent link">#</a></h2>
-<p>(Described the sensors connected to the ECUs)</p>
-<h2 id="instructions-to-deploy-autoware">Instructions to deploy Autoware<a class="headerlink" href="#instructions-to-deploy-autoware" title="Permanent link">#</a></h2>
-<p>(Describe the instructions to deploy Autware, configuration, and start Autoware)</p>
+<p>This guide provides comprehensive instructions for deploying Autoware on x86-based ECUs (Intel/AMD platforms) for Low Speed Autonomy vehicles.</p>
+<h2 id="system-preparation">System Preparation<a class="headerlink" href="#system-preparation" title="Permanent link">#</a></h2>
+<h3 id="biosuefi-configuration">BIOS/UEFI Configuration<a class="headerlink" href="#biosuefi-configuration" title="Permanent link">#</a></h3>
+<p>Configure BIOS settings for optimal performance:</p>
+<div class="highlight"><pre><span></span><code>1. Disable Secure Boot (required for custom kernel modules)
+2. Enable Above 4G Decoding (for GPU memory mapping)
+3. Set Power Profile to &quot;Performance&quot;
+4. Disable C-States for reduced latency
+5. Enable Intel VT-x/AMD-V (for containerization)
+6. Set PCIe to Gen 4.0 (if supported)
+</code></pre></div>
+<h3 id="operating-system-installation">Operating System Installation<a class="headerlink" href="#operating-system-installation" title="Permanent link">#</a></h3>
+<p>Follow the base <a href="../deployment-setup/">Deployment Setup Guide</a> for Ubuntu 22.04 installation, then apply x86-specific configurations:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install x86-specific packages</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>intel-microcode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>amd64-microcode<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>linux-tools-generic<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>cpufrequtils<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>i7z<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>powertop
+
+<span class="c1"># Install real-time kernel (optional but recommended)</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>linux-realtime
+</code></pre></div>
+<h2 id="cuda-and-gpu-configuration">CUDA and GPU Configuration<a class="headerlink" href="#cuda-and-gpu-configuration" title="Permanent link">#</a></h2>
+<h3 id="1-cuda-toolkit-installation">1. CUDA Toolkit Installation<a class="headerlink" href="#1-cuda-toolkit-installation" title="Permanent link">#</a></h3>
+<p>(This part should be moved to hardware-dependent instructions.)</p>
+<p>Using the following instructions to install the toolkit of nVidia CUDA. </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add NVIDIA network package repositories</span>
+wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>cuda-keyring_1.1-1_all.deb
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+
+<span class="c1"># Install CUDA toolkit</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cuda-12-3
+
+<span class="c1"># Add CUDA to PATH</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=/usr/local/cuda-12.3/bin:$PATH&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64:$LD_LIBRARY_PATH&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+
+<span class="c1"># Verify installation</span>
+nvidia-smi
+nvcc<span class="w"> </span>--version
+</code></pre></div>
+<h3 id="2-install-nvidia-drivers">2. Install NVIDIA Drivers<a class="headerlink" href="#2-install-nvidia-drivers" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remove any existing NVIDIA installations</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>--purge<span class="w"> </span><span class="s1">&#39;^nvidia-.*&#39;</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
+
+<span class="c1"># Add NVIDIA PPA</span>
+sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:graphics-drivers/ppa
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+
+<span class="c1"># Install recommended driver</span>
+ubuntu-drivers<span class="w"> </span>devices<span class="w">  </span><span class="c1"># Check recommended version</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nvidia-driver-535<span class="w">  </span><span class="c1"># Or latest recommended</span>
+
+<span class="c1"># Reboot</span>
+sudo<span class="w"> </span>reboot
+</code></pre></div>
+<h3 id="3-configure-gpu-for-compute">3. Configure GPU for Compute<a class="headerlink" href="#3-configure-gpu-for-compute" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set GPU to persistence mode</span>
+sudo<span class="w"> </span>nvidia-smi<span class="w"> </span>-pm<span class="w"> </span><span class="m">1</span>
+
+<span class="c1"># Set application clock speeds to maximum</span>
+sudo<span class="w"> </span>nvidia-smi<span class="w"> </span>-ac<span class="w"> </span><span class="m">6001</span>,1980<span class="w">  </span><span class="c1"># RTX 4090 example</span>
+
+<span class="c1"># Configure GPU for compute mode</span>
+sudo<span class="w"> </span>nvidia-smi<span class="w"> </span>-c<span class="w"> </span>EXCLUSIVE_PROCESS
+
+<span class="c1"># Verify configuration</span>
+nvidia-smi<span class="w"> </span>-q<span class="w"> </span>-d<span class="w"> </span>PERFORMANCE
+</code></pre></div>
+<h3 id="4-install-cuda-toolkit">4. Install CUDA Toolkit<a class="headerlink" href="#4-install-cuda-toolkit" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install CUDA 12.3 (matching driver version)</span>
+wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cuda/12.3.0/local_installers/cuda_12.3.0_545.23.06_linux.run
+sudo<span class="w"> </span>sh<span class="w"> </span>cuda_12.3.0_545.23.06_linux.run<span class="w"> </span>--silent<span class="w"> </span>--toolkit
+
+<span class="c1"># Install cuDNN</span>
+wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cudnn/9.0.0/local_installers/cudnn_9.0.0_linux.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>cudnn_9.0.0_linux.deb
+
+<span class="c1"># Install TensorRT</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tensorrt
+</code></pre></div>
+<h2 id="sensor-configuration">Sensor Configuration<a class="headerlink" href="#sensor-configuration" title="Permanent link">#</a></h2>
+<h3 id="lidar-integration">LiDAR Integration<a class="headerlink" href="#lidar-integration" title="Permanent link">#</a></h3>
+<h4 id="velodyne-lidar-setup">Velodyne LiDAR Setup<a class="headerlink" href="#velodyne-lidar-setup" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Velodyne ROS 2 driver</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-velodyne
+
+<span class="c1"># Configure network interface</span>
+sudo<span class="w"> </span>nmcli<span class="w"> </span>con<span class="w"> </span>add<span class="w"> </span><span class="nb">type</span><span class="w"> </span>ethernet<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>con-name<span class="w"> </span>lidar-velodyne<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ifname<span class="w"> </span>enp2s0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ip4<span class="w"> </span><span class="m">192</span>.168.1.100/24
+
+<span class="c1"># Create configuration file</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/autoware_config/sensors
+cat<span class="w"> </span>&gt;<span class="w"> </span>~/autoware_config/sensors/velodyne.yaml<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">/**:</span>
+<span class="s">  ros__parameters:</span>
+<span class="s">    device_ip: &quot;192.168.1.201&quot;</span>
+<span class="s">    port: 2368</span>
+<span class="s">    model: &quot;VLP32C&quot;</span>
+<span class="s">    rpm: 600</span>
+<span class="s">    time_offset: 0.0</span>
+<span class="s">    enabled: true</span>
+<span class="s">    read_once: false</span>
+<span class="s">    read_fast: false</span>
+<span class="s">    repeat_delay: 0.0</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h4 id="ouster-lidar-setup">Ouster LiDAR Setup<a class="headerlink" href="#ouster-lidar-setup" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Ouster ROS 2 driver</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-ros2-ouster
+
+<span class="c1"># Configure with DMA optimizations</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">2048</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/proc/sys/vm/nr_hugepages
+</code></pre></div>
+<h3 id="camera-configuration">Camera Configuration<a class="headerlink" href="#camera-configuration" title="Permanent link">#</a></h3>
+<h4 id="usb-cameras">USB Cameras<a class="headerlink" href="#usb-cameras" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install USB camera drivers</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-usb-cam
+
+<span class="c1"># Configure udev rules for consistent naming</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;SUBSYSTEM==&quot;video4linux&quot;, ATTRS{idVendor}==&quot;046d&quot;, SYMLINK+=&quot;video_front&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/udev/rules.d/99-camera.rules
+sudo<span class="w"> </span>udevadm<span class="w"> </span>control<span class="w"> </span>--reload-rules
+</code></pre></div>
+<h4 id="gige-vision-cameras">GigE Vision Cameras<a class="headerlink" href="#gige-vision-cameras" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install GigE Vision support</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ros-humble-camera-aravis
+
+<span class="c1"># Optimize network settings</span>
+sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.core.rmem_max<span class="o">=</span><span class="m">33554432</span>
+sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.core.rmem_default<span class="o">=</span><span class="m">33554432</span>
+</code></pre></div>
+<h3 id="can-bus-interface">CAN Bus Interface<a class="headerlink" href="#can-bus-interface" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install SocketCAN utilities</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>can-utils
+
+<span class="c1"># Load kernel modules</span>
+sudo<span class="w"> </span>modprobe<span class="w"> </span>can
+sudo<span class="w"> </span>modprobe<span class="w"> </span>can_raw
+sudo<span class="w"> </span>modprobe<span class="w"> </span>vcan
+
+<span class="c1"># Configure CAN interface</span>
+sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>can0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>can<span class="w"> </span>bitrate<span class="w"> </span><span class="m">500000</span>
+sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>up<span class="w"> </span>can0
+
+<span class="c1"># Create systemd service for automatic setup</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/can-setup.service<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">[Unit]</span>
+<span class="s">Description=Setup CAN interfaces</span>
+<span class="s">After=network.target</span>
+
+<span class="s">[Service]</span>
+<span class="s">Type=oneshot</span>
+<span class="s">ExecStart=/usr/local/bin/setup-can.sh</span>
+<span class="s">RemainAfterExit=yes</span>
+
+<span class="s">[Install]</span>
+<span class="s">WantedBy=multi-user.target</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h2 id="autoware-deployment">Autoware Deployment<a class="headerlink" href="#autoware-deployment" title="Permanent link">#</a></h2>
+<h3 id="1-install-autoware-components">1. Install Autoware Components<a class="headerlink" href="#1-install-autoware-components" title="Permanent link">#</a></h3>
+<p>Follow the general installation from <a href="../deployment-setup/">Deployment Setup</a>, then add x86-specific optimizations:</p>
+<h4 id="11-configure-autoware-apt-repository">1.1 Configure Autoware APT Repository<a class="headerlink" href="#11-configure-autoware-apt-repository" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Download and install repository configuration</span>
+wget<span class="w"> </span>https://github.com/autowarefoundation/autoware/releases/latest/download/autoware-apt-config.deb
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>autoware-apt-config.deb
+
+<span class="c1"># Update package lists</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<h4 id="12-deploy-autoware-core-packages">1.2. Deploy Autoware Core Packages<a class="headerlink" href="#12-deploy-autoware-core-packages" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install complete Autoware stack</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>autoware-universe
+
+<span class="c1"># Or install specific components</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-common<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-control<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-localization<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-perception<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-planning
+</code></pre></div>
+<h4 id="13-configure-environment">1.3. Configure Environment<a class="headerlink" href="#13-configure-environment" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add Autoware setup to bashrc</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+
+<span class="c1"># Verify installation</span>
+ros2<span class="w"> </span>pkg<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>autoware
+</code></pre></div>
+<h4 id="14-post-installation-verification">1.4 Post-Installation Verification<a class="headerlink" href="#14-post-installation-verification" title="Permanent link">#</a></h4>
+<p>This section uses a shell script to verify if the Autoware is successfully deployed to the system. </p>
+<h5 id="system-check-script">System Check Script<a class="headerlink" href="#system-check-script" title="Permanent link">#</a></h5>
+<p>The first step is to create a verification script:</p>
+<p><div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>verify-installation.sh<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">#!/bin/bash</span>
+
+<span class="s">echo &quot;=== System Verification ===&quot;</span>
+<span class="s">echo &quot;OS Version: $(lsb_release -d | cut -f2)&quot;</span>
+<span class="s">echo &quot;Kernel: $(uname -r)&quot;</span>
+<span class="s">echo &quot;&quot;</span>
+
+<span class="s">echo &quot;=== CUDA Verification ===&quot;</span>
+<span class="s">if command -v nvidia-smi &amp;&gt; /dev/null; then</span>
+<span class="s">    nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;NVIDIA driver not found&quot;</span>
+<span class="s">fi</span>
+
+<span class="s">if command -v nvcc &amp;&gt; /dev/null; then</span>
+<span class="s">    echo &quot;CUDA Version: $(nvcc --version | grep release | awk &#39;{print $6}&#39;)&quot;</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;CUDA not found&quot;</span>
+<span class="s">fi</span>
+<span class="s">echo &quot;&quot;</span>
+
+<span class="s">echo &quot;=== ROS 2 Verification ===&quot;</span>
+<span class="s">if [ -f /opt/ros/humble/setup.bash ]; then</span>
+<span class="s">    source /opt/ros/humble/setup.bash</span>
+<span class="s">    echo &quot;ROS 2 Distro: $ROS_DISTRO&quot;</span>
+<span class="s">    echo &quot;ROS 2 Version: $(ros2 --version 2&gt;&amp;1 | grep &#39;^ros2&#39;)&quot;</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;ROS 2 not found&quot;</span>
+<span class="s">fi</span>
+<span class="s">echo &quot;&quot;</span>
+
+<span class="s">echo &quot;=== Autoware Verification ===&quot;</span>
+<span class="s">if [ -f /opt/autoware/setup.bash ]; then</span>
+<span class="s">    source /opt/autoware/setup.bash</span>
+<span class="s">    echo &quot;Autoware packages installed: $(ros2 pkg list | grep -c autoware)&quot;</span>
+<span class="s">else</span>
+<span class="s">    echo &quot;Autoware not found&quot;</span>
+<span class="s">fi</span>
+<span class="s">EOF</span>
+</code></pre></div>
+You can also download the <a href="assets/verify-installation.sh">file</a> and move the shell script to the working directory.</p>
+<h5 id="verify-the-deployment">Verify the deployment<a class="headerlink" href="#verify-the-deployment" title="Permanent link">#</a></h5>
+<p>The last step executes the verification script to verify the deployment. </p>
+<div class="highlight"><pre><span></span><code>chmod +x verify-installation.sh
+./verify-installation.sh
+</code></pre></div>
+<h4 id="15-add-x86-specific-optimizations">1.5 Add x86-specific optimizations:<a class="headerlink" href="#15-add-x86-specific-optimizations" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install performance analysis tools</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-humble-rqt-top<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ros-humble-rqt-tf-tree<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>htop<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>nvtop<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>linux-tools-common<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>linux-tools-generic
+
+<span class="c1"># Install x86-optimized libraries</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libtbb-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>libopenblas-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>liblapack-dev
+</code></pre></div>
+<h3 id="2-configure-autoware-for-x86">2. Configure Autoware for x86<a class="headerlink" href="#2-configure-autoware-for-x86" title="Permanent link">#</a></h3>
+<p>Create optimized launch configuration:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>~/autoware_config/x86_optimization.yaml<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">/**:</span>
+<span class="s">  ros__parameters:</span>
+<span class="s">    # CPU optimization</span>
+<span class="s">    use_sim_time: false</span>
+<span class="s">    num_threads: 16  # Adjust based on CPU cores</span>
+
+<span class="s">    # GPU optimization</span>
+<span class="s">    gpu_device_id: 0</span>
+<span class="s">    use_tensorrt: true</span>
+<span class="s">    tensorrt_precision: &quot;FP16&quot;</span>
+
+<span class="s">    # Memory optimization</span>
+<span class="s">    pointcloud_buffer_size: 100</span>
+<span class="s">    image_buffer_size: 30</span>
+
+<span class="s">    # Perception settings</span>
+<span class="s">    perception:</span>
+<span class="s">      lidar:</span>
+<span class="s">        detection_method: &quot;centerpoint&quot;</span>
+<span class="s">        use_gpu_preprocessing: true</span>
+<span class="s">      camera:</span>
+<span class="s">        detection_method: &quot;yolox&quot;</span>
+<span class="s">        model_type: &quot;yolox-sPlus&quot;</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h3 id="3-system-service-configuration">3. System Service Configuration<a class="headerlink" href="#3-system-service-configuration" title="Permanent link">#</a></h3>
+<p>Create systemd service for Autoware:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/systemd/system/autoware.service<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">[Unit]</span>
+<span class="s">Description=Autoware Universe</span>
+<span class="s">After=network.target</span>
+
+<span class="s">[Service]</span>
+<span class="s">Type=simple</span>
+<span class="s">User=autoware</span>
+<span class="s">Environment=&quot;ROS_DOMAIN_ID=42&quot;</span>
+<span class="s">Environment=&quot;RMW_IMPLEMENTATION=rmw_cyclonedds_cpp&quot;</span>
+<span class="s">ExecStart=/opt/autoware/scripts/start_autoware.sh</span>
+<span class="s">Restart=on-failure</span>
+<span class="s">RestartSec=10</span>
+
+<span class="s">[Install]</span>
+<span class="s">WantedBy=multi-user.target</span>
+<span class="s">EOF</span>
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>autoware.service
+</code></pre></div>
+<h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">#</a></h2>
+<h3 id="cpu-optimization">CPU Optimization<a class="headerlink" href="#cpu-optimization" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Set CPU governor to performance</span>
+<span class="k">for</span><span class="w"> </span>cpu<span class="w"> </span><span class="k">in</span><span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_governor<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>performance<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span><span class="nv">$cpu</span>
+<span class="k">done</span>
+
+<span class="c1"># Disable CPU frequency scaling</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>ondemand
+
+<span class="c1"># Pin Autoware processes to specific cores</span>
+<span class="c1"># Add to launch file:</span>
+<span class="c1"># &lt;node pkg=&quot;...&quot; exec=&quot;...&quot; cpu_affinity=&quot;0-7&quot;&gt;</span>
+</code></pre></div>
+<h3 id="memory-optimization">Memory Optimization<a class="headerlink" href="#memory-optimization" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure huge pages</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/proc/sys/vm/nr_hugepages
+
+<span class="c1"># Disable transparent huge pages</span>
+<span class="nb">echo</span><span class="w"> </span>never<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/kernel/mm/transparent_hugepage/enabled
+
+<span class="c1"># Set memory swappiness</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/proc/sys/vm/swappiness
+</code></pre></div>
+<h3 id="network-optimization">Network Optimization<a class="headerlink" href="#network-optimization" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Increase ring buffer sizes</span>
+sudo<span class="w"> </span>ethtool<span class="w"> </span>-G<span class="w"> </span>enp1s0<span class="w"> </span>rx<span class="w"> </span><span class="m">4096</span><span class="w"> </span>tx<span class="w"> </span><span class="m">4096</span>
+
+<span class="c1"># Enable interrupt coalescing</span>
+sudo<span class="w"> </span>ethtool<span class="w"> </span>-C<span class="w"> </span>enp1s0<span class="w"> </span>adaptive-rx<span class="w"> </span>on<span class="w"> </span>adaptive-tx<span class="w"> </span>on
+
+<span class="c1"># Configure IRQ affinity</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>irqbalance
+</code></pre></div>
 <h2 id="performance-evaluation">Performance Evaluation<a class="headerlink" href="#performance-evaluation" title="Permanent link">#</a></h2>
-<p>(Describe the performance of the deloyed Autoware, including framerate on obejct detections, CPU/GPU utilization)</p>
+<h3 id="monitoring-tools">Monitoring Tools<a class="headerlink" href="#monitoring-tools" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>System Monitoring</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># CPU and Memory</span>
+htop
+<span class="c1"># GPU</span>
+nvtop
+nvidia-smi<span class="w"> </span>dmon<span class="w"> </span>-s<span class="w"> </span>pucvmet
+<span class="c1"># Network</span>
+iftop<span class="w"> </span>-i<span class="w"> </span>enp1s0
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>ROS 2 Performance</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Node performance</span>
+ros2<span class="w"> </span>run<span class="w"> </span>rqt_top<span class="w"> </span>rqt_top
+<span class="c1"># Topic bandwidth</span>
+ros2<span class="w"> </span>topic<span class="w"> </span>bw<span class="w"> </span>/sensing/lidar/concatenated/pointcloud
+<span class="c1"># Latency measurement</span>
+ros2<span class="w"> </span>run<span class="w"> </span>performance_test<span class="w"> </span>perf_test<span class="w"> </span>-c<span class="w"> </span>ROS2<span class="w"> </span>-t<span class="w"> </span>Array1k
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="expected-performance-metrics">Expected Performance Metrics<a class="headerlink" href="#expected-performance-metrics" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Target FPS</th>
+<th>CPU Usage</th>
+<th>GPU Usage</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiDAR Detection</td>
+<td>10 Hz</td>
+<td>20-30%</td>
+<td>40-60%</td>
+<td>&lt;100ms</td>
+</tr>
+<tr>
+<td>Camera Detection</td>
+<td>15 Hz</td>
+<td>15-25%</td>
+<td>50-70%</td>
+<td>&lt;80ms</td>
+</tr>
+<tr>
+<td>Planning</td>
+<td>10 Hz</td>
+<td>30-40%</td>
+<td>N/A</td>
+<td>&lt;50ms</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>50 Hz</td>
+<td>10-15%</td>
+<td>N/A</td>
+<td>&lt;20ms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="profiling-and-optimization">Profiling and Optimization<a class="headerlink" href="#profiling-and-optimization" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># CPU profiling</span>
+perf<span class="w"> </span>record<span class="w"> </span>-g<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>autoware.launch.xml
+perf<span class="w"> </span>report
+
+<span class="c1"># GPU profiling</span>
+nsys<span class="w"> </span>profile<span class="w"> </span>-o<span class="w"> </span>autoware_profile<span class="w"> </span>ros2<span class="w"> </span>launch<span class="w"> </span>autoware_launch<span class="w"> </span>autoware.launch.xml
+nsys-ui<span class="w"> </span>autoware_profile.nsys-rep
+
+<span class="c1"># Memory profiling</span>
+valgrind<span class="w"> </span>--tool<span class="o">=</span>massif<span class="w"> </span>ros2<span class="w"> </span>run<span class="w"> </span>perception_node<span class="w"> </span>perception_node
+ms_print<span class="w"> </span>massif.out.*
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>GPU Memory Errors</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Solution: Reduce batch sizes</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TF_FORCE_GPU_ALLOW_GROWTH</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>CPU Throttling</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check throttling</span>
+cat<span class="w"> </span>/sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
+<span class="c1"># Solution: Improve cooling or reduce workload</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Network Packet Loss</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check for drops</span>
+ethtool<span class="w"> </span>-S<span class="w"> </span>enp1s0<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>drop
+<span class="c1"># Solution: Increase buffer sizes</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<ul>
+<li>Configure <a href="../rmw_zenoh/">RMW Zenoh</a> for improved middleware performance</li>
+<li>Review <a href="../ARM-based_ECU/">ARM-based ECU</a> documentation for comparison</li>
+<li>Implement custom <a href="https://autoware.readthedocs.io/en/latest/how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/">sensor drivers</a> for your specific hardware</li>
+</ul>
 
 
 
@@ -1386,7 +2130,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ARM-based_ECU/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software Configuration for ARM-based ECUs" rel="prev">
+          <a href="../ARM-based_ECU/customization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ARM-based ECU Customization Guide" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1395,20 +2139,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Software Configuration for ARM-based ECUs
+                ARM-based ECU Customization Guide
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../hardware-configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Hardware Configuration" rel="next">
+          <a href="customization/" class="md-footer__link md-footer__link--next" aria-label="Next: x86-based ECU Customization Guide" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Hardware Configuration
+                x86-based ECU Customization Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
