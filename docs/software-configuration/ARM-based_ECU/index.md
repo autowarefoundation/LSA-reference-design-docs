@@ -6,56 +6,48 @@ This guide provides comprehensive instructions for deploying Autoware on ARM-bas
 
 ### CUDA Toolkit Installation
 
-Using the following instructions to install the toolkit of nVidia CUDA. 
+#### For NVIDIA AGX Orin
 
-For Jetson platforms, CUDA comes pre-installed with JetPack. Verify your installation:
+**Important**: Do NOT install CUDA packages manually on AGX Orin as it may break the system. CUDA is included with JetPack and must be installed through NVIDIA's SDK Manager.
 
+**Installation Steps:**
+
+1. **Download NVIDIA SDK Manager** from [https://developer.nvidia.com/nvidia-sdk-manager](https://developer.nvidia.com/nvidia-sdk-manager)
+
+2. **Select JetPack 6.0** (or latest version) in SDK Manager
+   - This will flash the Orin device and install the appropriate CUDA version
+   - JetPack 6.0 includes CUDA 12.2, cuDNN, TensorRT, and other essential libraries
+
+3. **Flash and Install**
+   - Connect your AGX Orin to the host PC via USB-C
+   - Follow SDK Manager prompts to flash the device
+   - The process will install Ubuntu, CUDA, and all necessary drivers
+
+4. **Verify Installation** after flashing:
 ```bash
 # Check CUDA version
 nvcc --version
 
-# Verify Jetson platform
+# Verify Jetson platform and monitor system
 sudo apt install -y python3-pip
 pip3 install jetson-stats
 sudo jtop
-```
 
-If CUDA is not installed, flash your Jetson with the appropriate JetPack version:
-- AGX Orin: JetPack 5.1.2 or later
-- Xavier Series: JetPack 5.1 or later
-
-### JetPack Installation
-
-The NVIDIA JetPack SDK provides the foundation for ARM-based deployments:
-
-```bash
-# For AGX Orin - Use JetPack 5.1.2 or later
-# Download NVIDIA SDK Manager from:
-# https://developer.nvidia.com/nvidia-sdk-manager
-
-# Or flash directly using command line:
-sudo apt install nvidia-jetpack
-```
-
-### Post-Installation Setup
-
-```bash
-# Verify JetPack installation
+# Check JetPack version
 cat /etc/nv_tegra_release
-
-# Check CUDA version
-nvcc --version
-
-# Install Jetson utilities
-sudo apt update
-sudo apt install -y python3-pip
-pip3 install -U jetson-stats
-sudo systemctl restart jtop.service
-
-# Configure power mode for development
-sudo nvpmodel -m 0  # MAXN mode
-sudo jetson_clocks
 ```
+
+#### For Other ARM64 Platforms
+
+For ARM64 platforms other than NVIDIA Jetson:
+- Check the manufacturer's product specifications or manual for CUDA support
+- Most non-NVIDIA ARM platforms do not support CUDA
+- Consider using CPU-only or other acceleration options if CUDA is not available
+
+**Supported JetPack Versions by Platform:**
+- AGX Orin: JetPack 6.0 or later (recommended)
+- Xavier Series: JetPack 5.1 or later
+- Nano/TX2: Check NVIDIA's compatibility matrix
 
 ## Platform-Specific Configuration
 

@@ -39,77 +39,44 @@ sudo apt install -y linux-realtime
 
 ### 1. CUDA Toolkit Installation
 
-(This part should be moved to hardware-dependent instructions.)
+For x86-based systems, CUDA must be installed manually. Visit the [NVIDIA CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive) to find the appropriate version for your system.
 
-Using the following instructions to install the toolkit of nVidia CUDA. 
+**Recommended Installation Method: deb (network)**
+
+Here's an example of installing CUDA Toolkit 12.3 using the network deb method:
 
 ```bash
-# Add NVIDIA network package repositories
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+# Step 1: Download and install the cuda-keyring package
+# Visit https://developer.nvidia.com/cuda-toolkit-archive and select:
+# - Operating System: Linux
+# - Architecture: x86_64
+# - Distribution: Ubuntu
+# - Version: 22.04
+# - Installer Type: deb (network)
+
+# Install the keyring
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
+
+# Step 2: Update package lists
 sudo apt update
 
-# Install CUDA toolkit
-sudo apt install -y cuda-12-3
+# Step 3: Install CUDA Toolkit
+sudo apt install -y cuda-toolkit-12-3
 
-# Add CUDA to PATH
-echo 'export PATH=/usr/local/cuda-12.3/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
-source ~/.bashrc
-
-# Verify installation
+# Step 4: Verify installation
 nvidia-smi
 nvcc --version
 ```
 
-### 2. Install NVIDIA Drivers
+### 2. Install Additional GPU Libraries
 
 ```bash
-# Remove any existing NVIDIA installations
-sudo apt remove --purge '^nvidia-.*'
-sudo apt autoremove
-
-# Add NVIDIA PPA
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt update
-
-# Install recommended driver
-ubuntu-drivers devices  # Check recommended version
-sudo apt install nvidia-driver-535  # Or latest recommended
-
-# Reboot
-sudo reboot
-```
-
-### 3. Configure GPU for Compute
-
-```bash
-# Set GPU to persistence mode
-sudo nvidia-smi -pm 1
-
-# Set application clock speeds to maximum
-sudo nvidia-smi -ac 6001,1980  # RTX 4090 example
-
-# Configure GPU for compute mode
-sudo nvidia-smi -c EXCLUSIVE_PROCESS
-
-# Verify configuration
-nvidia-smi -q -d PERFORMANCE
-```
-
-### 4. Install CUDA Toolkit
-
-```bash
-# Install CUDA 12.3 (matching driver version)
-wget https://developer.download.nvidia.com/compute/cuda/12.3.0/local_installers/cuda_12.3.0_545.23.06_linux.run
-sudo sh cuda_12.3.0_545.23.06_linux.run --silent --toolkit
-
-# Install cuDNN
-wget https://developer.download.nvidia.com/compute/cudnn/9.0.0/local_installers/cudnn_9.0.0_linux.deb
-sudo dpkg -i cudnn_9.0.0_linux.deb
+# Install cuDNN (after CUDA toolkit is installed)
+# Visit https://developer.nvidia.com/cudnn for the latest version
+sudo apt install -y cudnn
 
 # Install TensorRT
-sudo apt install tensorrt
+sudo apt install -y tensorrt
 ```
 
 ## Sensor Configuration
@@ -252,7 +219,7 @@ ros2 pkg list | grep autoware
 
 #### 1.4 Post-Installation Verification
 
-This section uses a shell script to verify if the Autoware is successfully deployed to the system. 
+This section uses a shell script to verify if the Autoware is successfully deployed to the system.
 
 ##### System Check Script
 
@@ -303,7 +270,7 @@ EOF
 You can also download the [file](assets/verify-installation.sh) and move the shell script to the working directory.
 
 ##### Verify the deployment
-The last step executes the verification script to verify the deployment. 
+The last step executes the verification script to verify the deployment.
 
 ```
 chmod +x verify-installation.sh
@@ -340,16 +307,16 @@ cat > ~/autoware_config/x86_optimization.yaml << EOF
     # CPU optimization
     use_sim_time: false
     num_threads: 16  # Adjust based on CPU cores
-    
+
     # GPU optimization
     gpu_device_id: 0
     use_tensorrt: true
     tensorrt_precision: "FP16"
-    
+
     # Memory optimization
     pointcloud_buffer_size: 100
     image_buffer_size: 30
-    
+
     # Perception settings
     perception:
       lidar:

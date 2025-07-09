@@ -56,7 +56,7 @@ sudo apt install -y \
   python3-venv
 ```
 
-### 2. Configure System Limits for better performance
+### 2. Configure System Limits for Better Performance
 
 Using the following instructions to optimize system settings for real-time performance: 
 
@@ -74,48 +74,15 @@ sudo sysctl -p
 
 ## CUDA Toolkit Installation
 
-(This part should be moved to hardware-dependent instructions.)
+CUDA installation is hardware-specific and varies significantly between x86 and ARM platforms. Please refer to the appropriate platform-specific guide for detailed CUDA installation instructions:
 
-Using the following instructions to install the toolkit of nVidia CUDA. 
+- **For x86-based ECUs (AMD64)**: See [x86 CUDA Installation Guide](../x86-based_ECU/index.md#cuda-and-gpu-configuration)
+- **For ARM-based ECUs (NVIDIA Jetson)**: See [ARM CUDA Installation Guide](../ARM-based_ECU/index.md#cuda-toolkit-installation)
 
-### For AMD64 Platforms
-
-```bash
-# Add NVIDIA network package repositories
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
-sudo dpkg -i cuda-keyring_1.1-1_all.deb
-sudo apt update
-
-# Install CUDA toolkit
-sudo apt install -y cuda-12-3
-
-# Add CUDA to PATH
-echo 'export PATH=/usr/local/cuda-12.3/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
-source ~/.bashrc
-
-# Verify installation
-nvidia-smi
-nvcc --version
-```
-
-### For ARM64 Platforms (NVIDIA Jetson)
-
-For Jetson platforms, CUDA comes pre-installed with JetPack. Verify your installation:
-
-```bash
-# Check CUDA version
-nvcc --version
-
-# Verify Jetson platform
-sudo apt install -y python3-pip
-pip3 install jetson-stats
-sudo jtop
-```
-
-If CUDA is not installed, flash your Jetson with the appropriate JetPack version:
-- AGX Orin: JetPack 5.1.2 or later
-- Xavier Series: JetPack 5.1 or later
+**Important Notes:**
+- x86 platforms require manual CUDA toolkit installation from NVIDIA repositories
+- ARM Jetson platforms come with CUDA pre-installed through JetPack SDK
+- Ensure CUDA version compatibility with your GPU and driver version
 
 ## Ansible Setup for Automated Provisioning
 
