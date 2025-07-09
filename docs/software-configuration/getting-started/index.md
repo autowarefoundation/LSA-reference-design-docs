@@ -1,4 +1,4 @@
-# Deployment Setup Guide
+# Getting Started
 
 This guide provides the foundational setup required for deploying Autoware on both AMD64 and ARM64 platforms running Ubuntu 22.04. Follow these steps before proceeding to platform-specific ECU configurations.
 
@@ -347,7 +347,7 @@ With the base system configured, proceed to:
 
 1. **[x86-based ECU Configuration](../x86-based_ECU/index.md)** for Intel/AMD platforms
 2. **[ARM-based ECU Configuration](../ARM-based_ECU/index.md)** for NVIDIA Jetson platforms
-3. **[RMW Zenoh Setup](../rmw_zenoh/index.md)** for alternative middleware configuration
+3. **[RMW Zenoh Setup](../middleware-configuration/index.md)** for alternative middleware configuration
 
 ## Additional Resources
 

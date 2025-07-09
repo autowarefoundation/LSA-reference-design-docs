@@ -81,7 +81,7 @@ source ~/.bashrc
 
 ### 1. Install Autoware
 
-Follow the general Autoware installation instructions from [Deployment Setup](../deployment-setup/index.md#autoware-installation-via-debian-packages). 
+Follow the general Autoware installation instructions from [Getting Started](../getting-started/index.md#autoware-installation-via-debian-packages). 
 
 **Important for Jetson Platforms**: Use the `autoware-localrepo_2025.2-1_jetpack6.0.deb` package specifically designed for JetPack 6.0 systems.
 
@@ -304,7 +304,7 @@ See: [ARM Customization Guide](customization.md)
 
 1. **Configure Sensors**: See [Sensor Configuration Guide](../sensor-configuration/index.md) for detailed sensor setup
 2. **Vehicle Integration**: Configure CAN bus and vehicle interface  
-3. **Middleware Setup**: Consider [RMW Zenoh](../rmw_zenoh/index.md) for optimized communication
+3. **Middleware Setup**: Consider [RMW Zenoh](../middleware-configuration/index.md) for optimized communication
 4. **Performance Tuning**: Run benchmarks and optimize for your use case
 
 ## Additional Resources

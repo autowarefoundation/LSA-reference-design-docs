@@ -6,7 +6,7 @@ This guide provides comprehensive instructions for deploying Autoware on x86-bas
 
 ### Operating System Installation
 
-Follow the base [Deployment Setup Guide](../deployment-setup/index.md) for Ubuntu 22.04 installation, then apply x86-specific configurations:
+Follow the base [Getting Started Guide](../getting-started/index.md) for Ubuntu 22.04 installation, then apply x86-specific configurations:
 
 ```bash
 # Install x86-specific packages
@@ -80,7 +80,7 @@ nvidia-smi
 
 ### 1. Install Autoware
 
-Follow the general Autoware installation instructions from [Deployment Setup](../deployment-setup/index.md#autoware-installation-via-debian-packages). For x86-based systems, use the `autoware-localrepo_2025.2-1_amd64.deb` package.
+Follow the general Autoware installation instructions from [Getting Started](../getting-started/index.md#autoware-installation-via-debian-packages). For x86-based systems, use the `autoware-localrepo_2025.2-1_amd64.deb` package.
 
 ### 2. x86-Specific Dependencies
 
