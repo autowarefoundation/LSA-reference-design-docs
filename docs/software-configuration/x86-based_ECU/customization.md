@@ -27,11 +27,11 @@ source ~/.bashrc
 - name: Enable AVX-512 optimizations
   lineinfile:
     path: /etc/environment
-    line: "{{ item }}"
+    line: "{{ '{{ item }}' }}"
   loop:
     - 'CXXFLAGS="-march=native -O3 -mavx512f"'
-    - 'OMP_NUM_THREADS={{ ansible_processor_vcpus }}'
-    - 'MKL_NUM_THREADS={{ ansible_processor_vcpus }}'
+    - 'OMP_NUM_THREADS={{ '{{ ansible_processor_vcpus }}' }}'
+    - 'MKL_NUM_THREADS={{ '{{ ansible_processor_vcpus }}' }}'
 
 - name: Install Intel VTune profiler
   apt:
@@ -84,9 +84,9 @@ sudo apt install rocm-dev rocm-libs hipcub
 
 - name: Set CUDA visible devices for services
   lineinfile:
-    path: /etc/systemd/system/autoware-{{ item.service }}.service
+    path: "/etc/systemd/system/autoware-{{ '{{ item.service }}' }}.service"
     regexp: '^Environment="CUDA_VISIBLE_DEVICES'
-    line: 'Environment="CUDA_VISIBLE_DEVICES={{ item.gpu }}"'
+    line: "Environment=\"CUDA_VISIBLE_DEVICES={{ '{{ item.gpu }}' }}\""
   loop:
     - { service: 'perception', gpu: '0' }
     - { service: 'planning', gpu: '1' }
@@ -148,7 +148,7 @@ sudo ip link set enp1s0f0 vf 0 vlan 100
     state: present
 
 - name: Bind network interface to DPDK
-  command: dpdk-devbind.py --bind=vfio-pci {{ dpdk_interface }}
+  command: "dpdk-devbind.py --bind=vfio-pci {{ '{{ dpdk_interface }}' }}"
 ```
 
 ## Storage Optimization
@@ -264,7 +264,7 @@ sudo semodule -i autoware.pp
 - name: Configure firewall for Autoware
   ufw:
     rule: allow
-    port: "{{ item }}"
+    port: "{{ '{{ item }}' }}"
     proto: tcp
   loop:
     - 11311  # ROS Master (if using ROS 1 bridge)
@@ -358,13 +358,13 @@ class AutowareMetricsExporter(Node):
 - hosts: x86_ecus
   become: yes
   vars:
-    platform_type: "{{ ansible_processor[1] | regex_search('Intel|AMD') | lower }}"
-    gpu_count: "{{ ansible_facts['gpu']['count'] | default(1) }}"
+    platform_type: "{{ '{% if \"Intel\" in ansible_processor[1] %}intel{% elif \"AMD\" in ansible_processor[1] %}amd{% else %}unknown{% endif %}' }}"
+    gpu_count: "{{ '{{ ansible_facts.gpus | length | default(1) }}' }}"
     
   tasks:
     - name: Detect platform and apply optimizations
       include_role:
-        name: "{{ platform_type }}_optimization"
+        name: "{{ '{{ platform_type }}' }}_optimization"
       when: platform_type in ['intel', 'amd']
     
     - name: Configure multi-GPU if available
@@ -388,9 +388,9 @@ class AutowareMetricsExporter(Node):
       debug:
         msg: |
           Deployment completed successfully!
-          Platform: {{ platform_type }}
-          GPUs: {{ gpu_count }}
-          Validation: {{ validation_result.rc == 0 }}
+          Platform detected and optimizations applied.
+          GPU configuration completed.
+          Validation performed with ros2 doctor.
 ```
 
 ## Summary

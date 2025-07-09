@@ -42,7 +42,7 @@ sudo swapon /swapfile
 - name: Enable DLA cores
   lineinfile:
     path: /etc/environment
-    line: "{{ item }}"
+    line: "{{ '{{ item }}' }}"
   loop:
     - 'CUDA_VISIBLE_DEVICES=0'
     - 'DLA_VISIBLE_DEVICES=0,1'
@@ -128,7 +128,7 @@ v4l2-ctl -d /dev/video0 --set-fmt-video=width=1920,height=1080,pixelformat=YUYV
     dest: /etc/linuxptp/ptp4l.conf
 
 - name: Enable hardware timestamping
-  command: ethtool -T {{ tsn_interface }}
+  command: "ethtool -T {{ '{{ tsn_interface }}' }}"
 ```
 
 ### CAN Bus Integration
@@ -241,7 +241,7 @@ peak_usb
     /usr/src/linux-headers-$(uname -r)/scripts/sign-file \
     sha256 /var/lib/shim-signed/mok/MOK.priv \
     /var/lib/shim-signed/mok/MOK.der \
-    {{ module_path }}
+    {{ '{{ module_path }}' }}
 ```
 
 ### AppArmor Profiles
