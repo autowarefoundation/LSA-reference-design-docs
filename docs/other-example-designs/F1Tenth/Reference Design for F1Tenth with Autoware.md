@@ -5,7 +5,7 @@ This document elaborates the hardware and software configurations for using Auto
 
 # Design Overview: 
 
-![Radar Chart for F1Tenth Design](RadarChart-F1Tenth.png)
+![Radar Chart for F1Tenth Design](images/RadarChart-F1Tenth.png)
 
 
 # Who should read: 
