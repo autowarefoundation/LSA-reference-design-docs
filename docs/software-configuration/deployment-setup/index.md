@@ -8,16 +8,16 @@ Please assure the requirements for hardware and operating systems are met before
 
 ### Hardware Requirements
 
-#### Minimum Hardware Specifications
-- **CPU**: 8 cores (AMD64 or ARM64)
-- **RAM**: 16 GB
-- **Storage**: 128 GB SSD/NVMe
-- **GPU**: NVIDIA GPU with Compute Capability 7.0+ (required for perception)
+#### Minimum Specifications
+- **CPU**: 8-core x86_64 (Intel/AMD) or ARMv8 (ARM64)
+- **RAM**: 32 GB (16 GB for simulation-only)
+- **Storage**: 30 GB of free space
+- **GPU**: NVIDIA GPU with CUDA 11.8+ and Compute Capability 5.0+ (required for perception)
 
 #### Recommended Specifications
 - **CPU**: 16+ cores
-- **RAM**: 32 GB or more
-- **Storage**: 256 GB NVMe SSD
+- **RAM**: 64 GB or more
+- **Storage**: 100 GB+ of free space on SSD
 - **GPU**: NVIDIA RTX 3080+ (x86) or AGX Orin (ARM)
 
 ### Network Requirements
@@ -84,114 +84,56 @@ CUDA installation is hardware-specific and varies significantly between x86 and 
 - ARM Jetson platforms come with CUDA pre-installed through JetPack SDK
 - Ensure CUDA version compatibility with your GPU and driver version
 
-## Ansible Setup for Automated Provisioning
+## Environment Setup
 
-[Ansible](https://docs.ansible.com/) is an open source automation tool, which can help to speed up the deployment process. 
+The Autoware project provides an automated setup script that installs all necessary dependencies and configures your development environment.
 
-### 1. Install Ansible
-
-```bash
-# Install Ansible via pip for latest version
-python3 -m pip install --user ansible ansible-lint
-
-# Verify installation
-ansible --version
-```
-
-### 2. Create Ansible Configuration
-
-Create a project directory for Autoware deployment:
+### 1. Clone Autoware Repository
 
 ```bash
-mkdir -p ~/autoware-deployment/ansible
-cd ~/autoware-deployment/ansible
+# Clone the Autoware repository
+git clone https://github.com/autowarefoundation/autoware.git
+cd autoware
 
-# Create ansible.cfg
-cat > ansible.cfg << EOF
-[defaults]
-inventory = ./inventory/hosts.yml
-host_key_checking = False
-retry_files_enabled = False
-stdout_callback = yaml
-callback_whitelist = timer,profile_tasks
-
-[privilege_escalation]
-become = True
-become_method = sudo
-become_ask_pass = False
-EOF
+# Checkout the 2025.02 branch
+git checkout 2025.02
 ```
 
-You can also download the [file](assets/ansible.cfg) and move the configuration file to the working directory.
+### 2. Run Setup Script
 
-### 3. Create Inventory File
+The setup script will automatically install ROS 2, development tools, and all required dependencies:
 
 ```bash
-mkdir -p inventory
-cat > inventory/hosts.yml << EOF
-all:
-  hosts:
-    localhost:
-      ansible_connection: local
-      ansible_python_interpreter: /usr/bin/python3
-  vars:
-    autoware_version: "2024.12"
-    ros_distro: "humble"
-    cuda_version: "12.3"
-EOF
+# Run the setup script
+./setup-dev-env.sh
 ```
 
-You can also download the [file](assets/hosts.yml) and move the file to the working directory - "ansible/inventory".
+This script will:
+- Install ROS 2 Humble (if not already installed)
+- Install development tools (colcon, vcstool, rosdep)
+- Configure your shell environment
+- Install additional Autoware dependencies
+- Set up pre-commit hooks for development
 
-### 4. Create Base Provisioning Playbook
+**Note**: The script may take 10-30 minutes to complete depending on your internet connection and system performance.
+
+### 3. Source the Environment
+
+After the setup completes, source your ROS 2 environment:
 
 ```bash
-cat > setup-autoware.yml << EOF
----
-- name: Setup Autoware Environment
-  hosts: localhost
-  become: yes
-  
-  tasks:
-    - name: Add ROS 2 GPG key
-      apt_key:
-        url: https://raw.githubusercontent.com/ros/rosdistro/master/ros.key
-        state: present
+# Source ROS 2 setup
+source /opt/ros/humble/setup.bash
 
-    - name: Add ROS 2 repository
-      apt_repository:
-        repo: "deb http://packages.ros.org/ros2/ubuntu {{ ansible_distribution_release }} main"
-        state: present
-
-    - name: Update apt cache
-      apt:
-        update_cache: yes
-
-    - name: Install ROS 2 Humble desktop
-      apt:
-        name: ros-humble-desktop
-        state: present
-
-    - name: Install ROS 2 development tools
-      apt:
-        name:
-          - python3-colcon-common-extensions
-          - python3-rosdep
-          - python3-vcstool
-        state: present
-
-    - name: Initialize rosdep
-      command: rosdep init
-      args:
-        creates: /etc/ros/rosdep/sources.list.d/20-default.list
-
-    - name: Update rosdep
-      become: no
-      command: rosdep update
-EOF
+# For development, you may want to add this to your .bashrc
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 ```
 
-You can also download the [file](assets/setup-autoware.yml) and move the set up environment file to the working directory.
+For more detailed information about the setup process, refer to the [Autoware source installation guide](https://autowarefoundation.github.io/autoware-documentation/main/installation/autoware/source-installation/).
+
+**Note**: For advanced users who want to customize the installation process using Ansible, please refer to the platform-specific customization guides:
+- [x86 Customization Guide](../x86-based_ECU/customization.md)
+- [ARM Customization Guide](../ARM-based_ECU/customization.md)
 
 ## Autoware Deployment via Debian Packages
 (This part should be moved to ECU-dependent deployment.)
