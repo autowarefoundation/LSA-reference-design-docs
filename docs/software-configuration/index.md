@@ -18,6 +18,19 @@ This guideline uses a containerized Autoware for deployment, which is hardeware 
 
 Read [Preparation for Deployment](deployment-setup/index.md)
 
+## Sensor Configuration
+
+Before deploying Autoware on any ECU, sensors must be properly configured. This section covers:
+
+- Network configuration for Ethernet-based sensors
+- LiDAR setup (Velodyne, Ouster, Hesai)
+- Camera configuration (USB, GMSL, GigE Vision)
+- CAN bus interface for vehicle communication
+- GNSS/IMU integration
+- Time synchronization and calibration
+
+Read the comprehensive [Sensor Configuration Guide](sensor-configuration/index.md)
+
 ## Platform-Specific ECU Deployment
 
 Given the containerized Autoware, this section provides the instructions to deploy the containers on different types of ECUs, including X86-based and ARM-based ECUs.
@@ -62,10 +75,11 @@ Read the instructions to deploy [rmw_zenoh](rmw_zenoh/index.md)
 # Getting Started
 
 1. **Review Requirements**: Start with [Deployment Setup](deployment-setup/index.md) to understand system requirements
-2. **Choose Your Platform**: Select either x86 or ARM ECUs based on your design requirements. 
-3. **Install Autoware**: Follow the platform-specific installation guide: [x86](x86-based_ECU/index.md) or [ARM](ARM-based_ECU/index.md).
-4. **Configure Middleware**: Optionally switch to [rmw_zenoh](rmw_zenoh/index.md) to improve the performance of ROS messages.
-5. **Customize the system**: Apply platform-specific optimizations for your use case
+2. **Choose Your Platform**: Select either x86 or ARM ECUs based on your design requirements
+3. **Install Autoware**: Follow the platform-specific installation guide: [x86](x86-based_ECU/index.md) or [ARM](ARM-based_ECU/index.md)
+4. **Configure Sensors**: Set up your sensors using the [Sensor Configuration Guide](sensor-configuration/index.md)
+5. **Configure Middleware**: Optionally switch to [rmw_zenoh](rmw_zenoh/index.md) to improve the performance of ROS messages
+6. **Customize the system**: Apply platform-specific optimizations for your use case
 
 # Support and Resources
 
@@ -74,11 +88,3 @@ Below are the support and resources for the software configuration guideline.
 - **Autoware Documentation**: [https://autoware.org/](https://autoware.org/)
 - **ROS 2 Documentation**: [https://docs.ros.org/](https://docs.ros.org/)
 - **NVIDIA Jetson Resources**: [https://developer.nvidia.com/embedded-computing](https://developer.nvidia.com/embedded-computing)
-
-# Contributing
-When contributing to this documentation:
-
-1. Follow the existing structure and formatting
-2. Test all commands and procedures on target hardware
-3. Include troubleshooting sections for common issues
-4. Keep content up-to-date with latest Autoware releases

@@ -49,17 +49,6 @@ sudo swapon /swapfile
     - 'TF_ENABLE_TENSORRT_DLA=1'
 ```
 
-#### Configure TensorRT
-```yaml
-- name: Optimize TensorRT for Autoware
-  template:
-    src: tensorrt_config.j2
-    dest: /etc/autoware/tensorrt.conf
-    owner: root
-    group: root
-    mode: '0644'
-```
-
 ## Sensor Integration
 
 ### LiDAR Configuration

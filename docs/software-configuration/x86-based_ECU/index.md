@@ -4,19 +4,6 @@ This guide provides comprehensive instructions for deploying Autoware on x86-bas
 
 ## System Preparation
 
-### BIOS/UEFI Configuration
-
-Configure BIOS settings for optimal performance:
-
-```
-1. Disable Secure Boot (required for custom kernel modules)
-2. Enable Above 4G Decoding (for GPU memory mapping)
-3. Set Power Profile to "Performance"
-4. Disable C-States for reduced latency
-5. Enable Intel VT-x/AMD-V (for containerization)
-6. Set PCIe to Gen 4.0 (if supported)
-```
-
 ### Operating System Installation
 
 Follow the base [Deployment Setup Guide](../deployment-setup/index.md) for Ubuntu 22.04 installation, then apply x86-specific configurations:
@@ -30,9 +17,6 @@ sudo apt install -y \
   cpufrequtils \
   i7z \
   powertop
-
-# Install real-time kernel (optional but recommended)
-sudo apt install -y linux-realtime
 ```
 
 ## CUDA and GPU Configuration
@@ -55,6 +39,7 @@ Here's an example of installing CUDA Toolkit 12.3 using the network deb method:
 # - Installer Type: deb (network)
 
 # Install the keyring
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
 
 # Step 2: Update package lists
@@ -79,205 +64,27 @@ sudo apt install -y cudnn
 sudo apt install -y tensorrt
 ```
 
-## Sensor Configuration
-
-### LiDAR Integration
-
-#### Velodyne LiDAR Setup
-```bash
-# Install Velodyne ROS 2 driver
-sudo apt install ros-humble-velodyne
-
-# Configure network interface
-sudo nmcli con add type ethernet \
-  con-name lidar-velodyne \
-  ifname enp2s0 \
-  ip4 192.168.1.100/24
-
-# Create configuration file
-mkdir -p ~/autoware_config/sensors
-cat > ~/autoware_config/sensors/velodyne.yaml << EOF
-/**:
-  ros__parameters:
-    device_ip: "192.168.1.201"
-    port: 2368
-    model: "VLP32C"
-    rpm: 600
-    time_offset: 0.0
-    enabled: true
-    read_once: false
-    read_fast: false
-    repeat_delay: 0.0
-EOF
-```
-
-#### Ouster LiDAR Setup
-```bash
-# Install Ouster ROS 2 driver
-sudo apt install ros-humble-ros2-ouster
-
-# Configure with DMA optimizations
-echo 2048 | sudo tee /proc/sys/vm/nr_hugepages
-```
-
-### Camera Configuration
-
-#### USB Cameras
-```bash
-# Install USB camera drivers
-sudo apt install ros-humble-usb-cam
-
-# Configure udev rules for consistent naming
-echo 'SUBSYSTEM=="video4linux", ATTRS{idVendor}=="046d", SYMLINK+="video_front"' | \
-  sudo tee /etc/udev/rules.d/99-camera.rules
-sudo udevadm control --reload-rules
-```
-
-#### GigE Vision Cameras
-```bash
-# Install GigE Vision support
-sudo apt install ros-humble-camera-aravis
-
-# Optimize network settings
-sudo sysctl -w net.core.rmem_max=33554432
-sudo sysctl -w net.core.rmem_default=33554432
-```
-
-### CAN Bus Interface
+### 3. Configure GPU Environment
 
 ```bash
-# Install SocketCAN utilities
-sudo apt install can-utils
+# Add CUDA to PATH
+echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
 
-# Load kernel modules
-sudo modprobe can
-sudo modprobe can_raw
-sudo modprobe vcan
-
-# Configure CAN interface
-sudo ip link set can0 type can bitrate 500000
-sudo ip link set up can0
-
-# Create systemd service for automatic setup
-sudo tee /etc/systemd/system/can-setup.service << EOF
-[Unit]
-Description=Setup CAN interfaces
-After=network.target
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/setup-can.sh
-RemainAfterExit=yes
-
-[Install]
-WantedBy=multi-user.target
-EOF
+# Verify GPU is accessible
+nvidia-smi
 ```
 
 ## Autoware Deployment
 
-### 1. Install Autoware Components
+### 1. Install Autoware
 
-Follow the general installation from [Deployment Setup](../deployment-setup/index.md), then add x86-specific optimizations:
+Follow the general Autoware installation instructions from [Deployment Setup](../deployment-setup/index.md#autoware-installation-via-debian-packages). For x86-based systems, use the `autoware-localrepo_2025.2-1_amd64.deb` package.
 
-#### 1.1 Configure Autoware APT Repository
+### 2. x86-Specific Dependencies
 
-```bash
-# Download and install repository configuration
-wget https://github.com/autowarefoundation/autoware/releases/latest/download/autoware-apt-config.deb
-sudo dpkg -i autoware-apt-config.deb
-
-# Update package lists
-sudo apt update
-```
-
-#### 1.2. Deploy Autoware Core Packages
-
-```bash
-# Install complete Autoware stack
-sudo apt install -y autoware-universe
-
-# Or install specific components
-sudo apt install -y \
-  autoware-common \
-  autoware-control \
-  autoware-localization \
-  autoware-perception \
-  autoware-planning
-```
-
-#### 1.3. Configure Environment
-
-```bash
-# Add Autoware setup to bashrc
-echo "source /opt/autoware/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-
-# Verify installation
-ros2 pkg list | grep autoware
-```
-
-#### 1.4 Post-Installation Verification
-
-This section uses a shell script to verify if the Autoware is successfully deployed to the system.
-
-##### System Check Script
-
-The first step is to create a verification script:
-
-```bash
-cat > verify-installation.sh << 'EOF'
-#!/bin/bash
-
-echo "=== System Verification ==="
-echo "OS Version: $(lsb_release -d | cut -f2)"
-echo "Kernel: $(uname -r)"
-echo ""
-
-echo "=== CUDA Verification ==="
-if command -v nvidia-smi &> /dev/null; then
-    nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader
-else
-    echo "NVIDIA driver not found"
-fi
-
-if command -v nvcc &> /dev/null; then
-    echo "CUDA Version: $(nvcc --version | grep release | awk '{print $6}')"
-else
-    echo "CUDA not found"
-fi
-echo ""
-
-echo "=== ROS 2 Verification ==="
-if [ -f /opt/ros/humble/setup.bash ]; then
-    source /opt/ros/humble/setup.bash
-    echo "ROS 2 Distro: $ROS_DISTRO"
-    echo "ROS 2 Version: $(ros2 --version 2>&1 | grep '^ros2')"
-else
-    echo "ROS 2 not found"
-fi
-echo ""
-
-echo "=== Autoware Verification ==="
-if [ -f /opt/autoware/setup.bash ]; then
-    source /opt/autoware/setup.bash
-    echo "Autoware packages installed: $(ros2 pkg list | grep -c autoware)"
-else
-    echo "Autoware not found"
-fi
-EOF
-```
-You can also download the [file](assets/verify-installation.sh) and move the shell script to the working directory.
-
-##### Verify the deployment
-The last step executes the verification script to verify the deployment.
-
-```
-chmod +x verify-installation.sh
-./verify-installation.sh
-```
-
-#### 1.5 Add x86-specific optimizations:
+After installing Autoware, install additional x86-optimized libraries:
 
 ```bash
 # Install performance analysis tools
@@ -296,184 +103,158 @@ sudo apt install -y \
   liblapack-dev
 ```
 
-### 2. Configure Autoware for x86
+## Verification
 
-Create optimized launch configuration:
+### System Check Script
 
-```bash
-cat > ~/autoware_config/x86_optimization.yaml << EOF
-/**:
-  ros__parameters:
-    # CPU optimization
-    use_sim_time: false
-    num_threads: 16  # Adjust based on CPU cores
-
-    # GPU optimization
-    gpu_device_id: 0
-    use_tensorrt: true
-    tensorrt_precision: "FP16"
-
-    # Memory optimization
-    pointcloud_buffer_size: 100
-    image_buffer_size: 30
-
-    # Perception settings
-    perception:
-      lidar:
-        detection_method: "centerpoint"
-        use_gpu_preprocessing: true
-      camera:
-        detection_method: "yolox"
-        model_type: "yolox-sPlus"
-EOF
-```
-
-### 3. System Service Configuration
-
-Create systemd service for Autoware:
+Create a comprehensive verification script:
 
 ```bash
-sudo tee /etc/systemd/system/autoware.service << EOF
-[Unit]
-Description=Autoware Universe
-After=network.target
+cat > ~/verify_x86_setup.sh << 'EOF'
+#!/bin/bash
 
-[Service]
-Type=simple
-User=autoware
-Environment="ROS_DOMAIN_ID=42"
-Environment="RMW_IMPLEMENTATION=rmw_cyclonedds_cpp"
-ExecStart=/opt/autoware/scripts/start_autoware.sh
-Restart=on-failure
-RestartSec=10
+echo "=== x86 Autoware Setup Verification ==="
+echo ""
 
-[Install]
-WantedBy=multi-user.target
+echo "1. System Information"
+echo "   OS: $(lsb_release -d | cut -f2)"
+echo "   Kernel: $(uname -r)"
+echo "   CPU: $(lscpu | grep "Model name" | cut -d':' -f2 | xargs)"
+echo "   RAM: $(free -h | grep Mem | awk '{print $2}')"
+echo ""
+
+echo "2. GPU Status"
+if command -v nvidia-smi &> /dev/null; then
+    nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader
+    echo "   CUDA: $(nvcc --version | grep release | awk '{print $6}')"
+else
+    echo "   No NVIDIA GPU detected"
+fi
+echo ""
+
+echo "3. ROS 2 Environment"
+source /opt/ros/humble/setup.bash
+echo "   ROS_DISTRO: $ROS_DISTRO"
+echo "   ROS_VERSION: $(ros2 --version 2>&1 | grep '^ros2')"
+echo ""
+
+echo "4. Autoware Installation"
+if [ -f /opt/autoware/autoware-env ]; then
+    source /opt/autoware/autoware-env
+    echo "   Autoware packages: $(ros2 pkg list | grep -c autoware)"
+    echo "   Launch files: $(ros2 pkg prefix autoware_launch >/dev/null 2>&1 && echo "Found" || echo "Not found")"
+else
+    echo "   Autoware not installed"
+fi
+echo ""
+
+echo "5. Network Interfaces"
+echo "   Available: $(ip -br link show | grep -v lo | awk '{print $1}' | tr '\n' ' ')"
+echo ""
+
+echo "Verification complete!"
 EOF
 
-sudo systemctl enable autoware.service
+chmod +x ~/verify_x86_setup.sh
 ```
 
-## Performance Optimization
-
-### CPU Optimization
+Run the verification:
 
 ```bash
-# Set CPU governor to performance
-for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do
-  echo performance | sudo tee $cpu
-done
-
-# Disable CPU frequency scaling
-sudo systemctl disable ondemand
-
-# Pin Autoware processes to specific cores
-# Add to launch file:
-# <node pkg="..." exec="..." cpu_affinity="0-7">
+~/verify_x86_setup.sh
 ```
 
-### Memory Optimization
+### Test Autoware Components
 
 ```bash
-# Configure huge pages
-echo 1024 | sudo tee /proc/sys/vm/nr_hugepages
+# Source ROS 2 and Autoware
+source /opt/ros/humble/setup.bash
+source /opt/autoware/autoware-env
 
-# Disable transparent huge pages
-echo never | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+# Test ROS 2 communication
+ros2 doctor
 
-# Set memory swappiness
-echo 10 | sudo tee /proc/sys/vm/swappiness
-```
+# List Autoware packages
+ros2 pkg list | grep autoware
 
-### Network Optimization
-
-```bash
-# Increase ring buffer sizes
-sudo ethtool -G enp1s0 rx 4096 tx 4096
-
-# Enable interrupt coalescing
-sudo ethtool -C enp1s0 adaptive-rx on adaptive-tx on
-
-# Configure IRQ affinity
-sudo systemctl enable irqbalance
-```
-
-## Performance Evaluation
-
-### Monitoring Tools
-
-1. **System Monitoring**
-```bash
-# CPU and Memory
-htop
-# GPU
-nvtop
-nvidia-smi dmon -s pucvmet
-# Network
-iftop -i enp1s0
-```
-
-2. **ROS 2 Performance**
-```bash
-# Node performance
-ros2 run rqt_top rqt_top
-# Topic bandwidth
-ros2 topic bw /sensing/lidar/concatenated/pointcloud
-# Latency measurement
-ros2 run performance_test perf_test -c ROS2 -t Array1k
-```
-
-### Expected Performance Metrics
-
-| Component | Target FPS | CPU Usage | GPU Usage | Latency |
-|-----------|------------|-----------|-----------|---------|
-| LiDAR Detection | 10 Hz | 20-30% | 40-60% | <100ms |
-| Camera Detection | 15 Hz | 15-25% | 50-70% | <80ms |
-| Planning | 10 Hz | 30-40% | N/A | <50ms |
-| Control | 50 Hz | 10-15% | N/A | <20ms |
-
-### Profiling and Optimization
-
-```bash
-# CPU profiling
-perf record -g ros2 launch autoware_launch autoware.launch.xml
-perf report
-
-# GPU profiling
-nsys profile -o autoware_profile ros2 launch autoware_launch autoware.launch.xml
-nsys-ui autoware_profile.nsys-rep
-
-# Memory profiling
-valgrind --tool=massif ros2 run perception_node perception_node
-ms_print massif.out.*
+# Check TF tree (in simulation)
+ros2 run tf2_tools view_frames
 ```
 
 ## Troubleshooting
 
 ### Common Issues
 
-1. **GPU Memory Errors**
+1. **CUDA Version Mismatch**
+   ```bash
+   # Check NVIDIA driver and CUDA compatibility
+   nvidia-smi
+   # Ensure driver version supports your CUDA version
+   ```
+
+2. **ROS 2 Package Conflicts**
+   ```bash
+   # Clean and rebuild if needed
+   cd ~/autoware_ws
+   rm -rf build install log
+   colcon build --symlink-install
+   ```
+
+3. **GPU Memory Errors**
+   ```bash
+   # Monitor GPU memory usage
+   watch -n 1 nvidia-smi
+   
+   # Set environment variable to allow memory growth
+   export TF_FORCE_GPU_ALLOW_GROWTH=true
+   ```
+
+4. **Network Configuration Issues**
+   - Verify network interfaces are properly configured
+   - Check firewall settings for ROS 2 DDS communication
+   - Ensure multicast is enabled for DDS discovery
+
+## Performance Monitoring
+
+### System Monitoring Tools
+
 ```bash
-# Solution: Reduce batch sizes
-export TF_FORCE_GPU_ALLOW_GROWTH=true
+# CPU and system monitoring
+htop
+
+# GPU monitoring
+nvtop
+
+# ROS 2 specific monitoring
+ros2 run rqt_top rqt_top
+
+# Network monitoring
+iftop
 ```
 
-2. **CPU Throttling**
-```bash
-# Check throttling
-cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq
-# Solution: Improve cooling or reduce workload
-```
+### ROS 2 Performance Analysis
 
-3. **Network Packet Loss**
 ```bash
-# Check for drops
-ethtool -S enp1s0 | grep drop
-# Solution: Increase buffer sizes
+# Monitor topic frequencies
+ros2 topic hz /sensing/lidar/concatenated/pointcloud
+
+# Check node CPU usage
+ros2 run rqt_top rqt_top
+
+# Analyze communication graph
+ros2 run rqt_graph rqt_graph
 ```
 
 ## Next Steps
 
-- Configure [RMW Zenoh](../rmw_zenoh/index.md) for improved middleware performance
-- Review [ARM-based ECU](../ARM-based_ECU/index.md) documentation for comparison
-- Implement custom [sensor drivers](https://autoware.readthedocs.io/en/latest/how-to-guides/integrating-autoware/creating-vehicle-and-sensor-model/) for your specific hardware
+1. **Configure Sensors**: See [Sensor Configuration Guide](../sensor-configuration/index.md) for detailed sensor setup
+2. **Vehicle Integration**: Configure CAN bus and vehicle interface
+3. **Calibration**: Run sensor calibration procedures
+4. **Testing**: Perform system integration tests
+
+## Additional Resources
+
+- [Autoware Documentation](https://autowarefoundation.github.io/autoware-documentation/)
+- [ROS 2 Humble Documentation](https://docs.ros.org/en/humble/)
+- [NVIDIA CUDA Documentation](https://docs.nvidia.com/cuda/)
+- [x86 Platform Optimization Guide](https://www.intel.com/content/www/us/en/developer/overview.html)

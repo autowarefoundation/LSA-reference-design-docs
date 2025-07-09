@@ -104,14 +104,14 @@ The containerized environment uses NVIDIA's official L4T (Linux for Tegra) image
 
 ### Container vs. Native Development
 
-| Aspect | Containerized | Native |
-|--------|--------------|--------|
-| **Setup Time** | < 30 minutes | Several hours |
-| **Reproducibility** | Guaranteed | Variable |
-| **Dependency Management** | Automated | Manual |
-| **Hardware Access** | Full (with proper flags) | Direct |
-| **Performance** | ~98% of native | 100% |
-| **Team Scalability** | Excellent | Challenging |
+| Aspect                    | Containerized            | Native        |
+|---------------------------|--------------------------|---------------|
+| **Setup Time**            | < 30 minutes             | Several hours |
+| **Reproducibility**       | Guaranteed               | Variable      |
+| **Dependency Management** | Automated                | Manual        |
+| **Hardware Access**       | Full (with proper flags) | Direct        |
+| **Performance**           | ~98% of native           | 100%          |
+| **Team Scalability**      | Excellent                | Challenging   |
 
 ## Environment Customization
 
