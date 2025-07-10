@@ -59,7 +59,7 @@ The instructions to deploy containerized Autoware include the following topics:
 - [Containerized development workflow](ARM-based_ECU/containerized-development.md)
 - [Platform-specific customizations](ARM-based_ECU/customization.md)
 
-Read the instructions to deploy containerized Autotware to [x86-based ECUs](x86-based_ECU/index.md)
+Read the instructions to deploy containerized Autotware to [ARM-based ECUs](ARM-based_ECU/index.md)
 
 ## Middleware Configuration
 
