@@ -77,38 +77,6 @@ echo "export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Autoware Deployment
-
-### 1. Install Autoware
-
-Follow the general Autoware installation instructions from [Getting Started](../getting-started/index.md#autoware-installation-via-debian-packages). 
-
-**Important for Jetson Platforms**: Use the `autoware-localrepo_2025.2-1_jetpack6.0.deb` package specifically designed for JetPack 6.0 systems.
-
-For other ARM64 platforms, use the standard `autoware-localrepo_2025.2-1_arm64.deb` package.
-
-### 2. ARM-Specific Dependencies
-
-Install ARM-specific tools and libraries:
-
-```bash
-# Install ARM-optimized libraries
-sudo apt install -y \
-  libopenblas-dev \
-  liblapack-dev \
-  libeigen3-dev \
-  libboost-all-dev
-
-# Install development tools
-sudo apt install -y \
-  htop \
-  jtop \
-  build-essential \
-  cmake \
-  git \
-  python3-colcon-common-extensions
-```
-
 ## Verification
 
 ### System Check Script

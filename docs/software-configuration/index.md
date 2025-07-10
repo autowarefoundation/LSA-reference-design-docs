@@ -2,10 +2,6 @@
 
 This section provides comprehensive guidance for deploying Autoware on Low Speed Autonomy (LSA) vehicles. The documentation covers everything from initial system setup to platform-specific optimizations.
 
-# Struture of the Guidelines
-
-The guidelines consist of several parts. You may go directly to [Getting Started](#getting-started) if you want to skip the structure of the guidelines.
-
 ## Getting Started
 
 This section provides the essential foundation for deploying Autoware on any platform. It covers:

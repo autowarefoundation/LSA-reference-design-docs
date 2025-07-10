@@ -76,33 +76,6 @@ source ~/.bashrc
 nvidia-smi
 ```
 
-## Autoware Deployment
-
-### 1. Install Autoware
-
-Follow the general Autoware installation instructions from [Getting Started](../getting-started/index.md#autoware-installation-via-debian-packages). For x86-based systems, use the `autoware-localrepo_2025.2-1_amd64.deb` package.
-
-### 2. x86-Specific Dependencies
-
-After installing Autoware, install additional x86-optimized libraries:
-
-```bash
-# Install performance analysis tools
-sudo apt install -y \
-  ros-humble-rqt-top \
-  ros-humble-rqt-tf-tree \
-  htop \
-  nvtop \
-  linux-tools-common \
-  linux-tools-generic
-
-# Install x86-optimized libraries
-sudo apt install -y \
-  libtbb-dev \
-  libopenblas-dev \
-  liblapack-dev
-```
-
 ## Verification
 
 ### System Check Script
