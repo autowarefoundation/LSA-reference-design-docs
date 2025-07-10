@@ -14,19 +14,6 @@ This section provides the essential foundation for deploying Autoware on any pla
 
 Start here: [Getting Started Guide](getting-started/index.md)
 
-## Sensor Configuration
-
-Before deploying Autoware on any ECU, sensors must be properly configured. This section covers:
-
-- Network configuration for Ethernet-based sensors
-- LiDAR setup (Velodyne, Ouster, Hesai)
-- Camera configuration (USB, GMSL, GigE Vision)
-- CAN bus interface for vehicle communication
-- GNSS/IMU integration
-- Time synchronization and calibration
-
-Read the comprehensive [Sensor Configuration Guide](sensor-configuration/index.md)
-
 ## Platform-Specific ECU Deployment
 
 Given the containerized Autoware, this section provides the instructions to deploy the containers on different types of ECUs, including X86-based and ARM-based ECUs.
@@ -57,6 +44,18 @@ The instructions to deploy containerized Autoware include the following topics:
 
 Read the instructions to deploy containerized Autotware to [ARM-based ECUs](ARM-based_ECU/index.md)
 
+## Sensor Configuration
+
+Before deploying Autoware on any ECU, sensors must be properly configured. This section covers:
+
+- Network configuration for Ethernet-based sensors
+- LiDAR setup (Velodyne, Ouster, Hesai)
+- Camera configuration (USB, GMSL, GigE Vision)
+- CAN bus interface for vehicle communication
+- GNSS/IMU integration
+- Time synchronization and calibration
+
+Read the comprehensive [Sensor Configuration Guide](sensor-configuration/index.md)
 ## Middleware Configuration
 
 ROS 2 supports multiple middleware implementations beyond the default DDS. This section covers:
