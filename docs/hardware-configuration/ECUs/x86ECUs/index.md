@@ -23,7 +23,7 @@ ADLINK solutions which is used for autonomous driving and tested by one or more 
 Link to company website is [here.](https://www.adlinktech.com/en/Connected-Autonomous-Vehicle-Solutions)
 
 
-## **AdvanTech In-Vehicle Computers**
+## **Advantech In-Vehicle Computers**
 
 ![Advantech AD Computers](https://github.com/user-attachments/assets/0798fc0d-e799-4c54-8f81-dfe98466e726)
 

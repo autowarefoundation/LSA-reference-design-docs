@@ -47,7 +47,7 @@ NXP solutions which is used for autonomous driving and tested by one or more com
 
 Link to company website is [here.](https://www.nxp.com/design/designs/bluebox-3-0-automotive-high-performance-compute-ahpc-development-platform:BlueBox)
 
-## **AdvanTech In-Vehicle Computers**
+## **Advantech In-Vehicle Computers**
 
 ![Advantech AD Computers](https://github.com/user-attachments/assets/0798fc0d-e799-4c54-8f81-dfe98466e726)
 
