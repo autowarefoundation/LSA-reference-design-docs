@@ -2,142 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/evaluation-and-testing/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/ad-computers/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/armECUs/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/x86ECUs/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/Sensors-and-Actuators/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/Sensors-and-Actuators/lidars/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/chassis/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/odd-definition/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/odd-definition/indoor/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/odd-definition/outdoor/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/AutoSDV/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/F1Tenth/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/F1Tenth/Reference%20Design%20for%20F1Tenth%20with%20Autoware/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/GoKart/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/other-example-designs/GoKart/Reference%20Design%20for%20Go-Kart%20with%20Autoware/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/ARM-based_ECU/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/ARM-based_ECU/containerized-development/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/ARM-based_ECU/customization/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/deployment-setup/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/rmw_zenoh/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/x86-based_ECU/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/x86-based_ECU/customization/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/system-configuration/</loc>
-         <lastmod>2025-07-08</lastmod>
+         <lastmod>2025-07-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
