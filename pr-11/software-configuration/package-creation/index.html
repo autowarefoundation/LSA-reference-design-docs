@@ -1,0 +1,2262 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/pr-11/software-configuration/package-creation/">
+      
+      
+        <link rel="prev" href="../workflow-customization/">
+      
+      
+        <link rel="next" href="../../evaluation-and-testing/">
+      
+      <link rel="icon" href="../../assets/images/autoware-foundation.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
+    
+    
+      
+        <title>Debian Package Creation - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/extra.css">
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#debian-package-creation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-header__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Debian Package Creation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/autowarefoundation/LSA-reference-design-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../system-configuration/" class="md-tabs__link">
+        System Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../odd-definition/" class="md-tabs__link">
+        ODD Definition
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../hardware-configuration/" class="md-tabs__link">
+        Hardware Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Software Configuration
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../evaluation-and-testing/" class="md-tabs__link">
+        Evaluation and Testing
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../other-example-designs/" class="md-tabs__link">
+        Other Example Designs
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-nav__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
+
+    </a>
+    Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/autowarefoundation/LSA-reference-design-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../system-configuration/">System Configuration</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          System Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../odd-definition/">ODD Definition</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          ODD Definition
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../odd-definition/outdoor/">Outdoor</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Outdoor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../odd-definition/indoor/">Indoor</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Indoor
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hardware-configuration/">Hardware Configuration</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hardware-configuration/chassis/">Chassis</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Chassis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hardware-configuration/ECUs/">ECUs</a>
+          
+            <label for="__nav_4_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          ECUs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hardware-configuration/ECUs/x86_64ECUs/">x86 64ECUs</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          x86 64ECUs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hardware-configuration/ECUs/armECUs/">armECUs</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          armECUs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Sensors and Actuators
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Software Configuration</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Software Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../getting-started/">Getting Started</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../x86_64-based_ECU/">Configuring x86_64 ECUs</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuring x86_64 ECUs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../ARM-based_ECU/">Configuring ARM ECUs</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuring ARM ECUs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../sensor-configuration/">Sensors</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sensors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_6" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../middleware-configuration/">Middleware</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Middleware
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_7" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../workflow-customization/">Workflow Customization (Optional)</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Workflow Customization (Optional)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" checked>
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Debian Package Creation (Optional)</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          Debian Package Creation (Optional)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../evaluation-and-testing/">Evaluation and Testing</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Evaluation and Testing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../other-example-designs/">Other Example Designs</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Other Example Designs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../other-example-designs/F1Tenth/">F1Tenth</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          F1Tenth
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../other-example-designs/GoKart/">GoKart</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          GoKart
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../other-example-designs/AutoSDV/">AutoSDV</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          AutoSDV
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-debian-packages" class="md-nav__link">
+    Creating Debian Packages
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating Debian Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-package-creation" class="md-nav__link">
+    Single Package Creation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-package-creation" class="md-nav__link">
+    Batch Package Creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-package-configuration" class="md-nav__link">
+    Advanced Package Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Package Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-control-file" class="md-nav__link">
+    Custom Control File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-installation-scripts" class="md-nav__link">
+    Post-Installation Scripts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-management" class="md-nav__link">
+    Repository Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-local-apt-repository" class="md-nav__link">
+    Creating Local APT Repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-to-remote-repository" class="md-nav__link">
+    Publishing to Remote Repository
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-versioning" class="md-nav__link">
+    Package Versioning
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    Semantic Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-version-management" class="md-nav__link">
+    Automated Version Management
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-architecture-builds" class="md-nav__link">
+    Multi-Architecture Builds
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Architecture Builds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-compilation-setup" class="md-nav__link">
+    Cross-Compilation Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-based-multi-arch-build" class="md-nav__link">
+    Docker-Based Multi-Arch Build
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-testing" class="md-nav__link">
+    Package Testing
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-testing" class="md-nav__link">
+    Installation Testing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-testing" class="md-nav__link">
+    Integration Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    Common Issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    Best Practices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="debian-package-creation">Debian Package Creation<a class="headerlink" href="#debian-package-creation" title="Permanent link">#</a></h1>
+<p>This guide covers creating Debian packages for Autoware components, enabling easy deployment and version management.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<p>Creating Debian packages from ROS 2 packages provides:
+- Version control and dependency management
+- Fast deployment without compilation
+- Consistent installations across systems
+- Easy rollback capabilities</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<p>Install required tools:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>dpkg-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>debhelper<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>devscripts<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>equivs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>python3-bloom<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>python3-rosdep<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>fakeroot
+</code></pre></div>
+<h2 id="creating-debian-packages">Creating Debian Packages<a class="headerlink" href="#creating-debian-packages" title="Permanent link">#</a></h2>
+<h3 id="single-package-creation">Single Package Creation<a class="headerlink" href="#single-package-creation" title="Permanent link">#</a></h3>
+<p>Create a Debian package from a single ROS 2 package:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># make-deb.sh - Create .deb from ROS 2 package</span>
+
+<span class="nv">PACKAGE_NAME</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">WORKSPACE_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">2</span><span class="k">:-$(</span><span class="nb">pwd</span><span class="k">)</span><span class="si">}</span>
+
+<span class="c1"># Source ROS environment</span>
+<span class="nb">source</span><span class="w"> </span>/opt/ros/humble/setup.bash
+
+<span class="c1"># Navigate to package</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKSPACE_PATH</span>/src/<span class="nv">$PACKAGE_NAME</span>
+
+<span class="c1"># Generate debian files using bloom</span>
+bloom-generate<span class="w"> </span>rosdebian<span class="w"> </span>--os-name<span class="w"> </span>ubuntu<span class="w"> </span>--os-version<span class="w"> </span>jammy<span class="w"> </span>--ros-distro<span class="w"> </span>humble
+
+<span class="c1"># Build the package</span>
+fakeroot<span class="w"> </span>debian/rules<span class="w"> </span>binary
+
+<span class="c1"># Move generated .deb files</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>~/debs
+mv<span class="w"> </span>../*.deb<span class="w"> </span>~/debs/
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Package created: ~/debs/</span><span class="si">${</span><span class="nv">PACKAGE_NAME</span><span class="si">}</span><span class="s2">_*.deb&quot;</span>
+</code></pre></div>
+<h3 id="batch-package-creation">Batch Package Creation<a class="headerlink" href="#batch-package-creation" title="Permanent link">#</a></h3>
+<p>Process multiple packages in a workspace:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># package-deb.sh - Batch create .deb packages</span>
+
+<span class="nv">WORKSPACE_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="k">:-$(</span><span class="nb">pwd</span><span class="k">)</span><span class="si">}</span>
+<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">2</span><span class="k">:-</span><span class="p">~/autoware-debs</span><span class="si">}</span>
+
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>
+
+<span class="c1"># Find all packages with package.xml</span>
+<span class="k">for</span><span class="w"> </span>pkg<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span><span class="nv">$WORKSPACE_PATH</span>/src<span class="w"> </span>-name<span class="w"> </span>package.xml<span class="w"> </span>-exec<span class="w"> </span>dirname<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">PACKAGE_NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$pkg</span><span class="k">)</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Processing: </span><span class="nv">$PACKAGE_NAME</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$pkg</span>
+
+<span class="w">    </span><span class="c1"># Skip if already processed</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>debian/changelog<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  Skipping - debian files already exist&quot;</span>
+<span class="w">        </span><span class="k">continue</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># Generate debian files</span>
+<span class="w">    </span>bloom-generate<span class="w"> </span>rosdebian<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--os-name<span class="w"> </span>ubuntu<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--os-version<span class="w"> </span>jammy<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--ros-distro<span class="w"> </span>humble<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="k">continue</span>
+
+<span class="w">    </span><span class="c1"># Build package</span>
+<span class="w">    </span><span class="nv">DEB_BUILD_OPTIONS</span><span class="o">=</span>nocheck<span class="w"> </span>fakeroot<span class="w"> </span>debian/rules<span class="w"> </span>binary
+
+<span class="w">    </span><span class="c1"># Move results</span>
+<span class="w">    </span>mv<span class="w"> </span>../*.deb<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Packages created in: </span><span class="nv">$OUTPUT_DIR</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h2 id="advanced-package-configuration">Advanced Package Configuration<a class="headerlink" href="#advanced-package-configuration" title="Permanent link">#</a></h2>
+<h3 id="custom-control-file">Custom Control File<a class="headerlink" href="#custom-control-file" title="Permanent link">#</a></h3>
+<p>Create custom package metadata:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># debian/control</span>
+Source:<span class="w"> </span>autoware-custom-sensor-driver
+Section:<span class="w"> </span>misc
+Priority:<span class="w"> </span>optional
+Maintainer:<span class="w"> </span>Your<span class="w"> </span>Name<span class="w"> </span>&lt;your.email@example.com&gt;
+Build-Depends:<span class="w"> </span>debhelper<span class="w"> </span><span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="o">)</span>,
+<span class="w">               </span>ros-humble-ros-core,
+<span class="w">               </span>ros-humble-sensor-msgs,
+<span class="w">               </span>ros-humble-std-msgs
+Standards-Version:<span class="w"> </span><span class="m">3</span>.9.8
+Homepage:<span class="w"> </span>https://github.com/your-org/custom-driver
+
+Package:<span class="w"> </span>autoware-custom-sensor-driver
+Architecture:<span class="w"> </span>any
+Depends:<span class="w"> </span><span class="si">${</span><span class="nv">shlibs</span><span class="p">:</span><span class="nv">Depends</span><span class="si">}</span>,
+<span class="w">         </span><span class="si">${</span><span class="nv">misc</span><span class="p">:</span><span class="nv">Depends</span><span class="si">}</span>,
+<span class="w">         </span>ros-humble-ros-core,
+<span class="w">         </span>ros-humble-sensor-msgs,
+<span class="w">         </span>ros-humble-std-msgs
+Description:<span class="w"> </span>Custom<span class="w"> </span>sensor<span class="w"> </span>driver<span class="w"> </span><span class="k">for</span><span class="w"> </span>Autoware
+<span class="w"> </span>This<span class="w"> </span>package<span class="w"> </span>provides<span class="w"> </span>ROS<span class="w"> </span><span class="m">2</span><span class="w"> </span>drivers<span class="w"> </span><span class="k">for</span><span class="w"> </span>custom<span class="w"> </span>sensors
+<span class="w"> </span>used<span class="w"> </span><span class="k">in</span><span class="w"> </span>Autoware<span class="w"> </span>autonomous<span class="w"> </span>driving<span class="w"> </span>stack.
+</code></pre></div>
+<h3 id="post-installation-scripts">Post-Installation Scripts<a class="headerlink" href="#post-installation-scripts" title="Permanent link">#</a></h3>
+<p>Add post-install configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># debian/postinst</span>
+<span class="c1">#!/bin/bash</span>
+<span class="nb">set</span><span class="w"> </span>-e
+
+<span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>configure<span class="o">)</span>
+<span class="w">        </span><span class="c1"># Create necessary directories</span>
+<span class="w">        </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/autoware/config
+<span class="w">        </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/log/autoware
+
+<span class="w">        </span><span class="c1"># Set permissions</span>
+<span class="w">        </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/opt/autoware/config
+
+<span class="w">        </span><span class="c1"># Configure systemd service if needed</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/opt/autoware/systemd/autoware.service<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span>systemctl<span class="w"> </span>daemon-reload
+<span class="w">            </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>autoware.service
+<span class="w">        </span><span class="k">fi</span>
+
+<span class="w">        </span><span class="c1"># Update ROS environment</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/bash.bashrc
+<span class="w">        </span><span class="p">;;</span>
+
+<span class="w">    </span>abort-upgrade<span class="p">|</span>abort-remove<span class="p">|</span>abort-deconfigure<span class="o">)</span>
+<span class="w">        </span><span class="p">;;</span>
+
+<span class="w">    </span>*<span class="o">)</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;postinst called with unknown argument &#39;</span><span class="nv">$1</span><span class="s2">&#39;&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+</code></pre></div>
+<h2 id="repository-management">Repository Management<a class="headerlink" href="#repository-management" title="Permanent link">#</a></h2>
+<h3 id="creating-local-apt-repository">Creating Local APT Repository<a class="headerlink" href="#creating-local-apt-repository" title="Permanent link">#</a></h3>
+<p>Set up a local repository for your packages:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># setup-local-repo.sh</span>
+
+<span class="nv">REPO_BASE</span><span class="o">=</span>~/local-apt-repo
+<span class="nv">DIST</span><span class="o">=</span>jammy
+<span class="nv">COMPONENT</span><span class="o">=</span>main
+<span class="nv">ARCH</span><span class="o">=</span>arm64
+
+<span class="c1"># Create repository structure</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$REPO_BASE</span>/<span class="o">{</span>dists/<span class="nv">$DIST</span>/<span class="nv">$COMPONENT</span>/binary-<span class="nv">$ARCH</span>,pool/<span class="nv">$COMPONENT</span><span class="o">}</span>
+
+<span class="c1"># Copy packages</span>
+cp<span class="w"> </span>~/autoware-debs/*.deb<span class="w"> </span><span class="nv">$REPO_BASE</span>/pool/<span class="nv">$COMPONENT</span>/
+
+<span class="c1"># Generate package index</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$REPO_BASE</span>
+dpkg-scanpackages<span class="w"> </span>pool/<span class="nv">$COMPONENT</span><span class="w"> </span>/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>gzip<span class="w"> </span>-9c<span class="w"> </span>&gt;<span class="w"> </span>dists/<span class="nv">$DIST</span>/<span class="nv">$COMPONENT</span>/binary-<span class="nv">$ARCH</span>/Packages.gz
+
+<span class="c1"># Create Release file</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>dists/<span class="nv">$DIST</span>/Release<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">Origin: Autoware Local Repository</span>
+<span class="s">Label: Autoware Local</span>
+<span class="s">Suite: $DIST</span>
+<span class="s">Codename: $DIST</span>
+<span class="s">Version: 1.0</span>
+<span class="s">Architectures: $ARCH</span>
+<span class="s">Components: $COMPONENT</span>
+<span class="s">Description: Local Autoware Package Repository</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Add repository to sources</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [trusted=yes] file://</span><span class="nv">$REPO_BASE</span><span class="s2"> </span><span class="nv">$DIST</span><span class="s2"> </span><span class="nv">$COMPONENT</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/autoware-local.list
+
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<h3 id="publishing-to-remote-repository">Publishing to Remote Repository<a class="headerlink" href="#publishing-to-remote-repository" title="Permanent link">#</a></h3>
+<p>Upload packages to a remote APT repository:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># publish-packages.sh</span>
+
+<span class="nv">REMOTE_HOST</span><span class="o">=</span>repo.example.com
+<span class="nv">REMOTE_PATH</span><span class="o">=</span>/var/www/apt/autoware
+<span class="nv">PACKAGES_DIR</span><span class="o">=</span>~/autoware-debs
+
+<span class="c1"># Upload packages</span>
+rsync<span class="w"> </span>-avz<span class="w"> </span>--progress<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">$PACKAGES_DIR</span>/*.deb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">$REMOTE_HOST</span>:<span class="nv">$REMOTE_PATH</span>/pool/main/
+
+<span class="c1"># Update remote repository</span>
+ssh<span class="w"> </span><span class="nv">$REMOTE_HOST</span><span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">cd /var/www/apt/autoware</span>
+<span class="s">dpkg-scanpackages pool/main /dev/null | \</span>
+<span class="s">    gzip -9c &gt; dists/jammy/main/binary-arm64/Packages.gz</span>
+<span class="s">apt-ftparchive release dists/jammy &gt; dists/jammy/Release</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h2 id="package-versioning">Package Versioning<a class="headerlink" href="#package-versioning" title="Permanent link">#</a></h2>
+<h3 id="semantic-versioning">Semantic Versioning<a class="headerlink" href="#semantic-versioning" title="Permanent link">#</a></h3>
+<p>Follow semantic versioning for packages:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update version in package.xml</span>
+&lt;version&gt;1.2.3&lt;/version&gt;
+
+<span class="c1"># Update debian changelog</span>
+dch<span class="w"> </span>-v<span class="w"> </span><span class="m">1</span>.2.3-1<span class="w"> </span><span class="s2">&quot;New upstream release&quot;</span>
+dch<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Added feature X&quot;</span>
+dch<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Fixed bug Y&quot;</span>
+</code></pre></div>
+<h3 id="automated-version-management">Automated Version Management<a class="headerlink" href="#automated-version-management" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># update_version.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">xml.etree.ElementTree</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ET</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">update_package_version</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">new_version</span><span class="p">):</span>
+    <span class="c1"># Update package.xml</span>
+    <span class="n">package_xml</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">package_path</span><span class="si">}</span><span class="s2">/package.xml&quot;</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">package_xml</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+
+    <span class="n">version_elem</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;version&#39;</span><span class="p">)</span>
+    <span class="n">version_elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">new_version</span>
+
+    <span class="n">tree</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">package_xml</span><span class="p">)</span>
+
+    <span class="c1"># Update debian changelog</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="s1">&#39;dch&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">new_version</span><span class="si">}</span><span class="s1">-1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;-D&#39;</span><span class="p">,</span> <span class="s1">&#39;jammy&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;Update to version </span><span class="si">{</span><span class="n">new_version</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">package_path</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">update_package_version</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="multi-architecture-builds">Multi-Architecture Builds<a class="headerlink" href="#multi-architecture-builds" title="Permanent link">#</a></h2>
+<h3 id="cross-compilation-setup">Cross-Compilation Setup<a class="headerlink" href="#cross-compilation-setup" title="Permanent link">#</a></h3>
+<p>Build packages for different architectures:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install cross-compilation tools</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gcc-aarch64-linux-gnu<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>g++-aarch64-linux-gnu<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>qemu-user-static
+
+<span class="c1"># Configure for ARM64 build on x86_64</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span>aarch64-linux-gnu-gcc
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span>aarch64-linux-gnu-g++
+<span class="nb">export</span><span class="w"> </span><span class="nv">CMAKE_TOOLCHAIN_FILE</span><span class="o">=</span>/opt/ros/humble/share/ros_cross_compile/cmake/toolchains/aarch64.cmake
+</code></pre></div>
+<h3 id="docker-based-multi-arch-build">Docker-Based Multi-Arch Build<a class="headerlink" href="#docker-based-multi-arch-build" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c"># Dockerfile.multiarch</span>
+<span class="k">ARG</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span>arm64
+<span class="k">FROM</span><span class="w"> </span><span class="s">--platform=linux/${ARCH}</span><span class="w"> </span>ros:humble-ros-base
+
+<span class="c"># Install build dependencies</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>dpkg-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>debhelper<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>python3-bloom<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/workspace</span>
+
+<span class="c"># Copy source</span>
+<span class="k">COPY</span><span class="w"> </span>src/<span class="w"> </span>./src/
+
+<span class="c"># Build script</span>
+<span class="k">COPY</span><span class="w"> </span>scripts/build_packages.sh<span class="w"> </span>/
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/build_packages.sh
+
+<span class="c"># Build packages</span>
+<span class="k">RUN</span><span class="w"> </span>/build_packages.sh
+
+<span class="c"># Extract packages</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">scratch</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span><span class="m">0</span><span class="w"> </span>/workspace/debs/*<span class="w"> </span>/
+</code></pre></div>
+<p>Build for multiple architectures:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Build for ARM64</span>
+docker<span class="w"> </span>buildx<span class="w"> </span>build<span class="w"> </span>--platform<span class="w"> </span>linux/arm64<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span><span class="nv">type</span><span class="o">=</span>local,dest<span class="o">=</span>./packages/arm64<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-f<span class="w"> </span>Dockerfile.multiarch<span class="w"> </span>.
+
+<span class="c1"># Build for AMD64</span>
+docker<span class="w"> </span>buildx<span class="w"> </span>build<span class="w"> </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span><span class="nv">type</span><span class="o">=</span>local,dest<span class="o">=</span>./packages/amd64<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-f<span class="w"> </span>Dockerfile.multiarch<span class="w"> </span>.
+</code></pre></div>
+<h2 id="package-testing">Package Testing<a class="headerlink" href="#package-testing" title="Permanent link">#</a></h2>
+<h3 id="installation-testing">Installation Testing<a class="headerlink" href="#installation-testing" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># test-package.sh</span>
+
+<span class="nv">PACKAGE_FILE</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">TEST_CONTAINER</span><span class="o">=</span><span class="s2">&quot;autoware-package-test&quot;</span>
+
+<span class="c1"># Create test container</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span><span class="nv">$TEST_CONTAINER</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>ubuntu:22.04<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/dev/null
+
+<span class="c1"># Copy and install package</span>
+docker<span class="w"> </span>cp<span class="w"> </span><span class="nv">$PACKAGE_FILE</span><span class="w"> </span><span class="nv">$TEST_CONTAINER</span>:/tmp/
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$TEST_CONTAINER</span><span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
+<span class="s2">    apt update</span>
+<span class="s2">    apt install -y /tmp/</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$PACKAGE_FILE</span><span class="k">)</span>
+<span class="s2">    # Run basic tests</span>
+<span class="s2">    dpkg -L </span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$PACKAGE_FILE</span><span class="w"> </span>.deb<span class="k">)</span>
+<span class="s2">    # Check for missing dependencies</span>
+<span class="s2">    apt-get check</span>
+<span class="s2">&quot;</span>
+
+<span class="c1"># Cleanup</span>
+docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$TEST_CONTAINER</span>
+</code></pre></div>
+<h3 id="integration-testing">Integration Testing<a class="headerlink" href="#integration-testing" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># .gitlab-ci.yml snippet</span>
+<span class="nt">test-packages</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ros:humble</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt update</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt install -y ./packages/*.deb</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source /opt/ros/humble/setup.bash</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ros2 pkg list | grep autoware</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ros2 run autoware_package test_node</span>
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>Missing Dependencies</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Check dependencies</span>
+dpkg-deb<span class="w"> </span>-I<span class="w"> </span>package.deb<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Depends
+
+<span class="c1"># Install missing dependencies</span>
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-f
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Build Failures</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Clean build environment</span>
+debian/rules<span class="w"> </span>clean
+
+<span class="c1"># Verbose build</span>
+<span class="nv">DEB_BUILD_OPTIONS</span><span class="o">=</span><span class="s2">&quot;nostrip noopt&quot;</span><span class="w"> </span>fakeroot<span class="w"> </span>debian/rules<span class="w"> </span>binary
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Version Conflicts</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Force version</span>
+sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>--force-overwrite<span class="w"> </span>package.deb
+
+<span class="c1"># Check conflicts</span>
+apt-cache<span class="w"> </span>policy<span class="w"> </span>package-name
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">#</a></h2>
+<ol>
+<li><strong>Dependency Management</strong>: Specify exact versions for critical dependencies</li>
+<li><strong>Testing</strong>: Always test packages in clean environments</li>
+<li><strong>Documentation</strong>: Include README.Debian with package-specific notes</li>
+<li><strong>Signing</strong>: Sign packages for production repositories</li>
+<li><strong>Automation</strong>: Use CI/CD for consistent package builds</li>
+<li><strong>Cleanup</strong>: Remove build artifacts and temporary files</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../workflow-customization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Workflow Customization" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Workflow Customization
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../evaluation-and-testing/" class="md-footer__link md-footer__link--next" aria-label="Next: Evaluation and Testing" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Evaluation and Testing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 The Autoware Foundation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  </body>
+</html>

@@ -1,0 +1,19 @@
+# autoware_config/jetson_optimization.yml
+---
+- ros__parameters:
+    # DLA acceleration
+    use_dla: true
+    dla_core: 0
+    
+    # GPU configuration
+    gpu_id: 0
+    allow_gpu_memory_growth: true
+    
+    # TensorRT optimization
+    use_tensorrt: true
+    tensorrt_precision: "INT8"  # Jetson supports INT8
+    tensorrt_workspace_size: 1073741824  # 1GB
+    
+    # CPU configuration
+    cpu_cores: 8
+    enable_cpu_affinity: true
