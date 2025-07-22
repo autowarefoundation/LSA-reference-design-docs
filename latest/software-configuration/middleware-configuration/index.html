@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/ARM-based_ECU/containerized-development/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/middleware-configuration/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../sensor-configuration/">
       
       
-        <link rel="next" href="../customization/">
+        <link rel="next" href="../workflow-customization/">
       
-      <link rel="icon" href="../../../assets/images/autoware-foundation.png">
+      <link rel="icon" href="../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Containerized Development for ARM-based ECUs - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
+        <title>Middleware Configuration - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -44,11 +44,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/css/extra.css">
+      <link rel="stylesheet" href="../../assets/css/extra.css">
     
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#containerized-development-for-arm-based-ecus" class="md-skip">
+        <a href="#middleware-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-header__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-header__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Containerized Development for ARM-based ECUs
+              Middleware Configuration
             
           </span>
         </div>
@@ -211,7 +211,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Introduction
     </a>
   </li>
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../system-configuration/" class="md-tabs__link">
+      <a href="../../system-configuration/" class="md-tabs__link">
         System Configuration
       </a>
     </li>
@@ -242,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../odd-definition/" class="md-tabs__link">
+      <a href="../../odd-definition/" class="md-tabs__link">
         ODD Definition
       </a>
     </li>
@@ -258,7 +258,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../hardware-configuration/" class="md-tabs__link">
+      <a href="../../hardware-configuration/" class="md-tabs__link">
         Hardware Configuration
       </a>
     </li>
@@ -276,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Software Configuration
       </a>
     </li>
@@ -292,7 +292,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../evaluation-and-testing/" class="md-tabs__link">
+      <a href="../../evaluation-and-testing/" class="md-tabs__link">
         Evaluation and Testing
       </a>
     </li>
@@ -308,7 +308,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../other-example-designs/" class="md-tabs__link">
+      <a href="../../other-example-designs/" class="md-tabs__link">
         Other Example Designs
       </a>
     </li>
@@ -342,7 +342,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-nav__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
+    <a href="../.." title="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" class="md-nav__button md-logo" aria-label="Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
@@ -373,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -408,7 +408,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../system-configuration/">System Configuration</a>
+          <a href="../../system-configuration/">System Configuration</a>
           
         </div>
       
@@ -459,7 +459,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../odd-definition/">ODD Definition</a>
+          <a href="../../odd-definition/">ODD Definition</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -504,7 +504,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../odd-definition/outdoor/">Outdoor</a>
+          <a href="../../odd-definition/outdoor/">Outdoor</a>
           
         </div>
       
@@ -552,7 +552,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../odd-definition/indoor/">Indoor</a>
+          <a href="../../odd-definition/indoor/">Indoor</a>
           
         </div>
       
@@ -612,7 +612,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../hardware-configuration/">Hardware Configuration</a>
+          <a href="../../hardware-configuration/">Hardware Configuration</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -657,7 +657,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../hardware-configuration/chassis/">Chassis</a>
+          <a href="../../hardware-configuration/chassis/">Chassis</a>
           
         </div>
       
@@ -709,7 +709,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../hardware-configuration/ECUs/">ECUs</a>
+          <a href="../../hardware-configuration/ECUs/">ECUs</a>
           
             <label for="__nav_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -752,14 +752,14 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../hardware-configuration/ECUs/x86ECUs/">x86ECUs</a>
+          <a href="../../hardware-configuration/ECUs/x86_64ECUs/">x86 64ECUs</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_3_2">
           <span class="md-nav__icon md-icon"></span>
-          x86ECUs
+          x86 64ECUs
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -798,7 +798,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../hardware-configuration/ECUs/armECUs/">armECUs</a>
+          <a href="../../hardware-configuration/ECUs/armECUs/">armECUs</a>
           
         </div>
       
@@ -853,7 +853,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
+          <a href="../../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
           
         </div>
       
@@ -908,12 +908,20 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">Software Configuration</a>
+          <a href="../">Software Configuration</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -934,25 +942,23 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
       
       
         
           
             
-          
-        
           
         
       
@@ -960,35 +966,17 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">ARM based ECU</a>
-          
-            <label for="__nav_5_2">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
+          <a href="../getting-started/">Getting Started</a>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_2">
           <span class="md-nav__icon md-icon"></span>
-          ARM based ECU
+          Getting Started
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../customization/" class="md-nav__link">
-        ARM-based ECU Customization Guide
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1021,42 +1009,22 @@
             
           
         
-          
-        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../x86-based_ECU/">x86 based ECU</a>
-          
-            <label for="__nav_5_3">
-              <span class="md-nav__icon md-icon"></span>
-            </label>
+          <a href="../x86_64-based_ECU/">Configuring x86_64 ECUs</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_3">
           <span class="md-nav__icon md-icon"></span>
-          x86 based ECU
+          Configuring x86_64 ECUs
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../x86-based_ECU/customization/" class="md-nav__link">
-        x86-based ECU Customization Guide
-      </a>
-    </li>
-  
-
             
           
         </ul>
@@ -1094,14 +1062,206 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../rmw_zenoh/">Rmw zenoh</a>
+          <a href="../ARM-based_ECU/">Configuring ARM ECUs</a>
           
         </div>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
-          Rmw zenoh
+          Configuring ARM ECUs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../sensor-configuration/">Sensors</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sensors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" checked>
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Middleware</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Middleware
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_7" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../workflow-customization/">Workflow Customization (Optional)</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Workflow Customization (Optional)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_8" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../package-creation/">Debian Package Creation (Optional)</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          Debian Package Creation (Optional)
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -1148,7 +1308,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../evaluation-and-testing/">Evaluation and Testing</a>
+          <a href="../../evaluation-and-testing/">Evaluation and Testing</a>
           
         </div>
       
@@ -1201,7 +1361,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../other-example-designs/">Other Example Designs</a>
+          <a href="../../other-example-designs/">Other Example Designs</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -1246,7 +1406,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../other-example-designs/F1Tenth/">F1Tenth</a>
+          <a href="../../other-example-designs/F1Tenth/">F1Tenth</a>
           
         </div>
       
@@ -1294,7 +1454,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../other-example-designs/GoKart/">GoKart</a>
+          <a href="../../other-example-designs/GoKart/">GoKart</a>
           
         </div>
       
@@ -1342,7 +1502,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../other-example-designs/AutoSDV/">AutoSDV</a>
+          <a href="../../other-example-designs/AutoSDV/">AutoSDV</a>
           
         </div>
       
@@ -1395,44 +1555,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#middleware-options" class="md-nav__link">
+    Middleware Options
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-philosophy-compile-once-deploy-everywhere" class="md-nav__link">
-    Build Philosophy: Compile Once, Deploy Everywhere
-  </a>
-  
-    <nav class="md-nav" aria-label="Build Philosophy: Compile Once, Deploy Everywhere">
+    <nav class="md-nav" aria-label="Middleware Options">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-containerized-compilation" class="md-nav__link">
-    1. Containerized Compilation
+  <a href="#dds-default" class="md-nav__link">
+    DDS (Default)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-debian-package-creation" class="md-nav__link">
-    2. Debian Package Creation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-ansible-based-provisioning" class="md-nav__link">
-    3. Ansible-Based Provisioning
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-unified-docker-environment" class="md-nav__link">
-    4. Unified Docker Environment
+  <a href="#zenoh-recommended-for-lsa" class="md-nav__link">
+    Zenoh (Recommended for LSA)
   </a>
   
 </li>
@@ -1443,11 +1582,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#development-environment-setup" class="md-nav__link">
-    Development Environment Setup
+  <a href="#zenoh-for-low-speed-autonomy" class="md-nav__link">
+    Zenoh for Low Speed Autonomy
   </a>
   
-    <nav class="md-nav" aria-label="Development Environment Setup">
+    <nav class="md-nav" aria-label="Zenoh for Low Speed Autonomy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-benefits" class="md-nav__link">
+    Performance Benefits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-advantages" class="md-nav__link">
+    Operational Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsa-specific-benefits" class="md-nav__link">
+    LSA-Specific Benefits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1458,8 +1631,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#quick-start-guide" class="md-nav__link">
-    Quick Start Guide
+  <a href="#install-zenoh-rmw" class="md-nav__link">
+    Install Zenoh RMW
   </a>
   
 </li>
@@ -1470,23 +1643,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#technical-architecture" class="md-nav__link">
-    Technical Architecture
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
-    <nav class="md-nav" aria-label="Technical Architecture">
+    <nav class="md-nav" aria-label="Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#container-design-principles" class="md-nav__link">
-    Container Design Principles
+  <a href="#basic-setup" class="md-nav__link">
+    Basic Setup
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#container-vs-native-development" class="md-nav__link">
-    Container vs. Native Development
+  <a href="#advanced-configuration" class="md-nav__link">
+    Advanced Configuration
   </a>
   
 </li>
@@ -1497,23 +1670,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environment-customization" class="md-nav__link">
-    Environment Customization
+  <a href="#integration-with-autoware" class="md-nav__link">
+    Integration with Autoware
   </a>
   
-    <nav class="md-nav" aria-label="Environment Customization">
+    <nav class="md-nav" aria-label="Integration with Autoware">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-ansible-for-configuration-management" class="md-nav__link">
-    Using Ansible for Configuration Management
+  <a href="#launch-file-configuration" class="md-nav__link">
+    Launch File Configuration
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#hardware-specific-configurations" class="md-nav__link">
-    Hardware-Specific Configurations
+  <a href="#multi-vehicle-setup" class="md-nav__link">
+    Multi-Vehicle Setup
   </a>
   
 </li>
@@ -1524,77 +1697,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#package-management" class="md-nav__link">
-    Package Management
+  <a href="#switching-between-middleware" class="md-nav__link">
+    Switching Between Middleware
   </a>
-  
-    <nav class="md-nav" aria-label="Package Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#building-debian-packages" class="md-nav__link">
-    Building Debian Packages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#repository-management" class="md-nav__link">
-    Repository Management
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#development-workflows" class="md-nav__link">
-    Development Workflows
+  <a href="#monitoring-and-debugging" class="md-nav__link">
+    Monitoring and Debugging
   </a>
   
-    <nav class="md-nav" aria-label="Development Workflows">
+    <nav class="md-nav" aria-label="Monitoring and Debugging">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#typical-development-cycle" class="md-nav__link">
-    Typical Development Cycle
+  <a href="#zenoh-tools" class="md-nav__link">
+    Zenoh Tools
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cicd-integration" class="md-nav__link">
-    CI/CD Integration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#performance-optimization" class="md-nav__link">
-    Performance Optimization
-  </a>
-  
-    <nav class="md-nav" aria-label="Performance Optimization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#container-runtime-optimizations" class="md-nav__link">
-    Container Runtime Optimizations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-performance" class="md-nav__link">
-    Build Performance
+  <a href="#ros-2-introspection" class="md-nav__link">
+    ROS 2 Introspection
   </a>
   
 </li>
@@ -1613,8 +1739,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#common-issues-and-solutions" class="md-nav__link">
-    Common Issues and Solutions
+  <a href="#common-issues" class="md-nav__link">
+    Common Issues
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fallback-to-dds" class="md-nav__link">
+    Fallback to DDS
   </a>
   
 </li>
@@ -1629,31 +1762,11 @@
     Best Practices
   </a>
   
-    <nav class="md-nav" aria-label="Best Practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#development-guidelines" class="md-nav__link">
-    Development Guidelines
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#team-collaboration" class="md-nav__link">
-    Team Collaboration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    Summary
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
   </a>
   
 </li>
@@ -1676,365 +1789,238 @@
   
 
 
-<h1 id="containerized-development-for-arm-based-ecus">Containerized Development for ARM-based ECUs<a class="headerlink" href="#containerized-development-for-arm-based-ecus" title="Permanent link">#</a></h1>
-<p>This comprehensive guide covers the containerized development environment for ARM-based ECUs, particularly focused on NVIDIA AGX Orin platforms. The content is adapted from the AutoSDV project, which provides a sophisticated containerized approach to Autoware development.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<p>The containerized development approach provides a complete, reproducible environment for developing and deploying Autoware on ARM-based ECUs. This methodology ensures consistency across development teams while optimizing for the specific capabilities of NVIDIA Jetson and AGX Orin hardware.</p>
-<h2 id="build-philosophy-compile-once-deploy-everywhere">Build Philosophy: Compile Once, Deploy Everywhere<a class="headerlink" href="#build-philosophy-compile-once-deploy-everywhere" title="Permanent link">#</a></h2>
-<p>The containerized environment follows a four-stage pipeline that maximizes efficiency and reproducibility:</p>
-<h3 id="1-containerized-compilation">1. Containerized Compilation<a class="headerlink" href="#1-containerized-compilation" title="Permanent link">#</a></h3>
+<h1 id="middleware-configuration">Middleware Configuration<a class="headerlink" href="#middleware-configuration" title="Permanent link">#</a></h1>
+<p>ROS 2 supports multiple middleware implementations (RMW). While DDS is default, Zenoh offers significant advantages for LSA applications.</p>
+<h2 id="middleware-options">Middleware Options<a class="headerlink" href="#middleware-options" title="Permanent link">#</a></h2>
+<h3 id="dds-default">DDS (Default)<a class="headerlink" href="#dds-default" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Process</strong>: Complete Autoware build (<code>colcon build</code>) within isolated Docker containers</li>
-<li><strong>Benefits</strong>: </li>
-<li>Eliminates host system dependency conflicts</li>
-<li>Ensures reproducible builds across different development machines</li>
-<li>Provides consistent compilation environment</li>
+<li>Fast-RTPS (ROS 2 Humble default)</li>
+<li>Cyclone DDS (lightweight)</li>
+<li>RTI Connext (commercial)</li>
 </ul>
-<h3 id="2-debian-package-creation">2. Debian Package Creation<a class="headerlink" href="#2-debian-package-creation" title="Permanent link">#</a></h3>
+<h3 id="zenoh-recommended-for-lsa">Zenoh (Recommended for LSA)<a class="headerlink" href="#zenoh-recommended-for-lsa" title="Permanent link">#</a></h3>
+<p>Tier 1 middleware optimized for autonomous vehicles with:
+- Better wireless/cellular performance
+- Lower latency and resource usage
+- Zero configuration
+- Cloud-native support</p>
+<h2 id="zenoh-for-low-speed-autonomy">Zenoh for Low Speed Autonomy<a class="headerlink" href="#zenoh-for-low-speed-autonomy" title="Permanent link">#</a></h2>
+<h3 id="performance-benefits">Performance Benefits<a class="headerlink" href="#performance-benefits" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Process</strong>: Automated conversion of ROS 2 packages to <code>.deb</code> files via <code>package-deb.sh</code></li>
-<li><strong>Benefits</strong>:</li>
-<li>Captures compiled artifacts in distributable format</li>
-<li>Enables version control and release management</li>
-<li>Supports standard Linux package management</li>
+<li><strong>Lower Latency</strong>: Up to 50% reduction in message latency compared to DDS</li>
+<li><strong>Higher Throughput</strong>: Better performance with large data streams (pointclouds, images)</li>
+<li><strong>Efficient Resource Usage</strong>: Lower CPU and memory footprint</li>
+<li><strong>Wireless Optimization</strong>: Superior performance on WiFi and cellular networks</li>
 </ul>
-<h3 id="3-ansible-based-provisioning">3. Ansible-Based Provisioning<a class="headerlink" href="#3-ansible-based-provisioning" title="Permanent link">#</a></h3>
+<h3 id="operational-advantages">Operational Advantages<a class="headerlink" href="#operational-advantages" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Process</strong>: Environment setup using pre-built packages instead of source compilation</li>
-<li><strong>Benefits</strong>:</li>
-<li>Dramatically faster than full <code>colcon build</code></li>
-<li>Consistent configuration across deployments</li>
-<li>Infrastructure-as-code approach</li>
+<li><strong>Zero Configuration</strong>: Works out-of-the-box without complex QoS tuning</li>
+<li><strong>Cloud Native</strong>: Seamless operation across local networks and internet</li>
+<li><strong>Cellular Support</strong>: Native unicast support for 4G/5G networks</li>
+<li><strong>Simplified Debugging</strong>: Built-in tools for monitoring and troubleshooting</li>
 </ul>
-<h3 id="4-unified-docker-environment">4. Unified Docker Environment<a class="headerlink" href="#4-unified-docker-environment" title="Permanent link">#</a></h3>
+<h3 id="lsa-specific-benefits">LSA-Specific Benefits<a class="headerlink" href="#lsa-specific-benefits" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Process</strong>: Complete pipeline orchestration through Docker</li>
-<li><strong>Benefits</strong>:</li>
-<li>Platform-independent development</li>
-<li>Simplified developer onboarding</li>
-<li>Consistent toolchain across teams</li>
+<li><strong>Multi-Vehicle Coordination</strong>: Efficient fleet communication</li>
+<li><strong>Remote Monitoring</strong>: Native support for cloud connectivity</li>
+<li><strong>Edge Computing</strong>: Optimized for distributed architectures</li>
+<li><strong>Dynamic Discovery</strong>: Better handling of intermittent connections</li>
 </ul>
-<h2 id="development-environment-setup">Development Environment Setup<a class="headerlink" href="#development-environment-setup" title="Permanent link">#</a></h2>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
-<p>Before starting, ensure your development machine has:</p>
-<ul>
-<li><strong>Docker Engine</strong>: Latest version with buildx support</li>
-<li><strong>NVIDIA Container Toolkit</strong>: For GPU acceleration in containers</li>
-<li><strong>QEMU</strong>: Cross-architecture build support (for x86_64 development hosts)</li>
-<li><strong>Git</strong>: For repository management</li>
-<li><strong>Sufficient Storage</strong>: At least 50GB free space for images and builds</li>
-</ul>
-<h3 id="quick-start-guide">Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permanent link">#</a></h3>
-<h4 id="1-repository-setup">1. Repository Setup<a class="headerlink" href="#1-repository-setup" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Clone the repository with submodules</span>
-git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>&lt;your-autoware-repository&gt;
-<span class="nb">cd</span><span class="w"> </span>&lt;repository&gt;/docker
+<p>Complete the <a href="../getting-started/">Getting Started</a> guide first.</p>
+<h3 id="install-zenoh-rmw">Install Zenoh RMW<a class="headerlink" href="#install-zenoh-rmw" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add the Zenoh repository</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/zenoh.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+
+<span class="c1"># Install RMW Zenoh</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ros-humble-rmw-zenoh-cpp
 </code></pre></div>
-<h4 id="2-bootstrap-environment-first-time-only">2. Bootstrap Environment (First Time Only)<a class="headerlink" href="#2-bootstrap-environment-first-time-only" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Configure QEMU for cross-architecture builds</span>
-make<span class="w"> </span>bootstrap
-</code></pre></div>
-<h4 id="3-build-development-image">3. Build Development Image<a class="headerlink" href="#3-build-development-image" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Build ARM64 Docker image with commit tagging</span>
-make<span class="w"> </span>build
-</code></pre></div>
-<h4 id="4-launch-development-container">4. Launch Development Container<a class="headerlink" href="#4-launch-development-container" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Start interactive development session</span>
-make<span class="w"> </span>run
-</code></pre></div>
-<p><strong>Note</strong>: The container automatically mounts your local source directory, enabling real-time code synchronization between host and container.</p>
-<h2 id="technical-architecture">Technical Architecture<a class="headerlink" href="#technical-architecture" title="Permanent link">#</a></h2>
-<h3 id="container-design-principles">Container Design Principles<a class="headerlink" href="#container-design-principles" title="Permanent link">#</a></h3>
-<h4 id="base-image-strategy">Base Image Strategy<a class="headerlink" href="#base-image-strategy" title="Permanent link">#</a></h4>
-<p>The containerized environment uses NVIDIA's official L4T (Linux for Tegra) images as the foundation:</p>
-<ul>
-<li><strong>Base Image</strong>: <code>nvcr.io/nvidia/l4t-tensorrt:r8.6.2-devel</code></li>
-<li><strong>Includes</strong>: CUDA, cuDNN, TensorRT pre-installed and optimized</li>
-<li><strong>Target Hardware</strong>: NVIDIA Jetson AGX Orin, Xavier, and compatible platforms</li>
-</ul>
-<h4 id="build-reproducibility-features">Build Reproducibility Features<a class="headerlink" href="#build-reproducibility-features" title="Permanent link">#</a></h4>
-<ul>
-<li><strong>Commit-based tagging</strong>: Each image tagged with Git commit hash</li>
-<li><strong>Deterministic builds</strong>: Locked dependency versions</li>
-<li><strong>Build cache optimization</strong>: Layered approach for faster rebuilds</li>
-<li><strong>Multi-stage builds</strong>: Separate build and runtime environments</li>
-</ul>
-<h4 id="nvidia-specific-optimizations">NVIDIA-Specific Optimizations<a class="headerlink" href="#nvidia-specific-optimizations" title="Permanent link">#</a></h4>
-<ul>
-<li><strong>Custom APT sources</strong>: Access to NVIDIA L4T packages</li>
-<li><strong>DLA compiler</strong>: Deep Learning Accelerator support</li>
-<li><strong>Jetson-specific libraries</strong>: Hardware-optimized components</li>
-<li><strong>Power mode configurations</strong>: Development vs. production profiles</li>
-</ul>
-<h3 id="container-vs-native-development">Container vs. Native Development<a class="headerlink" href="#container-vs-native-development" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Containerized</th>
-<th>Native</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Setup Time</strong></td>
-<td>&lt; 30 minutes</td>
-<td>Several hours</td>
-</tr>
-<tr>
-<td><strong>Reproducibility</strong></td>
-<td>Guaranteed</td>
-<td>Variable</td>
-</tr>
-<tr>
-<td><strong>Dependency Management</strong></td>
-<td>Automated</td>
-<td>Manual</td>
-</tr>
-<tr>
-<td><strong>Hardware Access</strong></td>
-<td>Full (with proper flags)</td>
-<td>Direct</td>
-</tr>
-<tr>
-<td><strong>Performance</strong></td>
-<td>~98% of native</td>
-<td>100%</td>
-</tr>
-<tr>
-<td><strong>Team Scalability</strong></td>
-<td>Excellent</td>
-<td>Challenging</td>
-</tr>
-</tbody>
-</table>
-<h2 id="environment-customization">Environment Customization<a class="headerlink" href="#environment-customization" title="Permanent link">#</a></h2>
-<h3 id="using-ansible-for-configuration-management">Using Ansible for Configuration Management<a class="headerlink" href="#using-ansible-for-configuration-management" title="Permanent link">#</a></h3>
-<p>The containerized environment uses Ansible for flexible, maintainable configuration:</p>
-<h4 id="creating-custom-components">Creating Custom Components<a class="headerlink" href="#creating-custom-components" title="Permanent link">#</a></h4>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
+<h3 id="basic-setup">Basic Setup<a class="headerlink" href="#basic-setup" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p><strong>Define Component Role</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># Create role structure</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/my_component/<span class="o">{</span>tasks,defaults,meta<span class="o">}</span>
+<p><strong>Set the RMW Implementation</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add to ~/.bashrc for permanent configuration</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export RMW_IMPLEMENTATION=rmw_zenoh_cpp&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+
+<span class="c1"># Or set temporarily for current session</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_zenoh_cpp
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>Implement Installation Logic</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/my_component/tasks/main.yml</span>
-<span class="nn">---</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install component dependencies</span>
-<span class="w">  </span><span class="nt">apt</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">component_dependencies</span><span class="nv"> </span><span class="s">}}&quot;</span>
-<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
-
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Download and install component</span>
-<span class="w">  </span><span class="nt">get_url</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">component_url</span><span class="nv"> </span><span class="s">}}&quot;</span>
-<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/tmp/{{</span><span class="nv"> </span><span class="s">component_filename</span><span class="nv"> </span><span class="s">}}&quot;</span>
-
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install component package</span>
-<span class="w">  </span><span class="nt">apt</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">deb</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/tmp/{{</span><span class="nv"> </span><span class="s">component_filename</span><span class="nv"> </span><span class="s">}}&quot;</span>
-<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">component_type == &quot;deb&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Configure Variables</strong>
-<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/my_component/defaults/main.yml</span>
-<span class="nn">---</span>
-<span class="nt">component_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my_custom_component&quot;</span>
-<span class="nt">component_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.0.0&quot;</span>
-<span class="nt">component_dependencies</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libboost-all-dev</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3-pip</span>
-</code></pre></div></p>
+<p><strong>Configure Zenoh Router (Optional but Recommended)</strong></p>
 </li>
 </ol>
-<h3 id="hardware-specific-configurations">Hardware-Specific Configurations<a class="headerlink" href="#hardware-specific-configurations" title="Permanent link">#</a></h3>
-<h4 id="agx-orin-optimizations">AGX Orin Optimizations<a class="headerlink" href="#agx-orin-optimizations" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/agx_orin_config/tasks/main.yml</span>
-<span class="nn">---</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure Jetson power mode</span>
-<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvpmodel -m 0</span><span class="w">  </span><span class="c1"># MAXN mode for development</span>
-
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set GPU/DLA clock frequencies</span>
-<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetson_clocks --fan</span>
-
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure memory growth for TensorRT</span>
-<span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/environment</span>
-<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TF_FORCE_GPU_ALLOW_GROWTH=true&#39;</span>
-</code></pre></div>
-<h2 id="package-management">Package Management<a class="headerlink" href="#package-management" title="Permanent link">#</a></h2>
-<h3 id="building-debian-packages">Building Debian Packages<a class="headerlink" href="#building-debian-packages" title="Permanent link">#</a></h3>
-<p>The containerized environment includes sophisticated tooling for creating Debian packages:</p>
-<h4 id="individual-package-building">Individual Package Building<a class="headerlink" href="#individual-package-building" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Convert single ROS 2 package to .deb</span>
-./scripts/make-deb.sh<span class="w"> </span>&lt;package_name&gt;
-</code></pre></div>
-<h4 id="batch-package-creation">Batch Package Creation<a class="headerlink" href="#batch-package-creation" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1"># Build all packages in workspace</span>
-./scripts/package-deb.sh<span class="w"> </span>--workspace<span class="w"> </span>/path/to/ws
-</code></pre></div>
-<h3 id="repository-management">Repository Management<a class="headerlink" href="#repository-management" title="Permanent link">#</a></h3>
-<h4 id="local-apt-repository-structure">Local APT Repository Structure<a class="headerlink" href="#local-apt-repository-structure" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>local-apt-repo/
-├── dists/
-│   └── focal/
-│       └── main/
-│           └── binary-arm64/
-└── pool/
-    └── main/
-        └── a/autoware-*/
-</code></pre></div>
-<h4 id="deployment-workflow">Deployment Workflow<a class="headerlink" href="#deployment-workflow" title="Permanent link">#</a></h4>
+<p>Create a Zenoh configuration file:
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>~/zenoh_config.json5<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  mode: &quot;router&quot;,</span>
+<span class="s">  listen: {</span>
+<span class="s">    endpoints: [</span>
+<span class="s">      &quot;tcp/0.0.0.0:7447&quot;,</span>
+<span class="s">      &quot;udp/0.0.0.0:7447&quot;</span>
+<span class="s">    ]</span>
+<span class="s">  },</span>
+<span class="s">  scouting: {</span>
+<span class="s">    multicast: {</span>
+<span class="s">      enabled: true,</span>
+<span class="s">      address: &quot;224.0.0.224:7446&quot;,</span>
+<span class="s">      interface: &quot;auto&quot;</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+</code></pre></div></p>
 <ol>
-<li>Build packages in container</li>
-<li>Export to local repository</li>
-<li>Configure target ECUs to use repository</li>
-<li>Deploy via standard <code>apt</code> commands</li>
+<li><strong>Start Zenoh Router</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Zenoh router</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>zenoh
+
+<span class="c1"># Run with configuration</span>
+zenohd<span class="w"> </span>-c<span class="w"> </span>~/zenoh_config.json5
+</code></pre></div></li>
 </ol>
-<h2 id="development-workflows">Development Workflows<a class="headerlink" href="#development-workflows" title="Permanent link">#</a></h2>
-<h3 id="typical-development-cycle">Typical Development Cycle<a class="headerlink" href="#typical-development-cycle" title="Permanent link">#</a></h3>
-<ol>
-<li><strong>Code Development</strong></li>
-<li>Edit code on host machine</li>
-<li>Changes reflected instantly in container</li>
-<li>
-<p>Use IDE of choice on host</p>
-</li>
-<li>
-<p><strong>Build and Test</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Inside container</span>
-colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<span class="w"> </span>&lt;your_package&gt;
-colcon<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--packages-select<span class="w"> </span>&lt;your_package&gt;
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Package Creation</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Create deployable package</span>
-make<span class="w"> </span>package<span class="w"> </span><span class="nv">PKG</span><span class="o">=</span>&lt;your_package&gt;
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Deployment Testing</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Test on target hardware</span>
-ansible-playbook<span class="w"> </span>deploy.yml<span class="w"> </span>-l<span class="w"> </span>target_ecu
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="cicd-integration">CI/CD Integration<a class="headerlink" href="#cicd-integration" title="Permanent link">#</a></h3>
-<p>The containerized approach seamlessly integrates with CI/CD pipelines:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example GitLab CI configuration</span>
-<span class="nt">build-arm64</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
-<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker buildx build --platform linux/arm64 -t ${IMAGE_TAG} .</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker run ${IMAGE_TAG} make test</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker run ${IMAGE_TAG} make package</span>
-<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">packages/*.deb</span>
+<h3 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h3>
+<h4 id="network-specific-settings">Network-Specific Settings<a class="headerlink" href="#network-specific-settings" title="Permanent link">#</a></h4>
+<p>For different network environments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># WiFi Networks</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_MULTICAST_SCOUTING</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_UNICAST_SCOUTING</span><span class="o">=</span><span class="nb">false</span>
+
+<span class="c1"># Cellular Networks (4G/5G)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_MULTICAST_SCOUTING</span><span class="o">=</span><span class="nb">false</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_UNICAST_SCOUTING</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_PEERS</span><span class="o">=</span><span class="s2">&quot;tcp/router-ip:7447&quot;</span>
+
+<span class="c1"># Mixed Networks</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_MULTICAST_SCOUTING</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_UNICAST_SCOUTING</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
-<h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">#</a></h2>
-<h3 id="container-runtime-optimizations">Container Runtime Optimizations<a class="headerlink" href="#container-runtime-optimizations" title="Permanent link">#</a></h3>
-<ol>
-<li>
-<p><strong>GPU Access</strong>
-   <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>--runtime<span class="w"> </span>nvidia<span class="w"> </span>...
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Memory Management</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Limit container memory to prevent OOM</span>
-docker<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>16g<span class="w"> </span>--memory-swap<span class="w"> </span>16g<span class="w"> </span>...
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>CPU Affinity</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Pin to specific cores</span>
-docker<span class="w"> </span>run<span class="w"> </span>--cpuset-cpus<span class="o">=</span><span class="s2">&quot;0-3&quot;</span><span class="w"> </span>...
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="build-performance">Build Performance<a class="headerlink" href="#build-performance" title="Permanent link">#</a></h3>
-<ul>
-<li><strong>Parallel Compilation</strong>: <code>colcon build --parallel-workers $(nproc)</code></li>
-<li><strong>ccache Integration</strong>: Persistent cache volumes</li>
-<li><strong>Incremental Builds</strong>: Proper workspace overlays</li>
-</ul>
+<h4 id="performance-tuning">Performance Tuning<a class="headerlink" href="#performance-tuning" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># Optimize for low latency</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_CACHE_SIZE</span><span class="o">=</span><span class="m">0</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_BATCHING_ENABLED</span><span class="o">=</span><span class="nb">false</span>
+
+<span class="c1"># Optimize for high throughput</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_CACHE_SIZE</span><span class="o">=</span><span class="m">10000</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_BATCHING_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_BATCH_SIZE</span><span class="o">=</span><span class="m">65536</span>
+</code></pre></div>
+<h2 id="integration-with-autoware">Integration with Autoware<a class="headerlink" href="#integration-with-autoware" title="Permanent link">#</a></h2>
+<h3 id="launch-file-configuration">Launch File Configuration<a class="headerlink" href="#launch-file-configuration" title="Permanent link">#</a></h3>
+<p>Modify your Autoware launch files to use Zenoh:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- autoware_zenoh.launch.xml --&gt;</span>
+<span class="nt">&lt;launch&gt;</span>
+<span class="w">  </span><span class="cm">&lt;!-- Set RMW implementation --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;set_env</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;RMW_IMPLEMENTATION&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;rmw_zenoh_cpp&quot;</span><span class="nt">/&gt;</span>
+
+<span class="w">  </span><span class="cm">&lt;!-- Include standard Autoware launch --&gt;</span>
+<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;$(find-pkg-share autoware_launch)/launch/autoware.launch.xml&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;vehicle_model&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;$(var vehicle_model)&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;sensor_model&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;$(var sensor_model)&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/include&gt;</span>
+<span class="nt">&lt;/launch&gt;</span>
+</code></pre></div>
+<h3 id="multi-vehicle-setup">Multi-Vehicle Setup<a class="headerlink" href="#multi-vehicle-setup" title="Permanent link">#</a></h3>
+<p>For fleet deployments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Vehicle 1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_SESSION_NAME</span><span class="o">=</span><span class="s2">&quot;vehicle_1&quot;</span>
+
+<span class="c1"># Vehicle 2</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">2</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_SESSION_NAME</span><span class="o">=</span><span class="s2">&quot;vehicle_2&quot;</span>
+
+<span class="c1"># Central Router (Fleet Coordinator)</span>
+zenohd<span class="w"> </span>--id<span class="w"> </span>fleet_router<span class="w"> </span>--listen<span class="w"> </span>tcp/0.0.0.0:7447
+</code></pre></div>
+<h2 id="switching-between-middleware">Switching Between Middleware<a class="headerlink" href="#switching-between-middleware" title="Permanent link">#</a></h2>
+<p>You can easily switch between different RMW implementations:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Use Zenoh</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_zenoh_cpp
+
+<span class="c1"># Switch back to Fast DDS</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_fastrtps_cpp
+
+<span class="c1"># Use Cyclone DDS</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp
+</code></pre></div>
+<h2 id="monitoring-and-debugging">Monitoring and Debugging<a class="headerlink" href="#monitoring-and-debugging" title="Permanent link">#</a></h2>
+<h3 id="zenoh-tools">Zenoh Tools<a class="headerlink" href="#zenoh-tools" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Zenoh tools</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>zenoh-tools
+
+<span class="c1"># Monitor active sessions</span>
+z_info
+
+<span class="c1"># Scout for Zenoh nodes</span>
+z_scout
+
+<span class="c1"># Monitor data flow</span>
+z_sub<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;/**&quot;</span>
+</code></pre></div>
+<h3 id="ros-2-introspection">ROS 2 Introspection<a class="headerlink" href="#ros-2-introspection" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># List active nodes</span>
+ros2<span class="w"> </span>node<span class="w"> </span>list
+
+<span class="c1"># Check middleware in use</span>
+ros2<span class="w"> </span>doctor<span class="w"> </span>--report<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>middleware
+
+<span class="c1"># Monitor topic bandwidth</span>
+ros2<span class="w"> </span>topic<span class="w"> </span>bw<span class="w"> </span>/sensing/lidar/concatenated/pointcloud
+</code></pre></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
-<h3 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">#</a></h3>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p><strong>QEMU Errors on x86_64 Hosts</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Re-run bootstrap</span>
-docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--privileged<span class="w"> </span>multiarch/qemu-user-static<span class="w"> </span>--reset<span class="w"> </span>-p<span class="w"> </span>yes
+<p><strong>Nodes not discovering each other</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Check multicast is enabled</span>
+ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>MULTICAST
+
+<span class="c1"># Verify Zenoh router is running</span>
+ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>zenohd
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>GPU Not Accessible</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Verify NVIDIA runtime</span>
-docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>nvidia/cuda:11.4.3-base-ubuntu20.04<span class="w"> </span>nvidia-smi
+<p><strong>High latency on WiFi</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Disable power saving</span>
+sudo<span class="w"> </span>iw<span class="w"> </span>dev<span class="w"> </span>wlan0<span class="w"> </span><span class="nb">set</span><span class="w"> </span>power_save<span class="w"> </span>off
+
+<span class="c1"># Set WiFi to performance mode</span>
+sudo<span class="w"> </span>iwconfig<span class="w"> </span>wlan0<span class="w"> </span>rate<span class="w"> </span>54M<span class="w"> </span>fixed
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>Build Cache Issues</strong>
-   <div class="highlight"><pre><span></span><code><span class="c1"># Clean and rebuild</span>
-docker<span class="w"> </span>builder<span class="w"> </span>prune
-docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>-t<span class="w"> </span><span class="si">${</span><span class="nv">IMAGE_TAG</span><span class="si">}</span><span class="w"> </span>.
+<p><strong>Connection issues over cellular</strong>
+   <div class="highlight"><pre><span></span><code><span class="c1"># Use explicit peer configuration</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_PEERS</span><span class="o">=</span><span class="s2">&quot;tcp/central-server-ip:7447&quot;</span>
 </code></pre></div></p>
 </li>
 </ol>
+<h3 id="fallback-to-dds">Fallback to DDS<a class="headerlink" href="#fallback-to-dds" title="Permanent link">#</a></h3>
+<p>If issues persist, you can always fall back to DDS:
+<div class="highlight"><pre><span></span><code><span class="nb">unset</span><span class="w"> </span>RMW_IMPLEMENTATION
+<span class="c1"># Or explicitly set</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp
+</code></pre></div></p>
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">#</a></h2>
-<h3 id="development-guidelines">Development Guidelines<a class="headerlink" href="#development-guidelines" title="Permanent link">#</a></h3>
 <ol>
-<li><strong>Layer Optimization</strong></li>
-<li>Group related operations</li>
-<li>Minimize layer size</li>
-<li>
-<p>Use multi-stage builds</p>
-</li>
-<li>
-<p><strong>Security Considerations</strong></p>
-</li>
-<li>Don't store credentials in images</li>
-<li>Use secrets management</li>
-<li>
-<p>Regular base image updates</p>
-</li>
-<li>
-<p><strong>Resource Management</strong></p>
-</li>
-<li>Set appropriate resource limits</li>
-<li>Monitor container metrics</li>
-<li>Clean up unused images regularly</li>
+<li><strong>Development</strong>: Use Cyclone DDS for simplicity</li>
+<li><strong>Testing</strong>: Validate with target middleware early</li>
+<li><strong>Production</strong>: Deploy with Zenoh for optimal performance</li>
+<li><strong>Fleet</strong>: Use centralized Zenoh routers</li>
+<li><strong>Remote</strong>: Configure explicit peers for cellular</li>
 </ol>
-<h3 id="team-collaboration">Team Collaboration<a class="headerlink" href="#team-collaboration" title="Permanent link">#</a></h3>
-<ol>
-<li><strong>Image Versioning</strong></li>
-<li>Semantic versioning for releases</li>
-<li>Commit-based tags for development</li>
-<li>
-<p>Maintain changelog</p>
-</li>
-<li>
-<p><strong>Documentation</strong></p>
-</li>
-<li>Document custom configurations</li>
-<li>Maintain runbooks</li>
-<li>Update README files</li>
-</ol>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>The containerized development approach for ARM-based ECUs provides a robust, scalable solution for Autoware development on NVIDIA Jetson platforms. By combining Docker containerization, Ansible automation, and Debian packaging, teams can achieve:</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Rapid Development</strong>: From code to deployment in minutes</li>
-<li><strong>Consistency</strong>: Identical environments across all developers</li>
-<li><strong>Hardware Optimization</strong>: Full utilization of NVIDIA accelerators</li>
-<li><strong>Production Ready</strong>: Seamless transition from development to deployment</li>
+<li>Continue to <a href="../sensor-configuration/">Sensor Configuration</a></li>
+<li>Review platform-specific guides: <a href="../x86_64-based_ECU/">x86_64 ECUs</a> or <a href="../ARM-based_ECU/">ARM ECUs</a></li>
+<li>Learn about <a href="https://zenoh.io/docs/">Zenoh architecture</a></li>
 </ul>
-<p>This methodology has been proven in production environments and continues to evolve with the Autoware ecosystem.</p>
 
 
 
@@ -2061,7 +2047,7 @@ docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software Configuration for ARM-based ECUs" rel="prev">
+          <a href="../sensor-configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sensor Configuration" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -2070,20 +2056,20 @@ docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class
                 Previous
               </span>
               <div class="md-ellipsis">
-                Software Configuration for ARM-based ECUs
+                Sensor Configuration
               </div>
             </div>
           </a>
         
         
           
-          <a href="../customization/" class="md-footer__link md-footer__link--next" aria-label="Next: ARM-based ECU Customization Guide" rel="next">
+          <a href="../workflow-customization/" class="md-footer__link md-footer__link--next" aria-label="Next: Workflow Customization" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                ARM-based ECU Customization Guide
+                Workflow Customization
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2119,10 +2105,10 @@ docker<span class="w"> </span>build<span class="w"> </span>--no-cache<span class
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
         
           <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

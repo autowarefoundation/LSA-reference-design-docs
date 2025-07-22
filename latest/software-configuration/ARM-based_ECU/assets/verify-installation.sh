@@ -30,8 +30,8 @@ fi
 echo ""
 
 echo "=== Autoware Verification ==="
-if [ -f /opt/autoware/setup.bash ]; then
-    source /opt/autoware/setup.bash
+if [ -f /opt/autoware/autoware-env ]; then
+    source /opt/autoware/autoware-env
     echo "Autoware packages installed: $(ros2 pkg list | grep -c autoware)"
 else
     echo "Autoware not found"

@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/chassis/">
+        <link rel="canonical" href="https://autowarefoundation.github.io/LSA-reference-design-docs/latest/software-configuration/workflow-customization/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../middleware-configuration/">
       
       
-        <link rel="next" href="../ECUs/">
+        <link rel="next" href="../package-creation/">
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.20">
     
     
       
-        <title>Chassis Design - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
+        <title>Workflow Customization - Reference Design Guideline for Low Speed Autonomy (LSA) Vehicles</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chassis-design" class="md-skip">
+        <a href="#workflow-customization" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chassis Design
+              Workflow Customization
             
           </span>
         </div>
@@ -252,15 +252,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../hardware-configuration/" class="md-tabs__link">
         Hardware Configuration
       </a>
     </li>
@@ -270,13 +268,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../software-configuration/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Software Configuration
       </a>
     </li>
@@ -584,16 +584,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
         
@@ -612,7 +612,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Hardware Configuration</a>
+          <a href="../../hardware-configuration/">Hardware Configuration</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -620,7 +620,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Hardware Configuration
@@ -633,18 +633,18 @@
               
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
       
       
         
@@ -656,12 +656,12 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index md-nav__link--active">
-          <a href="./">Chassis</a>
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../hardware-configuration/chassis/">Chassis</a>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4_2">
           <span class="md-nav__icon md-icon"></span>
           Chassis
@@ -709,7 +709,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../ECUs/">ECUs</a>
+          <a href="../../hardware-configuration/ECUs/">ECUs</a>
           
             <label for="__nav_4_3">
               <span class="md-nav__icon md-icon"></span>
@@ -752,7 +752,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../ECUs/x86_64ECUs/">x86 64ECUs</a>
+          <a href="../../hardware-configuration/ECUs/x86_64ECUs/">x86 64ECUs</a>
           
         </div>
       
@@ -798,7 +798,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../ECUs/armECUs/">armECUs</a>
+          <a href="../../hardware-configuration/ECUs/armECUs/">armECUs</a>
           
         </div>
       
@@ -853,7 +853,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../Sensors-and-Actuators/">Sensors and Actuators</a>
+          <a href="../../hardware-configuration/Sensors-and-Actuators/">Sensors and Actuators</a>
           
         </div>
       
@@ -885,16 +885,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -921,7 +921,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/">Software Configuration</a>
+          <a href="../">Software Configuration</a>
           
             <label for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
@@ -929,7 +929,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Software Configuration
@@ -966,7 +966,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/getting-started/">Getting Started</a>
+          <a href="../getting-started/">Getting Started</a>
           
         </div>
       
@@ -1014,7 +1014,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/x86_64-based_ECU/">Configuring x86_64 ECUs</a>
+          <a href="../x86_64-based_ECU/">Configuring x86_64 ECUs</a>
           
         </div>
       
@@ -1062,7 +1062,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/ARM-based_ECU/">Configuring ARM ECUs</a>
+          <a href="../ARM-based_ECU/">Configuring ARM ECUs</a>
           
         </div>
       
@@ -1110,7 +1110,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/sensor-configuration/">Sensors</a>
+          <a href="../sensor-configuration/">Sensors</a>
           
         </div>
       
@@ -1158,7 +1158,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/middleware-configuration/">Middleware</a>
+          <a href="../middleware-configuration/">Middleware</a>
           
         </div>
       
@@ -1182,18 +1182,18 @@
               
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" checked>
       
       
         
@@ -1205,12 +1205,12 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/workflow-customization/">Workflow Customization (Optional)</a>
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Workflow Customization (Optional)</a>
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           Workflow Customization (Optional)
@@ -1254,7 +1254,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../software-configuration/package-creation/">Debian Package Creation (Optional)</a>
+          <a href="../package-creation/">Debian Package Creation (Optional)</a>
           
         </div>
       
@@ -1555,23 +1555,192 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vehicle-spec" class="md-nav__link">
-    Vehicle Spec
+  <a href="#customization-workflow-overview" class="md-nav__link">
+    Customization Workflow Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#electronicalelectric-architecture-eea" class="md-nav__link">
-    Electronical/Electric Architecture, EEA
+  <a href="#step-1-host-configuration-customization" class="md-nav__link">
+    Step 1: Host Configuration Customization
   </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Host Configuration Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-host-sensor-drivers" class="md-nav__link">
+    Install Host Sensor Drivers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
+  <a href="#step-2-image-customization" class="md-nav__link">
+    Step 2: Image Customization
   </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Image Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-installation-in-custom-images" class="md-nav__link">
+    CUDA Installation in Custom Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-x86_64-containers" class="md-nav__link">
+    For x86_64 Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-arm64jetson-containers" class="md-nav__link">
+    For ARM64/Jetson Containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-dockerfiles" class="md-nav__link">
+    Creating Custom Dockerfiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-stage-build-for-development" class="md-nav__link">
+    Multi-Stage Build for Development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-compilation" class="md-nav__link">
+    Cross-Compilation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-container-runtime-customization" class="md-nav__link">
+    Step 3: Container Runtime Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Container Runtime Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpu-and-hardware-access" class="md-nav__link">
+    GPU and Hardware Access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-limits-and-performance-tuning" class="md-nav__link">
+    Resource Limits and Performance Tuning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-configuration-for-fleet-deployment" class="md-nav__link">
+    Network Configuration for Fleet Deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-environment-configuration" class="md-nav__link">
+    Step 4: Environment Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Environment Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-roles" class="md-nav__link">
+    Creating Custom Roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-main-playbook" class="md-nav__link">
+    Customizing the Main Playbook
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-image-customization" class="md-nav__link">
+    Docker Image Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Image Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-dockerfiles_1" class="md-nav__link">
+    Creating Custom Dockerfiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-stage-build-for-development_1" class="md-nav__link">
+    Multi-Stage Build for Development
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-package-installation" class="md-nav__link">
+    Step 5: Package Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Package Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-package-development" class="md-nav__link">
+    Custom Package Development
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1593,125 +1762,337 @@
   
 
 
-<h1 id="chassis-design">Chassis Design<a class="headerlink" href="#chassis-design" title="Permanent link">#</a></h1>
-<p>The page suggests the reference chassis for the Low Speed Autonomy.</p>
-<h2 id="vehicle-spec">Vehicle Spec<a class="headerlink" href="#vehicle-spec" title="Permanent link">#</a></h2>
-<ul>
-<li>Dimension:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Reference Design</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>Wheel base (mm)</td>
-<td>Dimension (mm)</td>
-</tr>
-<tr>
-<td>Length</td>
-<td>2500</td>
-<td>3500</td>
-</tr>
-<tr>
-<td>Heigh</td>
-<td></td>
-<td>2500</td>
-</tr>
-<tr>
-<td>Width</td>
-<td></td>
-<td>1500</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Power Train</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Reference Design</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Battery Capacity</td>
-<td>22 kWh</td>
-</tr>
-<tr>
-<td>Range</td>
-<td>200 km</td>
-</tr>
-<tr>
-<td>Voltage</td>
-<td>96 V</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Steering (Only support Two-Wheel Drive, 2WD)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Reference Design</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2 Wheel</td>
-<td>V</td>
-</tr>
-<tr>
-<td>4 Wheel</td>
-<td>Optional</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Others</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Reference Design</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Speed</td>
-<td>&lt;20 kph (5,10,15)</td>
-</tr>
-<tr>
-<td>Payload</td>
-<td>500 - 1000KG</td>
-</tr>
-<tr>
-<td>Turn Radius</td>
-<td>&gt; 4M</td>
-</tr>
-<tr>
-<td>Slope</td>
-<td>20 (degree)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="electronicalelectric-architecture-eea">Electronical/Electric Architecture, EEA<a class="headerlink" href="#electronicalelectric-architecture-eea" title="Permanent link">#</a></h2>
-<p><img alt="LSA EEA Design" src="images/LSA_EEA.png" /></p>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="AWFRefDesignWG_Chassis.xlsx">AWF Reference Design Discussion (Excel)</a></li>
-<li><a href="ReferenceDrawingV2.pdf">Reference Drawing (PDF)</a></li>
-</ul>
+<h1 id="workflow-customization">Workflow Customization<a class="headerlink" href="#workflow-customization" title="Permanent link">#</a></h1>
+<p>This guide covers advanced customization options for the containerized Autoware deployment workflow.</p>
+<h2 id="customization-workflow-overview">Customization Workflow Overview<a class="headerlink" href="#customization-workflow-overview" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "Step 1: Host Configuration"
+        A1[Host System] --&gt; A2[Docker Engine]
+        A1 --&gt; A3[NVIDIA Container Toolkit]
+        A1 --&gt; A4[NVIDIA Driver]
+        A1 --&gt; A5[Custom Tools&lt;br/&gt;- Ansible&lt;br/&gt;- Build Tools]
+    end
+
+    subgraph "Step 2: Image Customization"
+        B1[Base Image] --&gt; B2{Customization Type}
+        B2 --&gt;|Add CUDA| B3[Custom CUDA Installation]
+        B2 --&gt;|Add Dependencies| B4[Additional Packages]
+        B2 --&gt;|Optimize| B5[Platform Optimizations]
+        B3 --&gt; B6[Build Custom Image]
+        B4 --&gt; B6
+        B5 --&gt; B6
+    end
+
+    subgraph "Step 3: Container Runtime"
+        C1[Launch Container] --&gt; C2[Runtime Options]
+        C2 --&gt; C3[GPU Access]
+        C2 --&gt; C4[Network Config]
+        C2 --&gt; C5[Resource Limits]
+        C2 --&gt; C6[Volume Mounts]
+    end
+
+    subgraph "Step 4: Environment Configuration"
+        D1[Clone Autoware Repo] --&gt; D2[Run setup-dev-env.sh]
+        D2 --&gt; D3[Ansible Playbooks]
+        D3 --&gt; D4[Custom Roles]
+        D4 --&gt; D5[Sensor Config]
+        D4 --&gt; D6[Platform Tuning]
+        D3 --&gt; D7[Variables &amp; Inventory]
+    end
+
+    subgraph "Step 5: Package Installation"
+        E1[Install localrepo Package] --&gt; E2[Install Autoware Packages]
+        E2 --&gt; E3[Custom Package Development]
+        E3 --&gt; E4[Deploy to Fleet]
+    end
+
+    subgraph "External Workflow"
+        F1[Build Packages] --&gt; F2[Create .deb Files]
+        F2 --&gt; F3[Setup APT Repository]
+        F3 --&gt; F4[Generate localrepo Package]
+    end
+
+    A5 --&gt; B1
+    B6 --&gt; C1
+    C6 --&gt; D1
+    D7 --&gt; E1
+    F4 -.-&gt;|Provides| E1
+
+    style A1 fill:#e3f2fd
+    style B1 fill:#f3e5f5
+    style C1 fill:#e8f5e9
+    style D1 fill:#fff3e0
+    style E1 fill:#fce4ec
+    style F1 fill:#f5f5f5</code></pre>
+<h2 id="step-1-host-configuration-customization">Step 1: Host Configuration Customization<a class="headerlink" href="#step-1-host-configuration-customization" title="Permanent link">#</a></h2>
+<h3 id="install-host-sensor-drivers">Install Host Sensor Drivers<a class="headerlink" href="#install-host-sensor-drivers" title="Permanent link">#</a></h3>
+<p>Some of the sensors ship proprietary drivers and userspace libraries, usually named SDKs. For example, StereoLabs cameras require the ZED Link driver and the ZED SDK to be installed. In the containerized setup, the ZED Link driver is installed on the host system, while the SDK is installed in the container.</p>
+<h2 id="step-2-image-customization">Step 2: Image Customization<a class="headerlink" href="#step-2-image-customization" title="Permanent link">#</a></h2>
+<h3 id="cuda-installation-in-custom-images">CUDA Installation in Custom Images<a class="headerlink" href="#cuda-installation-in-custom-images" title="Permanent link">#</a></h3>
+<p>While the recommended pre-built images include CUDA, you may need to install or update CUDA in custom containers:</p>
+<h3 id="for-x86_64-containers">For x86_64 Containers<a class="headerlink" href="#for-x86_64-containers" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c"># Install CUDA in Dockerfile</span>
+<span class="k">RUN</span><span class="w"> </span>wget<span class="w"> </span>https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>dpkg<span class="w"> </span>-i<span class="w"> </span>cuda-keyring_1.1-1_all.deb<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>cuda-toolkit-12-3<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>rm<span class="w"> </span>cuda-keyring_1.1-1_all.deb
+</code></pre></div>
+<h3 id="for-arm64jetson-containers">For ARM64/Jetson Containers<a class="headerlink" href="#for-arm64jetson-containers" title="Permanent link">#</a></h3>
+<p>CUDA is typically pre-installed via JetPack. To verify or update:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check CUDA version</span>
+nvcc<span class="w"> </span>--version
+
+<span class="c1"># For custom installations, use NVIDIA SDK Manager on the host</span>
+</code></pre></div>
+<h3 id="creating-custom-dockerfiles">Creating Custom Dockerfiles<a class="headerlink" href="#creating-custom-dockerfiles" title="Permanent link">#</a></h3>
+<p>Extend the base Autoware image with custom components:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Dockerfile.custom</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/autowarefoundation/autoware:humble-2025.02-arm64</span>
+
+<span class="c"># Install additional dependencies</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>custom-driver-package<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>additional-tools<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="c"># Copy custom configuration</span>
+<span class="k">COPY</span><span class="w"> </span>config/custom_params.yaml<span class="w"> </span>/opt/autoware/config/
+
+<span class="c"># Add custom launch files</span>
+<span class="k">COPY</span><span class="w"> </span>launch/custom_autoware.launch.xml<span class="w"> </span>/opt/autoware/launch/
+
+<span class="c"># Set custom environment variables</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">CUSTOM_PARAM</span><span class="o">=</span>value
+<span class="k">ENV</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp
+
+<span class="c"># Custom entrypoint</span>
+<span class="k">COPY</span><span class="w"> </span>scripts/custom_entrypoint.sh<span class="w"> </span>/
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/custom_entrypoint.sh
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/custom_entrypoint.sh&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="multi-stage-build-for-development">Multi-Stage Build for Development<a class="headerlink" href="#multi-stage-build-for-development" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c"># Dockerfile.dev</span>
+<span class="c"># Build stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/autowarefoundation/autoware:humble-2025.02-arm64</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/workspace</span>
+<span class="k">COPY</span><span class="w"> </span>src/<span class="w"> </span>./src/
+
+<span class="c"># Build custom packages</span>
+<span class="k">RUN</span><span class="w"> </span>.<span class="w"> </span>/opt/ros/humble/setup.bash<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>colcon<span class="w"> </span>build<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
+
+<span class="c"># Runtime stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/autowarefoundation/autoware:humble-2025.02-arm64</span>
+
+<span class="c"># Copy built packages</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/workspace/install<span class="w"> </span>/opt/autoware/custom
+
+<span class="c"># Update environment</span>
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/custom/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+<h3 id="cross-compilation">Cross-Compilation<a class="headerlink" href="#cross-compilation" title="Permanent link">#</a></h3>
+<p>For faster builds, consider cross-compilation from an x86_64 host. See <a href="https://docs.docker.com/build/building/multi-platform/">Docker Cross-Compilation Guide</a> for details.</p>
+<h2 id="step-3-container-runtime-customization">Step 3: Container Runtime Customization<a class="headerlink" href="#step-3-container-runtime-customization" title="Permanent link">#</a></h2>
+<h3 id="gpu-and-hardware-access">GPU and Hardware Access<a class="headerlink" href="#gpu-and-hardware-access" title="Permanent link">#</a></h3>
+<p>Configure Docker run commands for optimal hardware access:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1"># launch_optimized.sh</span>
+
+docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>autoware-optimized<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--runtime<span class="w"> </span>nvidia<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--network<span class="w"> </span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--privileged<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ipc<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pid<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cap-add<span class="w"> </span>SYS_ADMIN<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cap-add<span class="w"> </span>SYS_NICE<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>/dev/bus/usb<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>/dev/ttyUSB0:/dev/ttyUSB0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--device<span class="w"> </span>/dev/video0:/dev/video0<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/dev/shm:/dev/shm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/tmp/.X11-unix:/tmp/.X11-unix:rw<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>~/autoware_maps:/autoware_maps<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>~/autoware_data:/autoware_data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">DISPLAY</span><span class="o">=</span><span class="nv">$DISPLAY</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">QT_X11_NO_MITSHM</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">NVIDIA_DRIVER_CAPABILITIES</span><span class="o">=</span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>custom-autoware:latest
+</code></pre></div>
+<h3 id="resource-limits-and-performance-tuning">Resource Limits and Performance Tuning<a class="headerlink" href="#resource-limits-and-performance-tuning" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># docker-compose.custom.yml</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">autoware</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom-autoware:latest</span>
+<span class="w">    </span><span class="nt">runtime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia</span>
+<span class="w">    </span><span class="nt">deploy</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">limits</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;8&#39;</span>
+<span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32G</span>
+<span class="w">        </span><span class="nt">reservations</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;4&#39;</span>
+<span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16G</span>
+<span class="w">          </span><span class="nt">devices</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia</span>
+<span class="w">              </span><span class="nt">count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">              </span><span class="nt">capabilities</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">gpu</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OMP_NUM_THREADS=8</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPENBLAS_NUM_THREADS=8</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MKL_NUM_THREADS=8</span>
+<span class="w">    </span><span class="nt">ulimits</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">memlock</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">soft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">        </span><span class="nt">hard</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">      </span><span class="nt">rtprio</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">soft</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99</span>
+<span class="w">        </span><span class="nt">hard</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99</span>
+</code></pre></div>
+<h3 id="network-configuration-for-fleet-deployment">Network Configuration for Fleet Deployment<a class="headerlink" href="#network-configuration-for-fleet-deployment" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create custom bridge network</span>
+docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--driver<span class="w"> </span>bridge<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--subnet<span class="o">=</span><span class="m">172</span>.20.0.0/16<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ip-range<span class="o">=</span><span class="m">172</span>.20.240.0/20<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gateway<span class="o">=</span><span class="m">172</span>.20.0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>autoware-fleet
+
+<span class="c1"># Launch containers on custom network</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--network<span class="w"> </span>autoware-fleet<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ip<span class="w"> </span><span class="m">172</span>.20.0.10<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--hostname<span class="w"> </span>vehicle-001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>custom-autoware:latest
+</code></pre></div>
+<h2 id="step-4-environment-configuration">Step 4: Environment Configuration<a class="headerlink" href="#step-4-environment-configuration" title="Permanent link">#</a></h2>
+<h3 id="creating-custom-roles">Creating Custom Roles<a class="headerlink" href="#creating-custom-roles" title="Permanent link">#</a></h3>
+<p>Extend the deployment with custom Ansible roles:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create custom role structure</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/custom_component/<span class="o">{</span>tasks,defaults,meta<span class="o">}</span>
+</code></pre></div>
+<h4 id="example-custom-sensor-configuration-role">Example: Custom Sensor Configuration Role<a class="headerlink" href="#example-custom-sensor-configuration-role" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/lidar_config/tasks/main.yml</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install LiDAR dependencies</span>
+<span class="w">  </span><span class="nt">apt</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ros-humble-velodyne</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ros-humble-ouster-ros</span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure network for LiDAR</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lidar_network.conf.j2</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/network/interfaces.d/lidar.conf</span>
+<span class="w">  </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">restart networking</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set LiDAR parameters</span>
+<span class="w">  </span><span class="nt">copy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">lidar_ip: {{ lidar_ip_address }}</span>
+<span class="w">      </span><span class="no">lidar_port: {{ lidar_port }}</span>
+<span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/autoware/config/lidar.yaml</span>
+</code></pre></div>
+<h4 id="example-platform-specific-optimization-role">Example: Platform-Specific Optimization Role<a class="headerlink" href="#example-platform-specific-optimization-role" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/jetson_optimization/tasks/main.yml</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure Jetson power mode</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvpmodel -m 0</span><span class="w">  </span><span class="c1"># MAXN mode</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == &quot;aarch64&quot;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enable jetson clocks</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetson_clocks --fan</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == &quot;aarch64&quot;</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure GPU memory growth</span>
+<span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/environment</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TF_FORCE_GPU_ALLOW_GROWTH=true&#39;</span>
+</code></pre></div>
+<h3 id="customizing-the-main-playbook">Customizing the Main Playbook<a class="headerlink" href="#customizing-the-main-playbook" title="Permanent link">#</a></h3>
+<p>Modify the main deployment playbook to include custom roles:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ansible/setup-autoware-custom.yml</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Custom Autoware Deployment</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
+
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">autoware_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025.02&quot;</span>
+<span class="w">    </span><span class="nt">enable_gpu_optimization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">custom_sensors</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">velodyne</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ouster</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hesai</span>
+
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base_system</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cuda_setup</span>
+<span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enable_gpu_optimization</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoware_core</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor_drivers</span>
+<span class="w">      </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">sensors</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">custom_sensors</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetson_optimization</span>
+<span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == &quot;aarch64&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom_component</span>
+</code></pre></div>
+<h2 id="docker-image-customization">Docker Image Customization<a class="headerlink" href="#docker-image-customization" title="Permanent link">#</a></h2>
+<h3 id="creating-custom-dockerfiles_1">Creating Custom Dockerfiles<a class="headerlink" href="#creating-custom-dockerfiles_1" title="Permanent link">#</a></h3>
+<p>Extend the base Autoware image with custom components:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Dockerfile.custom</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/autowarefoundation/autoware:humble-2025.02-arm64</span>
+
+<span class="c"># Install additional dependencies</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>custom-driver-package<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>additional-tools<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+
+<span class="c"># Copy custom configuration</span>
+<span class="k">COPY</span><span class="w"> </span>config/custom_params.yaml<span class="w"> </span>/opt/autoware/config/
+
+<span class="c"># Add custom launch files</span>
+<span class="k">COPY</span><span class="w"> </span>launch/custom_autoware.launch.xml<span class="w"> </span>/opt/autoware/launch/
+
+<span class="c"># Set custom environment variables</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">CUSTOM_PARAM</span><span class="o">=</span>value
+<span class="k">ENV</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_cyclonedds_cpp
+
+<span class="c"># Custom entrypoint</span>
+<span class="k">COPY</span><span class="w"> </span>scripts/custom_entrypoint.sh<span class="w"> </span>/
+<span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/custom_entrypoint.sh
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/custom_entrypoint.sh&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="multi-stage-build-for-development_1">Multi-Stage Build for Development<a class="headerlink" href="#multi-stage-build-for-development_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c"># Dockerfile.dev</span>
+<span class="c"># Build stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/autowarefoundation/autoware:humble-2025.02-arm64</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/workspace</span>
+<span class="k">COPY</span><span class="w"> </span>src/<span class="w"> </span>./src/
+
+<span class="c"># Build custom packages</span>
+<span class="k">RUN</span><span class="w"> </span>.<span class="w"> </span>/opt/ros/humble/setup.bash<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>colcon<span class="w"> </span>build<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
+
+<span class="c"># Runtime stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">ghcr.io/autowarefoundation/autoware:humble-2025.02-arm64</span>
+
+<span class="c"># Copy built packages</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/workspace/install<span class="w"> </span>/opt/autoware/custom
+
+<span class="c"># Update environment</span>
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/custom/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+<h2 id="step-5-package-installation">Step 5: Package Installation<a class="headerlink" href="#step-5-package-installation" title="Permanent link">#</a></h2>
+<p>This step focuses on installing pre-built Autoware packages from the local repository.</p>
+<h3 id="custom-package-development">Custom Package Development<a class="headerlink" href="#custom-package-development" title="Permanent link">#</a></h3>
+<p>For developing your own packages on top of Autoware, see the dedicated <a href="../package-creation/">Package Creation Guide</a>.</p>
 
 
 
@@ -1738,7 +2119,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Hardware Configuration" rel="prev">
+          <a href="../middleware-configuration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Middleware Configuration" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1747,20 +2128,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Hardware Configuration
+                Middleware Configuration
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ECUs/" class="md-footer__link md-footer__link--next" aria-label="Next: ECUs" rel="next">
+          <a href="../package-creation/" class="md-footer__link md-footer__link--next" aria-label="Next: Debian Package Creation" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                ECUs
+                Debian Package Creation
               </div>
             </div>
             <div class="md-footer__button md-icon">
