@@ -23,5 +23,14 @@
 
 ### AdvanTech X86-based ECU
 
+| Component | Target FPS | CPU Usage | GPU Usage | Latency |
+|-----------|------------|-----------|-----------|---------|
+| LiDAR Detection | 10 Hz | 15-25% | N/A | <150ms |
+| Camera Detection | 10 Hz | 5-10% | N/A | <80ms |
+| Planning | 10 Hz | 30-45% | N/A | <75ms |
+| Control | 20 Hz | 10-25% | N/A | <40ms |
+
+*LiDAR:Use 3D LiDAR Sensor.
+*Camera:Use USB camera, resolution is 1280x720.
 ### vecow X86-based ECU
 
