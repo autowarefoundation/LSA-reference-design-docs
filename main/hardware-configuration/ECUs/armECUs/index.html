@@ -1575,13 +1575,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nvidia-in-vehicle-computers" class="md-nav__link">
-    nVidia In-Vehicle Computers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#adlink-in-vehicle-computers" class="md-nav__link">
     ADLINK In-Vehicle Computers
   </a>
@@ -1589,15 +1582,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nxp-in-vehicle-computers" class="md-nav__link">
-    NXP In-Vehicle Computers
+  <a href="#advantech-in-vehicle-computers" class="md-nav__link">
+    Advantech In-Vehicle Computers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantech-in-vehicle-computers" class="md-nav__link">
-    Advantech In-Vehicle Computers
+  <a href="#nvidia-in-vehicle-computers" class="md-nav__link">
+    nVidia In-Vehicle Computers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nxp-in-vehicle-computers" class="md-nav__link">
+    NXP In-Vehicle Computers
   </a>
   
 </li>
@@ -1621,43 +1621,9 @@
 
 
 <h1 id="arm-based-ecus">ARM-based ECUs<a class="headerlink" href="#arm-based-ecus" title="Permanent link">#</a></h1>
-<p>The page lists the ARM-based ECUs being tested for LSA, which can meet the computation capacity requirement of LSA but does not overprovision the resource requirements. </p>
-<p>Another page on <a href="https://autowarefoundation.github.io/autoware-documentation/main/reference-hw/ad-computers/">Autoware Document</a> lists the ECUs being for other use scenarios. </p>
-<p>(Candidates of the ECUS to be used by the LSA)</p>
-<h2 id="nvidia-in-vehicle-computers"><strong>nVidia In-Vehicle Computers</strong><a class="headerlink" href="#nvidia-in-vehicle-computers" title="Permanent link">#</a></h2>
-<p><img alt="ad_comp-adlink.png" src="images/ad_comp-nvidia.jpg" />
-nVidia provides the development kit as a reference design. </p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nVidia Jetson Orin</td>
-<td>12-core Arm® Cortex®-A78AE v8.2 64-bit CPU 3MB L2 + 6MB L3</td>
-<td>2048-core NVIDIA Ampere architecture GPU with 64 Tensor Cores</td>
-<td>64 GB RAM, Up to 6 cameras (16 via virtual channels), 4x USB2.0 1x 1GbE, 1x10GbE</td>
-<td>None</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td>DRIVE AGX Orin Developer Kit</td>
-<td>12 Cortex-A78A CPU</td>
-<td>2048-core NVIDIA Ampere architecture GPU with 64 Tensor Cores</td>
-<td>16x GMSL cameras, 2x 10GbE, 10x 1GbE, 6x 100 MbE, 6 CAN</td>
-<td>ASIL-D</td>
-<td>(TBA)</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website is <a href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/">here.</a></p>
+<p>The page lists the ARM-based ECUs being tested for LSA, which can meet the computation capacity requirement of LSA but does not overprovision the resource requirements.</p>
+<p>Another page on <a href="https://autowarefoundation.github.io/autoware-documentation/main/reference-hw/ad-computers/">Autoware Document</a> lists the ECUs being for other use scenarios.</p>
+<p>(Candidates of the ECUs to be used by the LSA in the alphabetical order)</p>
 <h2 id="adlink-in-vehicle-computers"><strong>ADLINK In-Vehicle Computers</strong><a class="headerlink" href="#adlink-in-vehicle-computers" title="Permanent link">#</a></h2>
 <p><img alt="ad_comp-adlink.png" src="images/ad_comp-adlink.png" /></p>
 <p>ADLINK solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
@@ -1702,32 +1668,6 @@ nVidia provides the development kit as a reference design. </p>
 </tbody>
 </table>
 <p>Link to company website is <a href="https://www.adlinktech.com/en/Connected-Autonomous-Vehicle-Solutions">here.</a></p>
-<h2 id="nxp-in-vehicle-computers"><strong>NXP In-Vehicle Computers</strong><a class="headerlink" href="#nxp-in-vehicle-computers" title="Permanent link">#</a></h2>
-<p><img alt="ad_comp-nxp.png" src="images/ad_comp-nxp.png" /></p>
-<p>NXP solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
-<table>
-<thead>
-<tr>
-<th>Supported Products List</th>
-<th>CPU</th>
-<th>GPU</th>
-<th>RAM, Interfaces</th>
-<th>Environmental</th>
-<th>Autoware Tested (Y/N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BLUEBOX 3.0</td>
-<td>16 x Arm® Cortex®-A72</td>
-<td>Dual RTX 8000 or RTX A6000</td>
-<td>16 GB RAM CAN, FlexRay, USB, Ethernet, DIO, SSD</td>
-<td>ASIL-D</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p>Link to company website is <a href="https://www.nxp.com/design/designs/bluebox-3-0-automotive-high-performance-compute-ahpc-development-platform:BlueBox">here.</a></p>
 <h2 id="advantech-in-vehicle-computers"><strong>Advantech In-Vehicle Computers</strong><a class="headerlink" href="#advantech-in-vehicle-computers" title="Permanent link">#</a></h2>
 <p><img alt="Advantech AD Computers" src="https://github.com/user-attachments/assets/0798fc0d-e799-4c54-8f81-dfe98466e726" /></p>
 <p>Advantech's autonomous driving and robotic computers are of compact size, with GMSL camera and other sensor data available at ROS level.</p>
@@ -1754,6 +1694,66 @@ nVidia provides the development kit as a reference design. </p>
 </tbody>
 </table>
 <p>Link to company website is <a href="https://campaign.advantech.online/en/AMR-Robotic-Solutions/">here.</a></p>
+<h2 id="nvidia-in-vehicle-computers"><strong>nVidia In-Vehicle Computers</strong><a class="headerlink" href="#nvidia-in-vehicle-computers" title="Permanent link">#</a></h2>
+<p><img alt="ad_comp-adlink.png" src="images/ad_comp-nvidia.jpg" />
+nVidia provides the development kit as a reference design.</p>
+<table>
+<thead>
+<tr>
+<th>Supported Products List</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM, Interfaces</th>
+<th>Environmental</th>
+<th>Autoware Tested (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nVidia Jetson Orin</td>
+<td>12-core Arm® Cortex®-A78AE v8.2 64-bit CPU 3MB L2 + 6MB L3</td>
+<td>2048-core NVIDIA Ampere architecture GPU with 64 Tensor Cores</td>
+<td>64 GB RAM, Up to 6 cameras (16 via virtual channels), 4x USB2.0 1x 1GbE, 1x10GbE</td>
+<td>None</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>DRIVE AGX Orin Developer Kit</td>
+<td>12 Cortex-A78A CPU</td>
+<td>2048-core NVIDIA Ampere architecture GPU with 64 Tensor Cores</td>
+<td>16x GMSL cameras, 2x 10GbE, 10x 1GbE, 6x 100 MbE, 6 CAN</td>
+<td>ASIL-D</td>
+<td>(TBA)</td>
+</tr>
+</tbody>
+</table>
+<p>Link to company website is <a href="https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/">here.</a></p>
+<h2 id="nxp-in-vehicle-computers"><strong>NXP In-Vehicle Computers</strong><a class="headerlink" href="#nxp-in-vehicle-computers" title="Permanent link">#</a></h2>
+<p><img alt="ad_comp-nxp.png" src="images/ad_comp-nxp.png" /></p>
+<p>NXP solutions which is used for autonomous driving and tested by one or more community members are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Supported Products List</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>RAM, Interfaces</th>
+<th>Environmental</th>
+<th>Autoware Tested (Y/N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLUEBOX 3.0</td>
+<td>16 x Arm® Cortex®-A72</td>
+<td>Dual RTX 8000 or RTX A6000</td>
+<td>16 GB RAM CAN, FlexRay, USB, Ethernet, DIO, SSD</td>
+<td>ASIL-D</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>Link to company website is <a href="https://www.nxp.com/design/designs/bluebox-3-0-automotive-high-performance-compute-ahpc-development-platform:BlueBox">here.</a></p>
 
 
 
