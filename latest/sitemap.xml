@@ -21,17 +21,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/ad-computers/</loc>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/ARM/</loc>
          <lastmod>2025-08-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/armECUs/</loc>
-         <lastmod>2025-08-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/x86_64ECUs/</loc>
+         <loc>https://autowarefoundation.github.io/LSA-reference-design-docs/latest/hardware-configuration/ECUs/x86_64/</loc>
          <lastmod>2025-08-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
