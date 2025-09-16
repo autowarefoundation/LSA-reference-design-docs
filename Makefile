@@ -6,18 +6,18 @@
 # Default target
 help:
 	@echo "LSA Reference Design Documentation - Available commands:"
-	@echo "  make prepare      Install required MkDocs packages"
-	@echo "  make serve        Start local development server"
+	@echo "  make prepare      Prepare Mkdocs development container"
+	@echo "  make serve        Start development server on the built container"
 	@echo "  make build        Build static documentation"
 	@echo "  make clean        Clean build artifacts"
 
 # Serve documentation locally
 serve:
-	mkdocs serve
+	docker run -it --rm -p 8000:8000 -v $$(pwd):/app mkdocs-dev
 
 # Build static documentation
 build:
-	mkdocs build
+	docker run -it --rm -v $$(pwd):/app --user $$(id -u):$$(id -g) mkdocs-dev mkdocs build
 
 # Clean build artifacts
 clean:
@@ -25,4 +25,4 @@ clean:
 
 # Install mkdocs dependencies
 prepare:
-	python3 -m pip install -U $$(curl -fsSL https://raw.githubusercontent.com/autowarefoundation/autoware-github-actions/main/deploy-docs/mkdocs-requirements.txt)
+	docker build -t mkdocs-dev .
