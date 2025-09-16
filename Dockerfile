@@ -4,6 +4,7 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y curl && \
     curl -fsSL https://raw.githubusercontent.com/autowarefoundation/autoware-github-actions/main/deploy-docs/mkdocs-requirements.txt -o requirements.txt && \
+    sed -i 's/mkdocs==1.4.3/mkdocs==1.6.0/' requirements.txt && \
     python3 -m pip install -U -r requirements.txt && \
     rm requirements.txt && \
     apt-get remove -y curl && apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
