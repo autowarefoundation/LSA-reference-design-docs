@@ -44,28 +44,17 @@ echo "net.core.rmem_max=134217728" | sudo tee -a /etc/sysctl.conf
 echo "net.core.rmem_default=134217728" | sudo tee -a /etc/sysctl.conf
 ```
 
-### Time-Sensitive Networking (TSN)
+### Time Synchronization
 
-For real-time communication requirements, configure TSN on supported hardware:
+For the tight real-time communication required for autonomous vehicles, all ECUs and sensors must be
+synchronized using Precision Time Protocol (PTP) or other bus or sensor specific synchronization
+methods.
 
-```yaml
-# ansible/roles/tsn_config/tasks/main.yml
----
-- name: Install TSN utilities
-  apt:
-    name:
-      - linuxptp
-      - ethtool
-    state: present
-
-- name: Configure PTP for time synchronization
-  template:
-    src: ptp4l.conf.j2
-    dest: /etc/linuxptp/ptp4l.conf
-
-- name: Enable hardware timestamping
-  command: "ethtool -T {{ tsn_interface }}"
-```
+Please refer to the 
+[PTP Architecture Guide](https://tier4.github.io/sync_tooling/ptp-architecture-guide/), part of the
+SYNC.TOOLING diagnostic suite.
+This guide provides guidance on how to configure synchronization across machines, recipes for common
+setups, command line examples, and Ansible roles.
 
 ## LiDAR Configuration
 
@@ -612,32 +601,6 @@ echo 'SUBSYSTEM=="tty", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="01a9", SYMLI
 
 ## Sensor Calibration
 
-### Time Synchronization
-
-Accurate time synchronization is crucial for sensor fusion:
-
-```bash
-# Install PTP for hardware time synchronization
-sudo apt install linuxptp
-
-# Configure PTP
-sudo tee /etc/linuxptp/ptp4l.conf << EOF
-[global]
-priority1 128
-priority2 128
-domainNumber 0
-clockClass 248
-clockAccuracy 0xFE
-offsetScaledLogVariance 0xFFFF
-free_running 0
-freq_est_interval 1
-EOF
-
-# Start PTP service
-sudo systemctl enable ptp4l
-sudo systemctl start ptp4l
-```
-
 ### Sensor Launch Order
 
 Create a master launch file to ensure sensors start in the correct order:
@@ -706,6 +669,26 @@ ip -details -statistics link show can0
 # Send test message
 cansend can0 123#DEADBEEF
 ```
+
+### Time Synchronization Issues
+
+PTP is a high-precision protocol and as such can be sensitive to network load, lacking hardware
+capabilities, or setup issues. Make sure to follow the
+[PTP Architecture Guide](https://tier4.github.io/sync_tooling/ptp-architecture-guide/) for best
+practices and troubleshooting steps, and ensure that your setup satisfies the requirements of all
+devices in the system.
+
+First steps include checking the sensors' web interfaces or diagnostics and looking for PTP4L or
+PHC2SYS errors in the system logs:
+
+```bash
+# Replace ptp4l and phc2sys with the service names used in your setup
+sudo journalctl -u ptp4l -u phc2sys
+```
+
+For advanced setups, the [SYNC.TOOLING](https://tier4.github.io/sync_tooling/) suite provides tools
+for real-time monitoring of synchronization status, ROS 2 diagnostics, and a WEB UI for
+on-vehicle troubleshooting and offline analysis.
 
 ## Performance Considerations
 
