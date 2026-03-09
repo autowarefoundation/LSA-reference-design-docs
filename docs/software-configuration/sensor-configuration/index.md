@@ -69,6 +69,14 @@ For real-time communication requirements, configure TSN on supported hardware:
 
 ## LiDAR Configuration
 
+For a plug-and-play experience with Autoware, the [Nebula](https://github.com/tier4/nebula) project
+provides a common interface for various LiDAR vendors, including Hesai, Velodyne and RoboSense.
+Nebula currently ships as part of the Autoware stack. Visit the 
+[Nebula documentation](https://tier4.github.io/nebula/) for more information.
+
+Alternatively, many vendors provide ROS 2 drivers for their LiDAR sensors. Vendor-specific
+installation and configuration are documented below.
+
 ### Velodyne LiDAR
 
 Velodyne LiDARs use UDP packets for data transmission over Ethernet. For hardware specifications and supported models, see [Velodyne Hardware Information](../../hardware-configuration/Sensors-and-Actuators/lidars.md#velodyne-3d-lidar-sensors).
