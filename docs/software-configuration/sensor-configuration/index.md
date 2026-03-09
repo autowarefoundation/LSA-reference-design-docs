@@ -690,6 +690,12 @@ For advanced setups, the [SYNC.TOOLING](https://tier4.github.io/sync_tooling/) s
 for real-time monitoring of synchronization status, ROS 2 diagnostics, and a WEB UI for
 on-vehicle troubleshooting and offline analysis.
 
+!!! note
+    Many sensors only provide a proprietary diagnostic interface for time synchronization status,
+    and the sensor's self reported status may not always be accurate. SYNC.TOOLING integrates with
+    sensor drivers like [Nebula](https://github.com/tier4/nebula) to provide more robust diagnostics.
+    See [SYNC.TOOLING sensor driver setup](https://tier4.github.io/sync_tooling/integrators-guide/#setup-diagnostics-in-sensor-driver).
+
 ## Performance Considerations
 
 - Use dedicated network interfaces for high-bandwidth sensors
