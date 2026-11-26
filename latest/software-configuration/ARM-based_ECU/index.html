@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2544,7 +2544,7 @@ sudo<span class="w"> </span>jetson_clocks<span class="w"> </span>--restore
 <h4 id="memory-configuration">Memory Configuration<a class="headerlink" href="#memory-configuration" title="Permanent link">#</a></h4>
 <p>Optimize memory allocation for Autoware workloads:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Increase GPU memory allocation</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;gpu_mem_size=8G&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/modprobe.d/tegra.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"gpu_mem_size=8G"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/modprobe.d/tegra.conf
 
 <span class="c1"># Configure swap for memory-intensive operations</span>
 sudo<span class="w"> </span>fallocate<span class="w"> </span>-l<span class="w"> </span>16G<span class="w"> </span>/swapfile
@@ -2559,11 +2559,11 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enable DLA cores</span>
 <span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/environment</span>
-<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">item</span><span class="nv"> </span><span class="s">}}"</span>
 <span class="w">  </span><span class="nt">loop</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;CUDA_VISIBLE_DEVICES=0&#39;</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;DLA_VISIBLE_DEVICES=0,1&#39;</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;TF_ENABLE_TENSORRT_DLA=1&#39;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'CUDA_VISIBLE_DEVICES=0'</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'DLA_VISIBLE_DEVICES=0,1'</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'TF_ENABLE_TENSORRT_DLA=1'</span>
 </code></pre></div>
 <h2 id="performance-tuning">Performance Tuning<a class="headerlink" href="#performance-tuning" title="Permanent link">#</a></h2>
 <h3 id="cpu-governor-settings">CPU Governor Settings<a class="headerlink" href="#cpu-governor-settings" title="Permanent link">#</a></h3>
@@ -2573,7 +2573,7 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 <span class="k">done</span>
 
 <span class="c1"># Make persistent</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;GOVERNOR=&quot;performance&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/default/cpufrequtils
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'GOVERNOR="performance"'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/default/cpufrequtils
 </code></pre></div>
 <h3 id="gpu-optimization">GPU Optimization<a class="headerlink" href="#gpu-optimization" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># ansible/roles/gpu_optimization/tasks/main.yml</span>
@@ -2584,14 +2584,14 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure GPU memory growth</span>
 <span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/environment</span>
-<span class="w">    </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;^TF_FORCE_GPU_ALLOW_GROWTH=&#39;</span>
-<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TF_FORCE_GPU_ALLOW_GROWTH=true&#39;</span>
+<span class="w">    </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s">'^TF_FORCE_GPU_ALLOW_GROWTH='</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">'TF_FORCE_GPU_ALLOW_GROWTH=true'</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set CUDA device order</span>
 <span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/environment</span>
-<span class="w">    </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;^CUDA_DEVICE_ORDER=&#39;</span>
-<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;CUDA_DEVICE_ORDER=PCI_BUS_ID&#39;</span>
+<span class="w">    </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s">'^CUDA_DEVICE_ORDER='</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">'CUDA_DEVICE_ORDER=PCI_BUS_ID'</span>
 </code></pre></div>
 <h2 id="storage-optimization">Storage Optimization<a class="headerlink" href="#storage-optimization" title="Permanent link">#</a></h2>
 <h3 id="nvme-configuration-for-high-speed-logging">NVMe Configuration for High-Speed Logging<a class="headerlink" href="#nvme-configuration-for-high-speed-logging" title="Permanent link">#</a></h3>
@@ -2600,7 +2600,7 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure NVMe for optimal performance</span>
 <span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/fstab</span>
-<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;/dev/nvme0n1p1</span><span class="nv"> </span><span class="s">/var/log/autoware</span><span class="nv"> </span><span class="s">ext4</span><span class="nv"> </span><span class="s">noatime,nodiratime,nobarrier</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">2&#39;</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">'/dev/nvme0n1p1</span><span class="nv"> </span><span class="s">/var/log/autoware</span><span class="nv"> </span><span class="s">ext4</span><span class="nv"> </span><span class="s">noatime,nodiratime,nobarrier</span><span class="nv"> </span><span class="s">0</span><span class="nv"> </span><span class="s">2'</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up log rotation for Autoware</span>
 <span class="w">  </span><span class="nt">template</span><span class="p">:</span>
@@ -2609,11 +2609,11 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 </code></pre></div>
 <h3 id="sd-card-optimization-jetson-nanoxavier-nx">SD Card Optimization (Jetson Nano/Xavier NX)<a class="headerlink" href="#sd-card-optimization-jetson-nanoxavier-nx" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Reduce SD card wear</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;vm.swappiness=10&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;vm.vfs_cache_pressure=50&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"vm.swappiness=10"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"vm.vfs_cache_pressure=50"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
 
 <span class="c1"># Move temporary files to RAM</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/fstab
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"tmpfs /tmp tmpfs defaults,noatime,mode=1777 0 0"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/fstab
 </code></pre></div>
 <h2 id="monitoring-and-debugging">Monitoring and Debugging<a class="headerlink" href="#monitoring-and-debugging" title="Permanent link">#</a></h2>
 <h3 id="jetson-specific-monitoring">Jetson-Specific Monitoring<a class="headerlink" href="#jetson-specific-monitoring" title="Permanent link">#</a></h3>
@@ -2741,7 +2741,7 @@ ncu<span class="w"> </span>--target-processes<span class="w"> </span>all<span cl
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

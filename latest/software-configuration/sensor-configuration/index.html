@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2732,8 +2732,8 @@ sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </s
 sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.core.rmem_default<span class="o">=</span><span class="m">134217728</span>
 
 <span class="c1"># Make settings persistent</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;net.core.rmem_max=134217728&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;net.core.rmem_default=134217728&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"net.core.rmem_max=134217728"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"net.core.rmem_default=134217728"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/sysctl.conf
 </code></pre></div>
 <h3 id="time-sensitive-networking-tsn">Time-Sensitive Networking (TSN)<a class="headerlink" href="#time-sensitive-networking-tsn" title="Permanent link">#</a></h3>
 <p>For real-time communication requirements, configure TSN on supported hardware:</p>
@@ -2752,7 +2752,7 @@ sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </s
 <span class="w">    </span><span class="nt">dest</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/linuxptp/ptp4l.conf</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enable hardware timestamping</span>
-<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ethtool</span><span class="nv"> </span><span class="s">-T</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">tsn_interface</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="s">"ethtool</span><span class="nv"> </span><span class="s">-T</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">tsn_interface</span><span class="nv"> </span><span class="s">}}"</span>
 </code></pre></div>
 <h2 id="lidar-configuration">LiDAR Configuration<a class="headerlink" href="#lidar-configuration" title="Permanent link">#</a></h2>
 <h3 id="velodyne-lidar">Velodyne LiDAR<a class="headerlink" href="#velodyne-lidar" title="Permanent link">#</a></h3>
@@ -2785,27 +2785,27 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/velodyne_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;192.168.1.201&quot;</span>
+<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.201"</span>
 <span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2368</span>
-<span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;VLP32C&quot;</span><span class="w">  </span><span class="c1"># Options: VLP16, VLP32C, VLS128</span>
+<span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">"VLP32C"</span><span class="w">  </span><span class="c1"># Options: VLP16, VLP32C, VLS128</span>
 <span class="w">    </span><span class="nt">rpm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">600</span>
 <span class="w">    </span><span class="nt">time_offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">read_once</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">read_fast</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">repeat_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;velodyne&quot;</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"velodyne"</span>
 </code></pre></div>
 <h4 id="launch-file">Launch File<a class="headerlink" href="#launch-file" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- velodyne.launch.xml --&gt;</span>
 <span class="nt">&lt;launch&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">&quot;velodyne_driver&quot;</span><span class="w"> </span><span class="na">exec=</span><span class="s">&quot;velodyne_driver_node&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;velodyne_driver&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;$(find-pkg-share autoware_config)/sensors/velodyne_config.yaml&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">"velodyne_driver"</span><span class="w"> </span><span class="na">exec=</span><span class="s">"velodyne_driver_node"</span><span class="w"> </span><span class="na">name=</span><span class="s">"velodyne_driver"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">from=</span><span class="s">"$(find-pkg-share autoware_config)/sensors/velodyne_config.yaml"</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/node&gt;</span>
 
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">&quot;velodyne_pointcloud&quot;</span><span class="w"> </span><span class="na">exec=</span><span class="s">&quot;velodyne_convert_node&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;velodyne_convert&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;VLP32C&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;remap</span><span class="w"> </span><span class="na">from=</span><span class="s">&quot;velodyne_packets&quot;</span><span class="w"> </span><span class="na">to=</span><span class="s">&quot;velodyne_driver/velodyne_packets&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">"velodyne_pointcloud"</span><span class="w"> </span><span class="na">exec=</span><span class="s">"velodyne_convert_node"</span><span class="w"> </span><span class="na">name=</span><span class="s">"velodyne_convert"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="w"> </span><span class="na">value=</span><span class="s">"VLP32C"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;remap</span><span class="w"> </span><span class="na">from=</span><span class="s">"velodyne_packets"</span><span class="w"> </span><span class="na">to=</span><span class="s">"velodyne_driver/velodyne_packets"</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/node&gt;</span>
 <span class="nt">&lt;/launch&gt;</span>
 </code></pre></div>
@@ -2819,11 +2819,11 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/ouster_config.yaml</span>
 <span class="nt">ouster_driver</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">sensor_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;192.168.1.202&quot;</span>
+<span class="w">    </span><span class="nt">sensor_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.202"</span>
 <span class="w">    </span><span class="nt">lidar_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7502</span>
 <span class="w">    </span><span class="nt">imu_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7503</span>
-<span class="w">    </span><span class="nt">lidar_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1024x10&quot;</span><span class="w">  </span><span class="c1"># Options: 512x10, 1024x10, 2048x10</span>
-<span class="w">    </span><span class="nt">timestamp_mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TIME_FROM_ROS_TIME&quot;</span>
+<span class="w">    </span><span class="nt">lidar_mode</span><span class="p">:</span><span class="w"> </span><span class="s">"1024x10"</span><span class="w">  </span><span class="c1"># Options: 512x10, 1024x10, 2048x10</span>
+<span class="w">    </span><span class="nt">timestamp_mode</span><span class="p">:</span><span class="w"> </span><span class="s">"TIME_FROM_ROS_TIME"</span>
 </code></pre></div>
 <h4 id="arm-specific-dma-optimization">ARM-Specific DMA Optimization<a class="headerlink" href="#arm-specific-dma-optimization" title="Permanent link">#</a></h4>
 <p>For ARM platforms, enable DMA transfer for better performance:</p>
@@ -2850,8 +2850,8 @@ colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<spa
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/hesai_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">lidar_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PandarXT32&quot;</span><span class="w">  </span><span class="c1"># Options: Pandar40P, PandarXT32, etc.</span>
-<span class="w">    </span><span class="nt">server_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;192.168.1.201&quot;</span>
+<span class="w">    </span><span class="nt">lidar_type</span><span class="p">:</span><span class="w"> </span><span class="s">"PandarXT32"</span><span class="w">  </span><span class="c1"># Options: Pandar40P, PandarXT32, etc.</span>
+<span class="w">    </span><span class="nt">server_ip</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.201"</span>
 <span class="w">    </span><span class="nt">lidar_recv_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2368</span>
 <span class="w">    </span><span class="nt">gps_recv_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10110</span>
 <span class="w">    </span><span class="nt">start_angle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
@@ -2870,8 +2870,8 @@ colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<spa
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/robosense_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">lidar_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;RS32&quot;</span><span class="w">  </span><span class="c1"># Options: RS16, RS32, RSBP, RS128, RS80, RSM1, RSHelios</span>
-<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;192.168.1.200&quot;</span>
+<span class="w">    </span><span class="nt">lidar_type</span><span class="p">:</span><span class="w"> </span><span class="s">"RS32"</span><span class="w">  </span><span class="c1"># Options: RS16, RS32, RSBP, RS128, RS80, RSM1, RSHelios</span>
+<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.200"</span>
 <span class="w">    </span><span class="nt">msop_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6699</span>
 <span class="w">    </span><span class="nt">difop_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7788</span>
 <span class="w">    </span><span class="nt">start_angle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
@@ -2893,10 +2893,10 @@ colcon<span class="w"> </span>build<span class="w"> </span>--packages-select<spa
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/leishen_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;192.168.1.222&quot;</span>
+<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.222"</span>
 <span class="w">    </span><span class="nt">device_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2368</span>
-<span class="w">    </span><span class="nt">device_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;C32&quot;</span><span class="w">  </span><span class="c1"># Options: C16, C32, CH32, CH128, C32W</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;lslidar&quot;</span>
+<span class="w">    </span><span class="nt">device_type</span><span class="p">:</span><span class="w"> </span><span class="s">"C32"</span><span class="w">  </span><span class="c1"># Options: C16, C32, CH32, CH128, C32W</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"lslidar"</span>
 <span class="w">    </span><span class="nt">scan_frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0</span>
 <span class="w">    </span><span class="nt">min_range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.15</span>
 <span class="w">    </span><span class="nt">max_range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">150.0</span>
@@ -2911,12 +2911,12 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/livox_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">broadcast_code</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3JEDHC900100791&quot;</span><span class="w">  </span><span class="c1"># Device broadcast code</span>
+<span class="w">    </span><span class="nt">broadcast_code</span><span class="p">:</span><span class="w"> </span><span class="s">"3JEDHC900100791"</span><span class="w">  </span><span class="c1"># Device broadcast code</span>
 <span class="w">    </span><span class="nt">enable_lidar_bag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">enable_imu_bag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">extrinsic_parameter_source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">  </span><span class="c1"># 0: broadcast, 1: from config file</span>
 <span class="w">    </span><span class="nt">enable_high_sensitivity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;livox_frame&quot;</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"livox_frame"</span>
 </code></pre></div>
 <h3 id="robin-w-wide-fov-lidar">Robin W Wide FOV LiDAR<a class="headerlink" href="#robin-w-wide-fov-lidar" title="Permanent link">#</a></h3>
 <p>Robin W offers wide field of view LiDAR technology for comprehensive environment sensing. For hardware specifications and supported models, see <a href="../../hardware-configuration/Sensors-and-Actuators/#robin-w-wide-fov-lidar">Robin W Hardware Information</a>.</p>
@@ -2928,9 +2928,9 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/robin_w_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;192.168.1.250&quot;</span>
+<span class="w">    </span><span class="nt">device_ip</span><span class="p">:</span><span class="w"> </span><span class="s">"192.168.1.250"</span>
 <span class="w">    </span><span class="nt">device_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7780</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;robin_w&quot;</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"robin_w"</span>
 <span class="w">    </span><span class="nt">horizontal_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">120.0</span><span class="w">  </span><span class="c1"># degrees</span>
 <span class="w">    </span><span class="nt">vertical_fov</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">70.0</span><span class="w">     </span><span class="c1"># degrees</span>
 <span class="w">    </span><span class="nt">min_range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
@@ -2947,24 +2947,24 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/usb_cam_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">video_device</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/dev/video0&quot;</span>
+<span class="w">    </span><span class="nt">video_device</span><span class="p">:</span><span class="w"> </span><span class="s">"/dev/video0"</span>
 <span class="w">    </span><span class="nt">framerate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30.0</span>
-<span class="w">    </span><span class="nt">io_method</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mmap&quot;</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;camera&quot;</span>
-<span class="w">    </span><span class="nt">pixel_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yuyv&quot;</span>
+<span class="w">    </span><span class="nt">io_method</span><span class="p">:</span><span class="w"> </span><span class="s">"mmap"</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"camera"</span>
+<span class="w">    </span><span class="nt">pixel_format</span><span class="p">:</span><span class="w"> </span><span class="s">"yuyv"</span>
 <span class="w">    </span><span class="nt">image_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1920</span>
 <span class="w">    </span><span class="nt">image_height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1080</span>
-<span class="w">    </span><span class="nt">camera_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;front_camera&quot;</span>
+<span class="w">    </span><span class="nt">camera_name</span><span class="p">:</span><span class="w"> </span><span class="s">"front_camera"</span>
 </code></pre></div>
 <h4 id="udev-rules-for-consistent-naming">Udev Rules for Consistent Naming<a class="headerlink" href="#udev-rules-for-consistent-naming" title="Permanent link">#</a></h4>
 <p>Create udev rules to ensure cameras always have the same device names:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create udev rules file</span>
 sudo<span class="w"> </span>tee<span class="w"> </span>/etc/udev/rules.d/99-cameras.rules<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
 <span class="s"># Front camera</span>
-<span class="s">SUBSYSTEM==&quot;video4linux&quot;, ATTRS{idVendor}==&quot;046d&quot;, ATTRS{idProduct}==&quot;085b&quot;, SYMLINK+=&quot;video_front&quot;</span>
+<span class="s">SUBSYSTEM=="video4linux", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="085b", SYMLINK+="video_front"</span>
 
 <span class="s"># Rear camera  </span>
-<span class="s">SUBSYSTEM==&quot;video4linux&quot;, ATTRS{idVendor}==&quot;046d&quot;, ATTRS{idProduct}==&quot;0825&quot;, SYMLINK+=&quot;video_rear&quot;</span>
+<span class="s">SUBSYSTEM=="video4linux", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0825", SYMLINK+="video_rear"</span>
 <span class="s">EOF</span>
 
 <span class="c1"># Reload udev rules</span>
@@ -2976,7 +2976,7 @@ sudo<span class="w"> </span>udevadm<span class="w"> </span>trigger
 <h4 id="gmsl-configuration-on-agx-orin">GMSL Configuration on AGX Orin<a class="headerlink" href="#gmsl-configuration-on-agx-orin" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># Enable GMSL cameras</span>
 sudo<span class="w"> </span>modprobe<span class="w"> </span>nvgmsl
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;nvgmsl&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/modules-load.d/nvgmsl.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"nvgmsl"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/modules-load.d/nvgmsl.conf
 
 <span class="c1"># Configure camera parameters</span>
 v4l2-ctl<span class="w"> </span>-d<span class="w"> </span>/dev/video0<span class="w"> </span>--set-fmt-video<span class="o">=</span><span class="nv">width</span><span class="o">=</span><span class="m">1920</span>,height<span class="o">=</span><span class="m">1080</span>,pixelformat<span class="o">=</span>YUYV
@@ -2985,9 +2985,9 @@ v4l2-ctl<span class="w"> </span>-d<span class="w"> </span>/dev/video0<span class
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/gmsl_config.yaml</span>
 <span class="nt">gmsl_camera</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">camera_info_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;file:///opt/autoware/calibration/gmsl_camera.yaml&quot;</span>
-<span class="w">    </span><span class="nt">video_device</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/dev/video0&quot;</span>
-<span class="w">    </span><span class="nt">pixel_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;YUYV&quot;</span>
+<span class="w">    </span><span class="nt">camera_info_url</span><span class="p">:</span><span class="w"> </span><span class="s">"file:///opt/autoware/calibration/gmsl_camera.yaml"</span>
+<span class="w">    </span><span class="nt">video_device</span><span class="p">:</span><span class="w"> </span><span class="s">"/dev/video0"</span>
+<span class="w">    </span><span class="nt">pixel_format</span><span class="p">:</span><span class="w"> </span><span class="s">"YUYV"</span>
 <span class="w">    </span><span class="nt">image_width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1920</span>
 <span class="w">    </span><span class="nt">image_height</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1080</span>
 <span class="w">    </span><span class="nt">framerate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30.0</span>
@@ -3004,13 +3004,13 @@ v4l2-ctl<span class="w"> </span>-d<span class="w"> </span>/dev/video0<span class
 <div class="highlight"><pre><span></span><code><span class="c1"># Example GStreamer pipeline for GMSL camera</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">create_gmsl_pipeline</span><span class="p">(</span><span class="n">sensor_id</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">&quot;nvarguscamerasrc sensor-id=</span><span class="si">{</span><span class="n">sensor_id</span><span class="si">}</span><span class="s2"> ! &quot;</span>
-        <span class="s2">&quot;video/x-raw(memory:NVMM), width=1920, height=1080, framerate=30/1 ! &quot;</span>
-        <span class="s2">&quot;nvvidconv ! &quot;</span>
-        <span class="s2">&quot;video/x-raw, format=BGRx ! &quot;</span>
-        <span class="s2">&quot;videoconvert ! &quot;</span>
-        <span class="s2">&quot;video/x-raw, format=BGR ! &quot;</span>
-        <span class="s2">&quot;appsink&quot;</span>
+        <span class="sa">f</span><span class="s2">"nvarguscamerasrc sensor-id=</span><span class="si">{</span><span class="n">sensor_id</span><span class="si">}</span><span class="s2"> ! "</span>
+        <span class="s2">"video/x-raw(memory:NVMM), width=1920, height=1080, framerate=30/1 ! "</span>
+        <span class="s2">"nvvidconv ! "</span>
+        <span class="s2">"video/x-raw, format=BGRx ! "</span>
+        <span class="s2">"videoconvert ! "</span>
+        <span class="s2">"video/x-raw, format=BGR ! "</span>
+        <span class="s2">"appsink"</span>
     <span class="p">)</span>
 </code></pre></div>
 <h3 id="gige-vision-cameras">GigE Vision Cameras<a class="headerlink" href="#gige-vision-cameras" title="Permanent link">#</a></h3>
@@ -3031,11 +3031,11 @@ sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </s
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/gige_camera_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">guid</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Basler-21995878&quot;</span><span class="w">  </span><span class="c1"># Camera serial number</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;camera&quot;</span>
+<span class="w">    </span><span class="nt">guid</span><span class="p">:</span><span class="w"> </span><span class="s">"Basler-21995878"</span><span class="w">  </span><span class="c1"># Camera serial number</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"camera"</span>
 <span class="w">    </span><span class="nt">exposure_auto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">gain_auto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">    </span><span class="nt">pixel_format</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;BayerRG8&quot;</span>
+<span class="w">    </span><span class="nt">pixel_format</span><span class="p">:</span><span class="w"> </span><span class="s">"BayerRG8"</span>
 <span class="w">    </span><span class="nt">packet_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1500</span>
 <span class="w">    </span><span class="nt">packet_delay</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </code></pre></div>
@@ -3076,16 +3076,16 @@ candump<span class="w"> </span>vcan0
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/vehicle/can_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">can_device</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;can0&quot;</span>
-<span class="w">    </span><span class="nt">dbc_file_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/path/to/vehicle.dbc&quot;</span>
+<span class="w">    </span><span class="nt">can_device</span><span class="p">:</span><span class="w"> </span><span class="s">"can0"</span>
+<span class="w">    </span><span class="nt">dbc_file_path</span><span class="p">:</span><span class="w"> </span><span class="s">"/path/to/vehicle.dbc"</span>
 <span class="w">    </span><span class="nt">sender_frames</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;STEERING_COMMAND&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;THROTTLE_COMMAND&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;BRAKE_COMMAND&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"STEERING_COMMAND"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"THROTTLE_COMMAND"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"BRAKE_COMMAND"</span>
 <span class="w">    </span><span class="nt">receiver_frames</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;VEHICLE_STATUS&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;WHEEL_SPEEDS&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;STEERING_ANGLE&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"VEHICLE_STATUS"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"WHEEL_SPEEDS"</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"STEERING_ANGLE"</span>
 </code></pre></div>
 <h3 id="systemd-service-for-can">Systemd Service for CAN<a class="headerlink" href="#systemd-service-for-can" title="Permanent link">#</a></h3>
 <p>Create a systemd service to automatically configure CAN interfaces:</p>
@@ -3131,16 +3131,16 @@ ls<span class="w"> </span>/dev/ttyUSB*<span class="w"> </span>/dev/ttyACM*
 sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">666</span><span class="w"> </span>/dev/ttyUSB0
 
 <span class="c1"># Create udev rule for persistent naming</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;SUBSYSTEM==&quot;tty&quot;, ATTRS{idVendor}==&quot;1546&quot;, ATTRS{idProduct}==&quot;01a9&quot;, SYMLINK+=&quot;gnss&quot;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'SUBSYSTEM=="tty", ATTRS{idVendor}=="1546", ATTRS{idProduct}=="01a9", SYMLINK+="gnss"'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/udev/rules.d/99-gnss.rules
 </code></pre></div>
 <h4 id="nmea-configuration">NMEA Configuration<a class="headerlink" href="#nmea-configuration" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/gnss_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/dev/gnss&quot;</span>
+<span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">"/dev/gnss"</span>
 <span class="w">    </span><span class="nt">baudrate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">115200</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gnss&quot;</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"gnss"</span>
 <span class="w">    </span><span class="nt">use_gnss_time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">    </span><span class="nt">publish_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0</span>
 </code></pre></div>
@@ -3148,9 +3148,9 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">666</sp
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/autoware_config/sensors/imu_config.yaml</span>
 <span class="nt">/**</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">ros__parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;/dev/ttyUSB1&quot;</span>
+<span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">"/dev/ttyUSB1"</span>
 <span class="w">    </span><span class="nt">baudrate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">921600</span>
-<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;imu&quot;</span>
+<span class="w">    </span><span class="nt">frame_id</span><span class="p">:</span><span class="w"> </span><span class="s">"imu"</span>
 <span class="w">    </span><span class="nt">imu_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200</span>
 <span class="w">    </span><span class="nt">filter_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
 <span class="w">    </span><span class="nt">mag_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
@@ -3184,22 +3184,22 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- sensors.launch.xml --&gt;</span>
 <span class="nt">&lt;launch&gt;</span>
 <span class="w">  </span><span class="cm">&lt;!-- Start time synchronization first --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">&quot;sensor_sync&quot;</span><span class="w"> </span><span class="na">exec=</span><span class="s">&quot;time_sync_node&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;time_sync&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">"sensor_sync"</span><span class="w"> </span><span class="na">exec=</span><span class="s">"time_sync_node"</span><span class="w"> </span><span class="na">name=</span><span class="s">"time_sync"</span><span class="nt">/&gt;</span>
 
 <span class="w">  </span><span class="cm">&lt;!-- Start LiDARs --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;$(find-pkg-share velodyne_driver)/launch/velodyne.launch.xml&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">"$(find-pkg-share velodyne_driver)/launch/velodyne.launch.xml"</span><span class="nt">/&gt;</span>
 
 <span class="w">  </span><span class="cm">&lt;!-- Start cameras after LiDARs --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;$(find-pkg-share usb_cam)/launch/camera.launch.xml&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;camera_name&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;front_camera&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">"$(find-pkg-share usb_cam)/launch/camera.launch.xml"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"camera_name"</span><span class="w"> </span><span class="na">value=</span><span class="s">"front_camera"</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/include&gt;</span>
 
 <span class="w">  </span><span class="cm">&lt;!-- Start GNSS/IMU --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;$(find-pkg-share nmea_navsat_driver)/launch/nmea_navsat.launch.xml&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">"$(find-pkg-share nmea_navsat_driver)/launch/nmea_navsat.launch.xml"</span><span class="nt">/&gt;</span>
 
 <span class="w">  </span><span class="cm">&lt;!-- Start CAN interface last --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">&quot;socketcan_bridge&quot;</span><span class="w"> </span><span class="na">exec=</span><span class="s">&quot;socketcan_bridge_node&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;can_bridge&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;can_device&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;can0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;node</span><span class="w"> </span><span class="na">pkg=</span><span class="s">"socketcan_bridge"</span><span class="w"> </span><span class="na">exec=</span><span class="s">"socketcan_bridge_node"</span><span class="w"> </span><span class="na">name=</span><span class="s">"can_bridge"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;param</span><span class="w"> </span><span class="na">name=</span><span class="s">"can_device"</span><span class="w"> </span><span class="na">value=</span><span class="s">"can0"</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/node&gt;</span>
 <span class="nt">&lt;/launch&gt;</span>
 </code></pre></div>
@@ -3351,7 +3351,7 @@ cansend<span class="w"> </span>can0<span class="w"> </span><span class="m">123</
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
