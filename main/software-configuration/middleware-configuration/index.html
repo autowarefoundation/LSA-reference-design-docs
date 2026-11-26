@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2643,7 +2643,7 @@
 <p>Complete the <a href="../getting-started/">Getting Started</a> guide first.</p>
 <h3 id="install-zenoh-rmw">Install Zenoh RMW<a class="headerlink" href="#install-zenoh-rmw" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Add the Zenoh repository</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/zenoh.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
 sudo<span class="w"> </span>apt<span class="w"> </span>update
 
@@ -2656,7 +2656,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li>
 <p><strong>Set the RMW Implementation</strong>
 <div class="highlight"><pre><span></span><code><span class="c1"># Add to ~/.bashrc for permanent configuration</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export RMW_IMPLEMENTATION=rmw_zenoh_cpp&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'export RMW_IMPLEMENTATION=rmw_zenoh_cpp'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 <span class="nb">source</span><span class="w"> </span>~/.bashrc
 
 <span class="c1"># Or set temporarily for current session</span>
@@ -2670,18 +2670,18 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <p>Create a Zenoh configuration file:
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>~/zenoh_config.json5<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
 <span class="s">{</span>
-<span class="s">  mode: &quot;router&quot;,</span>
+<span class="s">  mode: "router",</span>
 <span class="s">  listen: {</span>
 <span class="s">    endpoints: [</span>
-<span class="s">      &quot;tcp/0.0.0.0:7447&quot;,</span>
-<span class="s">      &quot;udp/0.0.0.0:7447&quot;</span>
+<span class="s">      "tcp/0.0.0.0:7447",</span>
+<span class="s">      "udp/0.0.0.0:7447"</span>
 <span class="s">    ]</span>
 <span class="s">  },</span>
 <span class="s">  scouting: {</span>
 <span class="s">    multicast: {</span>
 <span class="s">      enabled: true,</span>
-<span class="s">      address: &quot;224.0.0.224:7446&quot;,</span>
-<span class="s">      interface: &quot;auto&quot;</span>
+<span class="s">      address: "224.0.0.224:7446",</span>
+<span class="s">      interface: "auto"</span>
 <span class="s">    }</span>
 <span class="s">  }</span>
 <span class="s">}</span>
@@ -2706,7 +2706,7 @@ zenohd<span class="w"> </span>-c<span class="w"> </span>~/zenoh_config.json5
 <span class="c1"># Cellular Networks (4G/5G)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_MULTICAST_SCOUTING</span><span class="o">=</span><span class="nb">false</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_UNICAST_SCOUTING</span><span class="o">=</span><span class="nb">true</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_PEERS</span><span class="o">=</span><span class="s2">&quot;tcp/router-ip:7447&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_PEERS</span><span class="o">=</span><span class="s2">"tcp/router-ip:7447"</span>
 
 <span class="c1"># Mixed Networks</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_MULTICAST_SCOUTING</span><span class="o">=</span><span class="nb">true</span>
@@ -2728,12 +2728,12 @@ zenohd<span class="w"> </span>-c<span class="w"> </span>~/zenoh_config.json5
 <div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- autoware_zenoh.launch.xml --&gt;</span>
 <span class="nt">&lt;launch&gt;</span>
 <span class="w">  </span><span class="cm">&lt;!-- Set RMW implementation --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;set_env</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;RMW_IMPLEMENTATION&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;rmw_zenoh_cpp&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;set_env</span><span class="w"> </span><span class="na">name=</span><span class="s">"RMW_IMPLEMENTATION"</span><span class="w"> </span><span class="na">value=</span><span class="s">"rmw_zenoh_cpp"</span><span class="nt">/&gt;</span>
 
 <span class="w">  </span><span class="cm">&lt;!-- Include standard Autoware launch --&gt;</span>
-<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">&quot;$(find-pkg-share autoware_launch)/launch/autoware.launch.xml&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;vehicle_model&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;$(var vehicle_model)&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;sensor_model&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;$(var sensor_model)&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;include</span><span class="w"> </span><span class="na">file=</span><span class="s">"$(find-pkg-share autoware_launch)/launch/autoware.launch.xml"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"vehicle_model"</span><span class="w"> </span><span class="na">value=</span><span class="s">"$(var vehicle_model)"</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;arg</span><span class="w"> </span><span class="na">name=</span><span class="s">"sensor_model"</span><span class="w"> </span><span class="na">value=</span><span class="s">"$(var sensor_model)"</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/include&gt;</span>
 <span class="nt">&lt;/launch&gt;</span>
 </code></pre></div>
@@ -2741,11 +2741,11 @@ zenohd<span class="w"> </span>-c<span class="w"> </span>~/zenoh_config.json5
 <p>For fleet deployments:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Vehicle 1</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">1</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_SESSION_NAME</span><span class="o">=</span><span class="s2">&quot;vehicle_1&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_SESSION_NAME</span><span class="o">=</span><span class="s2">"vehicle_1"</span>
 
 <span class="c1"># Vehicle 2</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DOMAIN_ID</span><span class="o">=</span><span class="m">2</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_SESSION_NAME</span><span class="o">=</span><span class="s2">&quot;vehicle_2&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_SESSION_NAME</span><span class="o">=</span><span class="s2">"vehicle_2"</span>
 
 <span class="c1"># Central Router (Fleet Coordinator)</span>
 zenohd<span class="w"> </span>--id<span class="w"> </span>fleet_router<span class="w"> </span>--listen<span class="w"> </span>tcp/0.0.0.0:7447
@@ -2773,7 +2773,7 @@ z_info
 z_scout
 
 <span class="c1"># Monitor data flow</span>
-z_sub<span class="w"> </span>-k<span class="w"> </span><span class="s2">&quot;/**&quot;</span>
+z_sub<span class="w"> </span>-k<span class="w"> </span><span class="s2">"/**"</span>
 </code></pre></div>
 <h3 id="ros-2-introspection">ROS 2 Introspection<a class="headerlink" href="#ros-2-introspection" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># List active nodes</span>
@@ -2809,7 +2809,7 @@ sudo<span class="w"> </span>iwconfig<span class="w"> </span>wlan0<span class="w"
 <li>
 <p><strong>Connection issues over cellular</strong>
    <div class="highlight"><pre><span></span><code><span class="c1"># Use explicit peer configuration</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_PEERS</span><span class="o">=</span><span class="s2">&quot;tcp/central-server-ip:7447&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOH_PEERS</span><span class="o">=</span><span class="s2">"tcp/central-server-ip:7447"</span>
 </code></pre></div></p>
 </li>
 </ol>
@@ -2935,7 +2935,7 @@ sudo<span class="w"> </span>iwconfig<span class="w"> </span>wlan0<span class="w"
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2669,7 +2669,7 @@ nvcc<span class="w"> </span>--version
 <span class="c"># Custom entrypoint</span>
 <span class="k">COPY</span><span class="w"> </span>scripts/custom_entrypoint.sh<span class="w"> </span>/
 <span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/custom_entrypoint.sh
-<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/custom_entrypoint.sh&quot;</span><span class="p">]</span>
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">"/custom_entrypoint.sh"</span><span class="p">]</span>
 </code></pre></div>
 <h3 id="multi-stage-build-for-development">Multi-Stage Build for Development<a class="headerlink" href="#multi-stage-build-for-development" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c"># Dockerfile.dev</span>
@@ -2690,7 +2690,7 @@ nvcc<span class="w"> </span>--version
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/workspace/install<span class="w"> </span>/opt/autoware/custom
 
 <span class="c"># Update environment</span>
-<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/custom/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"source /opt/autoware/custom/setup.bash"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 <h3 id="cross-compilation">Cross-Compilation<a class="headerlink" href="#cross-compilation" title="Permanent link">#</a></h3>
 <p>For faster builds, consider cross-compilation from an x86_64 host. See <a href="https://docs.docker.com/build/building/multi-platform/">Docker Cross-Compilation Guide</a> for details.</p>
@@ -2724,7 +2724,7 @@ docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </s
 </code></pre></div>
 <h3 id="resource-limits-and-performance-tuning">Resource Limits and Performance Tuning<a class="headerlink" href="#resource-limits-and-performance-tuning" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># docker-compose.custom.yml</span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3.8'</span>
 
 <span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">autoware</span><span class="p">:</span>
@@ -2733,10 +2733,10 @@ docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </s
 <span class="w">    </span><span class="nt">deploy</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">limits</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;8&#39;</span>
+<span class="w">          </span><span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="s">'8'</span>
 <span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32G</span>
 <span class="w">        </span><span class="nt">reservations</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;4&#39;</span>
+<span class="w">          </span><span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="s">'4'</span>
 <span class="w">          </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">16G</span>
 <span class="w">          </span><span class="nt">devices</span><span class="p">:</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvidia</span>
@@ -2802,16 +2802,16 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/custom_comp
 <span class="nn">---</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure Jetson power mode</span>
 <span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nvpmodel -m 0</span><span class="w">  </span><span class="c1"># MAXN mode</span>
-<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == &quot;aarch64&quot;</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == "aarch64"</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Enable jetson clocks</span>
 <span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetson_clocks --fan</span>
-<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == &quot;aarch64&quot;</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == "aarch64"</span>
 
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure GPU memory growth</span>
 <span class="w">  </span><span class="nt">lineinfile</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/environment</span>
-<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;TF_FORCE_GPU_ALLOW_GROWTH=true&#39;</span>
+<span class="w">    </span><span class="nt">line</span><span class="p">:</span><span class="w"> </span><span class="s">'TF_FORCE_GPU_ALLOW_GROWTH=true'</span>
 </code></pre></div>
 <h3 id="customizing-the-main-playbook">Customizing the Main Playbook<a class="headerlink" href="#customizing-the-main-playbook" title="Permanent link">#</a></h3>
 <p>Modify the main deployment playbook to include custom roles:</p>
@@ -2822,7 +2822,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/custom_comp
 <span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span>
 
 <span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">autoware_version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2025.02&quot;</span>
+<span class="w">    </span><span class="nt">autoware_version</span><span class="p">:</span><span class="w"> </span><span class="s">"2025.02"</span>
 <span class="w">    </span><span class="nt">enable_gpu_optimization</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">    </span><span class="nt">custom_sensors</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">velodyne</span>
@@ -2836,9 +2836,9 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/custom_comp
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autoware_core</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor_drivers</span>
 <span class="w">      </span><span class="nt">vars</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">sensors</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">custom_sensors</span><span class="nv"> </span><span class="s">}}&quot;</span>
+<span class="w">        </span><span class="nt">sensors</span><span class="p">:</span><span class="w"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">custom_sensors</span><span class="nv"> </span><span class="s">}}"</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jetson_optimization</span>
-<span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == &quot;aarch64&quot;</span>
+<span class="w">      </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible_architecture == "aarch64"</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom_component</span>
 </code></pre></div>
 <h2 id="docker-image-customization">Docker Image Customization<a class="headerlink" href="#docker-image-customization" title="Permanent link">#</a></h2>
@@ -2866,7 +2866,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/custom_comp
 <span class="c"># Custom entrypoint</span>
 <span class="k">COPY</span><span class="w"> </span>scripts/custom_entrypoint.sh<span class="w"> </span>/
 <span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>/custom_entrypoint.sh
-<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/custom_entrypoint.sh&quot;</span><span class="p">]</span>
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">"/custom_entrypoint.sh"</span><span class="p">]</span>
 </code></pre></div>
 <h3 id="multi-stage-build-for-development_1">Multi-Stage Build for Development<a class="headerlink" href="#multi-stage-build-for-development_1" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c"># Dockerfile.dev</span>
@@ -2887,7 +2887,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/custom_comp
 <span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/workspace/install<span class="w"> </span>/opt/autoware/custom
 
 <span class="c"># Update environment</span>
-<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/custom/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"source /opt/autoware/custom/setup.bash"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
 </code></pre></div>
 <h2 id="step-5-package-installation">Step 5: Package Installation<a class="headerlink" href="#step-5-package-installation" title="Permanent link">#</a></h2>
 <p>This step focuses on installing pre-built Autoware packages from the local repository.</p>
@@ -2995,7 +2995,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>ansible/roles/custom_comp
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

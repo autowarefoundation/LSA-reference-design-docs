@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2624,7 +2624,7 @@ fakeroot<span class="w"> </span>debian/rules<span class="w"> </span>binary
 mkdir<span class="w"> </span>-p<span class="w"> </span>~/debs
 mv<span class="w"> </span>../*.deb<span class="w"> </span>~/debs/
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Package created: ~/debs/</span><span class="si">${</span><span class="nv">PACKAGE_NAME</span><span class="si">}</span><span class="s2">_*.deb&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Package created: ~/debs/</span><span class="si">${</span><span class="nv">PACKAGE_NAME</span><span class="si">}</span><span class="s2">_*.deb"</span>
 </code></pre></div>
 <h3 id="batch-package-creation">Batch Package Creation<a class="headerlink" href="#batch-package-creation" title="Permanent link">#</a></h3>
 <p>Process multiple packages in a workspace:</p>
@@ -2639,13 +2639,13 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$OUTPUT_
 <span class="c1"># Find all packages with package.xml</span>
 <span class="k">for</span><span class="w"> </span>pkg<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span><span class="nv">$WORKSPACE_PATH</span>/src<span class="w"> </span>-name<span class="w"> </span>package.xml<span class="w"> </span>-exec<span class="w"> </span>dirname<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <span class="w">    </span><span class="nv">PACKAGE_NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$pkg</span><span class="k">)</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Processing: </span><span class="nv">$PACKAGE_NAME</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Processing: </span><span class="nv">$PACKAGE_NAME</span><span class="s2">"</span>
 
 <span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$pkg</span>
 
 <span class="w">    </span><span class="c1"># Skip if already processed</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>debian/changelog<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  Skipping - debian files already exist&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  Skipping - debian files already exist"</span>
 <span class="w">        </span><span class="k">continue</span>
 <span class="w">    </span><span class="k">fi</span>
 
@@ -2663,7 +2663,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$OUTPUT_
 <span class="w">    </span>mv<span class="w"> </span>../*.deb<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 <span class="k">done</span>
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Packages created in: </span><span class="nv">$OUTPUT_DIR</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Packages created in: </span><span class="nv">$OUTPUT_DIR</span><span class="s2">"</span>
 </code></pre></div>
 <h2 id="advanced-package-configuration">Advanced Package Configuration<a class="headerlink" href="#advanced-package-configuration" title="Permanent link">#</a></h2>
 <h3 id="custom-control-file">Custom Control File<a class="headerlink" href="#custom-control-file" title="Permanent link">#</a></h3>
@@ -2697,7 +2697,7 @@ Description:<span class="w"> </span>Custom<span class="w"> </span>sensor<span cl
 <span class="c1">#!/bin/bash</span>
 <span class="nb">set</span><span class="w"> </span>-e
 
-<span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="k">case</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="k">in</span>
 <span class="w">    </span>configure<span class="o">)</span>
 <span class="w">        </span><span class="c1"># Create necessary directories</span>
 <span class="w">        </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/autoware/config
@@ -2713,14 +2713,14 @@ Description:<span class="w"> </span>Custom<span class="w"> </span>sensor<span cl
 <span class="w">        </span><span class="k">fi</span>
 
 <span class="w">        </span><span class="c1"># Update ROS environment</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;source /opt/autoware/setup.bash&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/bash.bashrc
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"source /opt/autoware/setup.bash"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/bash.bashrc
 <span class="w">        </span><span class="p">;;</span>
 
 <span class="w">    </span>abort-upgrade<span class="p">|</span>abort-remove<span class="p">|</span>abort-deconfigure<span class="o">)</span>
 <span class="w">        </span><span class="p">;;</span>
 
 <span class="w">    </span>*<span class="o">)</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;postinst called with unknown argument &#39;</span><span class="nv">$1</span><span class="s2">&#39;&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"postinst called with unknown argument '</span><span class="nv">$1</span><span class="s2">'"</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span>
 <span class="w">        </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="w">        </span><span class="p">;;</span>
 <span class="k">esac</span>
@@ -2762,7 +2762,7 @@ cat<span class="w"> </span>&gt;<span class="w"> </span>dists/<span class="nv">$D
 <span class="s">EOF</span>
 
 <span class="c1"># Add repository to sources</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [trusted=yes] file://</span><span class="nv">$REPO_BASE</span><span class="s2"> </span><span class="nv">$DIST</span><span class="s2"> </span><span class="nv">$COMPONENT</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [trusted=yes] file://</span><span class="nv">$REPO_BASE</span><span class="s2"> </span><span class="nv">$DIST</span><span class="s2"> </span><span class="nv">$COMPONENT</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/autoware-local.list
 
 sudo<span class="w"> </span>apt<span class="w"> </span>update
@@ -2782,7 +2782,7 @@ rsync<span class="w"> </span>-avz<span class="w"> </span>--progress<span class="
 <span class="w">    </span><span class="nv">$REMOTE_HOST</span>:<span class="nv">$REMOTE_PATH</span>/pool/main/
 
 <span class="c1"># Update remote repository</span>
-ssh<span class="w"> </span><span class="nv">$REMOTE_HOST</span><span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+ssh<span class="w"> </span><span class="nv">$REMOTE_HOST</span><span class="w"> </span><span class="s">&lt;&lt; 'EOF'</span>
 <span class="s">cd /var/www/apt/autoware</span>
 <span class="s">dpkg-scanpackages pool/main /dev/null | \</span>
 <span class="s">    gzip -9c &gt; dists/jammy/main/binary-arm64/Packages.gz</span>
@@ -2796,9 +2796,9 @@ ssh<span class="w"> </span><span class="nv">$REMOTE_HOST</span><span class="w"> 
 &lt;version&gt;1.2.3&lt;/version&gt;
 
 <span class="c1"># Update debian changelog</span>
-dch<span class="w"> </span>-v<span class="w"> </span><span class="m">1</span>.2.3-1<span class="w"> </span><span class="s2">&quot;New upstream release&quot;</span>
-dch<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Added feature X&quot;</span>
-dch<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Fixed bug Y&quot;</span>
+dch<span class="w"> </span>-v<span class="w"> </span><span class="m">1</span>.2.3-1<span class="w"> </span><span class="s2">"New upstream release"</span>
+dch<span class="w"> </span>-a<span class="w"> </span><span class="s2">"Added feature X"</span>
+dch<span class="w"> </span>-a<span class="w"> </span><span class="s2">"Fixed bug Y"</span>
 </code></pre></div>
 <h3 id="automated-version-management">Automated Version Management<a class="headerlink" href="#automated-version-management" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
@@ -2810,23 +2810,23 @@ dch<span class="w"> </span>-a<span class="w"> </span><span class="s2">&quot;Fixe
 
 <span class="k">def</span><span class="w"> </span><span class="nf">update_package_version</span><span class="p">(</span><span class="n">package_path</span><span class="p">,</span> <span class="n">new_version</span><span class="p">):</span>
     <span class="c1"># Update package.xml</span>
-    <span class="n">package_xml</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">package_path</span><span class="si">}</span><span class="s2">/package.xml&quot;</span>
+    <span class="n">package_xml</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">package_path</span><span class="si">}</span><span class="s2">/package.xml"</span>
     <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">package_xml</span><span class="p">)</span>
     <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
 
-    <span class="n">version_elem</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;version&#39;</span><span class="p">)</span>
+    <span class="n">version_elem</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'version'</span><span class="p">)</span>
     <span class="n">version_elem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">new_version</span>
 
     <span class="n">tree</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">package_xml</span><span class="p">)</span>
 
     <span class="c1"># Update debian changelog</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
-        <span class="s1">&#39;dch&#39;</span><span class="p">,</span> <span class="s1">&#39;-v&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">new_version</span><span class="si">}</span><span class="s1">-1&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;-D&#39;</span><span class="p">,</span> <span class="s1">&#39;jammy&#39;</span><span class="p">,</span>
-        <span class="sa">f</span><span class="s1">&#39;Update to version </span><span class="si">{</span><span class="n">new_version</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="s1">'dch'</span><span class="p">,</span> <span class="s1">'-v'</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">new_version</span><span class="si">}</span><span class="s1">-1'</span><span class="p">,</span>
+        <span class="s1">'-D'</span><span class="p">,</span> <span class="s1">'jammy'</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">'Update to version </span><span class="si">{</span><span class="n">new_version</span><span class="si">}</span><span class="s1">'</span>
     <span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">package_path</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">update_package_version</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </code></pre></div>
 <h2 id="multi-architecture-builds">Multi-Architecture Builds<a class="headerlink" href="#multi-architecture-builds" title="Permanent link">#</a></h2>
@@ -2888,7 +2888,7 @@ docker<span class="w"> </span>buildx<span class="w"> </span>build<span class="w"
 <span class="c1"># test-package.sh</span>
 
 <span class="nv">PACKAGE_FILE</span><span class="o">=</span><span class="nv">$1</span>
-<span class="nv">TEST_CONTAINER</span><span class="o">=</span><span class="s2">&quot;autoware-package-test&quot;</span>
+<span class="nv">TEST_CONTAINER</span><span class="o">=</span><span class="s2">"autoware-package-test"</span>
 
 <span class="c1"># Create test container</span>
 docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span><span class="nv">$TEST_CONTAINER</span><span class="w"> </span><span class="se">\</span>
@@ -2896,14 +2896,14 @@ docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </sp
 
 <span class="c1"># Copy and install package</span>
 docker<span class="w"> </span>cp<span class="w"> </span><span class="nv">$PACKAGE_FILE</span><span class="w"> </span><span class="nv">$TEST_CONTAINER</span>:/tmp/
-docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$TEST_CONTAINER</span><span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$TEST_CONTAINER</span><span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span>
 <span class="s2">    apt update</span>
 <span class="s2">    apt install -y /tmp/</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$PACKAGE_FILE</span><span class="k">)</span>
 <span class="s2">    # Run basic tests</span>
 <span class="s2">    dpkg -L </span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$PACKAGE_FILE</span><span class="w"> </span>.deb<span class="k">)</span>
 <span class="s2">    # Check for missing dependencies</span>
 <span class="s2">    apt-get check</span>
-<span class="s2">&quot;</span>
+<span class="s2">"</span>
 
 <span class="c1"># Cleanup</span>
 docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$TEST_CONTAINER</span>
@@ -2938,7 +2938,7 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 debian/rules<span class="w"> </span>clean
 
 <span class="c1"># Verbose build</span>
-<span class="nv">DEB_BUILD_OPTIONS</span><span class="o">=</span><span class="s2">&quot;nostrip noopt&quot;</span><span class="w"> </span>fakeroot<span class="w"> </span>debian/rules<span class="w"> </span>binary
+<span class="nv">DEB_BUILD_OPTIONS</span><span class="o">=</span><span class="s2">"nostrip noopt"</span><span class="w"> </span>fakeroot<span class="w"> </span>debian/rules<span class="w"> </span>binary
 </code></pre></div></p>
 </li>
 <li>
@@ -3062,7 +3062,7 @@ apt-cache<span class="w"> </span>policy<span class="w"> </span>package-name
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

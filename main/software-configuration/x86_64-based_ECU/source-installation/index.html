@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/images/autoware-foundation.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2535,13 +2535,13 @@ rosdep<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> 
 touch<span class="w"> </span>~/.cache/ccache/ccache.conf
 </code></pre></div>
    Set the maximum cache size. By default, it's <code>5 GB</code>, but you can increase it based on your system's available storage. In this example, we set it to <code>60 GB</code>:
-   <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;max_size = 60G&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.cache/ccache/ccache.conf
+   <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"max_size = 60G"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.cache/ccache/ccache.conf
 </code></pre></div>
    3.3 Integrate Ccache with your environment</p>
 <p>To ensure that Ccache is used during compilation, add the following lines to your <code>.bashrc</code>. This setup redirects <code>gcc</code> and <code>g++</code> calls through Ccache:
-   <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="s2">&quot;/usr/lib/ccache/gcc&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span><span class="s2">&quot;/usr/lib/ccache/g++&quot;</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">CCACHE_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.cache/ccache/&quot;</span><span class="w"> </span>
+   <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CC</span><span class="o">=</span><span class="s2">"/usr/lib/ccache/gcc"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CXX</span><span class="o">=</span><span class="s2">"/usr/lib/ccache/g++"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CCACHE_DIR</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.cache/ccache/"</span><span class="w"> </span>
 </code></pre></div>
    After adding these lines, either reload your .bashrc or restart the terminal to apply the changes.</p>
 <p>3.4 Verify Ccache is working
@@ -2570,10 +2570,10 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
    <div class="highlight"><pre><span></span><code>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
 </code></pre></div>
    Reference:
-   <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="o">[</span>debug<span class="o">]</span>:<span class="w"> </span><span class="s2">&quot;-DCMAKE_BUILD_TYPE=Debug&quot;</span>
-<span class="w">   </span><span class="o">[</span>min-size-rel<span class="o">]</span>:<span class="w"> </span><span class="s2">&quot;-DCMAKE_BUILD_TYPE=MinSizeRel&quot;</span>
-<span class="w">   </span><span class="o">[</span>rel-with-deb-info<span class="o">]</span>:<span class="w"> </span><span class="s2">&quot;-DCMAKE_BUILD_TYPE=RelWithDebInfo&quot;</span>
-<span class="w">   </span><span class="o">[</span>release<span class="o">]</span>:<span class="w"> </span><span class="s2">&quot;-DCMAKE_BUILD_TYPE=Release&quot;</span><span class="w">     </span>
+   <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="o">[</span>debug<span class="o">]</span>:<span class="w"> </span><span class="s2">"-DCMAKE_BUILD_TYPE=Debug"</span>
+<span class="w">   </span><span class="o">[</span>min-size-rel<span class="o">]</span>:<span class="w"> </span><span class="s2">"-DCMAKE_BUILD_TYPE=MinSizeRel"</span>
+<span class="w">   </span><span class="o">[</span>rel-with-deb-info<span class="o">]</span>:<span class="w"> </span><span class="s2">"-DCMAKE_BUILD_TYPE=RelWithDebInfo"</span>
+<span class="w">   </span><span class="o">[</span>release<span class="o">]</span>:<span class="w"> </span><span class="s2">"-DCMAKE_BUILD_TYPE=Release"</span><span class="w">     </span>
 </code></pre></div>
    By reducing the number of packages built in parallel, you can lower memory usage. In the example below, only one package is built at a time:
    <div class="highlight"><pre><span></span><code>colcon<span class="w"> </span>build<span class="w"> </span>--symlink-install<span class="w"> </span>--parallel-workers<span class="w"> </span><span class="m">1</span><span class="w"> </span>--cmake-args<span class="w"> </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release
@@ -2588,7 +2588,7 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 <ol>
 <li>Install Rust:</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">&#39;=https&#39;</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSf<span class="w"> </span>https://sh.rustup.rs/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">'=https'</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSf<span class="w"> </span>https://sh.rustup.rs/<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
    You can verify it using the following command:
    <div class="highlight"><pre><span></span><code>rustc<span class="w"> </span>--version
@@ -2600,7 +2600,7 @@ sudo<span class="w"> </span>swapon<span class="w"> </span>/swapfile
 <li>Install Node.js(version &gt; 14):</li>
 </ol>
 <p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o-<span class="w"> </span>https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
-<span class="se">\.</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.nvm/nvm.sh&quot;</span>
+<span class="se">\.</span><span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.nvm/nvm.sh"</span>
 nvm<span class="w"> </span>install<span class="w"> </span><span class="m">22</span>
 </code></pre></div>
    You can verify it using the following command:
@@ -2690,18 +2690,18 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </ol>
 <p>For CycloneDDS configuration:</p>
 <p>Save the following file as <code>~/cyclonedds.xml</code>:
-   <div class="highlight"><pre><span></span><code><span class="go">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span>
-<span class="go">&lt;CycloneDDS xmlns=&quot;https://cdds.io/config&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd&quot;&gt;</span>
-<span class="go">  &lt;Domain Id=&quot;any&quot;&gt;</span>
+   <div class="highlight"><pre><span></span><code><span class="go">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="go">&lt;CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd"&gt;</span>
+<span class="go">  &lt;Domain Id="any"&gt;</span>
 <span class="go">    &lt;General&gt;</span>
 <span class="go">      &lt;Interfaces&gt;</span>
-<span class="go">        &lt;NetworkInterface autodetermine=&quot;false&quot; name=&quot;lo&quot; priority=&quot;default&quot; multicast=&quot;default&quot; /&gt;</span>
+<span class="go">        &lt;NetworkInterface autodetermine="false" name="lo" priority="default" multicast="default" /&gt;</span>
 <span class="go">      &lt;/Interfaces&gt;</span>
 <span class="go">      &lt;AllowMulticast&gt;default&lt;/AllowMulticast&gt;</span>
 <span class="go">      &lt;MaxMessageSize&gt;65500B&lt;/MaxMessageSize&gt;</span>
 <span class="go">    &lt;/General&gt;</span>
 <span class="go">    &lt;Internal&gt;</span>
-<span class="go">      &lt;SocketReceiveBufferSize min=&quot;10MB&quot;/&gt;</span>
+<span class="go">      &lt;SocketReceiveBufferSize min="10MB"/&gt;</span>
 <span class="go">      &lt;Watermarks&gt;</span>
 <span class="go">        &lt;WhcHigh&gt;500kB&lt;/WhcHigh&gt;</span>
 <span class="go">      &lt;/Watermarks&gt;</span>
@@ -2822,7 +2822,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
